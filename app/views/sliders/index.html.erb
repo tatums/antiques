@@ -1,0 +1,58 @@
+<script language="javascript">
+	$(document).ready(function(){
+		$('#active-slider-images').sortable({
+			update: function(event, ui) {
+				var SlidersOrder = $(this).sortable('toArray');
+				$.post( 'sliders/sort', {SlidersOrder:SlidersOrder});
+			}
+		});
+	});
+</script>
+
+
+<div class="col-container">
+	<div class="left col">
+		<h3>Active</h3>
+		<ul id="active-slider-images">
+		<% @sliders.active.each do |slider| %>
+
+			<%= content_tag_for :li, slider do %>
+				<div class="slider-image">
+			    	<%= image_tag slider.image_url(:small_thumb) %>
+				</div>
+		
+				<div class="slider-meta">
+					<%= activate_deactivate_button(slider) %>
+				    <%= link_to 'Edit', edit_slider_path(slider) %> | 
+				    <%= link_to 'Destroy', slider, confirm: 'Are you sure?', method: :delete %>
+				</div>
+			<% end %>
+		<% end %>
+		</ul>
+	</div>
+
+	<div class="left col">
+		<h3>Inactive</h3>
+		<ul id="inactive-slider-images">
+		<% @sliders.inactive.each do |slider| %>
+
+			<%= content_tag_for :li, slider do %>
+
+				<div class="slider-image">
+			    	<%= image_tag slider.image_url(:small_thumb) %>
+				</div>
+		
+				<div class="slider-meta">
+					<%= activate_deactivate_button(slider) %>
+				    <%= link_to 'Edit', edit_slider_path(slider) %> | 
+				    <%= link_to 'Destroy', slider, confirm: 'Are you sure?', method: :delete %>
+				</div>
+			<% end %>
+		<% end %>
+		</ul>
+	</div>
+</div>
+
+<br />
+
+<%= link_to 'New Slider', new_slider_path %>

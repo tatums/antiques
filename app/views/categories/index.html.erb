@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th>Position</th>
+    <th>Published</th>
+    <th>Title</th>
+    <th>Slug</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><%= category.position %></td>
+    <td><%= published(category) %></td>
+    <td><%= capitalize_title(category) %></td>
+    <td><%= category.slug %></td>
+    <td><%= link_to 'Edit', edit_category_path(category) %></td>
+    <td><%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Category', new_category_path %>

@@ -1,0 +1,7 @@
+<% Category.active.each do |category|%>
+	<li><%= link_to capitalize_title(category), category.slug %></li>
+<% end %>
+
+<% if user_signed_in? %>
+	<li class="admin-link"><%= link_to 'Admin Links', admin_url %></li>
+<% end %>

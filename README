@@ -1,0 +1,7 @@
+App to manage products.  Allows the user to upload images set a description.  A product can exist in multiple categories. 
+
+Rails 3.1
+Mysql DB
+rmagick
+devise
+... 

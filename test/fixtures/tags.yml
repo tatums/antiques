@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  categroy_id: 1
+  product_id: 1
+
+two:
+  categroy_id: 1
+  product_id: 1

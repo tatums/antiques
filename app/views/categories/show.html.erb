@@ -1,0 +1,34 @@
+
+<% if user_signed_in? %>
+	<script language="javascript">
+		$(document).ready(function(){
+			$('#products').sortable({
+				update: function(event, ui) {
+					var ProductsOrder = $(this).sortable('toArray');
+					$.post( 'sort', {ProductsOrder:ProductsOrder});
+				}
+			});
+		});
+	</script>
+<% end %>
+
+
+
+<ul id="products">
+
+<% @products.each do |product| %>
+	
+	
+	<%= content_tag_for :li, product do %>
+		<span class="block photo">
+			<%= link_to image_tag(product.image_url(:thumb) ), product %>	  
+			<%# image_tag product.image_url(:thumb) if product.image? %>
+		</span>
+		<span class="block meta">
+		    <h3><%= link_to product.title, product %></h3>
+			<p><%= read_more(_product) %></p>
+		</span>
+	<% end %>
+
+<% end %>
+</ul>
