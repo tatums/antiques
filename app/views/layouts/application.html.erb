@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>phoebeboothanitques.com</title>
-  <%= stylesheet_link_tag    "application" %>
+  <title>Phoebe Booth Antiques</title>
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
   <%= csrf_meta_tags %>
@@ -10,32 +10,40 @@
 <body>
 
 <!-- Start Page Container -->
-<div id="container_wrap">
-	
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-	
-	<div id="header">
-		<h1>Phoebe Booth Antiques</h1> 
-		<ul id="nav">			
-			<%= render 'layouts/navigation' %>
-		</ul>
+<div id="container">
+	<div class="row">
+		<div class="column grid_12">
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+		</div>
 	</div>
 	
-	<div id="homepage" class="main_content">	
-		<div class="sidebar">
+	<div id="header" class="row">
+		<div class="column grid_12">
+			<h1>Phoebe Booth <span>Antiques LLC</span></h1>
+			<ul id="nav">			
+				<%= render 'layouts/navigation' %>
+			</ul>
+		</div>	
+	</div>
+	
+	
+	<div class="row">	
+		<div id="sidebar" class="column grid_3">
 			<ul>
 				<%= render 'layouts/sidebar' %>
 			</ul>
 		</div>
-		<div class="main_right">
+		<div id="main_right" class="column grid_9">
 			<%= yield %>			
 		</div>
 	</div>
 	
 	<!-- Start Footer -->
-	<div id="footer">
-		<%= render 'layouts/footer' %>
+	<div id="footer" class="row">
+		<div class="column grid_12">
+				<p>Copyright &copy; Phoebeboothantiques.com <%=Time.now.year %>. All Rights Reserved.</p>
+		</div>
 	</div>
 	<!-- End Footer -->
 	

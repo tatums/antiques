@@ -68,7 +68,6 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.where(:slug => params[:id]).first
-    
     #@category = Category.find(params[:id])
 
     respond_to do |format|

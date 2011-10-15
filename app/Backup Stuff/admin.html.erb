@@ -12,14 +12,13 @@
 <!-- Start Page Container -->
 <div id="container_wrap">
 	
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-	
 	<div id="header">
 		<h1>Phoebe Booth Antiques</h1> 
-		<ul id="nav">			
-			<%= render 'layouts/navigation' %>
-		</ul>
+		<ul id="nav">
+			<li><%= link_to 'Home', root_url %></li>
+			<li><%= link_to 'Products', products_url %></li>
+			<li><%= link_to 'Categories', categories_url %></li>
+		</ul>	
 	</div>
 	
 	<div id="homepage" class="main_content">	

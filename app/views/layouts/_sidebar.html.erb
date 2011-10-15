@@ -1,5 +1,5 @@
 <% Category.active.each do |category|%>
-	<li><%= link_to capitalize_title(category), category.slug %></li>
+	<li><%= link_to capitalize_title(category), category %></li>
 <% end %>
 
 <% if user_signed_in? %>

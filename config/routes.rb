@@ -42,7 +42,9 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   end 
   get "home/index"
   
-  get "/:id" => 'categories#show' 
+  #get "/:id" => 'categories#show' 
+  
+  
   
   # get "/:id" => "categories#show" do
   #   collection do

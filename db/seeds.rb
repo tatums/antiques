@@ -25,3 +25,5 @@ categories.each do |c|
   puts "Created Category #{c.title}"
 end
 
+u = User.create!({:email => "admin@gmail.com", :roles => ["admin"], :password => "pba2011", :password_confirmation => "pba2011" })
+puts "created #{u.email} default admin created with password (pba2011) no ()" 

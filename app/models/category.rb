@@ -20,7 +20,7 @@ class Category < ActiveRecord::Base
 
   def to_param  # overridden
     slug
-    #"#{id}-#{title.gsub(/\W/, '-').downcase}"
+    #{}"#{id}-#{title.gsub(/\W/, '-').downcase}"
     #"#{title.gsub(/\W/, '-').downcase}"
     #"#{title.gsub(' ', '-').gsub(/[^a-zA-Z0-9\_\-\.]/, '').downcase}"
   end  

@@ -19,7 +19,10 @@
 			<%= link_to 'Back', products_path %> |
 			<%= link_to 'Edit', edit_product_path(@product) %> <br />
 			<%= link_to 'Manage Images', product_images_path(@product)%><br />
-			<%= link_to 'Manage Dimensions', product_measurements_path(@product)%>
+			<%= link_to 'Manage Dimensions', product_measurements_path(@product)%><br />
+			Created on <%= @product.created_at.strftime("%m/%d/%Y at %I:%M %p") %><br />
+			Updated on <%= @product.updated_at.strftime("%m/%d/%Y at %I:%M %p") %>
+			
 		<% end %>
 		
 	</span>
