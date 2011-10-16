@@ -1,0 +1,15 @@
+<h3><%= link_to "Back to #{@product.title} ", product_path(@product) %></h3>
+
+<ul>
+<% @measurements.each do |measurement| %>
+    <li>
+	    <%= measurement.dimension %>
+	    <%= measurement.amount %>
+	    <%= measurement.unit_of_measure %>
+	    <%= link_to 'Edit', edit_measurement_path(measurement) %>
+	    <%= link_to 'Destroy', measurement, confirm: 'Are you sure?', method: :delete %>
+	</li>
+<% end %>
+</ul>
+
+<%= link_to 'New Measurement', new_product_measurement_path(@product) %>

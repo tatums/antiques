@@ -1,0 +1,24 @@
+<%= form_for([@product, @measurement]) do |f| %>
+  <% if @measurement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@measurement.errors.count, "error") %> prohibited this measurement from being saved:</h2>
+
+      <ul>
+      <% @measurement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.select :dimension, Measurement::DIMENSION_SELECT, {:prompt => 'Dimension'} %>
+    <%= f.label :amount, "Value" %>
+    <%= f.text_field :amount %>
+    <%= f.label :unit_of_measure %>
+    <%= f.select :unit_of_measure, Measurement::UNIT_OF_MEASURE_SELECT, {:prompt => 'Select'} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
