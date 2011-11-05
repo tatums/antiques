@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 gem 'carrierwave'
-<<<<<<< HEAD
 gem 'sqlite3', '1.3.4'
 gem "mini_magick"
 gem 'devise'
@@ -16,15 +15,6 @@ gem 'pdfkit'
 #gem 'mysql2'
 #gem 'sqlite3'
 #gem 'rmagick'
-=======
-gem 'mysql2'
-
-#gem 'rmagick'
-gem "mini_magick"
-
-gem 'devise'
-
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
 
 #User.create!({:email => "guy@gmail.com", :roles => ["admin"], :password => "111111", :password_confirmation => "111111" })
 

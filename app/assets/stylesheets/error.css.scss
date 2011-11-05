@@ -1,16 +1,9 @@
 div {
-  &.field, &.actions {
-<<<<<<< HEAD
-    margin-bottom: 10px; 
-} }
-=======
-    margin-bottom: 10px; } }
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
+  &.field, &.actions {margin-bottom: 10px;} 
+}
 
-#notice {
-  color: green; }
+#notice { color: green; }
 
-<<<<<<< HEAD
 label .field_with_errors {
   color:red;
   //border-right:3px solid red;
@@ -22,38 +15,13 @@ label .field_with_errors {
 
 #error_explanation {
   //width: 400px;
-=======
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table; }
+	.field_with_errors {
+	  padding: 2px;
+	  background-color: red;
+	  display: table; 
+	}
 
-#error_explanation {
-  width: 450px;
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-<<<<<<< HEAD
-font-family:Arial;
-
-=======
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff; }
-  ul li {
-    font-size: 12px;
-<<<<<<< HEAD
-    list-style: none; } }
-=======
-    list-style: square; } }
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
+	#error_explanation {
+		ul li { font-size: 12px; list-style: none; }
+	}
+}		 

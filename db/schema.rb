@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20111028230343) do
-=======
-ActiveRecord::Schema.define(:version => 20111011140322) do
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
 
   create_table "categories", :force => true do |t|
     t.boolean  "active",      :default => false
@@ -27,7 +23,6 @@ ActiveRecord::Schema.define(:version => 20111011140322) do
     t.string   "slug"
   end
 
-<<<<<<< HEAD
   create_table "emails", :force => true do |t|
     t.string   "first"
     t.string   "last"
@@ -36,8 +31,6 @@ ActiveRecord::Schema.define(:version => 20111011140322) do
     t.datetime "updated_at"
   end
 
-=======
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
   create_table "images", :force => true do |t|
     t.string   "image"
     t.integer  "product_id"
@@ -59,25 +52,15 @@ ActiveRecord::Schema.define(:version => 20111011140322) do
     t.boolean  "active",          :default => true
     t.string   "title"
     t.text     "body"
-<<<<<<< HEAD
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
-=======
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image"
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
     t.boolean  "phoebe_find",     :default => false
     t.boolean  "new_acquisition", :default => false
     t.string   "country"
     t.string   "period"
-<<<<<<< HEAD
     t.integer  "position"
     t.integer  "item_number"
-=======
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
   end
 
   create_table "sliders", :force => true do |t|
@@ -94,10 +77,7 @@ ActiveRecord::Schema.define(:version => 20111011140322) do
     t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-<<<<<<< HEAD
     t.integer  "position"
-=======
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
   end
 
   create_table "users", :force => true do |t|

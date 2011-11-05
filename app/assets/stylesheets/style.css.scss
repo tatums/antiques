@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $lime-green: #54B919;
 
 * { padding: 0; margin: 0; }
@@ -254,7 +253,6 @@ a.subscribe:hover { background-position: 0 0; }
 
 //COLUMNS
 .col-container{overflow:auto; border:1px dashed gray;}
-=======
 ul{margin:0; padding:0; list-style:none;}
 
 #header h1{ margin:0; padding:0;font-size:48px;color:#319E00; text-align:center;}
@@ -270,7 +268,8 @@ ul#nav {background-color: #319E00;}
 
 #footer {color:white;}
 #footer .column { margin-bottom:30px;}
-#footer p {background-color: #319E00; padding:10px;}
+//#footer p {color:gray; padding:10px;}
+#footer p{color:gray; margin:0; padding:0;}
 
 #sidebar ul{margin:0; padding:0; text-align:right;}
 #sidebar ul li {margin:0 0 1em 0; list-style:none; letter-spacing:0.1em; text-decoration:none;}
@@ -322,6 +321,8 @@ div#header ul#nav li.active a {
 .sidebar{float:left; padding-right:0px;width: 160px;}
 .sidebar ul li{margin-bottom:10px;}
 .sidebar ul a{font-size:16px;text-decoration:none; color:#41A100;}
+
+
 .main_right{float:right; width: 750px;}
 
 
@@ -344,12 +345,10 @@ li.admin-link a{color:red; text-decoration:italic;}
 .dimensions span{ font-weight:800;}
 
 .col-container{overflow:auto;}
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
 .col{padding:0 1em; margin:0 1em; border:3px solid gray;}
 .left{ float:left;}
 .right{float:right; }
 
-<<<<<<< HEAD
 
 
 //Login
@@ -431,7 +430,6 @@ li.admin-link a{color:red; text-decoration:italic;}
 .column-container{ overflow:auto;}
 .left-column{float:left; width:300px;}
 .right-column{float:right; width:300px;}
-=======
 .spinner {
 	position: fixed;
 	top: 50%;
@@ -467,8 +465,3 @@ li.admin-link a{color:red; text-decoration:italic;}
     top:  0;
     left: 0
 }
-
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
-
-
-

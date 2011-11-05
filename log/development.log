@@ -80083,3 +80083,3324 @@ Served asset /navigation/finds.gif - 304 Not Modified (0ms)
 
 Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 08:57:03 -0500
 Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 10:05:11 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSlider Load (0.4ms)[0m  [1mSELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (137.6ms)
+Compiled application.css  (12ms)  (pid 53448)
+Cache for Asset (application.css) is stale
+Invalid CSS after "    margin-bottom:": expected pseudoclass or pseudoelement, was " 10px; } }"
+Compiled application.css  (14ms)  (pid 53448)
+Completed 500 Internal Server Error in 382ms
+
+ActionView::Template::Error (/Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/application.css has already been required):
+    4: 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    5: 	<title>Phoebe Booth Antiques LLC</title>
+    6: 	<%= javascript_include_tag "application" %>
+    7: 	<%= stylesheet_link_tag "application" %>
+    8: 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    9: 	<%= csrf_meta_tags %>
+    10: </head>
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___889797021934645075_70141352016420'
+
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 10:06:06 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSlider Load (0.3ms)[0m  [1mSELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (137.1ms)
+Compiled application.css  (12ms)  (pid 53474)
+Cache for Asset (application.css) is stale
+Invalid CSS after "    margin-bottom:": expected pseudoclass or pseudoelement, was " 10px; } }"
+Compiled application.css  (13ms)  (pid 53474)
+Completed 500 Internal Server Error in 377ms
+
+ActionView::Template::Error (/Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/application.css has already been required):
+    4: 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    5: 	<title>Phoebe Booth Antiques LLC</title>
+    6: 	<%= javascript_include_tag "application" %>
+    7: 	<%= stylesheet_link_tag "application" %>
+    8: 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    9: 	<%= csrf_meta_tags %>
+    10: </head>
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1462442412235685936_70129257033820'
+
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 10:06:49 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mSlider Load (0.2ms)[0m  SELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1
+Rendered home/index.html.erb within layouts/application (106.3ms)
+Compiled application.css  (12ms)  (pid 53474)
+Cache for Asset (application.css) is stale
+Invalid CSS after "    margin-bottom:": expected pseudoclass or pseudoelement, was " 10px; } }"
+Compiled application.css  (12ms)  (pid 53474)
+Completed 500 Internal Server Error in 264ms
+
+ActionView::Template::Error (/Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/application.css has already been required):
+    4: 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    5: 	<title>Phoebe Booth Antiques LLC</title>
+    6: 	<%= javascript_include_tag "application" %>
+    7: 	<%= stylesheet_link_tag "application" %>
+    8: 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    9: 	<%= csrf_meta_tags %>
+    10: </head>
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1462442412235685936_70129257033820'
+
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (25.9ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (30.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 10:08:34 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSlider Load (0.2ms)[0m  [1mSELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (103.1ms)
+Rendered layouts/_notifications.html.erb (0.8ms)
+Rendered layouts/_navigation.html.erb (3.7ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (62.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_admin_links.html.erb (40.1ms)
+Completed 200 OK in 264ms (Views: 229.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 10:08:34 -0500
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 10:08:34 -0500
+Served asset /fancybox.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 10:08:34 -0500
+Served asset /emails.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 10:08:34 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 10:08:34 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 10:08:34 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 10:08:34 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 10:08:34 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 10:08:34 -0500
+Served asset /spinner.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 10:08:34 -0500
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 10:08:34 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 10:08:38 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (2ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 10:08:38 -0500
+Served asset /loading.gif - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 10:08:53 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mSlider Load (0.2ms)[0m  SELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1
+Rendered home/index.html.erb within layouts/application (176.7ms)
+Compiled application.css  (24ms)  (pid 53474)
+Cache for Asset (application.css) is stale
+Invalid CSS after "    margin-bottom:": expected pseudoclass or pseudoelement, was " 10px; } }"
+Compiled application.css  (21ms)  (pid 53474)
+Completed 500 Internal Server Error in 328ms
+
+ActionView::Template::Error (/Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/application.css has already been required):
+    4: 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    5: 	<title>Phoebe Booth Antiques LLC</title>
+    6: 	<%= javascript_include_tag "application" %>
+    7: 	<%= stylesheet_link_tag "application" %>
+    8: 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    9: 	<%= csrf_meta_tags %>
+    10: </head>
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1462442412235685936_70129256516780'
+
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 10:10:53 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSlider Load (0.2ms)[0m  [1mSELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (101.4ms)
+Cache for Asset (application.css) is stale
+Invalid CSS after "    margin-bottom:": expected pseudoclass or pseudoelement, was " 10px; } }"
+Compiled application.css  (15ms)  (pid 53474)
+Completed 500 Internal Server Error in 166ms
+
+ActionView::Template::Error (Invalid CSS after "    margin-bottom:": expected pseudoclass or pseudoelement, was " 10px; } }"
+  (in /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/error.css.scss)):
+    4: 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    5: 	<title>Phoebe Booth Antiques LLC</title>
+    6: 	<%= javascript_include_tag "application" %>
+    7: 	<%= stylesheet_link_tag "application" %>
+    8: 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    9: 	<%= csrf_meta_tags %>
+    10: </head>
+  app/assets/stylesheets/error.css.scss:5
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1462442412235685936_70129256516780'
+
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 10:12:06 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mSlider Load (0.2ms)[0m  SELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1
+Rendered home/index.html.erb within layouts/application (106.0ms)
+Cache for Asset (application.css) is stale
+Invalid CSS after "...yle: square; } ": expected selector or at-rule, was "}"
+Compiled application.css  (14ms)  (pid 53474)
+Completed 500 Internal Server Error in 211ms
+
+ActionView::Template::Error (Invalid CSS after "...yle: square; } ": expected selector or at-rule, was "}"
+  (in /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/error.css.scss)):
+    4: 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    5: 	<title>Phoebe Booth Antiques LLC</title>
+    6: 	<%= javascript_include_tag "application" %>
+    7: 	<%= stylesheet_link_tag "application" %>
+    8: 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    9: 	<%= csrf_meta_tags %>
+    10: </head>
+  app/assets/stylesheets/error.css.scss:45
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1462442412235685936_70129256516780'
+
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 10:13:37 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSlider Load (0.2ms)[0m  [1mSELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (103.7ms)
+Cache for Asset (application.css) is stale
+Invalid CSS after "	}": expected "}", was ""
+Compiled application.css  (42ms)  (pid 53474)
+Completed 500 Internal Server Error in 199ms
+
+ActionView::Template::Error (Invalid CSS after "	}": expected "}", was ""
+  (in /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/error.css.scss)):
+    4: 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    5: 	<title>Phoebe Booth Antiques LLC</title>
+    6: 	<%= javascript_include_tag "application" %>
+    7: 	<%= stylesheet_link_tag "application" %>
+    8: 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    9: 	<%= csrf_meta_tags %>
+    10: </head>
+  app/assets/stylesheets/error.css.scss:47
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1462442412235685936_70129256516780'
+
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 10:14:14 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mSlider Load (0.6ms)[0m  SELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1
+Rendered home/index.html.erb within layouts/application (113.5ms)
+Compiled error.css  (4ms)  (pid 53474)
+Cache for Asset (application.css) is stale
+Invalid CSS after "...x dashed gray;}": expected selector or at-rule, was "======="
+Compiled application.css  (42ms)  (pid 53474)
+Completed 500 Internal Server Error in 307ms
+
+ActionView::Template::Error (Invalid CSS after "...x dashed gray;}": expected selector or at-rule, was "======="
+  (in /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss)):
+    4: 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    5: 	<title>Phoebe Booth Antiques LLC</title>
+    6: 	<%= javascript_include_tag "application" %>
+    7: 	<%= stylesheet_link_tag "application" %>
+    8: 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    9: 	<%= csrf_meta_tags %>
+    10: </head>
+  app/assets/stylesheets/style.css.scss:256
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1462442412235685936_70129256516780'
+
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 10:15:02 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSlider Load (0.2ms)[0m  [1mSELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (107.9ms)
+Compiled style.css  (180ms)  (pid 53474)
+Compiled application.css  (13ms)  (pid 53474)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.3ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (33.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_admin_links.html.erb (81.9ms)
+Completed 200 OK in 479ms (Views: 447.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /emails.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /fancybox.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /style.css - 200 OK (4ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /error.css - 200 OK (4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /scaffolds.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /spinner.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 10:15:03 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 10:15:08 -0500
+Served asset /light-tile.gif - 304 Not Modified (1ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 10:15:08 -0500
+Served asset /navigation/about.gif - 304 Not Modified (1ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 10:15:08 -0500
+Served asset /navigation/search.gif - 304 Not Modified (3ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 10:15:08 -0500
+Served asset /navigation/home.gif - 304 Not Modified (2ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 10:15:08 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 10:15:08 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (2ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 10:15:08 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (1ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 10:15:09 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 10:17:22 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mSlider Load (0.2ms)[0m  SELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1
+Rendered home/index.html.erb within layouts/application (115.0ms)
+Cache for Asset (application.css) is stale
+Invalid CSS after "}": expected "}", was ""
+Compiled application.css  (13ms)  (pid 53474)
+Completed 500 Internal Server Error in 184ms
+
+ActionView::Template::Error (Invalid CSS after "}": expected "}", was ""
+  (in /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/error.css.scss)):
+    4: 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    5: 	<title>Phoebe Booth Antiques LLC</title>
+    6: 	<%= javascript_include_tag "application" %>
+    7: 	<%= stylesheet_link_tag "application" %>
+    8: 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    9: 	<%= csrf_meta_tags %>
+    10: </head>
+  app/assets/stylesheets/error.css.scss:48
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1462442412235685936_70129256516780'
+
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSlider Load (0.3ms)[0m  [1mSELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (108.9ms)
+Compiled error.css  (6ms)  (pid 53474)
+Compiled application.css  (54ms)  (pid 53474)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.2ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (34.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_admin_links.html.erb (75.7ms)
+Completed 200 OK in 334ms (Views: 308.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /application.css - 200 OK (7ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /emails.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /error.css - 200 OK (6ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:05:06 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:05:07 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 11:05:34 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mSlider Load (1.5ms)[0m  SELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1
+Rendered home/index.html.erb within layouts/application (120.2ms)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.7ms)
+  [1m[36mCategory Load (1.6ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position[0m
+Rendered layouts/_sidebar.html.erb (48.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_admin_links.html.erb (111.1ms)
+Completed 200 OK in 331ms (Views: 295.3ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:05:35 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+  Processing by HomeController#about as HTML
+Rendered home/about.html.erb within layouts/application (0.5ms)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (3.1ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position[0m
+Rendered layouts/_sidebar.html.erb (37.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_admin_links.html.erb (108.2ms)
+Completed 200 OK in 214ms (Views: 210.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /fancybox.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:36 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:37 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:37 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:37 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:37 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:05:37 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:05:37 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:05:37 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:05:37 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:05:37 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:05:37 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:05:37 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:05:37 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:05:37 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/categories/other" for 127.0.0.1 at 2011-11-05 11:05:38 -0500
+  Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"other"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."slug" = 'other' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tags" WHERE "tags"."category_id" = 12[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."category_id" = 12 ORDER BY tags.position
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+  [1m[35mMeasurement Load (0.3ms)[0m  SELECT "measurements".* FROM "measurements" WHERE "measurements"."product_id" = 14 ORDER BY position
+Rendered categories/show.html.erb within layouts/categories (225.2ms)
+Rendered layouts/_navigation.html.erb (2.5ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position[0m
+Rendered layouts/_sidebar.html.erb (6.1ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."slug" = 'other' LIMIT 1
+Completed 500 Internal Server Error in 329ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/categories_controller.rb:25:in `show'
+
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/tatum/.rvm/gems/ruby-1.9.3-p0@phoebeboothantiques.com/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.4ms)
+
+
+Started GET "/categories/other" for 127.0.0.1 at 2011-11-05 11:06:28 -0500
+  Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"other"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."slug" = 'other' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tags" WHERE "tags"."category_id" = 12[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."category_id" = 12 ORDER BY tags.position
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+  [1m[35mMeasurement Load (0.4ms)[0m  SELECT "measurements".* FROM "measurements" WHERE "measurements"."product_id" = 14 ORDER BY position
+Rendered categories/show.html.erb within layouts/categories (219.2ms)
+Rendered layouts/_navigation.html.erb (2.5ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position[0m
+Rendered layouts/_sidebar.html.erb (6.0ms)
+Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 261ms (Views: 238.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:28 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:28 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:28 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:28 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:28 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:28 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:28 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:28 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:28 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:28 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:28 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:29 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:29 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:29 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:29 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:29 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:29 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:29 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:06:29 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:06:29 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:06:29 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:06:29 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:06:29 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:06:30 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 11:06:33 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mSlider Load (0.3ms)[0m  SELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1
+Rendered home/index.html.erb within layouts/application (107.8ms)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.2ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position[0m
+Rendered layouts/_sidebar.html.erb (33.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_admin_links.html.erb (74.2ms)
+Completed 200 OK in 306ms (Views: 229.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /fancybox.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /loading.gif - 304 Not Modified (1ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:06:34 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:06:35 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/categories/other" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+  Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"other"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."slug" = 'other' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tags" WHERE "tags"."category_id" = 12[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."category_id" = 12 ORDER BY tags.position
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+  [1m[35mMeasurement Load (0.4ms)[0m  SELECT "measurements".* FROM "measurements" WHERE "measurements"."product_id" = 14 ORDER BY position
+Rendered categories/show.html.erb within layouts/categories (220.3ms)
+Rendered layouts/_navigation.html.erb (2.4ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position[0m
+Rendered layouts/_sidebar.html.erb (6.0ms)
+Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 261ms (Views: 238.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /fancybox.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:36 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:38 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:06:38 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:06:38 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:06:38 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:06:38 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:06:38 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:06:39 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-11-05 11:06:42 -0500
+  Processing by HomeController#about as HTML
+Rendered home/about.html.erb within layouts/application (0.1ms)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (75.9ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (49.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_admin_links.html.erb (51.2ms)
+Completed 200 OK in 205ms (Views: 198.4ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:43 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:44 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:06:44 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:06:44 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:06:44 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:06:44 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:06:44 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:06:44 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:06:44 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:06:44 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/categories/tables" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+  Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"tables"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."slug" = 'tables' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tags" WHERE "tags"."category_id" = 11
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."category_id" = 11 ORDER BY tags.position[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1
+  [1m[36mMeasurement Load (0.3ms)[0m  [1mSELECT "measurements".* FROM "measurements" WHERE "measurements"."product_id" = 14 ORDER BY position[0m
+Rendered categories/show.html.erb within layouts/categories (186.4ms)
+Rendered layouts/_navigation.html.erb (2.6ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (6.2ms)
+Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 307ms (Views: 242.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /spinner.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:06:46 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:06:48 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/categories/tables" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+  Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"tables"}
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."slug" = 'tables' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tags" WHERE "tags"."category_id" = 11[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."category_id" = 11 ORDER BY tags.position
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+  [1m[35mMeasurement Load (0.4ms)[0m  SELECT "measurements".* FROM "measurements" WHERE "measurements"."product_id" = 14 ORDER BY position
+Rendered categories/show.html.erb within layouts/application (215.9ms)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.3ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position[0m
+Rendered layouts/_sidebar.html.erb (6.0ms)
+Rendered layouts/_admin_links.html.erb (1.4ms)
+Completed 200 OK in 307ms (Views: 238.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:11 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:07:12 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:07:12 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:07:12 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:07:12 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:07:12 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:07:12 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:07:12 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:07:13 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 11:07:22 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mSlider Load (0.2ms)[0m  SELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1
+Rendered home/index.html.erb within layouts/application (126.4ms)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.6ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position[0m
+Rendered layouts/_sidebar.html.erb (38.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_admin_links.html.erb (75.6ms)
+Completed 200 OK in 350ms (Views: 260.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /fancybox.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:07:23 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:07:24 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 11:11:02 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSlider Load (0.2ms)[0m  [1mSELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (116.9ms)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.2ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (75.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_admin_links.html.erb (35.1ms)
+Completed 200 OK in 289ms (Views: 247.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:02 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:02 -0500
+Served asset /fancybox.js - 304 Not Modified (45ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:02 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:02 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:02 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:02 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:02 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:11:03 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:11:04 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:11:04 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:11:04 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:11:04 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 11:11:51 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mSlider Load (0.3ms)[0m  SELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1
+Rendered home/index.html.erb within layouts/application (117.7ms)
+Compiled style.css  (171ms)  (pid 53474)
+Compiled application.css  (16ms)  (pid 53474)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (3.0ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position[0m
+Rendered layouts/_sidebar.html.erb (37.8ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_admin_links.html.erb (85.6ms)
+Completed 200 OK in 490ms (Views: 457.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /application.css - 200 OK (11ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /style.css - 200 OK (7ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:11:52 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:11:53 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 11:12:10 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSlider Load (0.3ms)[0m  [1mSELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (125.3ms)
+Compiled style.css  (117ms)  (pid 53474)
+Compiled application.css  (17ms)  (pid 53474)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.9ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (87.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_admin_links.html.erb (42.9ms)
+Completed 200 OK in 457ms (Views: 425.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:10 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:10 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:10 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:10 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:10 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:10 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:10 -0500
+Served asset /application.css - 200 OK (3ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:10 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /style.css - 200 OK (8ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (3ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:12:11 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:12:12 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mSlider Load (0.2ms)[0m  SELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1
+Rendered home/index.html.erb within layouts/application (119.0ms)
+Compiled style.css  (161ms)  (pid 53474)
+Compiled application.css  (13ms)  (pid 53474)
+Rendered layouts/_notifications.html.erb (0.4ms)
+Rendered layouts/_navigation.html.erb (2.3ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position[0m
+Rendered layouts/_sidebar.html.erb (34.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_admin_links.html.erb (85.0ms)
+Completed 200 OK in 475ms (Views: 443.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /fancybox.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /emails.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /application.css - 200 OK (16ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /style.css - 200 OK (7ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:20 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:12:21 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:12:21 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:12:21 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:12:21 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:12:21 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:12:21 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:12:21 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:12:21 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 11:12:31 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSlider Load (0.3ms)[0m  [1mSELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (124.0ms)
+Compiled style.css  (124ms)  (pid 53474)
+Compiled application.css  (14ms)  (pid 53474)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.3ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (86.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_admin_links.html.erb (36.4ms)
+Completed 200 OK in 448ms (Views: 416.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /application.css - 200 OK (13ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /emails.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /fancybox.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /style.css - 200 OK (7ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:12:32 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 11:12:45 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mSlider Load (0.3ms)[0m  SELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1
+Rendered home/index.html.erb within layouts/application (125.8ms)
+Compiled style.css  (163ms)  (pid 53474)
+Compiled application.css  (12ms)  (pid 53474)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.8ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position[0m
+Rendered layouts/_sidebar.html.erb (33.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_admin_links.html.erb (85.7ms)
+Completed 200 OK in 498ms (Views: 451.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /fancybox.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /fancybox.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /application.css - 200 OK (9ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /style.css - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:12:46 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:12:47 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSlider Load (0.3ms)[0m  [1mSELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (108.8ms)
+Compiled style.css  (110ms)  (pid 53474)
+Compiled application.css  (12ms)  (pid 53474)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.3ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (83.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_admin_links.html.erb (38.6ms)
+Completed 200 OK in 409ms (Views: 381.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /emails.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /style.css - 200 OK (9ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /application.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:35 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:14:36 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:14:36 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:14:36 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:14:36 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:14:36 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:14:36 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:14:36 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:14:36 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mSlider Load (0.3ms)[0m  SELECT "sliders".* FROM "sliders" WHERE "sliders"."active" = 't' ORDER BY position
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" IS NULL LIMIT 1[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 14 LIMIT 1
+Rendered home/index.html.erb within layouts/application (123.0ms)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (45.4ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position[0m
+Rendered layouts/_sidebar.html.erb (36.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_admin_links.html.erb (36.9ms)
+Completed 200 OK in 283ms (Views: 256.4ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:14:40 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:14:41 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:14:41 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-11-05 11:18:50 -0500
+  Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered admin/index.html.erb within layouts/admin (2.5ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (35.0ms)
+Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 135ms (Views: 52.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:18:51 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+  Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered admin/index.html.erb within layouts/admin (1.8ms)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.2ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (75.2ms)
+Rendered layouts/_admin_links.html.erb (1.4ms)
+Completed 200 OK in 130ms (Views: 95.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (2ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:19:26 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2011-11-05 11:19:34 -0500
+  Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 'f' ORDER BY position[0m
+Rendered categories/index.html.erb within layouts/application (21.2ms)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (5.7ms)
+Rendered layouts/_admin_links.html.erb (1.4ms)
+Completed 200 OK in 120ms (Views: 85.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:19:35 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:19:36 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started POST "/categories/sort" for 127.0.0.1 at 2011-11-05 11:19:40 -0500
+  Processing by CategoriesController#sort as */*
+  Parameters: {"CategoriesOrder"=>["category_11", "category_8", "category_12", "category_10", "category_9"]}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  UPDATE "categories" SET "position" = 1 WHERE "categories"."id" IN (11)
+  [1m[36mSQL (1.3ms)[0m  [1mUPDATE "categories" SET "position" = 2 WHERE "categories"."id" IN (8)[0m
+  [1m[35mSQL (1.2ms)[0m  UPDATE "categories" SET "position" = 3 WHERE "categories"."id" IN (12)
+  [1m[36mSQL (1.4ms)[0m  [1mUPDATE "categories" SET "position" = 4 WHERE "categories"."id" IN (10)[0m
+  [1m[35mSQL (1.2ms)[0m  UPDATE "categories" SET "position" = 5 WHERE "categories"."id" IN (9)
+Rendered text template (0.0ms)
+Completed 200 OK in 54ms (Views: 6.7ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+  Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 'f' ORDER BY position[0m
+Rendered categories/index.html.erb within layouts/application (20.3ms)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (5.2ms)
+Rendered layouts/_admin_links.html.erb (1.3ms)
+Completed 200 OK in 78ms (Views: 42.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /fancybox.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:19:42 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:19:43 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started POST "/categories/sort" for 127.0.0.1 at 2011-11-05 11:19:47 -0500
+  Processing by CategoriesController#sort as */*
+  Parameters: {"CategoriesOrder"=>["category_11", "category_8", "category_10", "category_9", "category_12"]}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "categories" SET "position" = 1 WHERE "categories"."id" IN (11)
+  [1m[36mSQL (1.3ms)[0m  [1mUPDATE "categories" SET "position" = 2 WHERE "categories"."id" IN (8)[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "categories" SET "position" = 3 WHERE "categories"."id" IN (10)
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "categories" SET "position" = 4 WHERE "categories"."id" IN (9)[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "categories" SET "position" = 5 WHERE "categories"."id" IN (12)
+Rendered text template (0.0ms)
+Completed 200 OK in 93ms (Views: 2.9ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/categories/sort" for 127.0.0.1 at 2011-11-05 11:19:50 -0500
+  Processing by CategoriesController#sort as */*
+  Parameters: {"CategoriesOrder"=>["category_9", "category_11", "category_8", "category_10", "category_12"]}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (6.4ms)[0m  UPDATE "categories" SET "position" = 1 WHERE "categories"."id" IN (9)
+  [1m[36mSQL (1.1ms)[0m  [1mUPDATE "categories" SET "position" = 2 WHERE "categories"."id" IN (11)[0m
+  [1m[35mSQL (1.1ms)[0m  UPDATE "categories" SET "position" = 3 WHERE "categories"."id" IN (8)
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "categories" SET "position" = 4 WHERE "categories"."id" IN (10)[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "categories" SET "position" = 5 WHERE "categories"."id" IN (12)
+Rendered text template (0.0ms)
+Completed 200 OK in 93ms (Views: 3.2ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+  Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 'f' ORDER BY position[0m
+Rendered categories/index.html.erb within layouts/application (20.9ms)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (5.7ms)
+Rendered layouts/_admin_links.html.erb (1.4ms)
+Completed 200 OK in 120ms (Views: 45.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:51 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:52 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:19:52 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:19:52 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:19:52 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:19:52 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:19:52 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:19:52 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:19:52 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:19:52 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started POST "/categories/lighting/toggle" for 127.0.0.1 at 2011-11-05 11:19:56 -0500
+  Processing by CategoriesController#toggle as HTML
+  Parameters: {"authenticity_token"=>"3KF3cjUEnnROtnk2NQCljVaK0oi5tfYrnPsfcvd8dxg=", "id"=>"lighting"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."slug" = 'lighting' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "categories" WHERE ("categories"."title" = 'lighting' AND "categories"."id" != 9) LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  UPDATE "categories" SET "active" = 'f', "updated_at" = '2011-11-05 16:19:57.164990' WHERE "categories"."id" = 9
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 114ms
+
+
+Started GET "/categories" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+  Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."active" = 'f' ORDER BY position[0m
+Rendered categories/index.html.erb within layouts/application (21.0ms)
+Rendered layouts/_notifications.html.erb (0.1ms)
+Rendered layouts/_navigation.html.erb (2.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."active" = 't' ORDER BY position
+Rendered layouts/_sidebar.html.erb (4.4ms)
+Rendered layouts/_admin_links.html.erb (1.3ms)
+Completed 200 OK in 118ms (Views: 43.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/emails.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /emails.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.cycle.all.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /jquery.cycle.all.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/emails.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /emails.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/error.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /error.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fancybox/jquery.fancybox-1.3.4.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /fancybox/jquery.fancybox-1.3.4.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easing-1.3.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /jquery.easing-1.3.pack.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /jquery.fancybox-1.3.4.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel-3.0.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /jquery.mousewheel-3.0.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox-1.3.4.pack.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /jquery.fancybox-1.3.4.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spinner.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /spinner.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/light-tile.gif" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /light-tile.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/about.gif" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /navigation/about.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phoebe_header2.gif" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /phoebe_header2.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/loading.gif" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/home.gif" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /navigation/home.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/finds.gif" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /navigation/finds.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/subscribe.gif" for 127.0.0.1 at 2011-11-05 11:19:57 -0500
+Served asset /navigation/subscribe.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/navigation/search.gif" for 127.0.0.1 at 2011-11-05 11:19:58 -0500
+Served asset /navigation/search.gif - 304 Not Modified (0ms)
