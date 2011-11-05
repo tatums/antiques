@@ -8,6 +8,7 @@ class Category < ActiveRecord::Base
   validates_uniqueness_of :title
   
   scope :active, where(:active => true)
+  scope :inactive, where(:active => false)
 
 
   after_create :set_init_position
@@ -20,15 +21,24 @@ class Category < ActiveRecord::Base
 
   def to_param  # overridden
     slug
-    #{}"#{id}-#{title.gsub(/\W/, '-').downcase}"
-    #"#{title.gsub(/\W/, '-').downcase}"
-    #"#{title.gsub(' ', '-').gsub(/[^a-zA-Z0-9\_\-\.]/, '').downcase}"
   end  
+
+  def toggle_active
+    if active == true
+      update_attributes(:active => false)
+    else
+      update_attributes(:active => true)
+    end  
+  end
+
+
+
 
 private
   def set_slug
     self.slug = self.title.gsub(' ', '-').gsub(/[^a-zA-Z0-9\_\-\.]/, '').downcase
-  end  
+  end
+    
   def downcase_title
     self.title = self.title.downcase
   end  

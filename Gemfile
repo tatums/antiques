@@ -8,6 +8,10 @@ gem "mini_magick"
 gem 'devise'
 gem 'rack' , '1.3.3'
 
+#gem 'prawn'
+
+gem 'pdfkit'
+
 #gem 'mysql2'
 #gem 'sqlite3'
 #gem 'rmagick'

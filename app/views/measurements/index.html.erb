@@ -1,15 +1,43 @@
-<h3><%= link_to "Back to #{@product.title} ", product_path(@product) %></h3>
-
-<ul>
-<% @measurements.each do |measurement| %>
-    <li>
-	    <%= measurement.dimension %>
-	    <%= measurement.amount %>
-	    <%= measurement.unit_of_measure %>
-	    <%= link_to 'Edit', edit_measurement_path(measurement) %>
-	    <%= link_to 'Destroy', measurement, confirm: 'Are you sure?', method: :delete %>
-	</li>
+<% if user_signed_in? %>
+	<script language="javascript">
+		$(document).ready(function(){
+			$('#measurements').sortable({
+				update: function(event, ui) {
+					var MeasurementsOrder = $(this).sortable('toArray');
+					$.post( 'measurements/sort', {MeasurementsOrder:MeasurementsOrder});
+				}
+			});
+		});
+	</script>
 <% end %>
-</ul>
 
-<%= link_to 'New Measurement', new_product_measurement_path(@product) %>
+
+<%= link_to "Back", product_path(@product), :class => 'back' %>
+
+<div class="column-container">
+  <div id="preview" class="left-column">
+    <em>Preview</em><br />
+    <%= full_dimensions(@product) %>
+  </div>
+
+  <div class="right-column">
+    <ul id="measurements">
+    <% @measurements.each do |measurement| %>
+    	<%= content_tag_for :li, measurement do %>
+    	    <%= measurement.dimension %>
+    	    <%= measurement.amount %>
+    	    <%= measurement.unit_of_measure %>
+    	    <%= link_to 'Edit', edit_measurement_path(measurement) %>
+    	    <%= link_to 'Destroy', measurement, confirm: 'Are you sure?', method: :delete %>
+    	<% end %>
+    <% end %>
+    </ul>
+  </div>
+</div>
+
+<div id="new-measurement">
+  <h3>Add New Dimension</h3>
+	<%= render 'form' %>
+</div>
+
+

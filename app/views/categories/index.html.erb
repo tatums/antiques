@@ -1,25 +1,53 @@
-<table>
-  <tr>
-    <th>Position</th>
-    <th>Published</th>
-    <th>Title</th>
-    <th>Slug</th>
-    <th></th>
-    <th></th>
-  </tr>
+<script language="javascript">
+	$(document).ready(function(){
+		$('#categories').sortable({
+			update: function(event, ui) {
+				var CategoriesOrder = $(this).sortable('toArray');
+				$.post( 'categories/sort', {CategoriesOrder:CategoriesOrder});
+				
+				
+				// TO DO RELOAD THE SIDEBAR A
+        // $('#categories').load('_sidebar.html.erb', function() {
+        //         alert('Load was performed.');
+        // });
+			}
+		});
+	});
+</script>
 
-<% @categories.each do |category| %>
-  <tr>
-    <td><%= category.position %></td>
-    <td><%= published(category) %></td>
-    <td><%= capitalize_title(category) %></td>
-    <td><%= category.slug %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div class="col-container">
+	<div class="left col">
+    <p> <===== You can reorder the categories in the sidebar.</p>
+    
+		<h3>Active</h3>
+    <ul>
+      <% @categories.active.each do |category| %>
+      <li>  
+				
+        <%= capitalize_title(category) %>
+        <%= category.slug %>
 
-<br />
+        <%= activate_deactivate_category(category) %>
+        <%= link_to 'Edit', edit_category_path(category) %>        
+      </li>
+    <% end %>
+    </ul>
+  </div>
+
+	<div class="left col">
+		<h3>Inactive</h3>
+    <ul>
+      <% @categories.inactive.each do |category| %>
+      <li>  
+        <%= capitalize_title(category) %>
+        <%= category.slug %>
+
+        <%= activate_deactivate_category(category) %>
+        <%= link_to 'Edit', edit_category_path(category) %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
 
 <%= link_to 'New Category', new_category_path %>

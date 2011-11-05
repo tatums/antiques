@@ -1,5 +1,4 @@
 module ProductsHelper
-  #seperator = <em>" X "</em>
   def full_dimensions(product)
     data = product.measurements.order_by_position.collect { |d| d.full_line }.join( '<span> x </span>' )
     return data.html_safe
@@ -13,14 +12,14 @@ module ProductsHelper
   
   def read_more(product)
       desc = product.body
-      preview_words = 60
+      preview_words = 35
       total_words = desc.split.length
       if total_words < preview_words
         preview = desc          
       else
         preview = desc.split[0..preview_words].join(" ")+" ... "
       end
-    return preview
+    return preview.html_safe
   end  
   
   

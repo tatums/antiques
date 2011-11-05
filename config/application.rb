@@ -27,6 +27,9 @@ module PhoebeboothanitquesCom2
     config.time_zone = 'Central Time (US & Canada)'
     #config.time_zone = 'Central Time (US & Canada)'  
     
-
+    #config.middleware.use PDFKit::Middleware
+    require 'pdfkit'
+    config.middleware.use PDFKit::Middleware
+    
   end
 end

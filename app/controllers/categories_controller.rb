@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
 
   def index
-    @categories = Category.all
+    @categories = Category.order(:position)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,23 +13,12 @@ class CategoriesController < ApplicationController
 
 
   def show
-   #@category = Category.find(params[:id])
-   
    @category = Category.where(:slug => params[:id]).first
-   
-   #@category = Category.find_by_slug!(params[:id])
-   
-   @products = @category.products.order(:position)
-  
-   render 'products/index'
-   
-   
-   #@products = Product.order(:position)
-   
-    #respond_to do |format|
-    #  format.html # show.html.erb
-    #  format.json { render json: @category }
-    #end
+   @tags = @category.tags.order('tags.position')
+    respond_to do |format|
+     format.html # show.html.erb
+     format.json { render json: @category }
+    end
   end
 
 
@@ -44,7 +33,6 @@ class CategoriesController < ApplicationController
 
 
   def edit
-    #@category = Category.find(params[:id])
     @category = Category.where(:slug => params[:id]).first
   end
 
@@ -68,8 +56,6 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.where(:slug => params[:id]).first
-    #@category = Category.find(params[:id])
-
     respond_to do |format|
       if @category.update_attributes(params[:category])
         format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }
@@ -84,7 +70,6 @@ class CategoriesController < ApplicationController
 
 
   def destroy
-    #@category = Category.find(params[:id])
     @category = Category.where(:slug => params[:id]).first
     @category.destroy
 
@@ -95,10 +80,23 @@ class CategoriesController < ApplicationController
   end
   
   def sort
-    params[:ProductsOrder].each_with_index do |id, index|
-      Product.where(:id => id.scan(/\d/)).update_all(:position => index+1)
+    params[:CategoriesOrder].each_with_index do |id, index|
+      Category.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
     end
     render :nothing => true
   end
+  
+    
+  def toggle
+    @category = Category.where(:slug => params[:id]).first
+    @category.toggle_active
+
+    respond_to do |format|
+      format.html { redirect_to categories_url }
+      format.json { head :ok }
+    end
+    
+  end
+  
   
 end

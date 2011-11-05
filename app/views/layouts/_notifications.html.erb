@@ -1,0 +1,8 @@
+<%- flash.each do |flash_type, message| -%>
+  <%= content_tag :p, message, :class => "flash #{flash_type}" %>
+  <%= content_tag :script, :type => "text/javascript" do %>
+      setTimeout(function() { 
+        $('#notifications').slideUp(); 
+        }, 3000);
+  <% end %>
+<%- end -%>

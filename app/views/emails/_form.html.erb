@@ -1,0 +1,32 @@
+<%= form_for(@email)   do |f| %>
+
+  <% if @email.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@email.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+      <% @email.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field first last">
+    <%= f.label :first, 'First Name' %>
+    <%= f.text_field :first %>
+  </div>
+
+  <div class="field first last">
+    <%= f.label :last, 'Last Name' %>
+    <%= f.text_field :last %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Save' %>
+  </div>
+<% end %>

@@ -2,8 +2,7 @@ class ProductsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
-    @products = Product.order(:position)
-
+    @products = Product.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
@@ -47,7 +46,7 @@ class ProductsController < ApplicationController
         format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        format.json { render json: @product.errors, status: :unprocessable_entity }        
       end
     end
   end
@@ -82,9 +81,7 @@ class ProductsController < ApplicationController
   
   def sort
     params[:ProductsOrder].each_with_index do |id, index|
-      #Product.update_all(['position=?', index+1], ['id=?', id.scan(/\d/)])
-      #Product.update_all( {:position => index+1}, {:id => id.scan(/\d/)} )
-      Product.where(:id => id.scan(/\d/)).update_all(:position => index+1)
+      Product.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
     end
     render :nothing => true
   end

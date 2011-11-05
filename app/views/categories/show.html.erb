@@ -16,19 +16,31 @@
 
 <ul id="products">
 
-<% @products.each do |product| %>
+<% if @tags.size > 0 %>
+
+	<% @tags.each do |tag| %>
+		
+		<%= content_tag_for :li, tag do %>
+			<span class="block photo">
+				<%= link_to image_tag(tag.product.image_url(:thumb_300) ), tag.product if tag.product.image? %>
+			</span>
+			<span class="block meta">
+			    <h3><%= link_to tag.product.title, tag.product %></h3>
+				<h4><%= country_and_period(tag.product) %> </h4>
+
+				<p class="dimensions"><%= full_dimensions(tag.product) %></p>
+				<p><%= read_more(tag.product) %></p>
 	
-	
-	<%= content_tag_for :li, product do %>
-		<span class="block photo">
-			<%= link_to image_tag(product.image_url(:thumb) ), product %>	  
-			<%# image_tag product.image_url(:thumb) if product.image? %>
-		</span>
-		<span class="block meta">
-		    <h3><%= link_to product.title, product %></h3>
-			<p><%= read_more(_product) %></p>
-		</span>
+			</span>
+		<% end %>
+
 	<% end %>
 
+<% else %>
+	<li>
+		<h2>Sorry</h2>
+		<p>We are working on the site.  Please check back soon.</p>
+		<p>If you would like to be emailed once we have content available. Click <%= link_to 'here', subscribe_path %></p>
+	</li>
 <% end %>
 </ul>

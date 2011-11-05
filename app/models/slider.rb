@@ -1,6 +1,8 @@
 class Slider < ActiveRecord::Base
-  attr_accessible :active, :position,  :image, :product_id
+  attr_accessible :active, :position, :image, :product_id
   mount_uploader :image, ImageUploader
+
+  validates_presence_of :image
 
   scope :active, where(:active => true)
   scope :inactive, where(:active => false)

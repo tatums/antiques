@@ -1,40 +1,4 @@
-<script type="text/javascript">
-$(document).ready(function(){
-	$("#spinner").bind("ajaxSend", function() {
-		$(this).show();
-	}).bind("ajaxStop", function() {
-		$(this).hide();
-	}).bind("ajaxError", function() {
-		$(this).hide();
-	});
-
-     });
-</script>
-
-
-<style>
-</style>
-
-<div id="spinner" class="spinner" style="display:none;">
-	<%= image_tag 'spinner.gif', :alt => 'Loading', :id => 'img-spinner' %>
-</div>
 
 <%= link_to 'Back', product_images_path(@product) %>
 
 <%= render 'form' %>
-
-
-
-<script type="text/javascript">
-$(document).ready(function(){
-	$('#upload-button').click(function() {
-		$('#spinner').show();
-	});
-	
-	$('#new_image').submit(function(){
-	    $('input[type=file]', this).hide();
-	    //$('input[type=file]', this).attr('disabled', 'disabled');
-	    $('input[type=submit]', this).attr('disabled', 'disabled');
-	});
-});
-</script>

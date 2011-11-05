@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
-  # GET /images
-  # GET /images.json
+
+
   def index
     @product = Product.find(params[:product_id])
     @images = @product.images.all
@@ -11,8 +11,8 @@ class ImagesController < ApplicationController
     end
   end
 
-  # GET /images/1
-  # GET /images/1.json
+
+
   def show
     @image = Image.find(params[:id])
 
@@ -22,8 +22,8 @@ class ImagesController < ApplicationController
     end
   end
 
-  # GET /images/new
-  # GET /images/new.json
+
+
   def new
     @product = Product.find(params[:product_id])
     @image = @product.images.build
@@ -34,14 +34,6 @@ class ImagesController < ApplicationController
     end
   end
 
-  # GET /images/1/edit
-  def edit
-    @image = Image.find(params[:id])
-    
-  end
-
-  # POST /images
-  # POST /images.json
   def create
     @product = Product.find(params[:product_id])    
     @image = @product.images.build(params[:image])
@@ -58,9 +50,15 @@ class ImagesController < ApplicationController
   end
 
 
+
+
+
+  def edit
+    @image = Image.find(params[:id])
+  end
+
   def update
     @image = Image.find(params[:id])
-
     respond_to do |format|
       if @image.update_attributes(params[:image])
         format.html { redirect_to product_images_path(@image.product), notice: 'Image was successfully updated.' }
@@ -72,8 +70,8 @@ class ImagesController < ApplicationController
     end
   end
 
-  # DELETE /images/1
-  # DELETE /images/1.json
+
+
   def destroy
     @image = Image.find(params[:id])
     @image.destroy

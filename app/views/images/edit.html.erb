@@ -1,5 +1,10 @@
 <h1>Editing image</h1>
 
+<div id="spinner" class="spinner" style="display:none;">
+	<%= image_tag 'spinner.gif', :alt => 'Loading', :id => 'img-spinner' %>
+</div>
+
+
 <%= render 'form' %>
 
 <%= link_to 'Show', @image %> |

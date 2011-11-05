@@ -18,7 +18,7 @@
 
 			<%= content_tag_for :li, slider do %>
 				<div class="slider-image">
-			    	<%= image_tag slider.image_url(:small_thumb) %>
+			    	<%= image_tag slider.image_url(:thumb_200) %>
 				</div>
 		
 				<div class="slider-meta">
@@ -31,6 +31,7 @@
 		</ul>
 	</div>
 
+  <% unless @sliders.inactive.empty? %>  
 	<div class="left col">
 		<h3>Inactive</h3>
 		<ul id="inactive-slider-images">
@@ -39,7 +40,7 @@
 			<%= content_tag_for :li, slider do %>
 
 				<div class="slider-image">
-			    	<%= image_tag slider.image_url(:small_thumb) %>
+			    	<%= image_tag slider.image_url(:thumb_200) %>
 				</div>
 		
 				<div class="slider-meta">
@@ -51,8 +52,9 @@
 		<% end %>
 		</ul>
 	</div>
+	<% end %>
 </div>
 
 <br />
 
-<%= link_to 'New Slider', new_slider_path %>
+<%= link_to 'New Image', new_slider_path %>
