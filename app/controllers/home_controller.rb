@@ -19,17 +19,8 @@ class HomeController < ApplicationController
     render 'products/index'
   end
   
-<<<<<<< HEAD
-  # def subscribe
-  #   @email = Email.new
-  #   render 'emails/new'
-  # end
 
   def thank_you
-    
-=======
-  def subscribe
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
   end
 
 end

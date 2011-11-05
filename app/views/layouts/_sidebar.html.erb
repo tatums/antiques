@@ -1,14 +1,5 @@
-<<<<<<< HEAD
 <% Category.active.order(:position).each do |category|%>
   <%= content_tag_for :li, category do %>
 	  <%= link_to upcase_title(category), category %>
 	<% end %>
-=======
-<% Category.active.each do |category|%>
-	<li><%= link_to capitalize_title(category), category %></li>
-<% end %>
-
-<% if user_signed_in? %>
-	<li class="admin-link"><%= link_to 'Admin Links', admin_url %></li>
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
 <% end %>

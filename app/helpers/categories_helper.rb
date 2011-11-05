@@ -11,7 +11,7 @@ module CategoriesHelper
   def capitalize_title(category)
     category.title.split(" ").each{|word| word.capitalize!}.join(" ")
   end  
-<<<<<<< HEAD
+
   def upcase_title(category)
     category.title.split(" ").each{|word| word.upcase!}.join(" ")
   end  
@@ -37,8 +37,6 @@ module CategoriesHelper
       button_to "Enable", toggle_category_path(category.slug)
     end
   end
-=======
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
 
 
 end

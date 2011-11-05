@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
 
   def sort
     params[:ProductsOrder].each_with_index do |id, index|
-<<<<<<< HEAD
       Product.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
     end
     render :nothing => true
@@ -17,14 +16,5 @@ class ApplicationController < ActionController::Base
     end
     render :nothing => true
   end
-
-=======
-      #Product.update_all(['position=?', index+1], ['id=?', id.scan(/\d/)])
-      #Product.update_all( {:position => index+1}, {:id => id.scan(/\d/)} )
-      Product.where(:id => id.scan(/\d/)).update_all(:position => index+1)
-    end
-    render :nothing => true
-  end
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
   
 end

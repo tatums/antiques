@@ -1,6 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1320500053.465944:@value{	I"length:EFi˜>I"digest;
-F"%9a582b410c4ad4f947293d4821e07062I"source;
-FI"˜>/* line 3, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1320509675.8422348:@value{	I"length:EFiøWI"digest;
+F"%378e0f1c7a4015ef9a501a4100154469I"source;
+FI"øW/* line 3, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 * {
   padding: 0;
   margin: 0;
@@ -435,29 +435,247 @@ a.subscribe:hover {
 }
 
 /* line 256, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 258, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#header h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 48px;
+  color: #319E00;
+  text-align: center;
+}
+
+/* line 259, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#header span {
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+/* line 261, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+p {
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+/* line 263, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+body {
+  background-color: gray;
+}
+
+/* line 265, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+ul#nav {
+  background-color: #319E00;
+}
+
+/* line 267, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#container {
+  background-color: white;
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* line 269, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#footer {
+  color: white;
+}
+
+/* line 270, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#footer .column {
+  margin-bottom: 30px;
+}
+
+/* line 272, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#footer p {
+  color: gray;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 274, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#sidebar ul {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+/* line 275, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#sidebar ul li {
+  margin: 0 0 1em 0;
+  list-style: none;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+/* line 276, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#sidebar ul li a {
+  text-decoration: none;
+}
+
+/* line 279, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#main_right {
+  height: auto;
+}
+
+/* line 281, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+div#header {
+  margin-bottom: 20px;
+}
+
+/* line 283, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+div#header ul#nav {
+  clear: both;
+  padding-left: 20px;
+  list-style: none;
+  position: relative;
+  padding: 10px;
+}
+
+/* line 291, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+div#header ul#nav li {
+  text-align: center;
+  display: inline;
+  position: relative;
+  padding-bottom: 25px;
+}
+
+/* line 298, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+div#header ul#nav li a {
+  text-decoration: none;
+  padding: 4px 13px 5px 13px;
+  margin-right: 10px;
+  border-radius: 5px;
+  font-family: "QlassikMedium";
+  font-size: 17px;
+  color: white;
+}
+
+/* line 309, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+div#header ul#nav li.active a {
+  background: #b6de3e;
+  color: #fff;
+  box-shadow: 0px 0px 1px #aaa;
+  border: 1px solid #eaeaea;
+  font-family: "QlassikBold";
+}
+
+/* line 321, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+.sidebar {
+  float: left;
+  padding-right: 0px;
+  width: 160px;
+}
+
+/* line 322, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+/* line 323, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+.sidebar ul a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #41A100;
+}
+
+/* line 324, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+.main_right {
+  float: right;
+  width: 750px;
+}
+
+/* line 328, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#products {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* line 329, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#products ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 331, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#products li {
+  height: auto;
+  overflow: auto;
+  margin: 0;
+}
+
+/* line 334, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+.product h3 {
+  padding: 0 0 10px 0;
+  margin: 0 0 10px 0;
+}
+
+/* line 336, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#show-product {
+  overflow: auto;
+}
+
+/* line 337, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+.photo {
+  float: left;
+  width: 400px;
+}
+
+/* line 338, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+.meta {
+  float: right;
+  width: 290px;
+}
+
+/* line 339, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+li.admin-link a {
+  color: red;
+  text-decoration: italic;
+}
+
+/* line 340, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+.meta h3 a {
+  text-decoration: none;
+}
+
+/* line 343, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+.dimensions span {
+  font-weight: 800;
+}
+
+/* line 345, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+.col-container {
+  overflow: auto;
+}
+
+/* line 346, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 .col {
   padding: 0 1em;
   margin: 0 1em;
   border: 3px solid gray;
 }
 
-/* line 257, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 347, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 .left {
   float: left;
 }
 
-/* line 258, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 348, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 .right {
   float: right;
 }
 
-/* line 267, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 357, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #sidebar li.admin-link a {
   color: red;
   font-style: italic;
 }
 
-/* line 270, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 360, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #admin-console li {
   width: 200px;
   display: inline;
@@ -466,12 +684,12 @@ a.subscribe:hover {
   border: 1px solid gray;
 }
 
-/* line 271, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 361, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #admin-console li a {
   font-size: 18px;
 }
 
-/* line 276, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 366, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #subscribe {
   margin-left: 30px;
   color: gray;
@@ -481,14 +699,14 @@ a.subscribe:hover {
   padding: 0 20px;
 }
 
-/* line 277, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 367, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #subscribe input {
   color: gray;
   font-size: 20px;
   float: right;
 }
 
-/* line 278, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 368, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #subscribe .field input {
   color: gray;
   font-size: 18px;
@@ -496,27 +714,27 @@ a.subscribe:hover {
   border: 2px solid gray;
 }
 
-/* line 279, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 369, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #subscribe label {
   font-size: 18px;
 }
 
-/* line 280, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 370, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #subscribe .first input {
   width: 200px;
 }
 
-/* line 284, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 374, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #footer .left-col {
   float: left;
 }
 
-/* line 285, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 375, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #footer .contact-info {
   float: right;
 }
 
-/* line 286, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 376, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #footer #contact-info {
   font-size: 14px;
   height: 50px;
@@ -528,7 +746,7 @@ a.subscribe:hover {
   padding-bottom: 20px;
 }
 
-/* line 299, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 389, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #notifications {
   font-family: helvetica;
   margin: 0 auto;
@@ -539,7 +757,7 @@ a.subscribe:hover {
   width: 500px;
 }
 
-/* line 307, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 397, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #notifications p {
   position: relative;
   display: block;
@@ -551,17 +769,17 @@ a.subscribe:hover {
   padding: 3px;
 }
 
-/* line 318, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 408, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #notifications p.notice {
   background-color: #54b919;
 }
 
-/* line 319, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 409, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #notifications p.alert {
   background-color: red;
 }
 
-/* line 322, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 412, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #spinner {
   position: absolute;
   left: 500px;
@@ -572,54 +790,91 @@ a.subscribe:hover {
   background-color: white;
 }
 
-/* line 323, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 413, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #spinner img {
   padding-left: 62px;
   width: 32px;
   height: 32px;
 }
 
-/* line 324, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 414, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #spinner p {
   text-align: center;
   margin-bottom: 20px;
   font-size: 20px;
 }
 
-/* line 328, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 418, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 .back {
   position: absolute;
   margin-top: -30px;
   font-size: 20px;
 }
 
-/* line 333, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 423, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #measurements {
   font-size: 16px;
   border: 3px solid gray;
 }
 
-/* line 335, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 425, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 #new-measurement {
   margin: 50px 0 0 0;
 }
 
-/* line 338, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 428, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 .column-container {
   overflow: auto;
 }
 
-/* line 339, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 429, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 .left-column {
   float: left;
   width: 300px;
 }
 
-/* line 340, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+/* line 430, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
 .right-column {
   float: right;
   width: 300px;
 }
+
+/* line 431, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  /* half width of the spinner gif */
+  margin-top: -50px;
+  /* half height of the spinner gif */
+  text-align: center;
+  z-index: 1234;
+  overflow: auto;
+  width: 100px;
+  /* width of the spinner gif */
+  height: 102px;
+  /*hight of the spinner gif +2px to fix IE8 issue */
+}
+
+/*#Slideshow--------------------------------------------*/
+/* line 451, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#slideshow {
+  width: 600px;
+  height: 375px;
+  padding: 0;
+}
+
+/* line 457, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/style.css.scss */
+#slideshow img {
+  padding: 10px;
+  /*border:  1px solid rgb(100,100,100);
+  background-color: rgb(230,230,230);*/
+  width: 600px;
+  height: 375px;
+  top: 0;
+  left: 0;
+}
 ;
 FI"_version;
-F"%2b04a2dbe97020cdd41a9387f5603786
+F"%8b0ba030fbdde7d68b94dd3fdebbc239

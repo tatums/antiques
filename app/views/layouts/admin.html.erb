@@ -1,45 +1,68 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>phoebeboothanitques.com</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Phoebe Booth Antiques LLC</title>
+	<%= javascript_include_tag "application" %>
+	<%= stylesheet_link_tag "application" %>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
-  <%= csrf_meta_tags %>
+	<%= csrf_meta_tags %>
 </head>
+
 <body>
 
-<!-- Start Page Container -->
-<div id="container_wrap">
+
+  <div id="notifications"> 
+    <%= render 'layouts/notifications' %>
+  </div>   
+
+
+	<div id="wrapper">
+
+		
+  	<div id="spinner" class="spinner" style="display:none;">
+  	  <p>Please Wait...</p>
+  		<%= image_tag 'loading.gif', :alt => 'Loading', :id => 'img-spinner' %>
+  	</div>
+  
+      <div id="header">
+				<h1><%=link_to image_tag("phoebe_header2.gif"), root_url %></h1>
+      </div>
+
+	    <div id="navigation">	
+				<%= render 'layouts/navigation' %>
+			</div>
+					
+			<div id="leftcolumn">
+				
+				<div id="sidebar">
+					<ul id="categories"> 
+						<%= render 'layouts/sidebar' %>
+					</ul> 
+				</div>
+				<div id="admin-links">
+						<%= render 'layouts/admin_links' %>
+				</div>
+
+			</div>
+
+			<div id="rightcolumn">
+				<%= yield %>			
+			</div>
 	
-	<div id="header">
-		<h1>Phoebe Booth Antiques</h1> 
-		<ul id="nav">
-			<li><%= link_to 'Home', root_url %></li>
-			<li><%= link_to 'Products', products_url %></li>
-			<li><%= link_to 'Categories', categories_url %></li>
-		</ul>	
-	</div>
-	
-	<div id="homepage" class="main_content">	
-		<div class="sidebar">
-			<ul>
-				<%= render 'layouts/sidebar' %>
-			</ul>
+		<div class="footer_style" id="footer">
+			<div class="left-col">
+				&copy;<%=Time.now.year %> Phoebe Booth Antiques LLC All Rights Reserved
+			</div>
+		
+			<div id="contact-info">
+				<p><strong>Contact Information:</strong></p>
+				<p>phoebe@phoebeboothantiques.com</p>
+				<p>917-597-4368</p>
+			</div>
 		</div>
-		<div class="main_right">
-			<%= yield %>			
-		</div>
-	</div>
-	
-	<!-- Start Footer -->
-	<div id="footer">
-		<%= render 'layouts/footer' %>
-	</div>
-	<!-- End Footer -->
 	
 </div>
-<!-- End Page Container -->
 
 </body>
 </html>

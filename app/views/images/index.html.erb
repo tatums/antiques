@@ -7,11 +7,7 @@
     <th></th>
   </tr>
 <tr>
-<<<<<<< HEAD
 	<td><%= image_tag @product.image_url(:thumb_200) %></td>
-=======
-	<td><%= image_tag @product.image_url(:small_thumb) %></td>
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
 	<th>**Featured Image. To modify this image go to <%= link_to 'Product', edit_product_path(@product) %></th>
     <th></th>
     <th></th>
@@ -19,11 +15,7 @@
 </tr>
 <% @images.each do |image| %>
   <tr>
-<<<<<<< HEAD
     <td><%= image_tag image.image_url(:thumb_200) %></td>
-=======
-    <td><%= image_tag image.image_url(:small_thumb) %></td>
->>>>>>> 155df5c196845e601546793c68862416eb7b97e6
     <td><%= link_to 'Show', image %></td>
     <td><%= link_to 'Edit', edit_image_path(image) %></td>
     <td><%= link_to 'Destroy', image, confirm: 'Are you sure?', method: :delete %></td>
