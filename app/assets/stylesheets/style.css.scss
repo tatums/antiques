@@ -1,5 +1,4 @@
 $lime-green: #54B919;
-
 * { padding: 0; margin: 0; }
 img{border:none;}
 ul{list-style:none;}
@@ -12,7 +11,6 @@ a:hover { text-decoration: none; color: #56A21D;}
 a:active { text-decoration: none;}
 
 
-
 //FORMS
 .field label{font-family:helvetica; font-size:14px; color:black; }
 .field input{font-family:helvetica; font-size:14px; color:gray; border:2px solid gray; padding:4px;}
@@ -21,13 +19,10 @@ a:active { text-decoration: none;}
 .field textarea:focus{border:2px solid black;}
 
 input#product_image{border:none;}
-
 .checkbox-line{margin:10px 0;}
-
 .inline_checkbox_field { display:inline; font-size:16px;font-family:helvetica; padding-right:7px; margin:130px 0;}
 
 //.actions input{ border:2px solid gray; background-color:white;}
-
 
 
 //Links
@@ -36,34 +31,15 @@ input#product_image{border:none;}
 #rightcolumn a:hover { text-decoration: none; color: black;}
 #rightcolumn a:active { text-decoration: none;}
 
-body {
-	font-family: "Times New Roman", Times, serif;
-	font-size: 13px;
-	background-color: #ECECEC;
-	margin:0;
-	background-image: url(light-tile.gif);
-	background-repeat: repeat;
-	
-}
-#wrapper {
-	overflow:auto;
-	margin: 0 auto;
-	width: 922px;
-	background-color: #FFF;
-}
+body { 	
+	font-family: "Times New Roman", Times, serif; font-size: 13px; background-color: #ECECEC;
+	margin:0; background-image: url(light-tile.gif); background-repeat: repeat; }
 
-#header h1 a img {
-	color: #333;
-	width: 900px;
-	float: left;
-	//height: 150px;
-	margin: 0px, 0, 5px, 0;
-	background-repeat: no-repeat;
-	background-position: center;
-	padding-right: 10px;
-	padding-left: 10px;
-	border:0;
-}
+#wrapper { overflow:auto; margin: 0 auto; width: 922px; background-color: #FFF; }
+
+#header h1 a img { 
+	color: #333; width: 900px; float: left; margin: 0px, 0, 5px, 0; background-repeat: no-repeat;
+	background-position: center; padding-right: 10px; padding-left: 10px; border:0; }
 
 #navigation {
 	float: left;
@@ -85,7 +61,6 @@ body {
 	padding-top: 25px;
 }
 #rightcolumn {
-	/*height: 410px;*/
 	width: 600px;
 	float: right;
 	padding-top: 20px;
@@ -146,9 +121,8 @@ body {
 	font-size: 11pt;
 	padding: 8px, 0, 0, 30px;
 }
-//Admin Links
 
-//#admin-links img { border: none; } 
+//Admin Links
 #admin-links {
 	width: 255px;
 	border-bottom-width: 1px;
@@ -191,8 +165,6 @@ body {
 
 
 
-
-
 //NAVIGATION ROLLOVERS//
 
 #navigation a{ float:left;display: block;height: 25px;text-indent: -99999px; }
@@ -219,11 +191,7 @@ a.subscribe:hover { background-position: 0 0; }
 
 
 
-
-
 //Tatum's Stylings
-
-
 
 //Products
 #products { list-style-type: none;  padding: 0;}
@@ -240,9 +208,6 @@ a.subscribe:hover { background-position: 0 0; }
 .meta h3 a{text-decoration:none;}
 
 .dimensions span{ font-weight:800;}
-
-
-
 
 #rightcolumn p{
 	color:gray;
@@ -271,17 +236,12 @@ ul#nav {background-color: #319E00;}
 //#footer p {color:gray; padding:10px;}
 #footer p{color:gray; margin:0; padding:0;}
 
-#sidebar ul{margin:0; padding:0; text-align:right;}
-#sidebar ul li {margin:0 0 1em 0; list-style:none; letter-spacing:0.1em; text-decoration:none;}
-#sidebar ul li a{text-decoration:none;}
-
 
 #main_right{height:auto;}
 
 div#header{margin-bottom:20px;}
 
-div#header ul#nav {
-	clear: both;
+div#header ul#nav {clear: both;
 	padding-left: 20px;
 	list-style: none;
 	position: relative;
@@ -316,46 +276,6 @@ div#header ul#nav li.active a {
 
 
 
-//TATUM's STUFF
-
-.sidebar{float:left; padding-right:0px;width: 160px;}
-.sidebar ul li{margin-bottom:10px;}
-.sidebar ul a{font-size:16px;text-decoration:none; color:#41A100;}
-
-
-.main_right{float:right; width: 750px;}
-
-
-
-#products { list-style-type: none;  padding: 0;}
-#products ul{ list-style-type: none;  padding:0; margin:0; }
-
-#products li{height:auto;  overflow:auto;  margin:0;}
-
-
-.product h3{padding:0 0 10px 0; margin:0 0 10px 0;}
-
-#show-product{overflow:auto;}
-.photo{float:left; width:400px;}
-.meta{float:right; width:290px;}
-li.admin-link a{color:red; text-decoration:italic;}
-.meta h3 a{text-decoration:none;}
-
-
-.dimensions span{ font-weight:800;}
-
-.col-container{overflow:auto;}
-.col{padding:0 1em; margin:0 1em; border:3px solid gray;}
-.left{ float:left;}
-.right{float:right; }
-
-
-
-//Login
-//.user_new label{margin:0px 0; font-size:18px;}
-//
-//.user_new input{margin:10px 0; padding:8px; font-size:18px;}
-
 #sidebar li.admin-link a{color:red; font-style:italic;}
 
 #admin-console{}
@@ -365,9 +285,9 @@ li.admin-link a{color:red; text-decoration:italic;}
 
 
 //Subscribe
-#subscribe {margin-left:30px;color:gray; /*border:1px dotted gray;*/ width:400px; overflow:auto; padding:0 20px;}
-#subscribe input{color:gray;font-size:20px; float:right;}
-#subscribe .field input{ color:gray; font-size:18px; float:right;border:2px solid gray;}
+#subscribe {margin-left:30px;color:gray; width:400px; overflow:auto; padding:0 20px;}
+//#subscribe input{color:gray;font-size:20px; float:right;}
+#subscribe .field input{ color:gray;  float:right;border:2px solid gray;}
 #subscribe label{font-size:18px; }
 #subscribe .first input{width:200px;}
 
@@ -399,7 +319,6 @@ li.admin-link a{color:red; text-decoration:italic;}
 #notifications p {
 	position:relative;
 	display:block;
-	
 	color:white; 
 	text-align:center; 
 	border-left:2px solid gray; 
@@ -420,12 +339,10 @@ li.admin-link a{color:red; text-decoration:italic;}
 .back{position:absolute; margin-top:-30px; font-size:20px;}
 
 
-
 //Measurement
 #measurements{font-size:16px; border:3px solid gray;}
 
 #new-measurement{margin:50px 0 0 0;}
-//#new-measurement input{ width:200px;}
 
 .column-container{ overflow:auto;}
 .left-column{float:left; width:300px;}
@@ -445,21 +362,12 @@ li.admin-link a{color:red; text-decoration:italic;}
 
 
 
-
-
 /*#Slideshow--------------------------------------------*/
 
-
-#slideshow {
-	width: 600px;
-	height: 375px;
-    padding: 0;
-} 
+#slideshow { width: 600px; height: 375px; padding: 0;} 
 
 #slideshow img {
     padding: 10px;
-    /*border:  1px solid rgb(100,100,100);
-    background-color: rgb(230,230,230);*/
     width: 600px;
     height: 375px;
     top:  0;
