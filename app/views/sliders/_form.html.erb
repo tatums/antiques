@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%= form_for(@slider ,:html => {:id => 'image-upload' }) do |f| %>
+=======
+<%= form_for(@slider) do |f| %>
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
   <% if @slider.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@slider.errors.count, "error") %> prohibited this slider from being saved:</h2>
@@ -12,8 +16,13 @@
   <% end %>
 
   <div class="field">
+<<<<<<< HEAD
     <%= image_tag(@slider.image_url(:thumb_200)) if @slider.image? %><br />
     <%= f.label :image, 'Image' %><br />
+=======
+    <%= image_tag(@slider.image_url(:small_thumb)) if @slider.image? %><br />
+    <%= f.label :image, 'Slider Image' %><br />
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
 
@@ -23,6 +32,10 @@
   	<%= f.select :product_id, Product.active.collect {|p|[p.title, p.id]},{:include_blank => 'None'} %>
   </div>
   <div class="actions">
+<<<<<<< HEAD
     <%= f.submit 'Save', :id => 'upload-button'   %>
+=======
+    <%= f.submit %>
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
   </div>
 <% end %>

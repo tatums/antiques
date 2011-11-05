@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%= form_for(@product,:html => {:id => 'image-upload' }) do |f| %>
+=======
+<%= form_for(@product) do |f| %>
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -10,6 +14,7 @@
       </ul>
     </div>
   <% end %>
+<<<<<<< HEAD
   
   <div class="field">
     <%= image_tag(@product.image_url(:thumb_200)) if @product.image? %><br />
@@ -39,11 +44,29 @@
     <% end %>
   </div>
   
+=======
+  <div class="field">
+    <%= f.label :new_acquisition %><br />
+    <%= f.check_box :new_acquisition %>
+  </div>
+  <div class="field">
+    <%= f.label :phoebe_find %><br />
+    <%= f.check_box :phoebe_find %>
+  </div>
+
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
+<<<<<<< HEAD
+=======
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
     <%= f.label :country %><br />
     <%= f.text_field :country %>
   </div>
@@ -51,11 +74,31 @@
     <%= f.label :period %><br />
     <%= f.text_field :period %>
   </div>
+<<<<<<< HEAD
   
   <div class="field">
     <%= f.text_area :body %>
   </div>
 
+=======
+
+  <div class="field">
+    <%= image_tag(@product.image_url(:small_thumb)) if @product.image? %><br />
+
+    <%= f.label :image, "Featured Image" %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+
+
+
+  <% Category.active.each do |category| %>
+    <label>
+      <%= check_box_tag "product[category_ids][]", category.id, @product_categories.include?(category.id) %>
+	  <%= category.title %>
+    </label>
+  <% end %>
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
   <div class="actions">
     <%= f.submit %>
   </div>

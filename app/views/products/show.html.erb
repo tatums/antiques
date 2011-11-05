@@ -1,22 +1,42 @@
 <div id="show-product">
 	<span class="block photo">
+<<<<<<< HEAD
 		<%= link_to image_tag(@product.image_url(:thumb_300) ), @product.image_url(:large), :class => 'single_image' %>	  		
 		<% @product.images.each do |i| %>
 			<%= link_to image_tag(i.image_url(:thumb_200) ), i.image_url(:large), :class => 'single_image' %>
+=======
+		<%= link_to image_tag(@product.image_url(:thumb) ), @product.image_url(:large), :class => 'single_image' %>	  
+		<%# image_tag product.image_url(:thumb) if product.image? %>
+		
+		<% @product.images.each do |i| %>
+			<%= link_to image_tag(i.image_url(:small_thumb) ), i.image_url(:large), :class => 'single_image' %>
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
 		<% end %>
 		
 	</span>
 	<span class="block meta">
 	    <h3><%= @product.title %></h3>
+<<<<<<< HEAD
 		  <h4><%= country_and_period(@product) %> </h4>
 		  <p class="dimensions"><%= full_dimensions(@product) %></p>
 		  <p><%= @product.body.html_safe %></p>
+=======
+		<h4><%= country_and_period(@product) %> </h4>
+		
+		<p class="dimensions"><%= full_dimensions(@product) %></p>
+		<p><%= @product.body %></p>
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
 		
 		<% if user_signed_in? %>
 			<%= link_to 'Back', products_path %> |
 			<%= link_to 'Edit', edit_product_path(@product) %> <br />
+<<<<<<< HEAD
 			<%= link_to 'Upload Images', product_images_path(@product)%><br />
 			<%= link_to 'Set Dimensions', product_measurements_path(@product)%><br />
+=======
+			<%= link_to 'Manage Images', product_images_path(@product)%><br />
+			<%= link_to 'Manage Dimensions', product_measurements_path(@product)%><br />
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
 			Created on <%= @product.created_at.strftime("%m/%d/%Y at %I:%M %p") %><br />
 			Updated on <%= @product.updated_at.strftime("%m/%d/%Y at %I:%M %p") %>
 			
@@ -29,8 +49,19 @@
 
 <script language="javascript">
 $(document).ready(function() {
+<<<<<<< HEAD
 	/* This is basic - uses default settings */
 	$("a.single_image").fancybox();
 	/* Using custom settings */
 });
 </script>
+=======
+
+	/* This is basic - uses default settings */
+	$("a.single_image").fancybox();
+	
+	/* Using custom settings */
+	
+});
+</script>
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6

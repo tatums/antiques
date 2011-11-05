@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%= form_for([@product, @image],:html => {:id => 'image-upload' })   do |f| %>
+=======
+<%= form_for([@product, @image]) do |f| %>
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
 
   <% if @image.errors.any? %>
     <div id="error_explanation">
@@ -12,12 +16,17 @@
     </div>
   <% end %>
 
+<<<<<<< HEAD
   <%= image_tag(@image.image_url(:thumb_200)) if @image.image? %><br />
 
   <div class="field">
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
 
+=======
+  <div class="field">
+    <%= f.file_field :image %>
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
   </div>
   <div class="actions">
     <%= f.submit :id => 'upload-button' %>

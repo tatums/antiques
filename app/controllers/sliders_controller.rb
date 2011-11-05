@@ -79,7 +79,13 @@ class SlidersController < ApplicationController
   
   def sort
     params[:SlidersOrder].each_with_index do |id, index|
+<<<<<<< HEAD
       Slider.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
+=======
+      #Product.update_all(['position=?', index+1], ['id=?', id.scan(/\d/)])
+      #Product.update_all( {:position => index+1}, {:id => id.scan(/\d/)} )
+      Slider.where(:id => id.scan(/\d/)).update_all(:position => index+1)
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
     end
     render :nothing => true
   end

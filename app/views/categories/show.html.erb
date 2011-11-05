@@ -16,6 +16,7 @@
 
 <ul id="products">
 
+<<<<<<< HEAD
 <% if @tags.size > 0 %>
 
 	<% @tags.each do |tag| %>
@@ -42,5 +43,21 @@
 		<p>We are working on the site.  Please check back soon.</p>
 		<p>If you would like to be emailed once we have content available. Click <%= link_to 'here', subscribe_path %></p>
 	</li>
+=======
+<% @products.each do |product| %>
+	
+	
+	<%= content_tag_for :li, product do %>
+		<span class="block photo">
+			<%= link_to image_tag(product.image_url(:thumb) ), product %>	  
+			<%# image_tag product.image_url(:thumb) if product.image? %>
+		</span>
+		<span class="block meta">
+		    <h3><%= link_to product.title, product %></h3>
+			<p><%= read_more(_product) %></p>
+		</span>
+	<% end %>
+
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
 <% end %>
 </ul>

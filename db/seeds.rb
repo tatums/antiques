@@ -15,6 +15,7 @@ Category.create(title: 'Mirrors', description: 'A reflective surface, glass coat
 Category.create(title: 'Tables', description: 'An article of furniture supported by one or more vertical legs and having a flat horizontal surface.')
 Category.create(title: 'Other', description: 'Everything else.')
 
+<<<<<<< HEAD
 categories = Category.all
 
 categories.each do |c|
@@ -25,3 +26,17 @@ end
 u = User.create!({:email => "tatum@ashlandstudios.com", :roles => ["admin"], :password => "pa88word", :password_confirmation => "pa88word" })
 
 puts "Created User #{u.email}"
+=======
+
+c = Category.first
+c.update_attributes(:active => 'true')
+
+categories = Category.all
+
+categories.each do |c|
+  puts "Created Category #{c.title}"
+end
+
+u = User.create!({:email => "admin@gmail.com", :roles => ["admin"], :password => "pba2011", :password_confirmation => "pba2011" })
+puts "created #{u.email} default admin created with password (pba2011) no ()" 
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6

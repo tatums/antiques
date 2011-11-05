@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 <% if user_signed_in? %>
+=======
+
+<% if user_signed_in? %>
+
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
 	<script language="javascript">
 		$(document).ready(function(){
 			$('#products').sortable({
 				update: function(event, ui) {
 					var ProductsOrder = $(this).sortable('toArray');
+<<<<<<< HEAD
 					$.post( 'products/sort', {ProductsOrder:ProductsOrder});
 					//$.post( "%#{sort_products_path}", {ProductsOrder:ProductsOrder});
+=======
+					$.post( 'sort', {ProductsOrder:ProductsOrder});
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
 				}
 			});
 		});
@@ -14,6 +24,7 @@
 
 <ul id="products">
 
+<<<<<<< HEAD
 <% if @products.count > 0 %>
 
 	<% @products.each do |product| %>
@@ -43,3 +54,26 @@
 
 <% end %>
 </ul>
+=======
+<% @products.each do |product| %>
+		
+	<%= content_tag_for :li, product do %>
+		<span class="block photo">
+			<%# link_to image_tag(product.image_url(:thumb) ), product %>	  
+			<%= link_to image_tag(product.image_url(:thumb) ), product if product.image? %>
+		</span>
+		<span class="block meta">
+		    <h3><%= link_to product.title, product %></h3>
+			<h4><%= country_and_period(product) %> </h4>
+			<p><%= read_more(product) %></p>
+		
+		</span>
+	<% end %>
+
+<% end %>
+</ul>
+
+<% if user_signed_in? %>
+	<%= link_to 'New Product', new_product_path %>
+<% end %>
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6

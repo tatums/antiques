@@ -1,7 +1,11 @@
 PhoebeboothanitquesCom2::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+<<<<<<< HEAD
 #config.action_controller.asset_host = "http://phoebeboothantiques.com"
  
+=======
+
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -16,9 +20,14 @@ PhoebeboothanitquesCom2::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
+<<<<<<< HEAD
   #config.assets.compile = false
   config.assets.compile = true
   
+=======
+  config.assets.compile = false
+
+>>>>>>> 155df5c196845e601546793c68862416eb7b97e6
   # Generate digests for assets URLs
   config.assets.digest = true
 
