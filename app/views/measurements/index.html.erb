@@ -14,12 +14,11 @@
 
 <%= link_to "Back", product_path(@product), :class => 'back' %>
 <h1 class="status">Product Dimensions</h1>
+<%= link_to image_tag(@product.image_url(:thumb_200) ), @product.image_url(:large), :class => 'single_image measurement_image' %>	  		
 
 <div class="column-container">
-
+  
   <div id="preview" class="left-column">
-  	<%= link_to image_tag(@product.image_url(:thumb_200) ), @product.image_url(:large), :class => 'single_image measurement_image' %>	  		
-
     <em>Preview</em><br />
     <%= full_dimensions(@product) %>
   </div>
