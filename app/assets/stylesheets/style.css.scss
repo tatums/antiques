@@ -340,11 +340,15 @@ div#header ul#nav li.active a {
 //Back
 .back{position:absolute; margin-top:-30px; font-size:20px;}
 
+//STATUS
+.status{position:absolute; margin-top:-30px; margin-left:75px; font-size:20px;}
+
 
 //Measurement
 #measurements{font-size:16px; border:3px solid gray;}
 
 #new-measurement{margin:50px 0 0 0;}
+.measurement_image{}
 
 .column-container{ overflow:auto;}
 .left-column{float:left; width:300px;}

@@ -31,7 +31,7 @@
   </div>
   
   <div class="checkbox-line">
-    <% Category.active.each do |category| %>
+    <% Category.active.order(:position).each do |category| %>
       <div class="inline_checkbox_field">
         <%= check_box_tag "product[category_ids][]", category.id, @product_categories.include?(category.id) %>
   	    <%= category.title.capitalize %>

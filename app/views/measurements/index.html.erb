@@ -13,9 +13,13 @@
 
 
 <%= link_to "Back", product_path(@product), :class => 'back' %>
+<h1 class="status">Product Dimensions</h1>
 
 <div class="column-container">
+
   <div id="preview" class="left-column">
+  	<%= link_to image_tag(@product.image_url(:thumb_200) ), @product.image_url(:large), :class => 'single_image measurement_image' %>	  		
+
     <em>Preview</em><br />
     <%= full_dimensions(@product) %>
   </div>
@@ -36,8 +40,14 @@
 </div>
 
 <div id="new-measurement">
-  <h3>Add New Dimension</h3>
 	<%= render 'form' %>
 </div>
 
+<script language="javascript">
+$(document).ready(function() {
+	/* This is basic - uses default settings */
+	$("a.single_image").fancybox();
+	/* Using custom settings */
+});
+</script>
 
