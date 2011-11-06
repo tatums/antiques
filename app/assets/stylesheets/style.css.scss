@@ -191,10 +191,10 @@ a.subscribe:hover { background-position: 0 0; }
 
 
 
-//Tatum's Stylings
+//Tatum's Backend Stylings
 
 //Products
-#products { list-style-type: none;  padding: 0;}
+#products { list-style-type: none;  padding: 0; border:1px solid red;}
 #products ul{ list-style-type: none;  padding:0; margin:0; }
 #products li{height:auto;  overflow:auto;  margin:0;}
 .product h3{padding:0 0 10px 0; margin:0 0 10px 0;}
@@ -217,7 +217,10 @@ a.subscribe:hover { background-position: 0 0; }
 }
 
 //COLUMNS
-.col-container{overflow:auto; border:1px dashed gray;}
+.col-container{overflow:auto; border:1px dashed gray; padding:0 20px;}
+.left{float:left;}
+.right{float:right;}
+
 ul{margin:0; padding:0; list-style:none;}
 
 #header h1{ margin:0; padding:0;font-size:48px;color:#319E00; text-align:center;}
@@ -286,9 +289,8 @@ div#header ul#nav li.active a {
 
 //Subscribe
 #subscribe {margin-left:30px;color:gray; width:400px; overflow:auto; padding:0 20px;}
-//#subscribe input{color:gray;font-size:20px; float:right;}
-#subscribe .field input{ color:gray;  float:right;border:2px solid gray;}
-#subscribe label{font-size:18px; }
+#subscribe .field input{ color:gray;  float:right; border:2px solid gray; display:block;}
+#subscribe label{font-size:16px; }
 #subscribe .first input{width:200px;}
 
 

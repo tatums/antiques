@@ -1,11 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Active:</b>
-  <%= @slider.active %>
-</p>
 
-  <%= image_tag @slider.image_url(:medium) %>
+<%= image_tag @slider.image_url(:medium) %>
 
 
 <%= link_to 'Edit', edit_slider_path(@slider) %> |

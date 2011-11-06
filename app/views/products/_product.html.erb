@@ -1,0 +1,13 @@
+<%= content_tag_for :li, product do %>
+	<span class="block photo">
+		<%= link_to image_tag(product.image_url(:thumb_300) ), product if product.image? %>
+	</span>
+	<span class="block meta">
+	    <h3><%= link_to product.title, product %></h3>
+		<h4><%= country_and_period(product) %> </h4>
+
+		<p class="dimensions"><%= full_dimensions(product) %></p>
+		<p><%= read_more(product) %></p>
+
+	</span>
+<% end %>
