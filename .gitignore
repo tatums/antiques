@@ -1,10 +1,9 @@
 .bundle
 db/*.sqlite3
-log/
 log/*.log
 tmp/*
 tmp/cache/assets/
 tmp/cache/sass/
 tmp/pids/
 .sass-cache/
-public/uploads/*
+public/uploads/
