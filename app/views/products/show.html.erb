@@ -11,8 +11,10 @@
 		  <h4><%= country_and_period(@product) %> </h4>
 		  <p class="meta-data"><%= full_dimensions(@product) %></p>
 		  <p class="meta-data">Inventory Number: <%= @product.item_number %></p>
-		  <p><%= @product.body.html_safe %></p>
-		
+		  <%= setup_paragraphs(@product).html_safe %>
+		  <!--
+		  <p id="product-desc"><%# setup_paragraphs(@product) %><%# @product.body.html_safe %></p>
+		  -->
 		<% if user_signed_in? %>
 			<%= link_to 'Back', products_path %> |
 			<%= link_to 'Edit', edit_product_path(@product) %> <br />

@@ -7,7 +7,8 @@ class Product < ActiveRecord::Base
   has_many :tags
   has_many :categories, :through => :tags
 
-  before_save :set_item_number
+  before_create :set_item_number
+  #after_initialize :set_item_number
 
   validates_presence_of :title, :body, :image, :country, :period
  
@@ -29,6 +30,7 @@ protected
     number += 1
     self.item_number = number
   end
+
 
 
 end

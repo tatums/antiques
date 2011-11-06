@@ -25,12 +25,11 @@
 				<%= link_to image_tag(tag.product.image_url(:thumb_300) ), tag.product if tag.product.image? %>
 			</span>
 			<span class="block meta">
-			    <h3><%= link_to tag.product.title, tag.product %></h3>
+			  <h3><%= link_to tag.product.title, tag.product %></h3>
 				<h4><%= country_and_period(tag.product) %> </h4>
-
-  		  <p class="meta-data"><%= full_dimensions(tag.product) %></p>
-  		  <p class="meta-data">Inventory Number: <%= tag.product.item_number %></p>
-				<p><%= read_more(tag.product) %></p>
+  		  <p class="meta-data dimenstions"><%= full_dimensions(tag.product) %></p>
+  		  <p class="meta-data inv">Inventory Number: <%= tag.product.item_number.to_s %></p>
+				<p id="product-desc"><%= read_more(tag.product) %></p>
 	
 			</span>
 		<% end %>

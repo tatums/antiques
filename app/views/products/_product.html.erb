@@ -7,8 +7,8 @@
 		<h4><%= country_and_period(product) %> </h4>
 
 	  <p class="meta-data"><%= full_dimensions(product) %></p>
-	  <p class="meta-data">Inventory Number: <%= product.item_number %></p>
-		<p><%= read_more(product) %></p>
+	  <p class="meta-data">Inventory Number: <%= product.item_number.to_s %></p>
+		<p id="product-desc"><%= read_more(product) %></p>
 
 	</span>
 <% end %>

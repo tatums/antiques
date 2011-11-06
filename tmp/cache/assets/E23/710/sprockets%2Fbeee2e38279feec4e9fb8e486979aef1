@@ -1,31 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1320509106.715473:@value{	I"length:EFiI"digest;
-F"%d7ad70a7bbc41974b9d0a392804c3064I"source;
-FI"/* line 2, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/error.css.scss */
-div.field, div.actions {
-  margin-bottom: 10px;
-}
-
-/* line 5, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/error.css.scss */
-#notice {
-  color: green;
-}
-
-/* line 7, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/error.css.scss */
-label .field_with_errors {
-  color: red;
-}
-
-/* line 18, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/error.css.scss */
-#error_explanation .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-/* line 25, /Users/tatum/Sites/phoebeboothantiques.com5/app/assets/stylesheets/error.css.scss */
-#error_explanation #error_explanation ul li {
-  font-size: 12px;
-  list-style: none;
-}
-;
-FI"_version;
-F"%807ea2a570ef905a47c7ef5c3fd52667
