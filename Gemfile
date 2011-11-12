@@ -34,6 +34,15 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'mysql2'
+# gem 'thinking-sphinx', :git => 'git://github.com/freelancing-god/thinking-sphinx.git', :branch  => 'rails3'
+gem 'sunspot_rails'
+
+group :development, :test do
+  gem "rspec-rails"
+  gem "capybara"
+  gem "factory_girl_rails"
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -44,7 +53,9 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
-end
+
+# turned off 
+# group :test do
+#   # Pretty printed test output
+#   gem 'turn', :require => false
+# end

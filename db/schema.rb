@@ -53,13 +53,13 @@ ActiveRecord::Schema.define(:version => 20111028230343) do
     t.string   "title"
     t.text     "body"
     t.string   "image"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "phoebe_find",     :default => false
     t.boolean  "new_acquisition", :default => false
     t.string   "country"
     t.string   "period"
-    t.integer  "position"
     t.integer  "item_number"
   end
 
