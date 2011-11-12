@@ -23,11 +23,13 @@ class HomeController < ApplicationController
 
   def phoebes_finds
     @products = Product.phoebe_finds.order(:position)
-    render 'products/index'
   end
   
 
   def thank_you
+  end
+  
+  def contact
   end
 
 end

@@ -1,9 +1,15 @@
 module ProductsHelper
 
+  def formated_dimension(measurement)
+    data = measurement.dimension + " " + measurement.amount +  measurement.unit_of_measure + "<br />" + link_to('Edit', edit_measurement_path(measurement))
+    return data.html_safe
+  end
+
   def full_dimensions(product)
     data = product.measurements.order_by_position.collect { |d| d.full_line }.join( '<span> x </span>' )
     return data.html_safe
   end
+
   
   def country_and_period(product)
     unless product.country.nil? or product.period.nil?

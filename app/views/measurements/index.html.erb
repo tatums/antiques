@@ -13,30 +13,25 @@
 
 
 <%= link_to "Back", product_path(@product), :class => 'back' %>
+
 <h1 class="status">Product Dimensions</h1>
 <%= link_to image_tag(@product.image_url(:thumb_200) ), @product.image_url(:large), :class => 'single_image measurement_image' %>	  		
 
-<div class="column-container">
   
-  <div id="preview" class="left-column">
-    <em>Preview</em><br />
-    <%= full_dimensions(@product) %>
-  </div>
+<% unless @measurements.empty? %>
 
-  <div class="right-column">
     <ul id="measurements">
     <% @measurements.each do |measurement| %>
     	<%= content_tag_for :li, measurement do %>
-    	    <%= measurement.dimension %>
-    	    <%= measurement.amount %>
-    	    <%= measurement.unit_of_measure %>
-    	    <%= link_to 'Edit', edit_measurement_path(measurement) %>
-    	    <%= link_to 'Destroy', measurement, confirm: 'Are you sure?', method: :delete %>
+        <%= formated_dimension(measurement) %>
+    	  <%# link_to 'Edit', edit_measurement_path(measurement) %><br />
     	<% end %>
     <% end %>
     </ul>
-  </div>
-</div>
+
+<% end %>
+
+<p>These items can be sorted. The order they appear in on this page is also the order they will be displayed in on the product page.</p>  
 
 <div id="new-measurement">
 	<%= render 'form' %>

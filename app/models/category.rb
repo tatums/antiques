@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
   has_many :tags
   has_many :products, :through => :tags
   
-  validates_presence_of :title, :description
+  validates_presence_of :title
   validates_uniqueness_of :title
   
   scope :active, where(:active => true)

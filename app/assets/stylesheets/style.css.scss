@@ -1,6 +1,6 @@
 $lime-green: #54B919;
 * { padding: 0; margin: 0; }
-body {font-family: Arial, Helvetica, sans-serif; font-size: 13px;}
+body {font-family: "Times New Roman", Times, serif;}
 
 img{border:none;}
 ul{list-style:none;}
@@ -36,10 +36,9 @@ input#product_image{border:none;}
 
 #wrapper { overflow:auto; margin: 0 auto; width: 922px; background-color: #FFF; }
 
-#header{}
+#header{ width:922px; height:150px;}
 #header h1{ margin:0; padding:0; font-size:48px; color:#319E00; text-align:center;}
-#header h1 a img { 	color: #333; float: left; margin: 0; background-repeat: no-repeat;
-					background-position: center; padding-right: 0px; padding-left: 0px; border:0; }
+#header h1 a img { background-repeat: no-repeat; border:0; }
 #header span{ font-size:14px; margin:0 auto;}
 
 
@@ -128,6 +127,15 @@ input#product_image{border:none;}
 	padding: 8px, 0, 0, 30px;
 }
 
+#search-box input{font-size:18px; color:gray;}
+#search-box{background-color: #F9F5E5; padding:20px 20px; margin-bottom:50px; width:500px; height:100px;}
+#bottom-search-tagline{margin-top:40px;}
+#search-results{  }
+#search-results p { margin-top:20px;  }
+#search-results ol li h2 {margin:0;}
+#search-results ol li p { margin-top:0px;  }
+
+
 //Admin Links
 #admin-links {
 	width: 255px;
@@ -166,39 +174,17 @@ input#product_image{border:none;}
 }
 #admin-links li.admin-link a{
 	color:red; 
-	text-decoration:italic;
+	font-style:italic;
+}
+#page_headline {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20pt;
+    line-height: 20px;
+    color: #58A51D;
+	margin-bottom:20px;
 }
 
 
-
-//NAVIGATION ROLLOVERS//
-
-
-#navigation a{ float:left;display: block;height: 35px;text-indent: -99999px; }
-
-//.home
-a.home { margin-left:40px; width: 50px; background: url('navigation/home.gif') top; }
-a.home:hover { background-position: 0 35px; }
-
-//.about
-a.about { margin-left:70px; width: 59px; background: url('navigation/about.gif') top; }
-a.about:hover { background-position: 0 35px; }
-
-//.search
-a.search {margin-left:75px; width: 68px; background: url('navigation/search.gif') top; }
-a.search:hover { background-position: 0 35px; }
-
-//.finds
-a.finds {margin-left:70px; width: 145px; background: url('navigation/phoebe_finds.gif') top; }
-a.finds:hover { background-position: 0 35px; }
-
-//.subscribe
-a.subscribe {margin-left:55px; width: 90px; background: url('navigation/subscribe.gif') top; }
-a.subscribe:hover { background-position: 0 35px; }
-
-//contact
-a.contact {margin-left:80px; width: 78px; background: url('navigation/contact.gif') top; }
-a.contact:hover { background-position: 0 35px; }
 
 
 
@@ -223,27 +209,16 @@ a.contact:hover { background-position: 0 35px; }
 
 .dimensions span{ font-weight:800;}
 
-#rightcolumn p{
-	color:gray;
-	font-size:16px;
-//	overflow:auto;
-}
-
 //COLUMNS
 .col-container{overflow:auto; border:1px dashed gray; padding:0 20px;}
 .left{float:left;}
 .right{float:right;}
 
 ul{margin:0; padding:0; list-style:none;}
-
-
 p{padding:0;margin:0;}
+//ul#nav {background-color: #319E00;}
 
-
-ul#nav {background-color: #319E00;}
-
-#container {background-color:white;width:960px; margin:0 auto;}
-
+#container {background-color:white;width:955px; margin:0 auto;}
 #footer {color:white;}
 #footer .column { margin-bottom:30px;}
 //#footer p {color:gray; padding:10px;}
@@ -273,7 +248,6 @@ div#header ul#nav li a {
 	padding: 4px 13px 5px 13px;
 	margin-right: 10px;
 	border-radius: 5px;
-	font-family: "QlassikMedium";
 	font-size: 17px;
 	color: white;
 }
@@ -283,7 +257,6 @@ div#header ul#nav li.active a {
 	color: #fff;
 	box-shadow: 0px 0px 1px #aaa;
 	border: 1px solid #eaeaea;
-	font-family: "QlassikBold";
 }
 
 
@@ -297,10 +270,13 @@ div#header ul#nav li.active a {
 
 
 //Subscribe
+
 #subscribe {margin-left:30px;color:gray; width:400px; overflow:auto; padding:0 20px;}
-#subscribe .field input{ color:gray;  float:right; border:2px solid gray; display:block;}
-#subscribe label{font-size:16px; }
-#subscribe .first input{width:200px;}
+#subscribe p {margin-bottom:20px;}
+.subscribe {margin-bottom:20px;}
+.subscribe .field input{ color:gray;  float:right; border:2px solid gray; display:block;}
+.subscribe label{font-size:16px; margin-bottom:20px;}
+.subscribe input{width:200px; float:right;}
 
 
 //Footer
@@ -320,7 +296,7 @@ div#header ul#nav li.active a {
 
 //Notifications
 #notifications{
-	font-family:helvetica;
+	font-family: "Times New Roman", Times, serif;
 	margin: 0 auto;
     left: 0; right: 0;
 	position:absolute; 
@@ -340,21 +316,17 @@ div#header ul#nav li.active a {
 #notifications p.notice{ background-color: $lime-green; }
 #notifications p.alert{background-color:red;}
 
-//Spinner
-#spinner{position:absolute; left:500px; top:200px; width:156px;  border:2px dashed gray; padding:20px; background-color:white;}
-#spinner img{padding-left:62px; width:32px; height:32px;}
-#spinner p{text-align:center; margin-bottom:20px;font-size:20px;}
 
 
-//Back
+//Back && Status
 .back{position:absolute; margin-top:-30px; font-size:20px;}
-
-//STATUS
 .status{position:absolute; margin-top:-30px; margin-left:75px; font-size:20px;}
 
 
 //Measurement
-#measurements{font-size:16px; border:3px solid gray;}
+#measurements{font-size:16px; overflow:auto; margin:20px 0;}
+
+.measurement{float:left; padding:10px;}
 
 #new-measurement{margin:50px 0 0 0;}
 .measurement_image{}
@@ -362,20 +334,8 @@ div#header ul#nav li.active a {
 .column-container{ overflow:auto;}
 .left-column{float:left; width:300px;}
 .right-column{float:right; width:300px;}
-.spinner {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	margin-left: -50px; /* half width of the spinner gif */
-	margin-top: -50px; /* half height of the spinner gif */
-	text-align:center;
-	z-index:1234;
-	overflow: auto;
-	width: 100px; /* width of the spinner gif */
-	height: 102px; /*hight of the spinner gif +2px to fix IE8 issue */
-}
-
-
+#about img{float:left; padding:0 10px 5px 0;}
+#about p{margin-bottom:20px; font-family: "Times New Roman", Times, serif; font-size: 12pt; line-height: 20px;}
 
 /*#Slideshow--------------------------------------------*/
 
@@ -387,4 +347,47 @@ div#header ul#nav li.active a {
     height: 375px;
     top:  0;
     left: 0
+}
+//NAVIGATION ROLLOVERS//
+#navigation a{ float:left;display: block;height: 35px;text-indent: -99999px; }
+
+//.home
+a.home { margin-left:40px; width: 50px; background: url('navigation/home.gif') top; }
+a.home:hover { background-position: 0 35px; }
+
+//.about
+a.about { margin-left:70px; width: 59px; background: url('navigation/about2.gif') top; }
+a.about:hover { background-position: 0 35px; }
+
+//.search
+a.search {margin-left:75px; width: 68px; background: url('navigation/search.gif') top; }
+a.search:hover { background-position: 0 35px; }
+
+//.finds
+a.finds {margin-left:70px; width: 145px; background: url('navigation/phoebe_finds.gif') top; }
+a.finds:hover { background-position: 0 35px; }
+
+//.subscribe
+a.subscribe {margin-left:55px; width: 90px; background: url('navigation/subscribe.gif') top; }
+a.subscribe:hover { background-position: 0 35px; }
+
+//contact
+a.contact {margin-left:80px; width: 78px; background: url('navigation/contact.gif') top; }
+a.contact:hover { background-position: 0 35px; }
+
+//Spinner
+#spinner{position:absolute; left:500px; top:200px; width:156px;  border:2px dashed gray; padding:20px; background-color:white;}
+#spinner img{padding-left:62px; width:32px; height:32px;}
+#spinner p{text-align:center; margin-bottom:20px;font-size:20px;}
+.spinner {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -50px; /* half width of the spinner gif */
+	margin-top: -50px; /* half height of the spinner gif */
+	text-align:center;
+	z-index:1234;
+	overflow: auto;
+	width: 100px; /* width of the spinner gif */
+	height: 102px; /*hight of the spinner gif +2px to fix IE8 issue */
 }

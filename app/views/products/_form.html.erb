@@ -10,8 +10,14 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="inline_checkbox_field">
+    <%= f.check_box :active %>
+    <%= f.label :active %>
+  </div>
   
   <div class="field">
+
     <%= image_tag(@product.image_url(:thumb_200)) if @product.image? %><br />
 
     <%= f.label :image, "Featured Image" %><br />
@@ -20,17 +26,14 @@
   </div>
   
   <div class="checkbox-line">
-    <div class="inline_checkbox_field">
-      <%= f.check_box :active %>
-      <%= f.label :active %>
-    </div>
+  </div>
+  
+  <div class="checkbox-line">
     <div class="inline_checkbox_field">
       <%= f.check_box :phoebe_find %>
       <%= f.label :phoebe_find %>
     </div>
-  </div>
-  
-  <div class="checkbox-line">
+    
     <% Category.active.order(:position).each do |category| %>
       <div class="inline_checkbox_field">
         <%= check_box_tag "product[category_ids][]", category.id, @product_categories.include?(category.id) %>

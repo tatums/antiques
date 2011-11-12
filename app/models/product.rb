@@ -20,11 +20,12 @@ class Product < ActiveRecord::Base
   end  
 
   scope :active, where(:active => true)
+  scope :inactive, where(:active => false)
   scope :phoebe_finds, where(:phoebe_find => true)
-  scope :new_acquisitions, where(:new_acquisition => true)
+  #scope :new_acquisitions, where(:new_acquisition => true)
 
   searchable do
-      text :title, :body
+      text :title, :body, :item_number
   end
 
 protected
