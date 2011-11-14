@@ -13,16 +13,11 @@ class CategoriesController < ApplicationController
 
   def show
    @category = Category.where(:slug => params[:id]).first
-   @tags = @category.tags.order('tags.position')
+   @tags = @category.tags.order('tags.position').page params[:page]
     respond_to do |format|
      format.html # show.html.erb
      format.json { render json: @category }
     end
-   # @category = Category.where(:slug => params[:id]).first
-   # 
-   # @products = @category.products.order(:position)
-   #   
-   # render 'products/index'
    
   end
 

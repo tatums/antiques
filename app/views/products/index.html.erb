@@ -12,17 +12,12 @@
 	</script>
 <% end %>
 
-<% if user_signed_in? %>
-
-<%= link_to 'Back', admin_path, :class => "back" %>
-  <h1 class="status">Products</h1>
-<% end %>
 
 <ul id="products">
   <% if @products.count > 0 %>
 
   	<% @products.each do |product| %>
-  		<%= render product%>
+  		<%= render product %>
   	<% end %>
 
   <% else %>
@@ -35,7 +30,4 @@
 
   <% end %>
 </ul>
-
-<% if user_signed_in? %>
-	<%= link_to 'New Product', new_product_path %>
-<% end %>
+<p class="paginate"><%= paginate @products %></p>

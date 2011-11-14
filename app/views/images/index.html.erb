@@ -1,30 +1,21 @@
 <%= link_to "Back", product_path(@product), :class => 'back' %>
 <h1 class="status"><%= @product.title %></h1>
 
-<table>
-  <tr>
-    <th>Image</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-<tr>
-	<td><%= image_tag @product.image_url(:thumb_200) %></td>
-	<th>**Featured Image. To modify this image go to <%= link_to 'Product', edit_product_path(@product) %></th>
-    <th></th>
-    <th></th>
-    
-</tr>
+
+
+<ul>    
+  <li>
+    <%= image_tag @product.image_url(:thumb_200) %>
+    <%= link_to 'Edit Product', edit_product_path(@product), :class=>"admin-link" %>
+  </li>
 <% @images.each do |image| %>
-  <tr>
-    <td><%= image_tag image.image_url(:thumb_200) %></td>
-    <td><%= link_to 'Show', image %></td>
-    <td><%= link_to 'Edit', edit_image_path(image) %></td>
-    <td><%= link_to 'Destroy', image, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <li>
+    <%= image_tag image.image_url(:thumb_200) %>
+    <%# link_to 'Show', image %>
+    <%= link_to 'Edit', edit_image_path(image), :class=>"admin-link"  %>
+  <%= link_to 'Destroy', image, confirm: 'Are you sure?', method: :delete, :class=>"admin-link"  %>
+  </li>
 <% end %>
-</table>
+</ul>
 
-<br />
-
-<%= link_to 'Add Image', new_product_image_path(@product) %>
+<%= link_to 'Add Image', new_product_image_path(@product), :class=>"admin-link"  %>

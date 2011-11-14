@@ -13,35 +13,29 @@
 <% end %>
 
 
+<p id="page_headline"><%= upcase_title(@category) %></p>
 
-<ul id="products">
-  
-  <p id="page_headline"><%= upcase_title(@category) %></p>
+  <% if @tags.size > 0 %>
+  <ul id="products">  
+  	<% @tags.each do |tag| %>		
+  		<%= content_tag_for :li, tag do %>
+  			<span class="block photo">
+  				<%= link_to image_tag(tag.product.image_url(:thumb_200) ), tag.product if tag.product.image? %>
+  			</span>
+  			<span class="block meta">
+  			  <h3><%= link_to tag.product.title, tag.product %></h3>
+  				<h4><%= country_and_period(tag.product) %> </h4>
+    		  <p class="meta-data dimenstions"><%= full_dimensions(tag.product) %></p>
+    		  <p class="meta-data inv">Inventory Number: <%= tag.product.item_number.to_s %></p>
+  				<p id="product-desc"><%= read_more(tag.product) %></p>
+  			</span>
+  		<% end %>
+  	<% end %>
+	</ul>	
 
-<% if @tags.size > 0 %>
+  <% else %>
+  		<p>We are working on the site.  Please check back soon.</p>
+  		<p>If you would like to be emailed once we have content available. Click <%= link_to 'here', subscribe_path %></p>
+  <% end %>
 
-	<% @tags.each do |tag| %>
-		
-		<%= content_tag_for :li, tag do %>
-			<span class="block photo">
-				<%= link_to image_tag(tag.product.image_url(:thumb_300) ), tag.product if tag.product.image? %>
-			</span>
-			<span class="block meta">
-			  <h3><%= link_to tag.product.title, tag.product %></h3>
-				<h4><%= country_and_period(tag.product) %> </h4>
-  		  <p class="meta-data dimenstions"><%= full_dimensions(tag.product) %></p>
-  		  <p class="meta-data inv">Inventory Number: <%= tag.product.item_number.to_s %></p>
-				<p id="product-desc"><%= read_more(tag.product) %></p>
-	
-			</span>
-		<% end %>
-
-	<% end %>
-
-<% else %>
-	<li>
-		<p>We are working on the site.  Please check back soon.</p>
-		<p>If you would like to be emailed once we have content available. Click <%= link_to 'here', subscribe_path %></p>
-	</li>
-<% end %>
-</ul>
+<p class="paginate"><%= paginate @tags %></p>

@@ -22,7 +22,7 @@ class HomeController < ApplicationController
   end
 
   def phoebes_finds
-    @products = Product.phoebe_finds.order(:position)
+    @products = Product.phoebe_finds.order(:position).page params[:page]
   end
   
 
@@ -30,6 +30,14 @@ class HomeController < ApplicationController
   end
   
   def contact
+    @contact = Contact.new
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @contact }
+    end
   end
+
+
+
 
 end

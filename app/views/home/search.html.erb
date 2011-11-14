@@ -13,14 +13,20 @@
 
   <div id="search-results">
     <% if @results %>
-      <ol>
+      <ul>
         <% @results.each do |result| %>
           <li>
-            <h4><%=link_to result.title, result %></h2>
-            <p><%= read_more(result) %></p>
+            <span class="block search-photo">
+              <%= link_to image_tag(result.image_url(:thumb_100) ), result if result.image? %>
+            </span>
+            <span class="block search-meta">
+              <h4><%=link_to result.title, result %> | <%= link_to result.item_number, result %></h2>
+              <p><%= read_more(result) %></p>
+            </span>
           </li>
         <% end %>  
-      </ol>
+      </ul>
+      <%# @results.paginate %>
       <p><em>Your search found <b><%=  @results.count.to_s %></b> results.</em></p>
     <% end %>
   </div>  

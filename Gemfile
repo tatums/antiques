@@ -11,6 +11,7 @@ gem 'rack' , '1.3.3'
 #gem 'prawn'
 
 gem 'pdfkit'
+gem 'wkhtmltopdf-binary'
 
 #gem 'mysql2'
 #gem 'sqlite3'
@@ -34,7 +35,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'mysql2'
+gem 'kaminari'
+#gem 'mysql2'
 # gem 'thinking-sphinx', :git => 'git://github.com/freelancing-god/thinking-sphinx.git', :branch  => 'rails3'
 gem 'sunspot_rails'
 

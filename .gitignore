@@ -7,3 +7,5 @@ tmp/cache/sass/
 tmp/pids/
 .sass-cache/
 public/uploads/
+
+solr/data/

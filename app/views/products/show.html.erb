@@ -6,7 +6,7 @@
 		<% end %>
 		
 	</span>
-	<span class="block meta">
+	<span class="block show-meta">
 	    <h3><%= @product.title %></h3>
 		  <h4><%= country_and_period(@product) %> </h4>
 		  <p class="meta-data"><%= full_dimensions(@product) %></p>
@@ -16,10 +16,10 @@
 		  <p id="product-desc"><%# setup_paragraphs(@product) %><%# @product.body.html_safe %></p>
 		  -->
 		<% if user_signed_in? %>
-			<%= link_to 'Back', products_path %> |
-			<%= link_to 'Edit', edit_product_path(@product) %> <br />
-			<%= link_to 'Upload Images', product_images_path(@product)%><br />
-			<%= link_to 'Set Dimensions', product_measurements_path(@product)%><br />
+			
+			<%= link_to 'Edit', edit_product_path(@product), :class=>"admin-link" %> <br />
+			<%= link_to 'Upload Images', product_images_path(@product), :class=>"admin-link" %><br />
+			<%= link_to 'Set Dimensions', product_measurements_path(@product), :class=>"admin-link" %><br />
 			Created on <%= @product.created_at.strftime("%m/%d/%Y at %I:%M %p") %><br />
 			Updated on <%= @product.updated_at.strftime("%m/%d/%Y at %I:%M %p") %>
 			

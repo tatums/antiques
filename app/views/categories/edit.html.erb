@@ -1,6 +1,4 @@
-<%= @category.title %>
+<%= link_to 'Back', categories_path, :class=>'back' %>
+<h1 class="status"><%= capitalize_title(@category) %></h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>

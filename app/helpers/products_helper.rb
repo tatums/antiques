@@ -1,7 +1,7 @@
 module ProductsHelper
 
   def formated_dimension(measurement)
-    data = measurement.dimension + " " + measurement.amount +  measurement.unit_of_measure + "<br />" + link_to('Edit', edit_measurement_path(measurement))
+    data = measurement.dimension + " " + measurement.amount +  measurement.unit_of_measure + "<br />" + link_to('Edit', edit_measurement_path(measurement), :class=>"admin-link")
     return data.html_safe
   end
 

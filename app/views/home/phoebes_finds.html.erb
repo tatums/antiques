@@ -12,11 +12,7 @@
 	</script>
 <% end %>
 
-<% if user_signed_in? %>
 
-<%= link_to 'Back', admin_path, :class => "back" %>
-  <h1 class="status">Products</h1>
-<% end %>
 
 <p id="page_headline">PHOEBE'S FINDS</p>
 
@@ -37,7 +33,4 @@
 
   <% end %>
 </ul>
-
-<% if user_signed_in? %>
-	<%= link_to 'New Product', new_product_path %>
-<% end %>
+<p class="paginate"><%= paginate @products %></p>

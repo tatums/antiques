@@ -12,6 +12,18 @@
 	
 </head>
 <body>
+<% if user_signed_in? %>
+  <script language="javascript">
+  	$(document).ready(function(){
+  		$('#categories').sortable({
+  			update: function(event, ui) {
+  				var CategoriesOrder = $(this).sortable('toArray');
+  				$.post( 'categories/sort', {CategoriesOrder:CategoriesOrder});
+  			}
+  		});
+  	});
+  </script>
+<% end %>
 
   <div id="notifications"> 
     <%= render 'layouts/notifications' %>
@@ -36,10 +48,11 @@
 				
 				<div id="sidebar">
 					<ul id="categories"> 
-						<%= render 'layouts/sidebar' %>
-						
-						<%= render 'layouts/admin_links' %>
+						<%= render 'layouts/sidebar' %>						
 					</ul> 
+					<ul>
+					  <%= render 'layouts/admin_links' %>
+					</ul>  
 				</div>
 
 			</div>

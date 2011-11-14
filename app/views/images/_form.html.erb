@@ -13,12 +13,12 @@
 
   <%= image_tag(@image.image_url(:thumb_200)) if @image.image? %><br />
 
-  <div class="field">
+  <div class="upload-field">
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
-
   </div>
+  
   <div class="actions">
-    <%= f.submit :id => 'upload-button' %>
+    <%= f.submit "Upload", :id => 'upload-button' %>
   </div>
 <% end %>
