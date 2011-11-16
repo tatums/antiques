@@ -33,8 +33,8 @@ input#product_image{border:none;}
 
 
 //Links
-#rightcolumn a:link { text-decoration: none; color: gray;}
-#rightcolumn a:visited { text-decoration: none; color: gray;}
+#rightcolumn a:link { text-decoration: none; color: black;}
+#rightcolumn a:visited { text-decoration: none; color: black;}
 #rightcolumn a:hover { text-decoration: none; color: black;}
 #rightcolumn a:active { text-decoration: none;}
 
@@ -133,30 +133,7 @@ input#product_image{border:none;}
 	padding: 8px, 0, 0, 30px;
 }
 
-#search-box input{font-size:18px; color:gray;}
-#search-box{background-color: #F9F5E5; padding:20px 20px; margin-bottom:50px; width:500px; height:100px;}
-#bottom-search-tagline{margin-top:40px;}
-#search-results{  }
-#search-results p { margin-top:20px;  }
-#search-results ul li h2 {margin:0;}
-#search-results ul li p { margin-top:0px;}
 
-#search-results 
-#search-results .search-photo {float:left; width:100px;}
-#search-results .search-meta {float:right; width:480px;}
-
-
-#contact-page form{
-background-color: #F9F5E5; 
-margin:0 0 20px 0;
-width:500px;
-padding:14px;
-
-}
-#contact-page .field label{display:block;text-align:right;width:140px; float:left; margin:5px 0 10px 10px;}
-#contact-page .field input{float:left; font-size:12px; padding:4px 2px; border:solid 1px #aacfe4; width:300px; margin:0 0 10px 10px; }
-#contact-page .actions input{display:block; margin:10px 0 0 365px;}
-#contact-page .field textarea{float:left; font-size:12px; padding:4px 2px; border:solid 1px #aacfe4; width:300px;height:175px; margin:2px 0 20px 10px; }
 
 //Admin Links
 #rightcolumn a.admin-link{color:red;}
@@ -216,7 +193,8 @@ padding:14px;
 //Products
 #products { list-style-type: none;  padding: 0; }
 #products ul{ list-style-type: none;  padding:0; margin:0; }
-#products li{height:auto;  overflow:auto;  margin:0;}
+#products li{height:auto;  overflow:auto; padding:20px 0; margin:10px 0; border-top:1px solid gray; }
+#products .meta h3 a{ color:black;}
 .product h3{padding:0 0 2px 0; margin:0 0 2px 0;}
 
 
@@ -302,12 +280,41 @@ div#header ul#nav li.active a {
 
 //Subscribe
 
-#subscribe {margin-left:30px;color:gray; width:400px; overflow:auto; padding:0 20px;}
-#subscribe p {margin-bottom:20px;}
-.subscribe {margin-bottom:20px;}
-.subscribe .field input{ color:gray;  float:right; border:2px solid gray; display:block;}
-.subscribe label{font-size:16px; margin-bottom:20px;}
-.subscribe input{width:200px; float:right;}
+#subscribe p {margin-bottom:20px; font-size:14pxs;}
+#subscribe form{background-color: #F9F5E5; margin:0 0 20px 0; width:500px; padding:14px;}
+
+#subscribe .field label{display:block;text-align:right;width:140px; float:left; margin:5px 0 10px 10px;}
+#subscribe .field input{float:left; font-size:12px; padding:4px 2px; border:solid 1px #aacfe4; width:300px; margin:0 0 10px 10px; }
+#subscribe .actions input{display:block; margin:10px 0 0 365px;}
+#subscribe .field textarea{float:left; font-size:12px; padding:4px 2px; border:solid 1px #aacfe4; width:300px;height:175px; margin:2px 0 20px 10px; }
+
+
+//Contact
+
+#contact-page form{ background-color: #F9F5E5; margin:0 0 20px 0; width:500px; padding:14px;}
+#contact-page .field label{display:block;text-align:right;width:140px; float:left; margin:5px 0 10px 10px;}
+#contact-page .field input{float:left; font-size:12px; padding:4px 2px; border:solid 1px #aacfe4; width:300px; margin:0 0 10px 10px; }
+#contact-page .actions input{display:block; margin:10px 0 0 365px;}
+#contact-page .field textarea{float:left; font-size:12px; padding:4px 2px; border:solid 1px #aacfe4; width:300px;height:175px; margin:2px 0 20px 10px; }
+
+//Search
+
+
+#search-box {background-color: #F9F5E5; margin:0 0 20px 0; width:500px; padding:14px;}
+#search-box form{overflow:auto;}
+#search-box input#query{float:left; font-size:12px; padding:4px 2px; border:solid 1px #aacfe4; width:250px; margin:0; }
+#search-box .actions input{display:block; margin:10px 0 0 365px;}
+#bottom-search-tagline{margin-top:40px;}
+
+
+#search-results .search-meta ul li h4 a{ color:black;}
+#search-results p {margin-top:20px;}
+#search-results ul li h2 {margin:0;}
+#search-results ul li p {margin-top:0px;}
+#search-results ul li {overflow:auto; margin:5px 0; padding: 5px 0; border-top:1px solid gray;}
+#search-results .search-photo {float:left; width:100px;}
+#search-results .search-meta {float:right; width:480px;}
+
 
 
 //Footer
@@ -356,6 +363,7 @@ div#header ul#nav li.active a {
 
 //Measurement
 #measurements{font-size:16px; overflow:auto; margin:20px 0;}
+
 
 .measurement{float:left; padding:10px;}
 

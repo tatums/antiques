@@ -3,9 +3,9 @@
   <p id="page_headline">SEARCH</p>
 
   <div id="search-box">
-  <p>Search by keyword:</p>
+  <p id="seach-overhead">Search by keyword:</p>
   <%= form_tag search_path, :method => :get do %>
-    <%= text_field_tag :query, params[:query] %> <%= submit_tag "Find!" %>
+      <%= text_field_tag :query, params[:query] %> <%= submit_tag "Find!" %>
   <% end %>
   <p id="bottom-search-tagline"><b>Please select a search phrase to search product descriptions</b></p>
   </div>

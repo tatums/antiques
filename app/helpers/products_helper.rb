@@ -7,13 +7,14 @@ module ProductsHelper
 
   def full_dimensions(product)
     data = product.measurements.order_by_position.collect { |d| d.full_line }.join( '<span> x </span>' )
-    return data.html_safe
+    output = "<p class='measurements'>"+data+"</p>"
+    return output.html_safe
   end
 
   
   def country_and_period(product)
     unless product.country.nil? or product.period.nil?
-       product.country + " | " + product.period
+       product.country + ", " + product.period
     end
   end
   
@@ -25,9 +26,10 @@ module ProductsHelper
       if total_words < preview_words
         preview = desc          
       else
-        preview = desc.split[0..preview_words].join(" ")+" ... "
+        preview = desc.split[0..preview_words].join(" ")+" ..."
       end
-    return preview.html_safe
+      data = "<p id='product-desc'>"+preview +"</p>"
+    return data.html_safe
   end  
 
   def setup_paragraphs(product)

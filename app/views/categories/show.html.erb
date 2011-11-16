@@ -25,9 +25,10 @@
   			<span class="block meta">
   			  <h3><%= link_to tag.product.title, tag.product %></h3>
   				<h4><%= country_and_period(tag.product) %> </h4>
-    		  <p class="meta-data dimenstions"><%= full_dimensions(tag.product) %></p>
     		  <p class="meta-data inv">Inventory Number: <%= tag.product.item_number.to_s %></p>
-  				<p id="product-desc"><%= read_more(tag.product) %></p>
+  				<%= read_more(tag.product) %>
+    		  <%= full_dimensions(tag.product) %>
+
   			</span>
   		<% end %>
   	<% end %>
