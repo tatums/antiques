@@ -28,17 +28,6 @@ PhoebeboothanitquesCom2::Application.configure do
 
 
 
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => 'phoebeboothantiques.com',
-    :user_name            => 'admin@phoebeboothantiques.com',
-    :password             => 'pa88word',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true  }
-
 
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH

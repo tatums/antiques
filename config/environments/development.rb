@@ -29,18 +29,6 @@ PhoebeboothanitquesCom2::Application.configure do
   config.assets.debug = true
   
   
-  config.action_mailer.perform_deliveries = true
-
-    config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => 'phoebeboothantiques.com',
-    :user_name            => 'admin@phoebeboothantiques.com',
-    :password             => 'pa88word',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true  }
-  
   
   #HACK TO GET PDFKIT RUNNING
   #config.threadsafe! 

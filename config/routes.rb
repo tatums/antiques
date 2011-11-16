@@ -28,7 +28,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
     get "backend", :to => "devise/sessions#new"
     get "logout", :to => "devise/sessions#destroy"
   end
-  match 'admin' => 'admin#index', :as => :admin
+  #match 'admin' => 'admin#index', :as => :admin
   #match 'categories/:title' => 'categories#show'
   
   match 'about' => 'home#about', :as => :about
