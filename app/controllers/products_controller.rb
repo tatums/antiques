@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @keyword = @product.keywords.build
 
     respond_to do |format|
       format.html # show.html.erb

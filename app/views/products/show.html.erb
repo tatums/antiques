@@ -23,6 +23,13 @@
 		<% if user_signed_in? %>
 			<%= link_to 'Edit', edit_product_path(@product), :class=>"admin-link" %> <br />
 			<%= link_to 'Upload Images', product_images_path(@product), :class=>"admin-link" %><br />
+			
+			<dl>
+			  <dt>Keywords</dt>
+			  <%= render 'keywords' %>
+			</dl>
+			<%= render 'keyword' %>
+			
 			<p class="timestamps">
 			  Created on <%= @product.created_at.strftime("%m/%d/%Y at %I:%M %p") %><br />
 			  Updated on <%= @product.updated_at.strftime("%m/%d/%Y at %I:%M %p") %>

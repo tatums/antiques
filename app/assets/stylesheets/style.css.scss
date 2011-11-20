@@ -314,6 +314,11 @@ div#header ul#nav li.active a {
 #contact-page .contact textarea { width:350px;height:175px; display: block; border: 2px solid gray; font-size: 14px; line-height: 1.5em; color: gray; padding: 4px; }
 #contact-page .contact textarea:focus { border: 2px solid black; }
 
+#contact-page dl dt{font-size:22px; margin-bottom:10px;}
+#contact-page dl dd {margin:10px 0 10px 10px;}
+#contact-page dl dd a:link{color:#4D642D;}
+#contact-page dl dd a:link:hover{color:#54B919;}
+
 
 //Search
 #search-box { margin-bottom:50px; width:420px; padding:0px;}

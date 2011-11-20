@@ -1,6 +1,5 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
 
-  resources :keywords, :only =>[:create, :destroy]
   resources :contacts, :only => [:new, :create]
   resources :emails
   resources :sliders do
@@ -34,15 +33,12 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   match 'phoebes_finds' => 'home#phoebes_finds', :as => :phoebes_finds
   match 'subscribe' => 'emails#new', :as => :subscribe
   match 'thank_you' => 'home#thank_you', :as => :thank_you
-  match 'contact' => 'contacts#new', :as => :contact
+  #match 'contact' => 'contacts#new', :as => :contact
+  match 'contact' => 'home#contact', :as => :contact
   
   resources :products do
     resources :images, :shallow  => true
-    resources :measurements, :shallow => true do
-      collection do
-        post 'sort'
-      end      
-    end
+    resources :keywords, :only =>[:create, :destroy]
     collection do
       post 'sort'
     end

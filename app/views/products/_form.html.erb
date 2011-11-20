@@ -25,16 +25,16 @@
         <%= f.file_field :image %>
         <%= f.hidden_field :image_cache %>
       </div>
+      <div class="field edit-product">
+        <%= f.check_box :phoebe_find %>
+        <%= f.label :phoebe_find %>
+      </div>
+      <% Category.active.order(:position).each do |category| %>
         <div class="field edit-product">
-          <%= f.check_box :phoebe_find %>
-          <%= f.label :phoebe_find %>
+          <%= check_box_tag "product[category_ids][]", category.id, @product_categories.include?(category.id) %>
+    	    <%= category.title.capitalize %>
         </div>
-        <% Category.active.order(:position).each do |category| %>
-          <div class="field edit-product">
-            <%= check_box_tag "product[category_ids][]", category.id, @product_categories.include?(category.id) %>
-      	    <%= category.title.capitalize %>
-          </div>
-        <% end %>
+      <% end %>
     </div>
   
   
