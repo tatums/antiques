@@ -1,10 +1,8 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
 
-
+  resources :keywords, :only =>[:create, :destroy]
   resources :contacts, :only => [:new, :create]
-
   resources :emails
-  
   resources :sliders do
     member do
       post 'toggle'
@@ -28,9 +26,8 @@ PhoebeboothanitquesCom2::Application.routes.draw do
     get "backend", :to => "devise/sessions#new"
     get "logout", :to => "devise/sessions#destroy"
   end
-  #match 'admin' => 'admin#index', :as => :admin
-  #match 'categories/:title' => 'categories#show'
   
+  #Navigation Links
   match 'about' => 'home#about', :as => :about
   match 'search' => 'home#search', :as => :search
   match 'new_acquisitions' => 'home#new_acquisitions', :as => :new_acquisitions
@@ -39,8 +36,6 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   match 'thank_you' => 'home#thank_you', :as => :thank_you
   match 'contact' => 'contacts#new', :as => :contact
   
-  
-
   resources :products do
     resources :images, :shallow  => true
     resources :measurements, :shallow => true do
@@ -54,7 +49,6 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   end 
   get "home/index"
   
-
    root :to => 'home#index'
 
 

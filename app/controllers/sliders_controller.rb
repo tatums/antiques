@@ -1,5 +1,6 @@
 class SlidersController < ApplicationController
-
+  before_filter :authenticate_user!
+  
   def index
     @sliders = Slider.order(:position)
 

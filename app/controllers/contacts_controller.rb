@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
-  # GET /contacts
-  # GET /contacts.json
+  before_filter :authenticate_user!, :except => [:new, :create]
+  
   def index
     @contacts = Contact.all
 
@@ -10,8 +10,6 @@ class ContactsController < ApplicationController
     end
   end
 
-  # GET /contacts/1
-  # GET /contacts/1.json
   def show
     @contact = Contact.find(params[:id])
 
@@ -21,8 +19,6 @@ class ContactsController < ApplicationController
     end
   end
 
-  # GET /contacts/new
-  # GET /contacts/new.json
   def new
     @contact = Contact.new
 
@@ -32,13 +28,10 @@ class ContactsController < ApplicationController
     end
   end
 
-  # GET /contacts/1/edit
   def edit
     @contact = Contact.find(params[:id])
   end
 
-  # POST /contacts
-  # POST /contacts.json
   def create
     @contact = Contact.new(params[:contact])
 
@@ -54,8 +47,6 @@ class ContactsController < ApplicationController
     end
   end
 
-  # PUT /contacts/1
-  # PUT /contacts/1.json
   def update
     @contact = Contact.find(params[:id])
 
@@ -70,8 +61,6 @@ class ContactsController < ApplicationController
     end
   end
 
-  # DELETE /contacts/1
-  # DELETE /contacts/1.json
   def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy

@@ -1,4 +1,6 @@
 class ImagesController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @product = Product.find(params[:product_id])
     @images = @product.images.all
