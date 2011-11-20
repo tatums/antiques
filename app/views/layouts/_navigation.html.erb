@@ -1,37 +1,6 @@
-  <img src="images/phoebe_navigation/phoebe_navigation_01.jpg" width="41" height="35" alt="Phoebe Booth 1" />
-  
-  <a href="index.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Phoebe Booth Home','','images/phoebe_navigation/phoebe_navigation_02_home_b.jpg',1)">
-    <img src="images/phoebe_navigation/phoebe_navigation_02_home_a.jpg" width="50" height="35" border="0" id="Phoebe Booth Home" />
-  </a>
-  
-  <img src="images/phoebe_navigation/phoebe_navigation_03.jpg" width="80" height="35" alt="Phoebe Booth 3" />
-    
-  <a href="about.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Phoebe Booth About','','images/phoebe_navigation/phoebe_navigation_04_about_b.jpg',1)">
-    <img src="images/phoebe_navigation/phoebe_navigation_04_about_a.jpg" width="59" height="35" border="0" id="Phoebe Booth About" />
-  </a>
-    
-  <img src="images/phoebe_navigation/phoebe_navigation_05.jpg" width="78" height="35" alt="Phoebe Booth 5" />
-  
-  <a href="search.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Phoebe Booth Search','','images/phoebe_navigation/phoebe_navigation_06_search_b.jpg',1)">
-    <img src="images/phoebe_navigation/phoebe_navigation_06_search_a.jpg" width="68" height="35" border="0" id="Phoebe Booth Search" />
-  </a>
-    
-  <img src="images/phoebe_navigation/phoebe_navigation_07.jpg" width="58" height="35" alt="Phoebe Booth 7" />
-    
-  <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Phoebe Booth Finds','','images/phoebe_navigation/phoebe_navigation_08_finds_b.jpg',1)">
-      <img src="images/phoebe_navigation/phoebe_navigation_08_finds_a.jpg" width="145" height="35" border="0" id="Phoebe Booth Finds" />
-  </a>
-  
-  <img src="images/phoebe_navigation/phoebe_navigation_09.jpg" width="54" height="35" alt="Phoebe Booth 9" />
-  
-  <a href="subscribe.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Phoebe Booth Subscribe','','images/phoebe_navigation/phoebe_navigation_10_subscribe_b.jpg',1)">
-      <img src="images/phoebe_navigation/phoebe_navigation_10_subscribe_a.jpg" width="90" height="35" border="0" id="Phoebe Booth Subscribe" />
-  </a>
-  
-  <img src="images/phoebe_navigation/phoebe_navigation_11.jpg" width="79" height="35" alt="Phoebe Booth 11" />
-  
-  <a href="contact.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Phoebe Booth Contact','','images/phoebe_navigation/phoebe_navigation_12_contact_b.jpg',1)">
-      <img src="images/phoebe_navigation/phoebe_navigation_12_contact_a.jpg" width="78" height="35" border="0" id="Phoebe Booth Contact" />
-  </a>
-  
-  <img src="images/phoebe_navigation/phoebe_navigation_13.jpg" width="42" height="35" alt="Phoebe Booth 13" />
+  <%= link_to 'Home', root_url, :class => "home" %>
+  <%= link_to 'ABOUT', about_url, :class => "about" %>
+  <%= link_to 'SEARCH', search_url, :class => "search" %>
+  <%= link_to 'PHOEBE\'S FINDS', phoebes_finds_url, :class => "finds" %>
+  <%= link_to 'SUBSCRIBE', subscribe_url, :class => "subscribe" %>
+  <%= link_to 'CONTACT', contact_url, :class => "contact" %>

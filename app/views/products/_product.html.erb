@@ -3,10 +3,13 @@
 		<%= link_to image_tag(product.image_url(:thumb_200) ), product if product.image? %>
 	</span>
 	<span class="block meta">
-	  <h3><%= link_to product.title, product %></h3>
-		<h4><%= country_and_period(product) %> </h4>
-	  <p class="meta-data">Inventory Number: <%= product.item_number.to_s %></p>
-		<%= read_more(product) %>
-	  <%= full_dimensions(product) %>
+	  <ul>
+		  <li><h3><%= link_to product.title, product %></h3></li>
+			<li><%= country_and_period(product) %> </li>
+		  <li>Inventory Number: <%= product.item_number.to_s %></li>
+		  <%= read_more_setup_as_paragraphs(product).html_safe %>
+		  <%= formatted_dimensions(product).html_safe %>
+      <%= formatted_price(product.price).to_s.html_safe %>
+	  </ul>	  
 	</span>
 <% end %>

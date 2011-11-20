@@ -3,16 +3,21 @@
   <p id="page_headline">SEARCH</p>
 
   <div id="search-box">
-  <p id="seach-overhead">Search by keyword:</p>
   <%= form_tag search_path, :method => :get do %>
-      <%= text_field_tag :query, params[:query] %> <%= submit_tag "Find!" %>
+    <div class="field search">
+      <%= text_field_tag :query, params[:query] %>
+    </div>
+    <div class="actions">  
+       <%= submit_tag "Find!" %>
+    </div>   
   <% end %>
-  <p id="bottom-search-tagline"><b>Please select a search phrase to search product descriptions</b></p>
   </div>
 
 
-  <div id="search-results">
+  <div id="search-results">    
     <% if @results %>
+    <p><em>Your search found <b><%=  @results.count.to_s %></b> results.</em></p>
+    
       <ul>
         <% @results.each do |result| %>
           <li>
@@ -20,14 +25,13 @@
               <%= link_to image_tag(result.image_url(:thumb_100) ), result if result.image? %>
             </span>
             <span class="block search-meta">
-              <h4><%=link_to result.title, result %> | <%= link_to result.item_number, result %></h2>
+              <h4><%= link_to result.item_number, result %> - <%=link_to result.title, result %></h4>
               <p><%= read_more(result) %></p>
             </span>
           </li>
         <% end %>  
       </ul>
       <%# @results.paginate %>
-      <p><em>Your search found <b><%=  @results.count.to_s %></b> results.</em></p>
     <% end %>
   </div>  
 </div>

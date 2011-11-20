@@ -4,7 +4,12 @@ class ContactMailer < ActionMailer::Base
   def contact_me(contact)
       @contact = contact
       @url  = "http://phoebeboothantiques.com"
-      mail(:to => "phoebe@phoebeboothantiques.com", :subject => "Contact me")
+      mail(:to => "tatum@ashlandstudios.com", :subject => "Contact me")
   end
   
+  def subscribe(email)
+      @email = email
+      @url  = "http://phoebeboothantiques.com"
+      mail(:to => "tatum@ashlandstudios.com", :subject => "Subscription")
+  end    
 end

@@ -14,7 +14,6 @@
 
 
 <p id="page_headline"><%= upcase_title(@category) %></p>
-
   <% if @tags.size > 0 %>
   <ul id="products">  
   	<% @tags.each do |tag| %>		
@@ -23,11 +22,15 @@
   				<%= link_to image_tag(tag.product.image_url(:thumb_200) ), tag.product if tag.product.image? %>
   			</span>
   			<span class="block meta">
-  			  <h3><%= link_to tag.product.title, tag.product %></h3>
-  				<h4><%= country_and_period(tag.product) %> </h4>
-    		  <p class="meta-data inv">Inventory Number: <%= tag.product.item_number.to_s %></p>
-  				<%= read_more(tag.product) %>
-    		  <%= full_dimensions(tag.product) %>
+  			  <ul>
+    			  <li><h3><%= link_to tag.product.title, tag.product %></h3></li>
+    				<li><%= country_and_period(tag.product) %> </li>
+      		  <li>Inventory Number: <%= tag.product.item_number.to_s %></li>
+      		  <%= read_more_setup_as_paragraphs(tag.product).html_safe %>
+      		  
+      		  <%= formatted_dimensions(tag.product).html_safe %>
+            <%= formatted_price(tag.product.price).to_s.html_safe %>
+    		  </ul>
 
   			</span>
   		<% end %>

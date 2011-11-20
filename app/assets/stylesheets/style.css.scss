@@ -25,12 +25,10 @@ a:active { text-decoration: none;}
 .field textarea:focus{border:2px solid black;}
 
 input#product_image{border:none;}
-.checkbox-line{margin:10px 0;}
-.inline_checkbox_field { display:inline; font-size:16px;font-family:helvetica; padding-right:7px; margin:130px 0;}
-
-//.actions input{padding:5px; margin:5px;border:2px solid gray; background-color:white;}
-//.actions input:hover{ border:2px solid #070707; background-color:gray; color:white;}
-
+#edit-product-container{ overflow:auto; }
+.edit-product-left{float:left;width:180px; overflow:hidden;}
+.edit-product-right{ float:right;width:400px;}
+.edit-product-right textarea{ width:90%;}
 
 //Links
 #rightcolumn a:link { text-decoration: none; color: black;}
@@ -184,31 +182,48 @@ input#product_image{border:none;}
 	margin-bottom:20px;
 }
 
-
-
+#facebook{
+	float:right;
+	margin-right:10px;
+}
 
 
 //Tatum's Backend Stylings
 
-//Products
+//Products Listing
 #products { list-style-type: none;  padding: 0; }
 #products ul{ list-style-type: none;  padding:0; margin:0; }
 #products li{height:auto;  overflow:auto; padding:20px 0; margin:10px 0; border-top:1px solid gray; }
 #products .meta h3 a{ color:black;}
 .product h3{padding:0 0 2px 0; margin:0 0 2px 0;}
 
+#products .meta ul li{margin:0 0 7px 0; padding:0; border:none;}
+#products .meta ul p{margin:0 0 7px 0; }
 
-.show-meta {float:right; width:280px;}
+//Edit Product Form
+#product .field {margin:5px 0;}
+#product .dimensions input{width:50px;}
+#product .table-dimensions input{width:50px;}
+
+
+
+//Show Product
 #show-product{overflow:auto; }
-.photo{float:left; width:200px;}
+#show-product .show-meta {float:right; width:280px;}
+#show-product .show-meta ul li{margin:0 0 7px 0; padding:0; border:none;}
+#show-product .show-meta ul li p{margin:0 0 7px 0; padding:0;}
+
+.photo{float:left;}
 .meta{float:right; width:380px;}
 
 #rightcolumn p.meta-data{margin:0; padding:0;}
 #product-desc{padding:15px 0 0 0;}
 
+#rightcolumn a .more {color:#58A51D;}
+.timestamps{margin:20px 0; font-size:11px; font-style:italic;}
 //.product h3{padding:0 0 10px 0; margin:0 0 10px 0;}
-.meta h3 a{text-decoration:none;}
 
+.meta h3 a{text-decoration:none;}
 .dimensions span{ font-weight:800;}
 
 //COLUMNS
@@ -221,9 +236,7 @@ p{padding:0;margin:0;}
 //ul#nav {background-color: #319E00;}
 
 #container {background-color:white;width:955px; margin:0 auto;}
-#footer {color:white;}
-#footer .column { margin-bottom:30px;}
-//#footer p {color:gray; padding:10px;}
+#footer { height:75px; }
 #footer p{color:gray; margin:0; padding:0;}
 
 
@@ -251,8 +264,7 @@ div#header ul#nav li {
 	padding-bottom: 25px;
 }
 
-div#header ul#nav li a {
-	
+div#header ul#nav li a {	
 	text-decoration: none;
 	padding: 4px 13px 5px 13px;
 	margin-right: 10px;
@@ -268,8 +280,6 @@ div#header ul#nav li.active a {
 	border: 1px solid #eaeaea;
 }
 
-
-
 #sidebar li.admin-link a{color:red; font-style:italic;}
 
 #admin-console{}
@@ -279,33 +289,40 @@ div#header ul#nav li.active a {
 
 
 //Subscribe
+#subscribe {overflow:auto; width:365px; margin-bottom:40px;}
+#subscribe p { margin-bottom:20px; font-size:14px;}
+#subscribe form{ margin:0; width:365px; padding:0;}
 
-#subscribe p {margin-bottom:20px; font-size:14pxs;}
-#subscribe form{background-color: #F9F5E5; margin:0 0 20px 0; width:500px; padding:14px;}
-
-#subscribe .field label{display:block;text-align:right;width:140px; float:left; margin:5px 0 10px 10px;}
-#subscribe .field input{float:left; font-size:12px; padding:4px 2px; border:solid 1px #aacfe4; width:300px; margin:0 0 10px 10px; }
-#subscribe .actions input{display:block; margin:10px 0 0 365px;}
-#subscribe .field textarea{float:left; font-size:12px; padding:4px 2px; border:solid 1px #aacfe4; width:300px;height:175px; margin:2px 0 20px 10px; }
+.subscribe.field { display: block; margin:5px 0; overflow:auto; }
+.subscribe label { width:100px; float:left; font-size: 14px; color: black;}
+.subscribe input { width:250px; float:left; font-size: 14px; color: gray; border: 2px solid gray; padding: 4px; }
+.subscribe input:focus { border: 2px solid black; }
+.subscribe textarea { display: block; border: 2px solid gray; font-size: 14px; line-height: 1.5em; color: gray; padding: 4px; }
+.subscribe textarea:focus { border: 2px solid black; }
 
 
 //Contact
+#contact-page { overflow:auto; margin-bottom:50px; }
+#contact-page p { margin-bottom:20px; font-size:14px; }
+#contact-page form{ margin:0; width:465px; padding:0; }
+#contact-page .actions{ margin-left:100px; }
 
-#contact-page form{ background-color: #F9F5E5; margin:0 0 20px 0; width:500px; padding:14px;}
-#contact-page .field label{display:block;text-align:right;width:140px; float:left; margin:5px 0 10px 10px;}
-#contact-page .field input{float:left; font-size:12px; padding:4px 2px; border:solid 1px #aacfe4; width:300px; margin:0 0 10px 10px; }
-#contact-page .actions input{display:block; margin:10px 0 0 365px;}
-#contact-page .field textarea{float:left; font-size:12px; padding:4px 2px; border:solid 1px #aacfe4; width:300px;height:175px; margin:2px 0 20px 10px; }
+#contact-page .contact { display: block; margin:5px 0; overflow:auto; }
+#contact-page .contact label { width:100px; float:left; font-size: 14px; color: black;}
+#contact-page .contact input { width:350px; float:left; font-size: 14px; color: gray; border: 2px solid gray; padding: 4px; }
+#contact-page .contact input:focus { border: 2px solid black; }
+#contact-page .contact textarea { width:350px;height:175px; display: block; border: 2px solid gray; font-size: 14px; line-height: 1.5em; color: gray; padding: 4px; }
+#contact-page .contact textarea:focus { border: 2px solid black; }
+
 
 //Search
-
-
-#search-box {background-color: #F9F5E5; margin:0 0 20px 0; width:500px; padding:14px;}
+#search-box { margin-bottom:50px; width:420px; padding:0px;}
 #search-box form{overflow:auto;}
-#search-box input#query{float:left; font-size:12px; padding:4px 2px; border:solid 1px #aacfe4; width:250px; margin:0; }
-#search-box .actions input{display:block; margin:10px 0 0 365px;}
-#bottom-search-tagline{margin-top:40px;}
-
+#search-box .search { display: block; margin:5px 0; overflow:auto; }
+#search-box .search label { width:100px; float:right; font-size: 18px; color: black;}
+#search-box .search input{ width:260px; float:left; font-size: 14px; color: gray; border: 2px solid gray; padding: 4px;  }
+#search-box .search input:focus { border: 2px solid black; }
+#search-box .actions input{display:block;}
 
 #search-results .search-meta ul li h4 a{ color:black;}
 #search-results p {margin-top:20px;}
@@ -361,14 +378,7 @@ div#header ul#nav li.active a {
 .status{position:absolute; margin-top:-30px; margin-left:75px; font-size:20px;}
 
 
-//Measurement
-#measurements{font-size:16px; overflow:auto; margin:20px 0;}
 
-
-.measurement{float:left; padding:10px;}
-
-#new-measurement{margin:50px 0 0 0;}
-.measurement_image{}
 
 .column-container{ overflow:auto;}
 .left-column{float:left; width:300px;}
@@ -377,9 +387,7 @@ div#header ul#nav li.active a {
 #about p{margin-bottom:20px; font-family: "Times New Roman", Times, serif; font-size: 12pt; line-height: 20px;}
 
 /*#Slideshow--------------------------------------------*/
-
 #slideshow { width: 600px; height: 375px; padding: 0;} 
-
 #slideshow img {
     padding: 0 10px 10px 10px;
     width: 600px;

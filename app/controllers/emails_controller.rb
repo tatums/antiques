@@ -1,4 +1,6 @@
 class EmailsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:new, :create]
+
   def index
   end
 
@@ -14,6 +16,7 @@ class EmailsController < ApplicationController
 
     respond_to do |format|
       if @email.save
+        ContactMailer.subscribe(@email).deliver
         format.html { redirect_to thank_you_path, notice: 'Email was successfully saved.' }
         format.json { render json: @email, status: :created, location: @email }
       else
