@@ -17,6 +17,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
     end
     collection do
       post 'sort'
+      post 'sort_products'
     end
   end
   devise_for :users 

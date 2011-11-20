@@ -12,8 +12,8 @@ class CategoriesController < ApplicationController
 
 
   def show
-   @category = Category.where(:slug => params[:id]).first
-   @tags = @category.tags.order('tags.position').page params[:page]
+    @category = Category.where(:slug => params[:id]).first
+    @tags = @category.tags.joins(:product).merge(Product.active).order('tags.position').page params[:page]
     respond_to do |format|
      format.html # show.html.erb
      format.json { render json: @category }
@@ -82,6 +82,12 @@ class CategoriesController < ApplicationController
   def sort
     params[:CategoriesOrder].each_with_index do |id, index|
       Category.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
+    end
+    render :nothing => true
+  end
+  def sort_products
+    params[:ProductsOrder].each_with_index do |id, index|
+      Tag.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
     end
     render :nothing => true
   end

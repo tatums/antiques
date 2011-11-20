@@ -9,4 +9,6 @@ class Tag < ActiveRecord::Base
     update_attributes(:position => position)
   end
 
+  scope :active2, where('products.active' => true)
+
 end
