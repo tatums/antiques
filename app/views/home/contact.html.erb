@@ -2,45 +2,16 @@
 <p id="page_headline">CONTACT</p>
 
 <div id="contact-page">
-<%= form_for(@contact) do |f| %>
-  <% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+  <p>Email: phoebe@phoebeboothantiques.com<br />
+    Phone: 917-597-4368
+  </p>  
 
-      <ul>
-      <% @contact.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name, 'Full Name'%>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :zip %>
-    <%= f.text_field :zip %>
-  </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :comments %>
-    <%= f.text_area :comments %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+  <dl>
+    <dt>Upcoming Shows:</dt>
+    <dd><a href="http://www.antiquesandgardenshow.com/">The Antiques and Garden Show of Nashville</a>: February 10-12, 2012</dd>
+    <dd><a href="http://huntvalleyantiquesshow.org/">Maryland Antiques Show of Hunt Valley</a>: February 23-26, 2012</dd>
+    <dd>
+      <a href="http://www.stellashows.com/cgi-bin/texis/scripts/showpromo_info/stellashowdetail.html?idnum=ZJD1463&showabb=botanic20020419">Chicago Botanic Garden Antiques and Garden Fair</a>: April 20-22, 2012</dd>
+    <dd>Shaia Nantucket Antiques Show: August 10-13, 2012</dd>
+  </dl>
 </div>
