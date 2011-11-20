@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
-    @products = Product.order(:position).page params[:page]
+    @products = Product.active.order(:position).page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

@@ -23,7 +23,6 @@ class Product < ActiveRecord::Base
   scope :inactive, where(:active => false)
   scope :phoebe_finds, where(:phoebe_find => true)
 
-  #scope :new_acquisitions, where(:new_acquisition => true)
 
   searchable do
     text :title, :body, :item_number

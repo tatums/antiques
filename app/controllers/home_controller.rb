@@ -16,13 +16,8 @@ class HomeController < ApplicationController
     end
   end
 
-  def new_acquisitions
-    @products = Product.new_acquisitions.order(:position)
-    render 'products/index'
-  end
-
   def phoebes_finds
-    @products = Product.phoebe_finds.order(:position).page params[:page]
+    @products = Product.phoebe_finds.active.order(:position).page params[:page]
   end
   
 
