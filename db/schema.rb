@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20111120142510) do
 
   create_table "keywords", :force => true do |t|
     t.string   "title"
+    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

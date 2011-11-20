@@ -1,8 +1,8 @@
 class Product < ActiveRecord::Base
 
   has_many :images, :dependent => :destroy
-  has_many :measurements, :dependent => :destroy
   has_many :sliders
+  has_many :keywords
  
   has_many :tags
   has_many :categories, :through => :tags

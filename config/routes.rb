@@ -1,6 +1,5 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
 
-  resources :keywords, :only =>[:create, :destroy]
   resources :contacts, :only => [:new, :create]
   resources :emails
   resources :sliders do
@@ -38,11 +37,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   
   resources :products do
     resources :images, :shallow  => true
-    resources :measurements, :shallow => true do
-      collection do
-        post 'sort'
-      end      
-    end
+    resources :keywords, :only =>[:create, :destroy]
     collection do
       post 'sort'
     end
