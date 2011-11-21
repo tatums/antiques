@@ -26,6 +26,9 @@ class Product < ActiveRecord::Base
 
   searchable do
     text :title, :body, :item_number
+    text :keywords do
+      keywords.map(&:title)
+    end
   end
 
   def measurements_setup?

@@ -9,7 +9,7 @@ class KeywordsController < ApplicationController
         format.html { redirect_to @product, notice: 'Keyword was successfully created.' }
         format.json { render json: @keyword, status: :created, location: @keyword }
       else
-        format.html { render action: "new" }
+        format.html {redirect_to @product, notice: 'Keyword was NOT successfully created.'}
         format.json { render json: @keyword.errors, status: :unprocessable_entity }
       end
     end

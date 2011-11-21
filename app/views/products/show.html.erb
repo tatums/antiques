@@ -40,11 +40,43 @@
 
 </div>
 
-
 <script language="javascript">
+
 $(document).ready(function() {
 	/* This is basic - uses default settings */
 	$("a.single_image").fancybox();
 	/* Using custom settings */
+
+
+
+
+  //Monitors the Keyword field and enables and disables the button unless filled.
+  $('#keyword-submit').attr('disabled','disabled');
+       $('#keyword_title').keyup(function(){
+              if($(this).val() == ""){
+                 $('#keyword-submit').attr('disabled','disabled');
+              } else
+              {
+                $('#keyword-submit').removeAttr('disabled');                
+              }
+       });
+  
 });
+</script>
+
+<script language="javascript">
+$(document).ready(function(){
+});
+
+
+
+// $(document).ready(function(){
+//   $('#keyword-submit').attr('disabled','disabled');
+//        $('#keyword_title').keyup(function(){
+//               if($(this).val() != ''){
+//                  $('#keyword-submit').removeAttr('disabled');
+//               }
+//        });
+// });
+
 </script>
