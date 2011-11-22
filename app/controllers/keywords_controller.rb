@@ -18,6 +18,15 @@ class KeywordsController < ApplicationController
   end
 
   def destroy
+    @keyword = Keyword.find(params[:id])
+    @keyword.destroy
+
+    respond_to do |format|
+      format.html { redirect_to @product }
+      format.js
+      format.json { head :ok }
+    end
+    
   end
 
 end

@@ -4,5 +4,5 @@ $("#keywords").append("<%= escape_javascript(render(@keyword)) %>");
 /* Highlight the new comment */
 $("#keywords").effect("highlight", {}, 3000);
 
-$("#keywords_title").clearfield();
+$("#keyword_title").val('');
 $('#keyword-submit').attr('disabled','disabled');

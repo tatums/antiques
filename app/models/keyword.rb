@@ -13,7 +13,6 @@ class Keyword < ActiveRecord::Base
   
   def destroy_associated_product_index
     product.index!
-    
   end
   
 end

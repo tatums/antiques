@@ -39,7 +39,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   
   resources :products do
     resources :images, :shallow  => true
-    resources :keywords, :only =>[:create, :destroy]
+    resources :keywords, :shallow => true, :only =>[:create, :destroy]
     collection do
       post 'sort'
     end

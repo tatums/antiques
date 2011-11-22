@@ -1,1 +1,3 @@
-<%= content_tag(:li, keyword.title, :class => "keyword-title") %>
+<%= content_tag(:li, keyword, :id => "keyword_#{keyword.id}") do %>
+  <%= keyword.title %> <%= link_to 'Delete', keyword_path(keyword), :method => :delete, :class => "delete", :remote => true  %>
+<% end %>
