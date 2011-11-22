@@ -232,7 +232,26 @@ input#product_image{border:none;}
 	color:white; background-color:gray; float:left; display:inline;
 	}
 
-
+.photo{
+	width:200px;
+	height:200px;
+	text-decoration:none;
+	position:relative;
+	display:block;
+	float:left;
+	}
+	
+.photo span.sold{
+	//visibility:hidden;
+	  position:absolute;
+	
+	
+	width: 200px;
+	height: 200px;
+	background:url('sold.png'); 
+//	background-repeat:no-repeat;
+	
+}
 
 
 //COLUMNS

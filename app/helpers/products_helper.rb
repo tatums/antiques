@@ -70,4 +70,9 @@ module ProductsHelper
     return output
   end
   
+  def sold?(active)
+      "<span class='sold'> </span>".html_safe if active == false
+  end
+  
+  
 end
