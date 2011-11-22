@@ -24,7 +24,7 @@ class Product < ActiveRecord::Base
   scope :phoebe_finds, where(:phoebe_find => true)
 
 
-  searchable do
+  searchable :auto_index => true, :auto_remove => true do
     text :title, :body, :item_number
     text :keywords do
       keywords.map(&:title)

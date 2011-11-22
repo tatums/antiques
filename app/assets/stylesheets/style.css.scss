@@ -226,6 +226,15 @@ input#product_image{border:none;}
 .meta h3 a{text-decoration:none;}
 .dimensions span{ font-weight:800;}
 
+//Keywords
+#keywords { overflow:auto;}
+#show-product .show-meta ul#keywords li{margin:2px; padding:4px; border:1px solid black; 
+	color:white; background-color:gray; float:left; display:inline;
+	}
+
+
+
+
 //COLUMNS
 .col-container{overflow:auto; border:1px dashed gray; padding:0 20px;}
 .left{float:left;}

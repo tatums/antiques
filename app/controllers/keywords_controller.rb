@@ -7,6 +7,7 @@ class KeywordsController < ApplicationController
     respond_to do |format|
       if @keyword.save
         format.html { redirect_to @product, notice: 'Keyword was successfully created.' }
+        format.js
         format.json { render json: @keyword, status: :created, location: @keyword }
       else
         format.html {redirect_to @product, notice: 'Keyword was NOT successfully created.'}
