@@ -31,10 +31,10 @@
 
 	<div id="wrapper">
 	
-    	<div id="spinner" class="spinner" style="display:none;">
-    	  <p>Please Wait...</p>
-    		<%= image_tag 'loading.gif', :alt => 'Loading', :id => 'img-spinner' %>
-    	</div>
+    <!-- <div id="spinner" class="spinner" style="display:none">
+      <p>Please Wait...</p>
+      <%= image_tag 'loading.gif', :alt => 'Loading', :id => 'img-spinner' %>
+    </div> -->
   
       <div id="header">
 				<h1><%=link_to image_tag("logo2.gif"), root_url %></h1>
@@ -65,6 +65,13 @@
       <%= render 'layouts/footer' %>
 		</div>
 	
+	
+		<div id="spinner" class="spinner">
+  	  <span><h1>Please Wait...</h1>
+  		<%= image_tag 'loading.gif', :alt => 'Loading', :id => 'img-spinner' %>
+  		</span>
+  	</div>
+  
 </div>
 
 </body>
