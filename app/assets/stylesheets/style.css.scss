@@ -1,11 +1,11 @@
 $lime-green: #54B919;
 * { padding: 0; margin: 0; }
-body {font-family: "Times New Roman", Times, serif;}
+body {font-family: "Times New Roman", Times, serif; color:black;}
 
 img{border:none;}
 ul{list-style:none;}
 h2{margin-bottom:10px;}
-
+h3{margin:0;}
 //Default Links
 a:link { text-decoration: none;	color: #000;}
 a:visited { text-decoration: none; color: #B7B7B7;}
@@ -14,15 +14,10 @@ a:active { text-decoration: none;}
 
 
 //FORMS
+form label{display:inline;}
 .upload-field label{font-family:helvetica; font-size:14px; color:black; }
 .upload-field input{font-family:helvetica; font-size:14px; color:gray; padding:4px;}
 
-.field {display:block;}
-.field label{ font-size:14px; color:black; }
-.field input{ font-size:14px; color:gray; border:2px solid gray; padding:4px;}
-.field input:focus{ border:2px solid black; }
-.field textarea{display:block; border:2px solid gray;font-size:14px; line-height: 1.5em; color:gray; padding:4px;}
-.field textarea:focus{border:2px solid black;}
 
 input#product_image{border:none;}
 #edit-product-container{ overflow:auto; }
@@ -119,7 +114,6 @@ input#product_image{border:none;}
 #sidebar li a:visited {
 	color: #808080;
 	display: block;
-	//padding: 8px, 0px, 30px, 30px;
 	padding-top:8px;
 	padding-left:30px;
 	font-size: 11pt;
@@ -128,7 +122,6 @@ input#product_image{border:none;}
 	color: #CCC;
 	background-position: 0 -32px;
 	font-size: 11pt;
-	padding: 8px, 0, 0, 30px;
 }
 
 
@@ -188,8 +181,6 @@ input#product_image{border:none;}
 }
 
 
-//Tatum's Backend Stylings
-
 //Products Listing
 #products { list-style-type: none;  padding: 0; }
 #products ul{ list-style-type: none;  padding:0; margin:0; }
@@ -200,9 +191,14 @@ input#product_image{border:none;}
 #products .meta ul li{margin:0 0 7px 0; padding:0; border:none;}
 #products .meta ul p{margin:0 0 7px 0; }
 
+
+.products-edit-button{}
+.products-upload-button{}
+
+
 //Edit Product Form
 #product .field {margin:5px 0;}
-#product .dimensions input{width:50px;}
+#product .dimensions input{}
 #product .table-dimensions input{width:50px;}
 
 
@@ -226,15 +222,25 @@ input#product_image{border:none;}
 .meta h3 a{text-decoration:none;}
 .dimensions span{ font-weight:800;}
 
+
+
+#keyword-form input{ margin:10px 0;}
+
 //Keywords
 #keywords { overflow:auto;}
-#show-product .show-meta ul#keywords li{margin:2px; padding:4px; border:1px solid black; 
-	color:white; background-color:gray; float:left; display:inline;
+#show-product .show-meta ul#keywords li{
+	margin:2px; 
+	padding:4px; 
+	border:1px solid black; 
+	color:white; 
+	background-color:white; 
+	float:left; 
+	display:inline;
 	}
 
 .photo{
-	width:200px;
-	height:200px;
+//	width:200px;
+//	height:200px;
 	text-decoration:none;
 	position:relative;
 	display:block;
@@ -243,10 +249,10 @@ input#product_image{border:none;}
 	
 .photo span.sold{
 	//visibility:hidden;
-	  position:absolute;
-	width: 200px;
-	height: 200px;
-	background:url('sold.png'); 
+//	  position:absolute;
+//	width: 200px;
+//	height: 200px;
+//	background:url('sold.png'); 
 //	background-repeat:no-repeat;
 	
 }
@@ -258,7 +264,7 @@ input#product_image{border:none;}
 .right{float:right;}
 
 ul{margin:0; padding:0; list-style:none;}
-p{padding:0;margin:0;}
+//p{padding:0;margin:0;}
 //ul#nav {background-color: #319E00;}
 
 #container {background-color:white;width:955px; margin:0 auto;}
@@ -270,9 +276,12 @@ p{padding:0;margin:0;}
 
 
 //#categories ul{ padding:10px;}
-//#categories li{ padding:10px 0;}
+#sidebar li{margin:0;}
+#sidebar form{margin:0;}
+
 #categories input{position:relative; background:red; color:white; border:1px solid gray; float:right; top:-30px;}
 #categories input:hover{background:gray;color:white; border:1px solid red;}
+
 
 #disabled-categories li{ margin:5px; padding:5px; border:1px dashed gray;}
 
@@ -315,16 +324,16 @@ div#header ul#nav li.active a {
 
 
 //Subscribe
-#subscribe {overflow:auto; width:365px; margin-bottom:40px;}
-#subscribe p { margin-bottom:20px; font-size:14px;}
-#subscribe form{ margin:0; width:365px; padding:0;}
+//#subscribe {overflow:auto; width:365px; margin-bottom:40px;}
+//#subscribe p { margin-bottom:20px; font-size:14px;}
+//#subscribe form{ margin:0; width:365px; padding:0;}
 
-.subscribe.field { display: block; margin:5px 0; overflow:auto; }
-.subscribe label { width:100px; float:left; font-size: 14px; color: black;}
-.subscribe input { width:250px; float:left; font-size: 14px; color: gray; border: 2px solid gray; padding: 4px; }
-.subscribe input:focus { border: 2px solid black; }
-.subscribe textarea { display: block; border: 2px solid gray; font-size: 14px; line-height: 1.5em; color: gray; padding: 4px; }
-.subscribe textarea:focus { border: 2px solid black; }
+//.subscribe.field { display: block; margin:5px 0; overflow:auto; }
+//.subscribe label { width:100px; float:left; font-size: 14px; color: black;}
+//.subscribe input { width:250px; float:left; font-size: 14px; color: gray; border: 2px solid gray; padding: 4px; }
+//.subscribe input:focus { border: 2px solid black; }
+//.subscribe textarea { display: block; border: 2px solid gray; font-size: 14px; line-height: 1.5em; color: gray; padding: 4px; }
+//.subscribe textarea:focus { border: 2px solid black; }
 
 
 //Contact
@@ -349,11 +358,11 @@ div#header ul#nav li.active a {
 //Search
 #search-box { margin-bottom:50px; width:420px; padding:0px;}
 #search-box form{overflow:auto;}
-#search-box .search { display: block; margin:5px 0; overflow:auto; }
-#search-box .search label { width:100px; float:right; font-size: 18px; color: black;}
-#search-box .search input{ width:260px; float:left; font-size: 14px; color: gray; border: 2px solid gray; padding: 4px;  }
-#search-box .search input:focus { border: 2px solid black; }
-#search-box .actions input{display:block;}
+//#search-box .search { display: block; margin:5px 0; overflow:auto; }
+//#search-box .search label { width:100px; float:right; font-size: 18px; color: black;}
+//#search-box .search input{ width:260px; float:left; font-size: 14px; color: gray; border: 2px solid gray; padding: 4px;  }
+//#search-box .search input:focus { border: 2px solid black; }
+//#search-box .actions input{display:block;}
 
 #search-results .search-meta ul li h4 a{ color:black;}
 #search-results p {margin-top:20px;}
@@ -453,18 +462,66 @@ a.subscribe:hover { background-position: 0 35px; }
 a.contact {margin-left:80px; width: 78px; background: url('navigation/contact.gif') top; }
 a.contact:hover { background-position: 0 35px; }
 
-//Spinner
-#spinner{background-color:white; border:4px solid gray;
-	padding:10px;
-position:fixed;position: fixed; top: 50%; left: 50%; margin:-64px 0 0 -114px; text-align:center;}
-#spinner span{
-	background-color:white; 
-	width:200px;
-	height:100px;
-	overflow:auto;
-	}
-#spinner span h1{background-color:white;}
-#spinner img{ width:32px; height:32px; }
-#spinner p{text-align:center; margin-bottom:20px;}
-.spinner {
+
+
+
+//AJAX
+#spinner {
+  background:#000;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  color:#FFF;
+  font-size:4em;
+  height:100px;
+  left:40%;
+  line-height:2;
+  opacity: 0.9;
+  -moz-opacity: 0.9;
+  filter:alpha(opacity=90);
+  padding:0 .5em;
+  position:absolute;
+  text-align:center;
+  top:20%;
+  /*width:200px;*/
+  z-index:999;
 }
+
+html>body #spinner {
+  position: fixed;
+}
+
+#spinner span {
+  background: url("ajax-loader.gif") 0 50% no-repeat;
+  padding-left: 40px;
+  vertical-align: bottom;
+}
+
+
+//pagination
+/*  --------------------------------------------------
+    Pagination
+    -------------------------------------------------- */ 
+div.top-pagination{display:block;	position:absolute; margin-top:-30px; font-size:20px;}
+div.bottom-pagination{display:block;font-size:20px; margin-bottom:20px;}
+    .pagination { display: block; height: 24px; margin-left: -5px; }
+    .pagination span { float: left; display: block; height: 24px; color: #999; font-size: 15px; margin-left: 5px; }
+    .pagination span { display: block; padding: 6px 7px 4px; color: #555; }
+    .pagination span.current, .pagination span:hover, .pagination span:focus { border-bottom: solid 2px #00a6fc; color: #141414; }
+    .pagination span.unavailable { cursor: default; color: #999; }
+    .pagination span.unavailable:hover , .pagination span.unavailable:focus { border-bottom: none; }
+
+//Spinner
+//#spinner{background-color:white; border:4px solid gray;
+//	padding:10px;
+//position:fixed;position: fixed; top: 50%; left: 50%; margin:-64px 0 0 -114px; text-align:center;}
+//#spinner span{
+//	background-color:white; 
+//	width:200px;
+//	height:100px;
+//	overflow:auto;
+//	}
+//#spinner span h1{background-color:white;}
+//#spinner img{ width:32px; height:32px; }
+//#spinner p{text-align:center; margin-bottom:20px;}
+//.spinner {
+//}

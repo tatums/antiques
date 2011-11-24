@@ -1,4 +1,4 @@
-<%= form_for(@email)   do |f| %>
+<%= form_for(@email, :html =>{:class=> 'nice'})   do |f| %>
 
   <% if @email.errors.any? %>
     <div id="error_explanation">
@@ -14,19 +14,19 @@
 
 
   <div class="field subscribe">
-    <%= f.label :first, 'First Name' %>
-    <%= f.text_field :first %>
+    <%# f.label :first, 'First Name' %>
+    <%= f.text_field :first, :class => 'medium input-text', :placeholder => 'First Name'  %>
   </div>
 
   <div class="field subscribe">
-    <%= f.label :last, 'Last Name' %>
-    <%= f.text_field :last %>
+    <%# f.label :last, 'Last Name' %>
+    <%= f.text_field :last, :class => 'medium input-text', :placeholder => 'Last Name' %>
   </div>
   <div class="field subscribe">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%# f.label :email %>
+    <%= f.text_field :email, :class => ' input-text', :placeholder => 'Email' %>
   </div>
   <div class="actions">
-    <%= f.submit 'Save' %>
+    <%= f.submit 'Subscribe', :class => 'small white nice button radius'  %>
   </div>
 <% end %>

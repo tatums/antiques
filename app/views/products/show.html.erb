@@ -16,29 +16,30 @@
 			<li><%= country_and_period(@product) %></li>
 		  <li>Inventory Number: <%= @product.item_number %></li>
 		  <%= setup_paragraphs(@product).html_safe %>		  
-		  <%= formatted_dimensions(@product).html_safe %>
-      <%= formatted_price(@product.price).to_s.html_safe %>
+		  <%= formatted_dimensions(@product.dimensions) %>
+      <%= formatted_price(@product.price) %>
 	  </ul>
 	  
 		<% if user_signed_in? %>
-			<%= link_to 'Edit', edit_product_path(@product), :class=>"admin-link" %> <br />
-			<%= link_to 'Upload Images', product_images_path(@product), :class=>"admin-link" %><br />
-	
-			<ul id="keywords">
-			  <%= render @product.keywords, :locals => { :list => true } %>
-			</ul>
+		  <%= link_to 'Edit', edit_product_path(@product), :class => "nice small radius red button" %> 
+			<%= link_to 'Upload Images', product_images_path(@product), :class => "nice small radius red button" %><br />
+	    
+	    <div id="keywords-widget">
+  			<ul id="keywords">
+  			  <%= render @product.keywords, :locals => { :list => true } %>
+  			</ul>
 
-			<div id="keyword-form">
-  			<%= form_for([@product, Keyword.new], :remote => true) do |f| %>
-          <div class="field edit-product">
-            <%= f.text_field :title, :placeholder => "keyword" %>
-          </div>
-          <div class="actions">
-            <%= f.submit 'Save', :id => "keyword-submit" %>
-          </div>
-        <% end %>
+  			<div id="keyword-form">
+    			<%= form_for([@product, Keyword.new], :remote => true, :html => {:class=> "nice"}) do |f| %>
+            <div class="field edit-product">
+              <%= f.text_field :title, :class => "small input-text", :placeholder => "keyword" %>
+            </div>
+            <div class="actions">
+              <%= f.submit 'Save Keyword', :id => "keyword-submit", :class => "nice small radius red button" %>
+            </div>
+          <% end %>
+        </div>
       </div>
-      
 			<p class="timestamps">
 			  Created on <%= @product.created_at.strftime("%m/%d/%Y at %I:%M %p") %><br />
 			  Updated on <%= @product.updated_at.strftime("%m/%d/%Y at %I:%M %p") %>
@@ -56,9 +57,6 @@ $(document).ready(function() {
 	$("a.single_image").fancybox();
 	/* Using custom settings */
 
-
-
-
   //Monitors the Keyword field and enables and disables the button unless filled.
   $('#keyword-submit').attr('disabled','disabled');
        $('#keyword_title').keyup(function(){
@@ -69,9 +67,9 @@ $(document).ready(function() {
                 $('#keyword-submit').removeAttr('disabled');                
               }
        });
-  
 });
 </script>
+
 
 <script language="javascript">
 $(document).ready(function(){

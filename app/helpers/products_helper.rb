@@ -54,25 +54,34 @@ module ProductsHelper
   end
 
   def formatted_price(price)
-    unless price.nil?
-      "<li>" + number_to_currency(price, :precision => 0) + "</li>"
-    end
-  end
-  def formatted_dimensions(product)
     output = ""
-    if product.measurements_setup?
-      if product.diameter.nil?
-        output = "<li>H " + product.height.to_s + "\" x W " + product.width.to_s + "\" x D " + product.depth.to_s + "\" </li>"
-      else
-        output = "<li>H " + product.height.to_s + "\" x Dia " + product.diameter.to_s +  "\" </li>"
-      end
+    unless price.nil?
+      output = "<li>" + number_to_currency(price, :precision => 0) + "</li>"
+    end
+    return output.html_safe
+  end
+
+  def formatted_dimensions(dimensions)
+    output = ""
+    unless dimensions.nil?
+      output = "<li>" + dimensions + "</li>"
     end  
-    return output
+    return output.html_safe
   end
   
   def sold?(active)
       "<span class='sold'> </span>".html_safe if active == false
   end
   
+  def edit_button_if_logged_in(product)
+    if user_signed_in?
+		  link_to 'Edit', edit_product_path(product), :class => "products-edit-button nice small radius red button"			
+		end
+  end
+  def upload_images_button_if_logged_in(product)
+    if user_signed_in?
+      link_to 'Upload Images', product_images_path(product), :class => "products-upload-button nice small radius red button"
+		end
+  end
   
 end

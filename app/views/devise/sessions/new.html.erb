@@ -1,22 +1,12 @@
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class=> 'nice'}) do |f| %>
+<h4>Login</h4>
   <div class="field">
-    <%= f.label :email, "Login" %><br />
-    <%= f.email_field :email %>
+    <%= f.email_field :email, :class=>"input-text", :placeholder => 'email'  %>
   </div>
-
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password, :class=>"input-text", :placeholder => 'password' %>
   </div>
-
-  <%# if devise_mapping.rememberable? -%>
-    <!--<div><%# f.check_box :remember_me %> <%# f.label :remember_me %></div>-->
-  <%# end -%>
-
   <div class="actions">
-    <%= f.submit "Sign in" %>
+    <%= f.submit "Sign in", :class => "nice small radius white button" %>
   </div>
 <% end %>
-
-<%# render :partial => "devise/shared/links" %>
