@@ -23,6 +23,7 @@ end
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'sunspot_rails'
+gem "zurb-foundation"
 
 group :development, :test do
   gem "rspec-rails"

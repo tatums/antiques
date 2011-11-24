@@ -25,16 +25,18 @@
   </script>
 <% end %>
 
-  <div id="notifications"> 
+<% unless notice.nil? %>
+<div class="alert-box success">
+	<%= notice %>
+	<a href="" class="close">&times;</a>
+</div>
+<% end %>
+  <!-- <div id="notifications"> 
     <%= render 'layouts/notifications' %>
-  </div>   
+  </div>    -->
 
 	<div id="wrapper">
 	
-    <!-- <div id="spinner" class="spinner" style="display:none">
-      <p>Please Wait...</p>
-      <%= image_tag 'loading.gif', :alt => 'Loading', :id => 'img-spinner' %>
-    </div> -->
   
       <div id="header">
 				<h1><%=link_to image_tag("logo2.gif"), root_url %></h1>
@@ -66,12 +68,10 @@
 		</div>
 	
 	
-		<div id="spinner" class="spinner">
-  	  <span><h1>Please Wait...</h1>
-  		<%= image_tag 'loading.gif', :alt => 'Loading', :id => 'img-spinner' %>
-  		</span>
-  	</div>
-  
+    <div id="spinner" style="display:none">
+      <span>Loading...</span>
+    </div>
+    
 </div>
 
 </body>

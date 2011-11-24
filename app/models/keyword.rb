@@ -5,6 +5,14 @@ class Keyword < ActiveRecord::Base
   
   validates :title, :presence => true
   
+  # def split_sentence_and_save_each_word_as_a_keyword(sentence, product)
+  #   words = sentence.split(" ")
+  #   words.each do |word|
+  #     keyword = product.keyword.build
+  #     keyword.title = word
+  #     keyword.save
+  #   end  
+  # end  
   
   private
   def create_associated_product_index

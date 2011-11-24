@@ -27,11 +27,11 @@
     				<li><%= country_and_period(tag.product) %> </li>
       		  <li>Inventory Number: <%= tag.product.item_number.to_s %></li>
       		  <%= read_more_setup_as_paragraphs(tag.product).html_safe %>
-      		  
-      		  <%= formatted_dimensions(tag.product).html_safe %>
-            <%= formatted_price(tag.product.price).to_s.html_safe %>
+      		  <%= formatted_dimensions(tag.product.dimensions) %>
+            <%= formatted_price(tag.product.price) %>
     		  </ul>
-
+          <%= edit_button_if_logged_in(tag.product) %>
+          <%= upload_images_button_if_logged_in(tag.product) %>
   			</span>
   		<% end %>
   	<% end %>

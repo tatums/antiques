@@ -2,7 +2,7 @@
 $("#keywords").append("<%= escape_javascript(render(@keyword)) %>");
 
 /* Highlight the new comment */
-$("#keywords").effect("highlight", {}, 3000);
+$('#keyword_<%= @keyword.id %>').effect("highlight", {}, 3000);
 
 $("#keyword_title").val('');
 $('#keyword-submit').attr('disabled','disabled');
