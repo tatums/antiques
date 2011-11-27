@@ -21,10 +21,12 @@
 	  </ul>
 	  
 		<% if user_signed_in? %>
-		  <%= link_to 'Edit', edit_product_path(@product), :class => "nice small radius red button" %> 
-			<%= link_to 'Upload Images', product_images_path(@product), :class => "nice small radius red button" %><br />
-	    
+		  <%= link_to 'Edit', edit_product_path(@product), :class => "nice small radius button" %> 
+			<%= link_to 'Upload Images', product_images_path(@product), :class => "nice small radius button" %><br />
+
+      	    
 	    <div id="keywords-widget">
+  		  <h4>Keywords</h4>
   			<ul id="keywords">
   			  <%= render @product.keywords, :locals => { :list => true } %>
   			</ul>
@@ -35,7 +37,7 @@
               <%= f.text_field :title, :class => "small input-text", :placeholder => "keyword" %>
             </div>
             <div class="actions">
-              <%= f.submit 'Save Keyword', :id => "keyword-submit", :class => "nice small radius red button" %>
+              <%= f.submit 'Save Keyword', :id => "keyword-submit", :class => "nice small radius button" %>
             </div>
           <% end %>
         </div>

@@ -1,14 +1,10 @@
 <%= content_tag_for :li, slider do %>
-	<div class="slider-image">
-	  <%# link_to image_tag(@product.image_url(:thumb_300) ), @product.image_url(:large), :class => 'single_image' %>	  		
-		
-    <%#link_to( image_tag(participant.user.profile_pic.url(:small)), user_path(participant.user), :class=>"work") %>
-    
-    	<%= link_to(image_tag(slider.image_url(:thumb_200)), slider.image_url(:large), :class => 'single_image') %>
+	<div class="slider-image">    
+    <%= link_to(image_tag(slider.image_url(:thumb_200)), slider.image_url(:large), :class => 'single_image') %>
 	</div>	
 	<div class="slider-meta">
 		<%= activate_deactivate_button(slider) %>
-	    <%= link_to 'Edit', edit_slider_path(slider) %> | 
-	    <%= link_to 'Destroy', slider, confirm: 'Are you sure?', method: :delete %>
+	  <%= link_to 'Edit', edit_slider_path(slider), :class=> 'nice small radius white button' %>
+	  <%= link_to 'Destroy', slider, :class=> 'nice small radius red button', confirm: 'Are you sure?', method: :delete %>
 	</div>
 <% end %>

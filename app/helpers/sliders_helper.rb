@@ -11,9 +11,9 @@ module SlidersHelper
 
   def activate_deactivate_button(slider)
     if slider.active
-      button_to "Disable", toggle_slider_path(slider)
+      button_to "Disable", toggle_slider_path(slider), :class=>'small red nice button radius'
     else
-      button_to "Enable", toggle_slider_path(slider)
+      button_to "Enable", toggle_slider_path(slider), :class=>'small white nice button radius'
     end
   end
 

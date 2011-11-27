@@ -2,6 +2,7 @@ class EmailsController < ApplicationController
   before_filter :authenticate_user!, :except => [:new, :create]
 
   def index
+    @emails = Email.page params[:page]
   end
 
   def show
