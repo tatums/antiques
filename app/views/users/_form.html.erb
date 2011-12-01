@@ -1,0 +1,17 @@
+<%= form_for @user do |f| %>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password, :class=> "input-text"  %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.text_field :password_confirmation, :class=> "input-text"  %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit 'Save', :class => "nice small radius button" %>
+  </div>
+  
+
+<% end %>

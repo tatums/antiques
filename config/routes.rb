@@ -1,5 +1,8 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
 
+
+  resources :tasks
+
   resources :contacts, :only => [:new, :create]
   resources :emails
   resources :sliders do
@@ -20,7 +23,13 @@ PhoebeboothanitquesCom2::Application.routes.draw do
       post 'sort_products'
     end
   end
-  devise_for :users 
+
+  devise_for :users
+  resources :users, only: [:show, :edit, :update] do
+    member do
+      get :change_password
+    end
+  end
   
   devise_scope :user do
     get "backend", :to => "devise/sessions#new"
