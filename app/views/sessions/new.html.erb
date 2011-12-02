@@ -1,0 +1,11 @@
+<%= form_tag sessions_path, :class=> 'nice' do %>
+  <div class="field">
+      <%= text_field_tag :email, params[:email], :class=>"input-text", :placeholder => 'email' %>
+  </div>  
+  <div class="field">
+      <%= password_field_tag :password, params[:password], :class=>"input-text", :placeholder => 'password' %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Login", :class => "nice small radius white button" %>
+  </div>
+<% end %>
