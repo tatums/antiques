@@ -18,9 +18,11 @@
 		  <%= setup_paragraphs(@product).html_safe %>		  
 		  <%= formatted_dimensions(@product.dimensions) %>
       <%= formatted_price(@product.price) %>
+      <li><%= link_to "Download (PDF)", product_path(@product, :format => "pdf") %></li>
+      
 	  </ul>
 	  
-		<% if user_signed_in? %>
+		<% if current_user %>
 		  <%= link_to 'Edit', edit_product_path(@product), :class => "nice small white radius button" %> 
 			<%= link_to 'Upload Images', product_images_path(@product), :class => "nice small white radius button" %><br />
 
@@ -70,22 +72,4 @@ $(document).ready(function() {
               }
        });
 });
-</script>
-
-
-<script language="javascript">
-$(document).ready(function(){
-});
-
-
-
-// $(document).ready(function(){
-//   $('#keyword-submit').attr('disabled','disabled');
-//        $('#keyword_title').keyup(function(){
-//               if($(this).val() != ''){
-//                  $('#keyword-submit').removeAttr('disabled');
-//               }
-//        });
-// });
-
 </script>

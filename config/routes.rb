@@ -1,6 +1,5 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
 
-
   resources :tasks
 
   resources :contacts, :only => [:new, :create]
@@ -24,17 +23,19 @@ PhoebeboothanitquesCom2::Application.routes.draw do
     end
   end
 
-  devise_for :users
-  resources :users, only: [:show, :edit, :update] do
-    member do
-      get :change_password
-    end
-  end
+  #devise_for :users
+  resources :users, only: [:edit, :update]
+  resources :sessions
   
-  devise_scope :user do
-    get "backend", :to => "devise/sessions#new"
-    get "logout", :to => "devise/sessions#destroy"
-  end
+  get "change_password" => "users#edit", :as => "change_password"
+  
+  get "log_in" => "sessions#new", :as => "login"
+  get "log_out" => "sessions#destroy", :as => "logout"
+  get "backend" => "sessions#new", :as => "backend"
+  # devise_scope :user do
+  #   get "backend", :to => "devise/sessions#new"
+  #   get "logout", :to => "devise/sessions#destroy"
+  # end
   
   #Navigation Links
   match 'about' => 'home#about', :as => :about

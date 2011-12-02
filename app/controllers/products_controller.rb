@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+  before_filter :require_user, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
     @products = Product.order(:position).page params[:page]

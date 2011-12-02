@@ -1,8 +1,17 @@
-<%- flash.each do |flash_type, message| -%>
-  <%= content_tag :p, message, :class => "flash #{flash_type}" %>
+<% if notice.present? %>
+  <%= show_notifcations.html_safe %>
   <%= content_tag :script, :type => "text/javascript" do %>
       setTimeout(function() { 
-        $('#notifications').slideUp(); 
+        $('#notification').slideUp(); 
         }, 3000);
   <% end %>
-<%- end -%>
+<% end %>
+
+<% if alert.present? %>
+  <%= show_alerts.html_safe %>
+  <%= content_tag :script, :type => "text/javascript" do %>
+      setTimeout(function() { 
+        $('#notification').slideUp(); 
+        }, 3000);
+  <% end %>
+<% end %>

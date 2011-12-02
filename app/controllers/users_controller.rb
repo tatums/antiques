@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :require_user
   def show
     @user = current_user
   end
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
     @user = current_user
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'Successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Password was updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

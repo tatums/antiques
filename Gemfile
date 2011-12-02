@@ -5,7 +5,8 @@ gem 'rails', '3.1.0'
 gem 'carrierwave'
 gem 'sqlite3', '1.3.4'
 gem "mini_magick"
-gem 'devise'
+gem 'bcrypt-ruby', :require => 'bcrypt'
+#gem 'devise'
 gem 'rack' , '1.3.3'
 
 
@@ -29,6 +30,8 @@ group :development, :test do
   gem "rspec-rails"
   gem "capybara"
   gem "factory_girl_rails"
+  # for use with ruby-1.9.2
+  #gem 'ruby-debug19'
 end
 
 # Use unicorn as the web server

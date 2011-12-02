@@ -240,21 +240,21 @@ input#product_image{border:none;}
 	}
 
 .photo{
-//	width:200px;
-//	height:200px;
+	width:200px;
+	height:200px;
 	text-decoration:none;
 	position:relative;
 	display:block;
 	float:left;
 	}
 	
-.photo span.sold{
-	//visibility:hidden;
-//	  position:absolute;
-//	width: 200px;
-//	height: 200px;
-//	background:url('sold.png'); 
-//	background-repeat:no-repeat;
+.sold{
+//	visibility:hidden;
+	  position:absolute;
+	width: 200px;
+	height: 200px;
+	background:url('sold.png'); 
+	background-repeat:no-repeat;
 	
 }
 
@@ -409,8 +409,7 @@ div#header ul#nav li.active a {
 	border-bottom:2px solid gray; 
 	padding:3px;
 }
-#notifications p.notice{ background-color: $lime-green; }
-#notifications p.alert{background-color:red;}
+.alert-box{width:922px; margin:5px auto; font-style:helvetica; font-size:20px;}
 
 
 

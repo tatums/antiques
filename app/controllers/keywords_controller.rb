@@ -1,5 +1,5 @@
 class KeywordsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :require_user
   
   def create
     @product = Product.find(params[:product_id])    
