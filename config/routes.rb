@@ -1,5 +1,7 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
 
+  resources :tasks
+
   resources :contacts, :only => [:new, :create]
   resources :emails
   resources :sliders do
@@ -20,12 +22,20 @@ PhoebeboothanitquesCom2::Application.routes.draw do
       post 'sort_products'
     end
   end
-  devise_for :users 
+
+  #devise_for :users
+  resources :users, only: [:edit, :update]
+  resources :sessions
   
-  devise_scope :user do
-    get "backend", :to => "devise/sessions#new"
-    get "logout", :to => "devise/sessions#destroy"
-  end
+  get "change_password" => "users#edit", :as => "change_password"
+  
+  get "log_in" => "sessions#new", :as => "login"
+  get "log_out" => "sessions#destroy", :as => "logout"
+  get "backend" => "sessions#new", :as => "backend"
+  # devise_scope :user do
+  #   get "backend", :to => "devise/sessions#new"
+  #   get "logout", :to => "devise/sessions#destroy"
+  # end
   
   #Navigation Links
   match 'about' => 'home#about', :as => :about

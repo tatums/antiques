@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:new, :create]
+  before_filter :require_user, :except => [:new, :create]
   
   def index
     @contacts = Contact.all

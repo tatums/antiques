@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show]
+  before_filter :require_user, :except => [:show]
 
 
   def index

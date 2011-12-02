@@ -1,8 +1,9 @@
-<% if user_signed_in? %>
+<% if current_user %>
 	<li class="admin-link"><%# link_to 'Admin Links', admin_url %></li>
 	<li class="admin-link"><%= link_to 'All Products', products_path %></li>
 	<li class="admin-link"><%= link_to 'New Product', new_product_path %></li>
 	<li class="admin-link"><%= link_to 'Disabled Categories', categories_path %></li>
 	<li class="admin-link"><%= link_to 'Home Page Images', sliders_path %></li>
-	<li class="admin-link"><%= link_to 'Logout', logout_url %></li>
+	<li class="admin-link"><%= link_to 'Change Password', change_password_path %></li>
+	<li class="admin-link"><%= link_to 'Logout', logout_path %></li>
 <% end %>
