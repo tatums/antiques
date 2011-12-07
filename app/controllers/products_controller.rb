@@ -17,6 +17,13 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
+      #format.pdf
+      #   html = render_to_string(:layout => 'pdf' , :action => "show.html.erb")
+      #       kit = PDFKit.new(html)
+      #       kit.stylesheets << "#{Rails.root}/public/stylesheets/pdf.css"
+      #       send_data(kit.to_pdf, :filename => "labels.pdf", :type => 'application/pdf')
+      #       return
+      #   }
     end
   end
 

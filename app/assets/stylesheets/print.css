@@ -1,0 +1,6 @@
+@media print{
+  	body{font-size:14px;}
+	#navigation{display: none;}
+	#sidebar{display: none;}
+	#footer{display: none;}
+}

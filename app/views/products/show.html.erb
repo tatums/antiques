@@ -19,6 +19,7 @@
 		  <%= formatted_dimensions(@product.dimensions) %>
       <%= formatted_price(@product.price) %>
       <li><%= link_to "Download (PDF)", product_path(@product, :format => "pdf") %></li>
+      <li><%= link_to_function("Print", "javascript:print()", :class => 'print_link')%></li>
       
 	  </ul>
 	  

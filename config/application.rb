@@ -29,7 +29,7 @@ module PhoebeboothanitquesCom2
     
     #config.middleware.use PDFKit::Middleware
     require 'pdfkit'
-    config.middleware.use PDFKit::Middleware
-    
+    #config.middleware.use PDFKit::Middleware
+    config.middleware.use PDFKit::Middleware, :print_media_type => true
   end
 end
