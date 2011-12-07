@@ -5,8 +5,6 @@
 	<title>Phoebe Booth Antiques LLC</title>
 	<%= javascript_include_tag "application" %>
 	<%= stylesheet_link_tag "application" %>
-	<%# stylesheet_link_tag ('print', :media => :print) %>
-	<%= stylesheet_link_tag "print", :media => "print" %>
 	<%= csrf_meta_tags %>
 	<meta name="description" content="" />
 	<meta name="keywords" content="antique, mahogany, walnut, burl, cherry, oak, fruitwood, credenza, commode, chest, console, breakfront, sideboard, highboy, high chest, lowboy, low chest, etagere, cabinet, bookcase, chiffonier, desk, bureau, coffee table, low table, painting, sculpture, ceramic, andirons, fire tools, fire bucket, candlesticks, lamps, chandelier, pricket sticks, candelabra, sconce, girandoles, mirror, overmantle, looking glass, hanging shelf, bracket, armchair, hall chair, chairvdining chair, bergere, barrel back, klismos, side chair, bench, william mary, queen anne, georgian, regency, victorian, edwardian, arts and crafts, hepplewhite, chippendalevsheraton, gothic, rococo, louis, directoire, dining table, writing table, card table, torcheres, occasional table, tray table, tilt top table, drum table, wine table, pembroke table, tripod table, dressing table, lady's work table, dining table, tea table, vase, tea caddy" />
@@ -35,22 +33,7 @@
 				<h1><%=link_to image_tag("logo2.gif"), root_url %></h1>
       </div>
 
-      <div id="navigation">
-				<%= render 'layouts/navigation' %>
-			</div>
 					
-			<div id="leftcolumn">
-				
-				<div id="sidebar">
-					<ul id="categories"> 
-						<%= render 'layouts/sidebar' %>						
-					</ul> 
-					<ul>
-					  <%= render 'layouts/admin_links' %>
-					</ul>  
-				</div>
-
-			</div>
 
 			<div id="rightcolumn">
 				<%= yield %>			
