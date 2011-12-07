@@ -26,9 +26,10 @@ input#product_image{border:none;}
 .edit-product-right textarea{ width:90%;}
 
 //Links
-#rightcolumn a:link { text-decoration: none; color: black;}
-#rightcolumn a:visited { text-decoration: none; color: black;}
-#rightcolumn a:hover { text-decoration: none; color: black;}
+
+#rightcolumn a:link { text-decoration: none; color: #4D642D;}
+#rightcolumn a:visited { text-decoration: none; color: #54B919;}
+#rightcolumn a:hover { text-decoration: none; color: #54B919;}
 #rightcolumn a:active { text-decoration: none;}
 
 
@@ -240,8 +241,8 @@ input#product_image{border:none;}
 	}
 
 .photo{
-	width:200px;
-	height:200px;
+//	width:200px;
+//	height:200px;
 	text-decoration:none;
 	position:relative;
 	display:block;
@@ -509,12 +510,3 @@ div.bottom-pagination{display:block;font-size:20px; margin-bottom:20px;}
     .pagination span.current, .pagination span:hover, .pagination span:focus { border-bottom: solid 2px #00a6fc; color: #141414; }
     .pagination span.unavailable { cursor: default; color: #999; }
     .pagination span.unavailable:hover , .pagination span.unavailable:focus { border-bottom: none; }
-
-// PDFkit 
-
-@media print{
-	body{font-size:32px;}
-  	#navigation{background-color:black;}
-	#sidebar{display: none;}
-	#footer{display: none;}   
-}

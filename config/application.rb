@@ -28,8 +28,8 @@ module PhoebeboothanitquesCom2
     #config.time_zone = 'Central Time (US & Canada)'  
     
     #config.middleware.use PDFKit::Middleware
-    require 'pdfkit'
+    #require 'pdfkit'
     #config.middleware.use PDFKit::Middleware
-    config.middleware.use PDFKit::Middleware, :print_media_type => true
+    #config.middleware.use PDFKit::Middleware, :print_media_type => true
   end
 end

@@ -18,8 +18,7 @@
 		  <%= setup_paragraphs(@product).html_safe %>		  
 		  <%= formatted_dimensions(@product.dimensions) %>
       <%= formatted_price(@product.price) %>
-      <li><%= link_to "Download (PDF)", product_path(@product, :format => "pdf") %></li>
-      <li><%= link_to_function("Print", "javascript:print()", :class => 'print_link')%></li>
+      <li><%= link_to_function("Print", "javascript:print()", :class => 'print_link no-print')%></li>
       
 	  </ul>
 	  
@@ -28,7 +27,7 @@
 			<%= link_to 'Upload Images', product_images_path(@product), :class => "nice small white radius button" %><br />
 
       	    
-	    <div id="keywords-widget">
+	    <div id="keywords-widget no-print">
   		  <h4>Keywords</h4>
   			<ul id="keywords">
   			  <%= render @product.keywords, :locals => { :list => true } %>
