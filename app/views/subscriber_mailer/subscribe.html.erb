@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>New subscriber.</h1>
+    <p><b>Email:</b> <%= @subscriber.email.to_s %></p>
+    <p><b>Name:</b> <%= @subscriber.first.to_s%></p>
+    <p><b>Last:</b> <%= @subscriber.last.to_s%></p>
+    <p><b>Address:</b> <%= @subscriber.address.to_s %></p>
+    <p><b>City:</b> <%= @subscriber.city.to_s %></p>
+    <p><b>State:</b> <%= @subscriber.state.to_s %></p>
+    <p><b>Zip:</b> <%= @subscriber.zip.to_s %></p>
+  </body>
+</html>

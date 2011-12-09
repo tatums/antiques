@@ -7,12 +7,12 @@ ul{list-style:none;}
 h2{margin-bottom:10px;}
 h3{margin:0;}
 //Default Links
-a:link { text-decoration: none;	color: #000;}
-a:visited { text-decoration: none; color: #B7B7B7;}
-a:hover { text-decoration: none; color: #56A21D;}
-a:active { text-decoration: none;}
+//a:link { text-decoration: none;	color: #000;}
+//a:visited { text-decoration: none; color: #B7B7B7;}
+//a:hover { text-decoration: none; color: #56A21D;}
+//a:active { text-decoration: none;}
 
-
+#rightcolumn h3{font-size:18px;}
 //FORMS
 form label{display:inline;}
 .upload-field label{font-family:helvetica; font-size:14px; color:black; }
@@ -27,8 +27,8 @@ input#product_image{border:none;}
 
 //Links
 
-#rightcolumn a:link { text-decoration: none; color: #4D642D;}
-#rightcolumn a:visited { text-decoration: none; color: #54B919;}
+#rightcolumn a:link { text-decoration: none; color: #54B919 /*#4D642D;*/}
+#rightcolumn a:visited { text-decoration: none;color: #54B919 /*color: #54B919;*/}
 #rightcolumn a:hover { text-decoration: none; color: #54B919;}
 #rightcolumn a:active { text-decoration: none;}
 
@@ -353,8 +353,8 @@ div#header ul#nav li.active a {
 
 #contact-page dl dt{font-size:22px; margin-bottom:10px;}
 #contact-page dl dd {margin:10px 0 10px 10px;}
-#contact-page dl dd a:link{color:#4D642D;}
-#contact-page dl dd a:link:hover{color:#54B919;}
+//#contact-page dl dd a:link{color:#4D642D;}
+//#contact-page dl dd a:link:hover{color:#54B919;}
 
 
 //Search
