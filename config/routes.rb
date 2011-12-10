@@ -1,8 +1,6 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
 
-  resources :subscribers
-
-  resources :tasks
+  resources :shows, :subscribers, :tasks
 
  resources :sliders do
     member do
@@ -23,7 +21,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
     end
   end
 
-  #devise_for :users
+  #:users
   resources :users, only: [:edit, :update]
   resources :sessions
   
@@ -51,7 +49,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   end 
   get "home/index"
   
-   root :to => 'home#index'
+  root :to => 'home#index'
 
 
 end
