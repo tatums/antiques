@@ -2,8 +2,8 @@ class ShowsController < ApplicationController
   before_filter :require_user, :except => [:index]
 
   def index
-    @shows = Show.all
-
+    @shows = Show.active
+    @show= Show.new
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @shows }
@@ -41,7 +41,8 @@ class ShowsController < ApplicationController
 
     respond_to do |format|
       if @show.save
-        format.html { redirect_to @show, notice: 'Show was successfully created.' }
+        format.html { redirect_to shows_path, notice: 'Show was successfully created.' }
+        format.js
         format.json { render json: @show, status: :created, location: @show }
       else
         format.html { render action: "new" }

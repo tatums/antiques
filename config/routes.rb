@@ -38,7 +38,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   match 'phoebes_finds' => 'home#phoebes_finds', :as => :phoebes_finds
   match 'subscribe' => 'subscribers#new', :as => :subscribe
   match 'thank_you' => 'home#thank_you', :as => :thank_you
-  match 'contact' => 'home#contact', :as => :contact
+  match 'contact' => 'shows#index', :as => :contact
   
   resources :products do
     resources :images, :shallow  => true

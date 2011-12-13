@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20111210204914) do
     t.string   "title"
     t.string   "url"
     t.string   "dates"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

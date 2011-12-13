@@ -5,6 +5,7 @@ class CreateShows < ActiveRecord::Migration
       t.string :title
       t.string :url
       t.string :dates
+      t.integer :position
 
       t.timestamps
     end
