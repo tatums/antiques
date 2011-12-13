@@ -68,7 +68,6 @@ class CategoriesController < ApplicationController
   end
 
 
-
   def destroy
     @category = Category.where(:slug => params[:id]).first
     @category.destroy
@@ -79,20 +78,22 @@ class CategoriesController < ApplicationController
     end
   end
   
+#///////////////////////////////////////////////////////////////////////////  
+    
   def sort
     params[:CategoriesOrder].each_with_index do |id, index|
       Category.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
     end
     render :nothing => true
   end
+  
   def sort_products
     params[:ProductsOrder].each_with_index do |id, index|
       Tag.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
     end
     render :nothing => true
   end
-  
-    
+      
   def toggle
     @category = Category.where(:slug => params[:id]).first
     @category.toggle_active

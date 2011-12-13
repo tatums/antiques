@@ -1,0 +1,35 @@
+<script type="text/javascript">
+     $(document).ready(function() {
+          $('#buttonForModal').click(function() {
+               $('#myModal').reveal();
+     });
+});
+</script>
+
+<p id="page_headline">CONTACT</p>
+
+<div id="contact-page">
+  <p>Email: <a href="mailto:phoebe@phoebeboothantiques.com">phoebe@phoebeboothantiques.com</a><br />
+    Phone: 917-597-4368
+  </p>  
+
+
+<% unless @shows.empty? %>
+  <dl id="shows">
+    <dt>Upcoming Shows:</dt>
+    <%= render @shows, :locals => { :list => true } %>
+  </dl>
+<% end %>
+
+
+
+<% if current_user %>
+  <a href="#" class="nice small radius button" id="buttonForModal">NEW</a>
+  <div id="myModal" class="reveal-modal">
+       <h2>New Show.</h2> 			
+        <%= render 'form2' %>
+       <a class="close-reveal-modal">&#215;</a>
+  </div>
+<% end %>
+
+</div>

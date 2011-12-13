@@ -27,10 +27,15 @@ input#product_image{border:none;}
 .edit-product-right textarea{ width:90%;}
 
 //Links
-#rightcolumn a:link { text-decoration: none; color: #4D642D;}
-#rightcolumn a:visited { text-decoration: none;color: #4D642D;}
-#rightcolumn a:hover { text-decoration: none; color: #54B919;}
-#rightcolumn a:active { text-decoration: none;}
+a:link { text-decoration: none; }
+a:visited { text-decoration: none;}
+a:hover { text-decoration: none;}
+a:active { text-decoration: none;}
+
+//#rightcolumn a:link { text-decoration: none; color: #4D642D;}
+//#rightcolumn a:visited { text-decoration: none;color: #4D642D;}
+//#rightcolumn a:hover { text-decoration: none; color: #54B919;}
+//#rightcolumn a:active { text-decoration: none;}
 
 //#rightcolumn a:link { text-decoration: none; color: #54B919 /*#4D642D;*/}
 //#rightcolumn a:visited { text-decoration: none;color: #54B919 /*color: #54B919;*/}
@@ -66,6 +71,7 @@ input#product_image{border:none;}
 	width: 250px;
 	float: left;
 	margin-top: 0;
+	margin-bottom:10px;
 	background-color: #FFF;
 	padding-left:10px;
 	padding-top: 25px;
@@ -81,7 +87,7 @@ input#product_image{border:none;}
 	width: 900px;
 	clear: both;
 	color: #333;
-	margin: 0px 0px 10px 0px;
+	margin: 10px 0px 10px 0px;
 	padding: 10px;
 	background-color: #FFF;
 	border-top-width: 1px;
@@ -324,17 +330,6 @@ div#header ul#nav li.active a {
 
 
 //Contact
-#contact-page { overflow:auto; margin-bottom:50px; }
-#contact-page p { margin-bottom:20px; font-size:14px; }
-#contact-page form{ margin:0; width:465px; padding:0; }
-#contact-page .actions{ margin-left:100px; }
-
-#contact-page .contact { display: block; margin:5px 0; overflow:auto; }
-#contact-page .contact label { width:100px; float:left; font-size: 14px; color: black;}
-#contact-page .contact input { width:350px; float:left; font-size: 14px; color: gray; border: 2px solid gray; padding: 4px; }
-#contact-page .contact input:focus { border: 2px solid black; }
-#contact-page .contact textarea { width:350px;height:175px; display: block; border: 2px solid gray; font-size: 14px; line-height: 1.5em; color: gray; padding: 4px; }
-#contact-page .contact textarea:focus { border: 2px solid black; }
 
 #contact-page dl dt{font-size:22px; margin-bottom:10px;}
 #contact-page dl dd {margin:10px 0 10px 10px;}
