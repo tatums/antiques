@@ -1,15 +1,13 @@
 <div id="show-product">
 	<span class="block photo">
-	  <ul>
+	  <ul id="images">
 		  <li class="featured">
 		    <%= link_to image_tag(@product.image_url(:thumb_300) ), @product.image_url(:large), :class => 'single_image' %>
 		  </li>
-		  <% @product.images.each do |i| %>
-			  <li><%= link_to image_tag(i.image_url(:thumb_200) ), i.image_url(:large), :class => 'single_image' %></li>
-		  <% end %>
+		  <%= render @product.images, :locals => { :list => true } %>
 		</ul>
 	</span>
-	<span class="block show-meta">
+  <span class="block show-meta">
 	  
 	  <ul>
 		  <li><h3><%= @product.title %></h3></li>
@@ -22,9 +20,10 @@
       
 	  </ul>
 	  
-		<% if current_user %>
+	  <% if current_user %>
 		  <%= link_to 'Edit', edit_product_path(@product), :class => "nice small white radius button" %> 
-			<%= link_to 'Upload Images', product_images_path(@product), :class => "nice small white radius button" %><br />
+			<%= link_to 'Upload Images', "#",:class => "nice small white radius button",  :id => "upload" %><br />
+			<%# link_to 'Upload Images', product_images_path(@product), :id => "upload", :class => "nice small white radius button" %><br />
 
       	    
 	    <div id="keywords-widget no-print">
@@ -44,32 +43,21 @@
           <% end %>
         </div>
       </div>
-			<p class="timestamps">
+		  <p class="timestamps">
 			  Created on <%= @product.created_at.strftime("%m/%d/%Y at %I:%M %p") %><br />
 			  Updated on <%= @product.updated_at.strftime("%m/%d/%Y at %I:%M %p") %>
 			</p>
-		<% end %>
+	  <% end %>
 		
-	</span>
+  </span>
+
 
 </div>
 
-<script language="javascript">
+<div id="myModal" class="reveal-modal">
+     <h2>New Image.</h2> 			
+      <%= render 'images/upload' %>
+     <a class="close-reveal-modal">&#215;</a>
+</div>
 
-$(document).ready(function() {
-	/* This is basic - uses default settings */
-	$("a.single_image").fancybox();
-	/* Using custom settings */
 
-  //Monitors the Keyword field and enables and disables the button unless filled.
-  $('#keyword-submit').attr('disabled','disabled');
-       $('#keyword_title').keyup(function(){
-              if($(this).val() == ""){
-                 $('#keyword-submit').attr('disabled','disabled');
-              } else
-              {
-                $('#keyword-submit').removeAttr('disabled');                
-              }
-       });
-});
-</script>

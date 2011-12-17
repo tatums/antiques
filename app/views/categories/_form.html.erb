@@ -1,4 +1,4 @@
-<%= form_for(@category) do |f| %>
+<%= form_for(@category, :html=> {:class=> 'nice'}) do |f| %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
@@ -14,9 +14,9 @@
 
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class=> "input-text"  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save' ,:class => "nice small radius button" %>
   </div>
 <% end %>

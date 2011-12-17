@@ -1,0 +1,8 @@
+/* Add the new keyword to the bottom of the keyword list */
+$("#images").append("<%= escape_javascript(render(@image)) %>");
+
+/* Highlight the new comment */
+$('#image_<%= @image.id %>').effect("highlight", {}, 3000);
+
+/* Close the modal */
+$('#myModal .close-reveal-modal').trigger('click.modalEvent');

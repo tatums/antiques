@@ -1,4 +1,4 @@
-<%= form_for(@slider ,:html => {:id => 'image-upload' }) do |f| %>
+<%= form_for(Slider.new ,:html => {:id => 'image-upload' }) do |f| %>
   <% if @slider.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@slider.errors.count, "error") %> prohibited this slider from being saved:</h2>

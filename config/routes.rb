@@ -2,7 +2,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
 
   resources :shows, :subscribers, :tasks
 
- resources :sliders do
+ resources :sliders, :except => [:show] do
     member do
       post 'toggle'
     end
@@ -21,9 +21,8 @@ PhoebeboothanitquesCom2::Application.routes.draw do
     end
   end
 
-  #:users
   resources :users, only: [:edit, :update]
-  resources :sessions
+  resources :sessions, only: [:new, :create, :destroy]
   
   get "change_password" => "users#edit", :as => "change_password"
   
@@ -41,7 +40,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   match 'contact' => 'shows#index', :as => :contact
   
   resources :products do
-    resources :images, :shallow  => true
+    resources :images, :shallow  => true, :only =>[:create, :destroy]
     resources :keywords, :shallow => true, :only =>[:create, :destroy]
     collection do
       post 'sort'

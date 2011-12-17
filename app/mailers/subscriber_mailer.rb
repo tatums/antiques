@@ -4,6 +4,6 @@ class SubscriberMailer < ActionMailer::Base
   def subscribe(subscriber)
       @subscriber = subscriber
       @url  = "http://phoebeboothantiques.com"
-      mail(:to => "tatum@ashlandstudios.com", :subject => "Subscription")
+      mail(:to => "phoebe@phoebeboothantiques.com", :subject => "Subscription")
   end    
 end

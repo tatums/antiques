@@ -81,7 +81,7 @@ module ProductsHelper
   
   def upload_images_button_if_logged_in(product)
     if current_user
-      link_to 'Upload Images', product_images_path(product), :class => "products-upload-button nice small white radius button"
+      link_to 'Upload Images', product, :class => "products-upload-button nice small white radius button"
 		end
   end
   

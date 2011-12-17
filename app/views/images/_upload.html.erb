@@ -1,0 +1,7 @@
+<%= form_for([@product, Image.new],:remote => true, :html => {:id => 'image-upload',:multipart => true }) do |f| %>
+
+  <div class="upload-field">
+    <%= f.file_field :image %>
+  </div>
+  
+<% end %>

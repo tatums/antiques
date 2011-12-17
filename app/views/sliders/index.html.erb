@@ -1,22 +1,9 @@
-<script language="javascript">
-	$(document).ready(function(){
-		$('#active-slider-images').sortable({
-			update: function(event, ui) {
-				var SlidersOrder = $(this).sortable('toArray');
-				$.post( 'sliders/sort', {SlidersOrder:SlidersOrder});
-			}
-		});
-	});
-	
-</script>
-
-
 <div class="col-container">
 	<div class="left col">
 		<h3>Active</h3>
 		<ul id="active-slider-images">
 		<% @sliders.active.each do |slider| %>
-      <%= render slider %>
+      <%= render slider, :locals => { :list => true } %>
 		<% end %>
 		</ul>
 	</div>
@@ -26,22 +13,18 @@
 		<h3>Inactive</h3>
 		<ul id="inactive-slider-images">
 		<% @sliders.inactive.each do |slider| %>
-      <%= render slider %>
+	  
+      <%= render slider, :locals => { :list => true } %>
 		<% end %>
 		</ul>
 	</div>
 	<% end %> 
 </div>
 
-<%= link_to 'New Image', new_slider_path, :class=> 'nice small radius white button' %>
+<%= link_to 'New Image', new_slider_path, :class=> 'nice small radius button', :id=> 'new_slider' %>
 
-
-
-
-<script language="javascript">
-  $(document).ready(function() {
-  	/* This is basic - uses default settings */
-  	$("a.single_image").fancybox();
-  	/* Using custom settings */
-  });
-</script>
+<div id="myModal" class="reveal-modal">
+     <h2>New Image.</h2> 			
+      <%= render 'upload' %>
+     <a class="close-reveal-modal">&#215;</a>
+</div>

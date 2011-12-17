@@ -28,8 +28,6 @@ module CategoriesHelper
     return preview
   end  
 
-
-
   def activate_deactivate_category(category)
     if category.active
       button_to "X", toggle_category_path(category.slug)

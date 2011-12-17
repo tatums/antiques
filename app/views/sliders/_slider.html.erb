@@ -5,6 +5,6 @@
 	<div class="slider-meta">
 		<%= activate_deactivate_button(slider) %>
 	  <%= link_to 'Edit', edit_slider_path(slider), :class=> 'nice small radius white button' %>
-	  <%= link_to 'Destroy', slider, :class=> 'nice small radius red button', confirm: 'Are you sure?', method: :delete %>
+	  <%= link_to 'Destroy', slider, :class=> 'nice small radius button white' , confirm: 'Are you sure?', method: :delete, :remote => true %>
 	</div>
 <% end %>

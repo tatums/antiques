@@ -1,0 +1,10 @@
+<%= form_for([@product, Image.new], :remote => true, :html => {:id => 'image-upload'}) do |f| %>
+
+  <div class="upload-field">
+    <%= f.file_field :image %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Upload", :id => 'upload-button' %>
+  </div>
+<% end %>

@@ -11,14 +11,14 @@ class SlidersController < ApplicationController
   end
 
 
-  def show
-    @slider = Slider.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @slider }
-    end
-  end
+  # def show
+  #   @slider = Slider.find(params[:id])
+  # 
+  #   respond_to do |format|
+  #     format.html # show.html.erb
+  #     format.json { render json: @slider }
+  #   end
+  # end
 
 
   def new
@@ -73,6 +73,7 @@ class SlidersController < ApplicationController
     @slider.destroy
 
     respond_to do |format|
+      format.js
       format.html { redirect_to sliders_url }
       format.json { head :ok }
     end

@@ -1,7 +1,9 @@
 <script type="text/javascript">
      $(document).ready(function() {
-          $('#buttonForModal').click(function() {
+          $('#buttonForModal').click(function(evt) {
                $('#myModal').reveal();
+                evt.preventDefault();
+         			
      });
 });
 </script>

@@ -1,0 +1,9 @@
+$('#slider_<%= @slider.id %>').fadeOut();
+
+$("#active-slider-images").append("<%= escape_javascript(render(@slider)) %>");
+
+
+
+
+//$("#active-slider-images").append("<%= escape_javascript(render(@slider)) %>");
+
