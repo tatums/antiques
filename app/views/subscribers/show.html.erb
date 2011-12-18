@@ -35,6 +35,7 @@
   <%= @subscriber.zip %>
 </p>
 
-
+<%= link_to 'Back', subscribers_path %> | 
 <%= link_to 'Edit', edit_subscriber_path(@subscriber) %> |
-<%= link_to 'Back', subscribers_path %>
+<%= link_to 'Destroy', @subscriber, confirm: 'Are you sure?', method: :delete %>
+

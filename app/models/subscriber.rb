@@ -5,6 +5,10 @@ class Subscriber < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
 
 
+  def full_name
+    first.to_s + " " + last.to_s
+  end
+
   STATE_SELECT = [
     # Displayed,Stored in DB
     ['AL','AL'] ,

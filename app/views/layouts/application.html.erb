@@ -30,14 +30,17 @@
   <%= render 'layouts/notifications' %>
 
 	<div id="wrapper">
-	  
+	    <%= render 'layouts/admin_nav' %>
+      <% unless current_user %>
+		
       <div id="header">
-				<h1><%=link_to image_tag("logo2.gif"), root_url %></h1>
+				  <h1><%=link_to image_tag("phoebe_booth.gif"), root_url %></h1>
       </div>
-
+				<% end %>
       <div id="navigation">
-				<%= render 'layouts/navigation' %>
+				<%= render 'layouts/navigation' %>  			
 			</div>
+										
 					
 			<div id="leftcolumn">
 				
@@ -45,9 +48,9 @@
 					<ul id="categories"> 
 						<%= render 'layouts/sidebar' %>						
 					</ul> 
-					<ul>
-					  <%= render 'layouts/admin_links' %>
-					</ul>  
+          <!-- <ul>
+            <%= render 'layouts/admin_links' %>
+          </ul>   -->
 				</div>
 
 			</div>
