@@ -8,7 +8,6 @@ class Product < ActiveRecord::Base
   has_many :categories, :through => :tags
 
   before_create :set_item_number
-  #after_initialize :set_item_number
 
   validates_presence_of :title, :body,  :country, :period, :image
  

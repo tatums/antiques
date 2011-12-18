@@ -10,7 +10,9 @@ $link-color: white;
 $hover-color: #54B919;
 
 
-.nav-bar { height: 45px; background: $bg-color; margin-top: 20px; border: 1px solid #ddd;  }  
+.nav-bar { height: 45px; background: $bg-color; //margin-top: 20px;
+	margin-bottom:20px;
+	 border: 1px solid #ddd;  }  
 .nav-bar>li { float: left; display: block; position: relative; padding: 0; margin: 0; border-right: 1px solid #ddd; line-height: 45px; }
 .nav-bar>li>a {
 	text-transform:uppercase; font-size: 11pt; color: $link-color; font-weight:400;

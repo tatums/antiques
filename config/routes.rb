@@ -1,8 +1,12 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
 
-  resources :shows, :subscribers, :tasks
-
- resources :sliders, :except => [:show] do
+  resources :subscribers, :tasks
+  resources :shows, :only =>  [:index, :create, :destroy] do 
+    collection do
+      post 'sort'
+    end
+  end
+  resources :sliders, :except => [:show] do
     member do
       post 'toggle'
     end

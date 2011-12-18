@@ -2,37 +2,12 @@ class ShowsController < ApplicationController
   before_filter :require_user, :except => [:index]
 
   def index
-    @shows = Show.active
+    @shows = Show.active.order(:position)
     @show= Show.new
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @shows }
     end
-  end
-
-
-  def show
-    @show = Show.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @show }
-    end
-  end
-
-
-  def new
-    @show = Show.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @show }
-    end
-  end
-
-
-  def edit
-    @show = Show.find(params[:id])
   end
 
 
@@ -52,28 +27,23 @@ class ShowsController < ApplicationController
   end
 
 
-  def update
-    @show = Show.find(params[:id])
-
-    respond_to do |format|
-      if @show.update_attributes(params[:show])
-        format.html { redirect_to @show, notice: 'Show was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @show.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-
   def destroy
     @show = Show.find(params[:id])
     @show.destroy
 
     respond_to do |format|
+      format.js
       format.html { redirect_to shows_url }
       format.json { head :ok }
     end
   end
+  
+  def sort
+    params[:ShowsOrder].each_with_index do |id, index|
+      Show.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
+    end
+    render :nothing => true
+  end
+  
+  
 end

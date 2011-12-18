@@ -1,11 +1,10 @@
 class Show < ActiveRecord::Base
-  
+
+  after_create 
   validates :title, :presence => true
-  #validates :url => :must_be_valid_url
   
   scope :active, where(:active => true)
-  after_initialize :set_active
-
+  before_save :set_active, :set_init_position 
 
   def must_be_valid_url
     if (url =~ URI::regexp).nil?   
@@ -14,10 +13,15 @@ class Show < ActiveRecord::Base
   end
 
 
+
 private
 
   def set_active
     self.active  ||= true          #will set the default value only if it's nil
+  end
+
+  def set_init_position
+    self.position = Show.active.size
   end
 
   # def init

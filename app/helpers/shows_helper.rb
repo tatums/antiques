@@ -6,7 +6,7 @@ module ShowsHelper
     else
       html_results = "<a href='#{show.url}'>#{show.title}</a>" + ": " + show.dates
     end
-    html_results += link_to('Delete', show, confirm: 'Are you sure?', method: :delete, :class => 'delete') if current_user
+    html_results += " " + link_to('X', show, confirm: 'Are you sure?', method: :delete, :class => 'delete white small button', :remote => true) if current_user
     return html_results.html_safe
   end
 

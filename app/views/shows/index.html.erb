@@ -1,13 +1,21 @@
-<script type="text/javascript">
-     $(document).ready(function() {
-          $('#buttonForModal').click(function(evt) {
-               $('#myModal').reveal();
-                evt.preventDefault();
-         			
-     });
-});
-</script>
+<% if current_user %>
+  <script language="javascript">
+      $(document).ready(function() {
+           $('#buttonForModal').click(function(evt) {
+      	        $('#myModal').reveal();
+      	         evt.preventDefault();        		         			      			
+           });
 
+           $('#shows').sortable({
+           	update: function(event, ui) {
+           		var ShowsOrder = $(this).sortable('toArray');
+           		$.post("<%= escape_javascript(sort_shows_path) %>", {ShowsOrder:ShowsOrder});
+           	}
+           });
+     
+      });
+  </script>
+<% end %>
 <p id="page_headline">CONTACT</p>
 
 <div id="contact-page">
@@ -18,7 +26,7 @@
 
 <% unless @shows.empty? %>
   <dl id="shows">
-    <dt>Upcoming Shows:</dt>
+    <dt id="shows-title">Upcoming Shows:</dt>
     <%= render @shows, :locals => { :list => true } %>
   </dl>
 <% end %>
@@ -29,7 +37,7 @@
   <a href="#" class="nice small radius button" id="buttonForModal">NEW</a>
   <div id="myModal" class="reveal-modal">
        <h2>New Show.</h2> 			
-        <%= render 'form2' %>
+        <%= render 'form' %>
        <a class="close-reveal-modal">&#215;</a>
   </div>
 <% end %>
