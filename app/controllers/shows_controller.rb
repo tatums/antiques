@@ -2,7 +2,7 @@ class ShowsController < ApplicationController
   before_filter :require_user, :except => [:index]
 
   def index
-    @shows = Show.active.order(:position)
+    @shows = Show.order(:position)
     @show= Show.new
     respond_to do |format|
       format.html # index.html.erb
