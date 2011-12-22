@@ -30,9 +30,9 @@ module CategoriesHelper
 
   def activate_deactivate_category(category)
     if category.active
-      button_to "X", toggle_category_path(category.slug)
+      button_to "X", toggle_category_path(category.slug), :class => 'white small button'
     else
-      button_to "Enable", toggle_category_path(category.slug)
+      button_to "Enable", toggle_category_path(category.slug), :class => 'white small button'
     end
   end
 

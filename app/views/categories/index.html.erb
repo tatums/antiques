@@ -3,9 +3,9 @@
     <li>  
       <%= capitalize_title(category) %> - <%= category.products.size %> products.
       <%= activate_deactivate_category(category) %>
-      <%= link_to 'Edit', edit_category_path(category) %>
+      <%= link_to 'Edit', edit_category_path(category), :class=> "small white button" %>
     </li>
   <% end %>
 </ul>
 
-<%= link_to 'New Category', new_category_path, :class=>"admin-link" %>
+<%= link_to 'New Category', new_category_path, :class=>"nice small radius button" %>

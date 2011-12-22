@@ -5,8 +5,11 @@
       <ul><li><%= link_to 'New Product', new_product_path %></li></ul>
     </div> 
 	</li>
-	<li><%= link_to 'Categories', categories_path %></li>
-	
+	<li class="has-flyout"><%= link_to 'Categories', categories_path %>
+    <div class="flyout">
+      <ul><li><%= link_to 'New Category', new_category_path %></li></ul>
+    </div> 
+	</li>
 
 	<li><%= link_to 'Home Page Images', sliders_path %></li>
 	<li><%= link_to 'Subscribers', subscribers_path %></li>
