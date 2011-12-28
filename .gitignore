@@ -9,3 +9,4 @@ tmp/pids/
 public/uploads/
 
 solr/data/
+.DS_Store
