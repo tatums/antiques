@@ -1,5 +1,4 @@
 class Image < ActiveRecord::Base
-  
   validates_presence_of :image
   attr_accessible :image
 

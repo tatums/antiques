@@ -16,14 +16,13 @@
 		  <%= setup_paragraphs(@product).html_safe %>		  
 		  <%= formatted_dimensions(@product.dimensions) %>
       <%= formatted_price(@product.price) %>
-      <li><%= link_to_function("Print", "javascript:print()", :class => 'print_link no-print')%></li>
+      <li><%= link_to_function("Print a Tear Sheet", "javascript:print()", :class => 'print_link no-print')%></li>
       
 	  </ul>
 	  
 	  <% if current_user %>
 		  <%= link_to 'Edit', edit_product_path(@product), :class => "nice small white radius button" %> 
 			<%= link_to 'Upload Images', "#",:class => "nice small white radius button",  :id => "upload" %><br />
-			<%# link_to 'Upload Images', product_images_path(@product), :id => "upload", :class => "nice small white radius button" %><br />
 
       	    
 	    <div id="keywords-widget no-print">
@@ -32,7 +31,7 @@
   			  <%= render @product.keywords, :locals => { :list => true } %>
   			</ul>
 
-  			<div id="keyword-form">
+  			<div id="keyword-form no-print">
     			<%= form_for([@product, Keyword.new], :remote => true, :html => {:class=> "nice"}) do |f| %>
             <div class="field edit-product">
               <%= f.text_field :title, :class => "small input-text", :placeholder => "keyword" %>
@@ -43,7 +42,7 @@
           <% end %>
         </div>
       </div>
-		  <p class="timestamps">
+		  <p class="timestamps no-print">
 			  Created on <%= @product.created_at.strftime("%m/%d/%Y at %I:%M %p") %><br />
 			  Updated on <%= @product.updated_at.strftime("%m/%d/%Y at %I:%M %p") %>
 			</p>
@@ -54,7 +53,7 @@
 
 </div>
 
-<div id="myModal" class="reveal-modal">
+<div id="myModal" class="reveal-modal no-print">
      <h2>New Image.</h2> 			
       <%= render 'images/upload' %>
      <a class="close-reveal-modal">&#215;</a>

@@ -1,0 +1,68 @@
+// Place all the styles related to the prints controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//#header{ height:50px; }
+//#header h1{ margin:0; padding:0; font-size:48px; color:#319E00; text-align:center;}
+//#header h1 a img { background-repeat: no-repeat; border:0; }
+.header img{}
+.print-product{padding:10px;}
+.print-product h1{ font-size:16px; text-align:center; padding:20px 0;}
+.print-product img{ display: block; margin:0 auto; width:600px; }
+
+.print-product ul li h3{ font-size:18px;}
+.print-product ul li { margin-bottom:5px;}
+
+.head-line{border-top:1px solid #9C9C9C;}
+.print-footer { 
+	margin-bottom:10px;
+	width: 900px; clear: both;
+	color: #333; padding: 10px;
+	border-top:1px solid #9C9C9C;
+	border-bottom:1px solid #9C9C9C;
+}
+.disclaimer{font-style:italic; margin:20px 0;}
+.print-footer p{ margin:0; padding:0; }
+
+
+
+
+
+//asdlfalsdjfa
+
+li{list-style:none}
+body{font-size:14px;}
+
+#navigation{display: none;}
+#sidebar{display: none;}
+#footer{display: none;}
+
+.no-print{display: none;}
+
+#rightcolumn {
+	margin-left:115px;
+	width: 630px;
+	float: left;
+	padding-top: 20px;
+	margin-right:20px;
+}
+
+#show-product{overflow:auto; }
+#show-product .show-meta {float:right; width:280px;}
+#show-product .show-meta ul li{margin:0 0 7px 0; padding:0; border:none;}
+#show-product .show-meta ul li p{margin:0 0 7px 0; padding:0;}
+
+.photo{float:left;}
+.meta{float:right; width:380px;}
+
+#rightcolumn p.meta-data{margin:0; padding:0;}
+/*#product-desc{padding:15px 0 0 0;}
+*/
+#rightcolumn a .more {color:#58A51D;}
+
+
+.timestamps{margin:20px 0; font-size:11px; font-style:italic;}
+.product h3{padding:0 0 10px 0; margin:0 0 10px 0;}
+
+.meta h3 a{text-decoration:none;}
+.dimensions span{ font-weight:800;}

@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-
+  before_filter :require_user
+  
   def index
     @tasks = Task.all
 
