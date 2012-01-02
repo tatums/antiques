@@ -33,6 +33,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   get "log_in" => "sessions#new", :as => "login"
   get "log_out" => "sessions#destroy", :as => "logout"
   get "backend" => "sessions#new", :as => "backend"
+  get 'print/:id' => "prints#show", :as => 'print'
   
   #Navigation Links
   match 'about' => 'home#about', :as => :about

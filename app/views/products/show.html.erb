@@ -16,14 +16,13 @@
 		  <%= setup_paragraphs(@product).html_safe %>		  
 		  <%= formatted_dimensions(@product.dimensions) %>
       <%= formatted_price(@product.price) %>
-      <li><%= link_to_function("Print", "javascript:print()", :class => 'print_link no-print')%></li>
+      <li><%= link_to_function("Print a Tear Sheet", "javascript:print()", :class => 'print_link no-print')%></li>
       
 	  </ul>
 	  
 	  <% if current_user %>
 		  <%= link_to 'Edit', edit_product_path(@product), :class => "nice small white radius button" %> 
 			<%= link_to 'Upload Images', "#",:class => "nice small white radius button",  :id => "upload" %><br />
-			<%# link_to 'Upload Images', product_images_path(@product), :id => "upload", :class => "nice small white radius button" %><br />
 
       	    
 	    <div id="keywords-widget no-print">

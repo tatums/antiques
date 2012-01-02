@@ -19,7 +19,7 @@
   	<% @tags.each do |tag| %>		
   		<%= content_tag_for :li, tag do %>
   			<span class="block photo">
-  				<%= link_to image_tag(tag.product.image_url(:thumb_200) ), tag.product if tag.product.image? %>
+  				<%= link_to image_tag(tag.product.image_url(:thumb_200) ), tag.product if tag.product.image? %>          
   			</span>
   			<span class="block meta">
   			  <ul>
@@ -29,6 +29,12 @@
       		  <%= read_more_setup_as_paragraphs(tag.product).html_safe %>
       		  <%= formatted_dimensions(tag.product.dimensions) %>
             <%= formatted_price(tag.product.price) %>
+            
+            <% tag.product.images.each do |image| %>
+              <%= image_tag(image.image_url(:thumb_50) )%>
+            <% end %>
+            <%# link_to_function("Print a Tear Sheet", "javascript:print()", :class => 'print_link no-print')%>
+            
     		  </ul>
           <%= edit_button_if_logged_in(tag.product) %>
           <%= upload_images_button_if_logged_in(tag.product) %>

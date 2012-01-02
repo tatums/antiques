@@ -12,4 +12,14 @@ namespace :phoebeboothantiques do
                 :dates  => "August 10-13, 2012", :url => "")            
   end
 
+
+  desc "Recreate all image versions."
+  task :recreate_image_versions => :environment do
+    images = Image.all
+    images.each do |image|
+      image.image.recreate_versions!
+      puts image.id
+    end    
+  end
+
 end
