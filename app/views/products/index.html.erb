@@ -11,7 +11,7 @@
 	</script>
 <% end %>
 
-<div class="top-pagination">
+<div class="top-pagination no-print">
   <%= paginate @products %>
 </div>  
 <ul id="products">
@@ -27,6 +27,6 @@
     </li>
   <% end %>
 </ul>
-<div class="bottom-pagination">
+<div class="bottom-pagination no-print">
   <%= paginate @products %>
 </div>

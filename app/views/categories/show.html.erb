@@ -29,12 +29,12 @@
       		  <%= read_more_setup_as_paragraphs(tag.product).html_safe %>
       		  <%= formatted_dimensions(tag.product.dimensions) %>
             <%= formatted_price(tag.product.price) %>
-            
-            <% tag.product.images.each do |image| %>
-              <%= image_tag(image.image_url(:thumb_50) )%>
-            <% end %>
-            <%# link_to_function("Print a Tear Sheet", "javascript:print()", :class => 'print_link no-print')%>
-            
+            <li class="small-thumbs">
+              <% tag.product.images.each do |image| %>
+                <%= image_tag(image.image_url(:thumb_50) )%>
+              <% end %>
+              <%= link_to("Print a Tear Sheet", print_path(tag.product), :class => 'print_link no-print')%>
+            </li>            
     		  </ul>
           <%= edit_button_if_logged_in(tag.product) %>
           <%= upload_images_button_if_logged_in(tag.product) %>
