@@ -31,7 +31,9 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   get "change_password" => "users#edit", :as => "change_password"
   
   get "log_in" => "sessions#new", :as => "login"
+  get "login" => "sessions#new", :as => "login"
   get "log_out" => "sessions#destroy", :as => "logout"
+  get "logout" => "sessions#destroy", :as => "logout"
   get "backend" => "sessions#new", :as => "backend"
   get 'print/:id' => "prints#show", :as => 'print'
   
