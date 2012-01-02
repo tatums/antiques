@@ -31,7 +31,7 @@
   			  <%= render @product.keywords, :locals => { :list => true } %>
   			</ul>
 
-  			<div id="keyword-form">
+  			<div id="keyword-form no-print">
     			<%= form_for([@product, Keyword.new], :remote => true, :html => {:class=> "nice"}) do |f| %>
             <div class="field edit-product">
               <%= f.text_field :title, :class => "small input-text", :placeholder => "keyword" %>
@@ -42,7 +42,7 @@
           <% end %>
         </div>
       </div>
-		  <p class="timestamps">
+		  <p class="timestamps no-print">
 			  Created on <%= @product.created_at.strftime("%m/%d/%Y at %I:%M %p") %><br />
 			  Updated on <%= @product.updated_at.strftime("%m/%d/%Y at %I:%M %p") %>
 			</p>
@@ -53,7 +53,7 @@
 
 </div>
 
-<div id="myModal" class="reveal-modal">
+<div id="myModal" class="reveal-modal no-print">
      <h2>New Image.</h2> 			
       <%= render 'images/upload' %>
      <a class="close-reveal-modal">&#215;</a>

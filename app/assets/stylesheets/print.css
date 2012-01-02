@@ -38,5 +38,16 @@ body{font-size:14px;}
 .meta h3 a{text-decoration:none;}
 .dimensions span{ font-weight:800;}
 
+
+
+#print-product{overflow:auto; margin:0 100px; }
+#print-product .show-meta {float:right; width:350px;}
+#print-product .show-meta ul li{margin:0 0 7px 0; padding:0; border:none;}
+#print-product .show-meta ul li p{margin:0 0 7px 0; padding:0;}
+
+
 	
 }
+
+
+
