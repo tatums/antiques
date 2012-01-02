@@ -8,33 +8,23 @@
 	<%= stylesheet_link_tag "application" %>
 	<%= stylesheet_link_tag "print", :media => "print" %>
 	<%= csrf_meta_tags %>
-	<meta name="description" content="" />
-	<meta name="keywords" content="antique, mahogany, walnut, burl, cherry, oak, fruitwood, credenza, commode, chest, console, breakfront, sideboard, highboy, high chest, lowboy, low chest, etagere, cabinet, bookcase, chiffonier, desk, bureau, coffee table, low table, painting, sculpture, ceramic, andirons, fire tools, fire bucket, candlesticks, lamps, chandelier, pricket sticks, candelabra, sconce, girandoles, mirror, overmantle, looking glass, hanging shelf, bracket, armchair, hall chair, chairvdining chair, bergere, barrel back, klismos, side chair, bench, william mary, queen anne, georgian, regency, victorian, edwardian, arts and crafts, hepplewhite, chippendalevsheraton, gothic, rococo, louis, directoire, dining table, writing table, card table, torcheres, occasional table, tray table, tilt top table, drum table, wine table, pembroke table, tripod table, dressing table, lady's work table, dining table, tea table, vase, tea caddy" />
-<%= render 'layouts/analytics' %>	
+  <%= render 'layouts/analytics' %>	
 </head>
 <body>
 
-
-  <%= render 'layouts/notifications' %>
-
 	<div id="wrapper">
-    <div id="header">
-			  <h1><%=link_to image_tag("phoebe_booth.gif"), root_url %></h1>
+    <div class="header">  
+      <%=link_to image_tag("phoebe_booth.gif"), root_url %>
     </div>
-										
+    <div class="head-line"></div>
 					
 		<%= yield %>			
 	
-		<div id="footer" class="footer_style">
-      <%# render 'layouts/footer' %>
-		</div>
-	
-	
-    <div id="spinner" style="display:none">
-      <span>Loading...</span>
+    <div class="print-footer">
+      <p class="center">Phoebe Booth Antiques LLC All Rights Reserved. | phoebe@phoebeboothantiques.com | 917-597-4368</p>
     </div>
-    
-</div>
+	
+  </div>
 
 </body>
 </html>

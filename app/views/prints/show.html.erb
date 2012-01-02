@@ -1,20 +1,14 @@
-<div id="print-product">
-	<span class="block photo">
-	  <ul id="images">
-		  <li class="featured">
-		    <%= link_to image_tag(@product.image_url(:thumb_300) ), @product.image_url(:large), :class => 'single_image' %>
-		  </li>
-		  <%= render @product.images, :locals => { :list => true } %>
-		</ul>
-	</span>
-  <span class="block show-meta">
-	  <ul>
-		  <li><h3><%= @product.title %></h3></li>
-			<li><%= country_and_period(@product) %></li>
-		  <li>Inventory Number: <%= @product.item_number %></li>
-		  <%= setup_paragraphs(@product).html_safe %>		  
-		  <%= formatted_dimensions(@product.dimensions) %>
+<div class="print-product">
+    <h1>Inventory #<%= @product.item_number %></h1>
+    <%= image_tag(@product.image_url(:medium))%>
+    <ul>
+      <li><h3><%= @product.title %></h3></li>
+      <li><%= country_and_period(@product) %></li>
+      <%# setup_paragraphs(@product).html_safe %>     
+      <%= formatted_dimensions(@product.dimensions) %>
       <%= formatted_price(@product.price) %>      
-	  </ul>
-  </span>
+    </ul>
+    <p class="disclaimer">
+      Images are property of Phoebe Booth Antiques LLC. Any reproductions of the inventory within the image require consent.
+    </p> 
 </div>
