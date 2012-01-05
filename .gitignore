@@ -7,6 +7,7 @@ tmp/cache/sass/
 tmp/pids/
 .sass-cache/
 public/uploads/
+<<<<<<< HEAD
 .DS_Store
 .lck
 solr/data/
