@@ -41,7 +41,7 @@ body{font-size:14px;}
 /* PRINT */
 .print-product{padding:10px;}
 .print-product h1{ font-size:16px; text-align:center; padding:15px 0;}
-.print-product img{ display: block; margin:0 auto; width:600px; }
+.print-product img{ display: block; margin:0 auto; width:600px; border:none; }
 
 .print-product ul li h3{ font-size:18px;}
 .print-product ul li { margin-bottom:5px;}

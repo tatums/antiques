@@ -10,14 +10,11 @@ h3{margin:0;}
 
 //Default Links
 a { text-decoration: none;	color: #4A4A4A;}
-//a:visited { text-decoration: none; color: #B7B7B7;}
-//a:hover { text-decoration: none; color: #56A21D;}
-//a:active { text-decoration: none;}
 
 .delete-image{vertical-align:top;}
-
 #rightcolumn h3{font-size:18px;}
 #rightcolumn{font-size:14px;}
+
 //FORMS
 form label{display:inline;}
 .upload-field label{font-family:helvetica; font-size:14px; color:black; }
@@ -54,8 +51,7 @@ a:active { text-decoration: none;}
 	margin-bottom:38px;
 	height: 35px;
 	border-top:1px solid #B7B7B7;
-	border-bottom:1px solid #B7B7B7;
-	
+	border-bottom:1px solid #B7B7B7;	
 }
 
 #leftcolumn {
@@ -199,7 +195,6 @@ a:active { text-decoration: none;}
 .dimensions span{ font-weight:800;}
 
 
-
 #keyword-form input{ margin:10px 0;}
 
 //Keywords
@@ -239,8 +234,6 @@ a:active { text-decoration: none;}
 .right{float:right;}
 
 ul{margin:0; padding:0; list-style:none;}
-//p{padding:0;margin:0;}
-//ul#nav {background-color: #319E00;}
 
 #container {background-color:white;width:955px; margin:0 auto;}
 #footer { height:75px; }
@@ -256,16 +249,17 @@ ul{margin:0; padding:0; list-style:none;}
 
 //categories button to disable
 #categories input{
-	//position:absolute;
-	//background:red;
-	//color:white; 
-	//border:1px solid gray; 
 	}
-#categories form input{float:right; color:red; position:relative; top:-30px;}	
+#categories form input{
+	float:right; 
+	color:red; 
+	position:relative; 
+	top:-25px;
+	padding:2px;
+	margin:0px;
+	line-height:11px;
+	}	
 #categories input:hover{
-	//background:gray;
-	//color:white; 
-	//border:1px solid red;
 	}
 
 #disabled-categories li{ margin:5px; padding:5px; border:1px dashed gray;}
@@ -308,35 +302,14 @@ div#header ul#nav li.active a {
 #admin-console li a:hover{ }
 
 
-//Subscribe
-//#subscribe {overflow:auto; width:365px; margin-bottom:40px;}
-//#subscribe p { margin-bottom:20px; font-size:14px;}
-//#subscribe form{ margin:0; width:365px; padding:0;}
-
-//.subscribe.field { display: block; margin:5px 0; overflow:auto; }
-//.subscribe label { width:100px; float:left; font-size: 14px; color: black;}
-//.subscribe input { width:250px; float:left; font-size: 14px; color: gray; border: 2px solid gray; padding: 4px; }
-//.subscribe input:focus { border: 2px solid black; }
-//.subscribe textarea { display: block; border: 2px solid gray; font-size: 14px; line-height: 1.5em; color: gray; padding: 4px; }
-//.subscribe textarea:focus { border: 2px solid black; }
-
-
 //Contact
 
 #contact-page dl dt{font-size:22px; margin-bottom:10px;}
 #contact-page dl dd {margin:10px 0 10px 10px;}
-//#contact-page dl dd a:link{color:#4D642D;}
-//#contact-page dl dd a:link:hover{color:#54B919;}
-
 
 //Search
 #search-box { margin-bottom:50px; width:420px; padding:0px;}
 #search-box form{overflow:auto;}
-//#search-box .search { display: block; margin:5px 0; overflow:auto; }
-//#search-box .search label { width:100px; float:right; font-size: 18px; color: black;}
-//#search-box .search input{ width:260px; float:left; font-size: 14px; color: gray; border: 2px solid gray; padding: 4px;  }
-//#search-box .search input:focus { border: 2px solid black; }
-//#search-box .actions input{display:block;}
 
 #search-results .search-meta ul li h4 a{ color:black;}
 #search-results p {margin-top:20px;}
@@ -396,8 +369,6 @@ div#header ul#nav li.active a {
 .column-container{ overflow:auto;}
 .left-column{float:left; width:300px;}
 .right-column{float:right; width:300px;}
-#about img{float:left; padding:0 10px 5px 0;}
-#about p{margin-bottom:20px; font-family: "Times New Roman", Times, serif; font-size: 12pt; line-height: 20px;}
 
 /*#Slideshow--------------------------------------------*/
 #slideshow { padding: 0; } 
