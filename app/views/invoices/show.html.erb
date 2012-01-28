@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div customer>
+  <%= @invoice.subscriber.name_and_address.html_safe %>
+
+</div>
+
 <p>
   <b>Title:</b>
   <%= @invoice.title %>
@@ -20,10 +25,6 @@
   <%= @invoice.tax %>
 </p>
 
-<p>
-  <b>Subscriber:</b>
-  <%= @invoice.subscriber_id %>
-</p>
 
 
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> |

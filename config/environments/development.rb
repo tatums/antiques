@@ -27,14 +27,20 @@ PhoebeboothanitquesCom2::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  
-  
-  
+
+  silence_warnings do
+    begin
+      require 'pry'
+      IRB = Pry
+    rescue LoadError
+    end
+  end
+
   #HACK TO GET PDFKIT RUNNING
-  #config.threadsafe! 
+  #config.threadsafe!
 
 
 
   #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  
+
 end

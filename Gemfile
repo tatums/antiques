@@ -30,6 +30,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "capybara"
   gem "factory_girl_rails"
+  gem 'pry'
   # for use with ruby-1.9.2
   #gem 'ruby-debug19'
 end
@@ -44,7 +45,7 @@ end
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 
-# turned off 
+# turned off
 # group :test do
 #   # Pretty printed test output
 #   gem 'turn', :require => false

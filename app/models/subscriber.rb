@@ -1,12 +1,17 @@
 class Subscriber < ActiveRecord::Base
 
 
-  validates_presence_of :first, :last 
+  validates_presence_of :first, :last
   validates :email, :presence => true, :uniqueness => true, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
 
+  has_many :invoices
 
   def full_name
     first.to_s + " " + last.to_s
+  end
+
+  def name_and_address
+    first.to_s + " " + last.to_s + " <br />" + address.to_s + " <br />" + city.to_s + ", " + state.to_s + " " + zip.to_s
   end
 
   STATE_SELECT = [

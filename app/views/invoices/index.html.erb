@@ -9,17 +9,15 @@
     <th>Subscriber</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @invoices.each do |invoice| %>
   <tr>
-    <td><%= invoice.title %></td>
-    <td><%= invoice.subtotal %></td>
-    <td><%= invoice.grand_total %></td>
-    <td><%= invoice.tax %></td>
-    <td><%= invoice.subscriber_id %></td>
-    <td><%= link_to 'Show', invoice %></td>
+    <td><%= link_to invoice.title, invoice %></td>
+    <td><%= link_to invoice.subtotal, invoice %></td>
+    <td><%= link_to invoice.grand_total, invoice %></td>
+    <td><%= link_to invoice.tax, invoice %></td>
+    <td><%= invoice.subscriber.full_name %></td>
     <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
     <td><%= link_to 'Destroy', invoice, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

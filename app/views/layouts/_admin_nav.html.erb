@@ -1,27 +1,33 @@
 <% if current_user %>
-<ul class="nav-bar no-print">
-	<li class="has-flyout"><%= link_to 'Products', products_path %>
-    <div class="flyout">
-      <ul><li><%= link_to 'New Product', new_product_path %></li></ul>
-    </div> 
-	</li>
-	<li class="has-flyout"><%= link_to 'Categories', categories_path %>
-    <div class="flyout">
-      <ul><li><%= link_to 'New Category', new_category_path %></li></ul>
-    </div> 
-	</li>
+  <ul class="nav-bar no-print">
+    <li class="has-flyout"><%= link_to 'Products', products_path %>
+      <div class="flyout">
+        <ul><li><%= link_to 'New Product', new_product_path %></li></ul>
+      </div>
+    </li>
+    <li class="has-flyout"><%= link_to 'Categories', categories_path %>
+      <div class="flyout">
+        <ul><li><%= link_to 'New Category', new_category_path %></li></ul>
+      </div>
+    </li>
 
-	<li><%= link_to 'Home Page Images', sliders_path %></li>
-	<li><%= link_to 'Subscribers', subscribers_path %></li>
-	<li><%= link_to 'Shows', shows_path %></li>
+    <li><%= link_to 'Home Page', sliders_path %></li>
+    <li><%= link_to 'Subscribers', subscribers_path %></li>
 
-	<li class="has-flyout"><a href="#">My Account</a>
-		<div class="flyout">
-        		<ul>
-        		  <li><%= link_to 'Change Password', change_password_path %></li>
-            	<li><%= link_to 'Logout', logout_path %></li>
-        		</ul>  
-  		</div>
-	</li>
-</ul>
+    <li class="has-flyout"><%= link_to 'Invoices', invoices_path %>
+      <div class="flyout">
+        <ul><li><%= link_to 'New Invoice', invoices_path %></li></ul>
+      </div>
+    </li>
+
+    <li><%= link_to 'Shows', shows_path %></li>
+    <li class="has-flyout"><a href="#">My Account</a>
+      <div class="flyout">
+        <ul>
+          <li><%= link_to 'Change Password', change_password_path %></li>
+          <li><%= link_to 'Logout', logout_path %></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
 <% end %>

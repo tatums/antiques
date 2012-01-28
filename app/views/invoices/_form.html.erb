@@ -1,8 +1,7 @@
-<%= form_for(@invoice) do |f| %>
+<%= form_for(@invoice, :html =>{:class => 'nice'}) do |f| %>
   <% if @invoice.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
-
       <ul>
       <% @invoice.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,28 +9,14 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class=> "large input-text", :placeholder => "Title" %>
   </div>
   <div class="field">
-    <%= f.label :subtotal %><br />
-    <%= f.text_field :subtotal %>
-  </div>
-  <div class="field">
-    <%= f.label :grand_total %><br />
-    <%= f.text_field :grand_total %>
-  </div>
-  <div class="field">
-    <%= f.label :tax %><br />
-    <%= f.text_field :tax %>
-  </div>
-  <div class="field">
-    <%= f.label :subscriber_id %><br />
-    <%= f.number_field :subscriber_id %>
+    <%= f.label :subscriber_id, "Customer" %><br />
+    <%= f.select("subscriber_id", Subscriber.all.collect {|s| [ s.full_name, s.id ] }, :class=> "large input-text")%>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create", :class => "nice small radius button" %>
   </div>
 <% end %>
