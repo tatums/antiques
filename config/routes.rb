@@ -1,5 +1,7 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
 
+  resources :invoices
+
   resources :subscribers, :tasks
   resources :shows, :only =>  [:index, :create, :destroy] do 
     collection do
