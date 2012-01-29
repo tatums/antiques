@@ -2,7 +2,6 @@
 
 <div customer>
   <%= @invoice.subscriber.name_and_address.html_safe %>
-
 </div>
 
 <p>
@@ -10,20 +9,56 @@
   <%= @invoice.title %>
 </p>
 
-<p>
-  <b>Subtotal:</b>
-  <%= @invoice.subtotal %>
-</p>
+<table>
+  <thead>
+    <tr>
+      <td></td>
+      <td>Item</td>
+      <td>Description</td>
+      <td>Dimensions</td>
+      <td>Qty</td>
+      <td>Price</td>
+      <td>Tax</td>
+      <td>Total</td>
+    </tr>
+  </thead>
+  <tfoot>
+    <%= form_for([@invoice, LineItem.new], :remote => true, :html => {:class=> "nice"}) do |f| %>
+      <tr>
+        <td></td>
+        <td><%= f.text_field :item_number, :class => "ex-small input-text", :placeholder => "item" %></td>
+        <td><%= f.text_field :description, :class => "small input-text", :placeholder => "description" %></td>
+        <td><%= f.text_field :dimensions, :class => "small input-text", :placeholder => "dimensions" %></td>
+        <td><%= f.text_field :quantity, :class => "ex-small input-text", :placeholder => "qty" %></td>
+        <td><%= f.text_field :price, :class => "ex-small input-text", :placeholder => "price" %></td>
+        <td><%= f.text_field :tax, :class => "ex-small input-text", :placeholder => "tax" %></td>
+        <td><%= f.submit 'Create', :class => "nice small radius button" %></td>
+      </tr>
+    <% end %>
+  </tfoot>
+  <tbody class="line_items">
+    <%= render @invoice.line_items %>
+  </tbody>
+</table>
 
-<p>
-  <b>Grand total:</b>
-  <%= @invoice.grand_total %>
-</p>
+<table class="totals">
+  <tr>
+    <td>Subtotal</td><td class="sub_total currency"><%= number_to_currency(@invoice.subtotal) %></td>
+  </tr>
+  <tr>
+    <td>Tax</td><td class="tax currency"><%= number_to_currency(@invoice.tax) %></td>
+  </tr>
+  <tr>
+    <td>Grand Total</td><td class="grand_total currency"><%= number_to_currency(@invoice.calc_grand_total) %></td>
+  </tr>
+</table>
 
-<p>
-  <b>Tax:</b>
-  <%= @invoice.tax %>
-</p>
+
+<!-- <ul class="totals">
+  <li class="sub_total"><em>Subtotal: </em><span><%= number_to_currency(@invoice.subtotal) %></span></li>
+  <li class="tax"><em>Tax: </em><span><%= number_to_currency(@invoice.tax) %></span></li>
+  <li class="grand_total"><em>Grand total: </em><span><%= number_to_currency(@invoice.calc_grand_total) %></span></li>
+</ul> -->
 
 
 

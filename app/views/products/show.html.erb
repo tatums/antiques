@@ -1,37 +1,37 @@
 <div id="show-product">
-	<span class="block photo">
-	  <ul id="images">
-		  <li class="featured">
-		    <%= link_to image_tag(@product.image_url(:thumb_300) ), @product.image_url(:large), :class => 'single_image' %>
-		  </li>
-		  <%= render @product.images, :locals => { :list => true } %>
-		</ul>
-	</span>
+  <span class="block photo">
+    <ul id="images">
+      <li class="featured">
+        <%= link_to image_tag(@product.image_url(:thumb_300) ), @product.image_url(:large), :class => 'single_image' %>
+      </li>
+    <%= render @product.images, :locals => { :list => true } %>
+    </ul>
+  </span>
   <span class="block show-meta">
-	  
+
 	  <ul>
-		  <li><h3><%= @product.title %></h3></li>
-			<li><%= country_and_period(@product) %></li>
-		  <li>Inventory Number: <%= @product.item_number %></li>
-		  <%= setup_paragraphs(@product).html_safe %>		  
-		  <%= formatted_dimensions(@product.dimensions) %>
+    <li><h3><%= @product.title %></h3></li>
+    <li><%= country_and_period(@product) %></li>
+    <li>Inventory Number: <%= @product.item_number %></li>
+      <%= setup_paragraphs(@product).html_safe %>
+      <%= formatted_dimensions(@product.dimensions) %>
       <%= formatted_price(@product.price) %>
-      <li><%= link_to("Print a Tear Sheet", print_path(@product), :class => 'print_link no-print')%></li>    
-	  </ul>
-	  
-	  <% if current_user %>
-		  <%= link_to 'Edit', edit_product_path(@product), :class => "nice small white radius button no-print" %> 
-			<%= link_to 'Upload Images', "#",:class => "nice small white radius button no-print",  :id => "upload" %><br />
+      <li><%= link_to("Print a Tear Sheet", print_path(@product), :class => 'print_link no-print')%></li>
+    </ul>
 
-      	    
-	    <div id="keywords-widget" class="no-print">
-  		  <h4>Keywords</h4>
-  			<ul id="keywords">
-  			  <%= render @product.keywords, :locals => { :list => true } %>
-  			</ul>
+    <% if current_user %>
+      <%= link_to 'Edit', edit_product_path(@product), :class => "nice small white radius button no-print" %>
+      <%= link_to 'Upload Images', "#",:class => "nice small white radius button no-print",  :id => "upload" %><br />
 
-  			<div id="keyword-form">
-    			<%= form_for([@product, Keyword.new], :remote => true, :html => {:class=> "nice"}) do |f| %>
+
+      <div id="keywords-widget" class="no-print">
+        <h4>Keywords</h4>
+        <ul id="keywords">
+          <%= render @product.keywords, :locals => { :list => true } %>
+        </ul>
+
+        <div id="keyword-form">
+          <%= form_for([@product, Keyword.new], :remote => true, :html => {:class=> "nice"}) do |f| %>
             <div class="field edit-product">
               <%= f.text_field :title, :class => "small input-text", :placeholder => "keyword" %>
             </div>
@@ -41,21 +41,17 @@
           <% end %>
         </div>
       </div>
-		  <p class="timestamps no-print">
-			  Created on <%= @product.created_at.strftime("%m/%d/%Y at %I:%M %p") %><br />
-			  Updated on <%= @product.updated_at.strftime("%m/%d/%Y at %I:%M %p") %>
-			</p>
-	  <% end %>
-		
+      <p class="timestamps no-print">
+        Created on <%= @product.created_at.strftime("%m/%d/%Y at %I:%M %p") %><br />
+        Updated on <%= @product.updated_at.strftime("%m/%d/%Y at %I:%M %p") %>
+      </p>
+    <% end %>
   </span>
-
 
 </div>
 
 <div id="myModal" class="reveal-modal no-print">
-     <h2>New Image.</h2> 			
+     <h2>New Image.</h2>
       <%= render 'images/upload' %>
      <a class="close-reveal-modal">&#215;</a>
 </div>
-
-

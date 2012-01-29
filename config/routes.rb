@@ -1,9 +1,11 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
 
-  resources :invoices
+  resources :invoices do
+    resources :line_items
+  end
 
   resources :subscribers, :tasks
-  resources :shows, :only =>  [:index, :create, :destroy] do 
+  resources :shows, :only =>  [:index, :create, :destroy] do
     collection do
       post 'sort'
     end
@@ -29,16 +31,16 @@ PhoebeboothanitquesCom2::Application.routes.draw do
 
   resources :users, only: [:edit, :update]
   resources :sessions, only: [:new, :create, :destroy]
-  
+
   get "change_password" => "users#edit", :as => "change_password"
-  
+
   get "log_in" => "sessions#new", :as => "login"
   get "login" => "sessions#new", :as => "login"
   get "log_out" => "sessions#destroy", :as => "logout"
   get "logout" => "sessions#destroy", :as => "logout"
   get "backend" => "sessions#new", :as => "backend"
   get 'print/:id' => "prints#show", :as => 'print'
-  
+
   #Navigation Links
   match 'about' => 'home#about', :as => :about
   match 'search' => 'home#search', :as => :search
@@ -47,16 +49,16 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   match 'subscribe' => 'subscribers#new', :as => :subscribe
   match 'thank_you' => 'home#thank_you', :as => :thank_you
   match 'contact' => 'shows#index', :as => :contact
-  
+
   resources :products do
     resources :images, :shallow  => true, :only =>[:create, :destroy]
     resources :keywords, :shallow => true, :only =>[:create, :destroy]
     collection do
       post 'sort'
     end
-  end 
+  end
   get "home/index"
-  
+
   root :to => 'home#index'
 
 

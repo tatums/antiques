@@ -10,6 +10,7 @@ class CreateLineItems < ActiveRecord::Migration
       t.decimal :price
       t.decimal :tax
       t.decimal :total
+      t.integer :invoice_id
 
       t.timestamps
     end

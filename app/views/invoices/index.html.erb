@@ -14,10 +14,10 @@
 <% @invoices.each do |invoice| %>
   <tr>
     <td><%= link_to invoice.title, invoice %></td>
-    <td><%= link_to invoice.subtotal, invoice %></td>
-    <td><%= link_to invoice.grand_total, invoice %></td>
-    <td><%= link_to invoice.tax, invoice %></td>
-    <td><%= invoice.subscriber.full_name %></td>
+    <td><%= link_to number_to_currency(invoice.subtotal), invoice %></td>
+    <td><%= link_to number_to_currency(invoice.grand_total), invoice %></td>
+    <td><%= link_to number_to_currency(invoice.tax), invoice %></td>
+    <td><%= link_to invoice.subscriber.full_name, invoice.subscriber %></td>
     <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
     <td><%= link_to 'Destroy', invoice, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

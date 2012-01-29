@@ -1,0 +1,12 @@
+/* Add the new keyword to the bottom of the keyword list */
+$(".line_items").append("<%= escape_javascript(render(@line_item)) %>");
+
+/* Highlight the new comment */
+$('#line_item_<%= @line_item.id %>').effect("highlight", {color: "#D3D3D3"}, 3000);
+
+
+$(".tax").html(" <%= number_to_currency(@line_item.invoice.tax) %>");
+$(".sub_total").html(" <%= number_to_currency(@line_item.invoice.subtotal) %>");
+$(".grand_total").html(" <%= number_to_currency(@invoice.calc_grand_total) %>");
+
+$('.totals').effect("highlight", {color: "#D3D3D3"}, 3000);

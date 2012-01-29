@@ -1,3 +1,24 @@
 // Place all the styles related to the invoices controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+input.ex-small{width:75px;}
+
+body table {
+  background: #fff;
+  font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+table.totals{
+  float:right;
+  width:200px;
+  }
+
+.currency{
+  text-align:right;
+}
