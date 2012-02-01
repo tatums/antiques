@@ -4,7 +4,7 @@
 
 input.ex-small{width:75px;}
 
-body table {
+body table.invoice {
   background: #fff;
   font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 13px;
@@ -12,6 +12,9 @@ body table {
   color: #555;
   position: relative;
   -webkit-font-smoothing: antialiased;
+}
+.invoice th{
+  text-align:center;
 }
 
 table.totals{
@@ -22,3 +25,13 @@ table.totals{
 .currency{
   text-align:right;
 }
+
+div.new-item{overflow:auto;}
+
+.new-item ul{
+  display:inline;
+}
+.new-item ul li{float:left; margin:0 5px;}
+.center {text-align:center;}
+
+.delete a{color:red;}

@@ -9,38 +9,41 @@
   <%= @invoice.title %>
 </p>
 
-<table>
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>
+
+<table class="invoice">
   <thead>
     <tr>
-      <td></td>
-      <td>Item</td>
-      <td>Description</td>
-      <td>Dimensions</td>
-      <td>Qty</td>
-      <td>Price</td>
-      <td>Tax</td>
-      <td>Total</td>
+      <th></th>
+      <th>Item</th>
+      <th>Description</th>
+      <th>Dimensions</th>
+      <th>Qty</th>
+      <th>Price</th>
+      <th>Tax</th>
+      <th>Total</th>
+      <th></th>
     </tr>
   </thead>
-  <tfoot>
-    <%= form_for([@invoice, LineItem.new], :remote => true, :html => {:class=> "nice"}) do |f| %>
-      <tr>
-        <td></td>
-        <td><%= f.text_field :item_number, :class => "ex-small input-text", :placeholder => "item" %></td>
-        <td><%= f.text_field :description, :class => "small input-text", :placeholder => "description" %></td>
-        <td><%= f.text_field :dimensions, :class => "small input-text", :placeholder => "dimensions" %></td>
-        <td><%= f.text_field :quantity, :class => "ex-small input-text", :placeholder => "qty" %></td>
-        <td><%= f.text_field :price, :class => "ex-small input-text", :placeholder => "price" %></td>
-        <td><%= f.text_field :tax, :class => "ex-small input-text", :placeholder => "tax" %></td>
-        <td><%= f.submit 'Create', :class => "nice small radius button" %></td>
-      </tr>
-    <% end %>
-  </tfoot>
   <tbody class="line_items">
     <%= render @invoice.line_items %>
   </tbody>
 </table>
 
+<div class="new-item">
+    <%= form_for([@invoice, LineItem.new], :remote => true, :html => {:class=> "nice"}) do |f| %>
+    <ul>
+        <li><%= f.text_field :item_number, :class => "ex-small input-text", :placeholder => "item" %></li>
+        <li><%= f.text_field :description, :class => "input-text", :placeholder => "description" %></li>
+        <li><%= f.text_field :dimensions, :class => "small input-text", :placeholder => "dimensions" %></li>
+        <li><%= f.text_field :quantity, :class => "ex-small input-text", :placeholder => "qty" %></li>
+        <li><%= f.text_field :price, :class => "ex-small input-text", :placeholder => "price" %></li>
+        <li><%= f.text_field :tax, :class => "ex-small input-text", :placeholder => "tax" %></li>
+        <li><%= f.submit 'Add Line', :class => "nice small radius button" %></li>
+      </ul>
+    <% end %>
+</div>
 <table class="totals">
   <tr>
     <td>Subtotal</td><td class="sub_total currency"><%= number_to_currency(@invoice.subtotal) %></td>
@@ -54,13 +57,3 @@
 </table>
 
 
-<!-- <ul class="totals">
-  <li class="sub_total"><em>Subtotal: </em><span><%= number_to_currency(@invoice.subtotal) %></span></li>
-  <li class="tax"><em>Tax: </em><span><%= number_to_currency(@invoice.tax) %></span></li>
-  <li class="grand_total"><em>Grand total: </em><span><%= number_to_currency(@invoice.calc_grand_total) %></span></li>
-</ul> -->
-
-
-
-<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
-<%= link_to 'Back', invoices_path %>

@@ -1,7 +1,7 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
 
   resources :invoices do
-    resources :line_items
+    resources :line_items, :only => [:create, :destroy], :shallow => true
   end
 
   resources :subscribers, :tasks

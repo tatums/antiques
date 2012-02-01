@@ -12,5 +12,13 @@ class LineItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @line_item = LineItem.find(params[:id])
+    @line_item.destroy
+    respond_to do |format|
+      format.html { redirect_to @line_item.invoice }
+      format.js
+    end
+  end
 
 end

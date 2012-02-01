@@ -7,6 +7,13 @@ $('#line_item_<%= @line_item.id %>').effect("highlight", {color: "#D3D3D3"}, 300
 
 $(".tax").html(" <%= number_to_currency(@line_item.invoice.tax) %>");
 $(".sub_total").html(" <%= number_to_currency(@line_item.invoice.subtotal) %>");
-$(".grand_total").html(" <%= number_to_currency(@invoice.calc_grand_total) %>");
+$(".grand_total").html(" <%= number_to_currency(@line_item.invoice.calc_grand_total) %>");
 
 $('.totals').effect("highlight", {color: "#D3D3D3"}, 3000);
+
+$('#line_item_item_number').val('')
+$('#line_item_description').val('')
+$('#line_item_dimensions').val('')
+$('#line_item_quantity').val('')
+$('#line_item_price').val('')
+$('#line_item_tax').val('')

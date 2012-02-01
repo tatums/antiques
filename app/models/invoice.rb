@@ -11,6 +11,14 @@ class Invoice < ActiveRecord::Base
     self.subtotal  ||= 0.0
   end
 
+  def calc_sub_total
+    line_items.map(&:price).sum
+  end
+
+  def calc_total_tax
+    line_items.map(&:tax).sum
+  end
+
   def calc_grand_total
     subtotal + tax
   end
@@ -19,7 +27,7 @@ protected
 
   def sum_totals
     self.tax = line_items.map(&:tax).sum
-    self.subtotal = line_items.map(&:total).sum
+    self.subtotal = line_items.map(&:price).sum
   end
 
 end
