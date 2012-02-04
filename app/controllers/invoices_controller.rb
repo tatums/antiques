@@ -1,4 +1,5 @@
 class InvoicesController < ApplicationController
+  before_filter :require_user
 
   def index
     @invoices = Invoice.all
@@ -12,6 +13,13 @@ class InvoicesController < ApplicationController
     @invoice = Invoice.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
+      #format.pdf { render :layout => false }
+      format.pdf do
+          pdf = InvoicePdf.new(@invoice, view_context)
+          send_data pdf.render, filename: "order_#{@invoice.id}",
+                                        type: "application/pdf",
+                                        disposition: "inline"
+      end
     end
   end
 

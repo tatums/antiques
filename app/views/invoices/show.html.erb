@@ -10,9 +10,10 @@
 </p>
 
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> |
-<%= link_to 'Back', invoices_path %>
+<%= link_to 'Back', invoices_path %> |
+<%= link_to "PDF Invoice", invoice_path(@invoice, :format => 'pdf')%>
 
-<table class="invoice">
+<table class="invoice table-bordered ">
   <thead>
     <tr>
       <th></th>
@@ -26,6 +27,21 @@
       <th></th>
     </tr>
   </thead>
+  <!-- <tfoot>
+    <%= form_for([@invoice, LineItem.new], :remote => true, :html => {:class=> "nice"}) do |f| %>
+    <tr>
+
+        <td><%= f.text_field :item_number, :class => "ex-small input-text", :placeholder => "item" %></td>
+        <td><%= f.text_field :description, :class => "input-text", :placeholder => "description" %></td>
+        <td><%= f.text_field :dimensions, :class => "small input-text", :placeholder => "dimensions" %></td>
+        <td><%= f.text_field :quantity, :class => "ex-small input-text", :placeholder => "qty" %></td>
+        <td><%= f.text_field :price, :class => "ex-small input-text", :placeholder => "price" %></td>
+        <td><%= f.text_field :tax, :class => "ex-small input-text", :placeholder => "tax" %></td>
+        <td><%= f.submit 'Add Line', :class => "nice small radius button" %></td>
+    </tr>
+    <% end %>
+
+  </tfoot> -->
   <tbody class="line_items">
     <%= render @invoice.line_items %>
   </tbody>
@@ -44,7 +60,7 @@
       </ul>
     <% end %>
 </div>
-<table class="totals">
+<table class="totals table-bordered">
   <tr>
     <td>Subtotal</td><td class="sub_total currency"><%= number_to_currency(@invoice.subtotal) %></td>
   </tr>

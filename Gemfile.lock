@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    Ascii85 (1.0.1)
     actionmailer (3.1.0)
       actionpack (= 3.1.0)
       mail (~> 2.3.0)
@@ -52,6 +53,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.1.2)
+    dalli (1.1.4)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     escape (0.0.4)
@@ -82,9 +84,14 @@ GEM
       subexec (~> 0.1.0)
     multi_json (1.0.3)
     nokogiri (1.5.0)
-    pdfkit (0.5.2)
+    pdf-reader (1.0.0)
+      Ascii85 (~> 1.0.0)
+      ruby-rc4
     polyglot (0.3.2)
     pr_geohash (1.0.0)
+    prawn (0.12.0)
+      pdf-reader (>= 0.9.0)
+      ttfunk (~> 1.0.2)
     pry (0.9.8)
       coderay (~> 1.0.5)
       method_source (~> 0.7)
@@ -131,6 +138,7 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.7.0)
+    ruby-rc4 (0.1.4)
     rubyzip (0.9.4)
     sass (3.1.10)
     sass-rails (3.1.4)
@@ -163,11 +171,11 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    ttfunk (1.0.3)
     tzinfo (0.3.30)
     uglifier (1.0.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
-    wkhtmltopdf-binary (0.9.5.3)
     xpath (0.1.4)
       nokogiri (~> 1.3)
     zurb-foundation (2.1.0)
@@ -182,11 +190,12 @@ DEPENDENCIES
   capybara
   carrierwave
   coffee-rails (~> 3.1.0)
+  dalli
   factory_girl_rails
   jquery-rails
   kaminari
   mini_magick
-  pdfkit
+  prawn
   pry
   rack (= 1.3.3)
   rails (= 3.1.0)
@@ -195,5 +204,4 @@ DEPENDENCIES
   sqlite3 (= 1.3.4)
   sunspot_rails
   uglifier
-  wkhtmltopdf-binary
   zurb-foundation

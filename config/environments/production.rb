@@ -3,7 +3,7 @@ PhoebeboothanitquesCom2::Application.configure do
 
 
 #config.action_controller.asset_host = "http://phoebeboothantiques.com"
- 
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -21,11 +21,13 @@ PhoebeboothanitquesCom2::Application.configure do
 
   #config.assets.compile = false
   config.assets.compile = true
-  
+
   # Generate digests for assets URLs
   config.assets.digest = true
 
 
+  #CACHE added on 2/4/2012
+  config.cache_store = :dalli_store
 
 
 
