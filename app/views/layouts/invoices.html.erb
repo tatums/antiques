@@ -26,27 +26,27 @@
   </script>
 <% end %>
 
-  <%= render 'layouts/admin_nav' %>
-  <%= render 'layouts/notifications' %>
-
-	<div id="wrapper">
+<%= render 'layouts/admin_nav' %>
+<%= render 'layouts/notifications' %>
+<a class="close" data-dismiss="alert" href="#">&times;</a>
+<div id="wrapper">
       <% unless current_user %>
 
       <div id="header">
-				  <h1><%=link_to image_tag("phoebe_booth.gif"), root_url %></h1>
+          <h1><%=link_to image_tag("phoebe_booth.gif"), root_url %></h1>
       </div>
-				<% end %>
+        <% end %>
       <div id="navigation">
-				<%= render 'layouts/navigation' %>
-			</div>
+        <%= render 'layouts/navigation' %>
+      </div>
 
 
 
-				<%= yield %>
+        <%= yield %>
 
-		<div id="footer" class="footer_style">
+    <div id="footer" class="footer_style">
       <%= render 'layouts/footer' %>
-		</div>
+    </div>
 
 
     <div id="spinner" style="display:none">

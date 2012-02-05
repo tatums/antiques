@@ -13,6 +13,9 @@ class Subscriber < ActiveRecord::Base
   def name_and_address
     first.to_s + " " + last.to_s + " <br />" + address.to_s + " <br />" + city.to_s + ", " + state.to_s + " " + zip.to_s
   end
+  def city_state_zip
+    city.to_s + ", " + state.to_s + " " + zip.to_s
+  end
 
   STATE_SELECT = [
     # Displayed,Stored in DB

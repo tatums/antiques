@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120204014642) do
+ActiveRecord::Schema.define(:version => 20120128150314) do
 
   create_table "categories", :force => true do |t|
     t.boolean  "active",      :default => false
@@ -52,9 +52,6 @@ ActiveRecord::Schema.define(:version => 20120204014642) do
 
   create_table "invoices", :force => true do |t|
     t.string   "title"
-    t.decimal  "subtotal"
-    t.decimal  "grand_total"
-    t.decimal  "tax"
     t.integer  "subscriber_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -69,7 +66,7 @@ ActiveRecord::Schema.define(:version => 20120204014642) do
 
   create_table "line_items", :force => true do |t|
     t.integer  "position"
-    t.integer  "porduct_id"
+    t.integer  "product_id"
     t.string   "item_number"
     t.string   "description"
     t.string   "dimensions"
@@ -98,16 +95,6 @@ ActiveRecord::Schema.define(:version => 20120204014642) do
     t.decimal  "price"
     t.string   "dimensions"
   end
-
-  create_table "sessions", :force => true do |t|
-    t.string   "session_id", :null => false
-    t.text     "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
-  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "shows", :force => true do |t|
     t.boolean  "active"

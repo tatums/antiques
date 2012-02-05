@@ -26,6 +26,11 @@ class InvoicesController < ApplicationController
   def new
     @invoice = Invoice.new
 
+    if params[:product_id]
+      @product = Product.find(params[:product_id])
+      @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,
+      :price => @product.price, :quantity => 1, :dimensions => @product.dimensions )
+    end
     respond_to do |format|
       format.html # new.html.erb
     end
@@ -39,6 +44,12 @@ class InvoicesController < ApplicationController
 
   def create
     @invoice = Invoice.new(params[:invoice])
+
+    if params[:product_id]
+      @product = Product.find(params[:product_id])
+      @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,
+      :price => @product.price, :quantity => 1, :dimensions => @product.dimensions )
+    end
 
     respond_to do |format|
       if @invoice.save

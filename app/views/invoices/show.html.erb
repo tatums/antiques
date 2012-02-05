@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div customer>
+<div class="customer">
   <%= @invoice.subscriber.name_and_address.html_safe %>
 </div>
 
@@ -62,10 +62,10 @@
 </div>
 <table class="totals table-bordered">
   <tr>
-    <td>Subtotal</td><td class="sub_total currency"><%= number_to_currency(@invoice.subtotal) %></td>
+    <td>Subtotal</td><td class="sub_total currency"><%= number_to_currency(@invoice.calc_sub_total) %></td>
   </tr>
   <tr>
-    <td>Tax</td><td class="tax currency"><%= number_to_currency(@invoice.tax) %></td>
+    <td>Tax</td><td class="tax currency"><%= number_to_currency(@invoice.calc_total_tax) %></td>
   </tr>
   <tr>
     <td>Grand Total</td><td class="grand_total currency"><%= number_to_currency(@invoice.calc_grand_total) %></td>

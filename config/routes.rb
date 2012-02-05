@@ -4,6 +4,9 @@ PhoebeboothanitquesCom2::Application.routes.draw do
     resources :line_items, :only => [:create, :destroy], :shallow => true
   end
 
+  get 'invoice/new/:product_id' => "invoices#new", :as => 'setup_new_invoice'
+  post 'invoice/:product_id' => "invoices#create", :as => 'setup_invoice'
+
   resources :subscribers, :tasks
   resources :shows, :only =>  [:index, :create, :destroy] do
     collection do

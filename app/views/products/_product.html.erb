@@ -1,23 +1,24 @@
 <%= content_tag_for :li, product do %>
-	<span class="block photo">
-		<%= link_to image_tag(product.image_url(:thumb_200) ), product if product.image? %>
-		<%= sold?(product.active) %>
-	</span>
-	<span class="block meta">
-	  <ul>
-		  <li><h3><%= link_to product.title, product %></h3></li>
-			<li><%= country_and_period(product) %> </li>
-		  <li>Inventory Number: <%= product.item_number.to_s %></li>
-		  <%= read_more_setup_as_paragraphs(product).html_safe %>
-		  <%= formatted_dimensions(product.dimensions) %>
+  <span class="block photo">
+    <%= link_to image_tag(product.image_url(:thumb_200) ), product if product.image? %>
+    <%= sold?(product.active) %>
+  </span>
+  <span class="block meta">
+    <ul>
+      <li><h3><%= link_to product.title, product %></h3></li>
+      <li><%= country_and_period(product) %> </li>
+      <li>Inventory Number: <%= product.item_number.to_s %></li>
+      <%= read_more_setup_as_paragraphs(product).html_safe %>
+      <%= formatted_dimensions(product.dimensions) %>
       <%= formatted_price(product.price) %>
-      
+
       <% product.images.each do |image| %>
         <%= image_tag(image.image_url(:thumb_50) )%>
       <% end %>
-      
-	  </ul>	  
-	  <%= edit_button_if_logged_in(product) %>
+
+    </ul>
+    <%= edit_button_if_logged_in(product) %>
     <%= upload_images_button_if_logged_in(product) %>
-	</span>
+    <%= link_to 'Invoice', setup_new_invoice_path(product) %>
+  </span>
 <% end %>

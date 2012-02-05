@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body div#wrapper .customer{
+font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+-webkit-font-smoothing: antialiased;
+}
 input.ex-small{width:75px;}
 body table {
   background: #fff;
