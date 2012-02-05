@@ -7,6 +7,9 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   get 'invoice/new/:product_id' => "invoices#new", :as => 'setup_new_invoice'
   post 'invoice/:product_id' => "invoices#create", :as => 'setup_invoice'
 
+  post 'email_invoice/:invoice_id' => "invoices#email_invoice", :as => 'email_invoice'
+
+
   resources :subscribers, :tasks
   resources :shows, :only =>  [:index, :create, :destroy] do
     collection do

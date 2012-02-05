@@ -40,6 +40,19 @@ PhoebeboothanitquesCom2::Application.configure do
     end
   end
 
+  MAIL = YAML.load_file("#{Rails.root}/config/mail.yml")
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => MAIL[Rails.env]["domain"],
+    :user_name            => MAIL[Rails.env]["user_name"],
+    :password             => MAIL[Rails.env]["password"],
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
+
+    #MAIL_CHIMP[Rails.env]["api_key"]
 
 
   #HACK TO GET PDFKIT RUNNING

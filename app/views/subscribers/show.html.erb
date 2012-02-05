@@ -1,41 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>First:</b>
-  <%= @subscriber.first %>
-</p>
-
-<p>
-  <b>Last:</b>
-  <%= @subscriber.last %>
-</p>
-
-<p>
-  <b>Email:</b>
+  <%= @subscriber.full_name %><br />
+  <%= @subscriber.address %><br />
+  <%= @subscriber.city_state_zip %><br />
   <%= @subscriber.email %>
 </p>
 
-<p>
-  <b>Address:</b>
-  <%= @subscriber.address %>
-</p>
+<table class="invoice table-bordered ">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Subtotal</th>
+    <th>Grand total</th>
+  </tr>
+  </thead>
+  <% @subscriber.invoices.each do |invoice| %>
 
-<p>
-  <b>City:</b>
-  <%= @subscriber.city %>
-</p>
+  <tr>
+    <td><%= link_to invoice.title, invoice %></td>
+    <td class="currency"><%= link_to number_to_currency(invoice.calc_sub_total), invoice %></td>
+    <td class="currency"><%= link_to number_to_currency(invoice.calc_grand_total), invoice %></td>
+  </tr>
 
-<p>
-  <b>State:</b>
-  <%= @subscriber.state %>
-</p>
+  <% end %>
+</table>
 
-<p>
-  <b>Zip:</b>
-  <%= @subscriber.zip %>
-</p>
-
-<%= link_to 'Back', subscribers_path %> | 
+<%= link_to 'New Invoice', new_invoice_path %> |
 <%= link_to 'Edit', edit_subscriber_path(@subscriber) %> |
 <%= link_to 'Destroy', @subscriber, confirm: 'Are you sure?', method: :delete %>
 

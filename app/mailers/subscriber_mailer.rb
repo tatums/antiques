@@ -1,9 +1,9 @@
 class SubscriberMailer < ActionMailer::Base
-  default from: "admin@phoebeboothantiques.com"
-    
+  default from: MAIL[Rails.env]["send_as"]
+
   def subscribe(subscriber)
       @subscriber = subscriber
       @url  = "http://phoebeboothantiques.com"
-      mail(:to => "phoebe@phoebeboothantiques.com", :subject => "Subscription")
-  end    
+      mail(:to => MAIL[Rails.env]["send_to"], :subject => "Subscription")
+  end
 end

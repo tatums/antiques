@@ -20,7 +20,7 @@
               <li><%= link_to 'Invoices', invoices_path %></li>
               <li><%= link_to 'Shows', shows_path %></li>
             </ul>
-            <p class="navbar-text pull-right">Logged in as <%= current_user.email %> <%= link_to "logout", logout_path %></p>
+            <p class="navbar-text pull-right"><%= link_to "logout", logout_path %></p>
           </div>
         </div>
       </div>

@@ -19,6 +19,6 @@
     </ul>
     <%= edit_button_if_logged_in(product) %>
     <%= upload_images_button_if_logged_in(product) %>
-    <%= link_to 'Invoice', setup_new_invoice_path(product) %>
+    <%= invoice_button_if_logged_in(product) %>
   </span>
 <% end %>

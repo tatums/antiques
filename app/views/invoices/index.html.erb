@@ -1,6 +1,7 @@
 <h1>Listing invoices</h1>
 
 <table class="invoice table-bordered ">
+  <thead>
   <tr>
     <th>Title</th>
     <th>Subtotal</th>
@@ -10,13 +11,13 @@
     <th></th>
     <th></th>
   </tr>
-
+</thead>
 <% @invoices.each do |invoice| %>
   <tr>
     <td><%= link_to invoice.title, invoice %></td>
-    <td><%= link_to number_to_currency(invoice.calc_sub_total), invoice %></td>
-    <td><%= link_to number_to_currency(invoice.calc_grand_total), invoice %></td>
-    <td><%= link_to number_to_currency(invoice.calc_total_tax), invoice %></td>
+    <td class="currency"><%= link_to number_to_currency(invoice.calc_sub_total), invoice %></td>
+    <td class="currency"><%= link_to number_to_currency(invoice.calc_grand_total), invoice %></td>
+    <td class="currency"><%= link_to number_to_currency(invoice.calc_total_tax), invoice %></td>
     <td><%= link_to invoice.subscriber.full_name, invoice.subscriber %></td>
     <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
     <td><%= link_to 'Destroy', invoice, confirm: 'Are you sure?', method: :delete %></td>

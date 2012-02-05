@@ -1,25 +1,25 @@
 module ProductsHelper
 
-  
+
   def country_and_period(product)
     unless product.country.nil? or product.period.nil?
        product.country + ", " + product.period
     end
   end
-  
+
 
   def read_more(product)
       desc = product.body
       preview_words = 35
       total_words = desc.split.length
       if total_words < preview_words
-        preview = desc          
+        preview = desc
       else
         preview = desc.split[0..preview_words].join(" ")+" ..."
       end
       data = "<p id='product-desc'>"+preview +"</p>"
     return data.html_safe
-  end  
+  end
 
   def read_more_setup_as_paragraphs(product)
     output = []
@@ -33,12 +33,12 @@ module ProductsHelper
       preview_words = 35
       total_words = x.split(" ").length
       if total_words < preview_words
-        preview = x          
+        preview = x
       else
-        preview = x.split[0..preview_words].join(" ")+ "#{link_to " ...more", product, :class=> 'more'}" 
+        preview = x.split[0..preview_words].join(" ")+ "#{link_to " ...more", product, :class=> 'more'}"
       end
       data = "<li>"+preview +"</li>"
-    return data.html_safe   
+    return data.html_safe
   end
 
 
@@ -65,24 +65,30 @@ module ProductsHelper
     output = ""
     unless dimensions.blank?
       output = "<li>" + dimensions + "</li>"
-    end  
+    end
     return output.html_safe
   end
-  
+
   def sold?(active)
       "<span class='sold'> </span>".html_safe if active == false
   end
-  
+
   def edit_button_if_logged_in(product)
     if current_user
-		  link_to 'Edit', edit_product_path(product), :class => "products-edit-button nice small white radius button no-print"			
+		  link_to 'Edit', edit_product_path(product), :class => "products-edit-button nice small white radius button no-print"
 		end
   end
-  
+
   def upload_images_button_if_logged_in(product)
     if current_user
       link_to 'Upload Images', product, :class => "products-upload-button nice small white radius button no-print"
 		end
   end
-  
+
+  def invoice_button_if_logged_in(product)
+    if current_user
+      link_to 'Invoice', setup_new_invoice_path(product), :class => "products-upload-button nice small white radius button no-print"
+    end
+  end
+
 end
