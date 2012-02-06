@@ -22,7 +22,7 @@ gem 'sunspot_rails'
 gem "zurb-foundation"
 gem 'prawn'
 gem 'dalli'
-
+gem 'memcached'
 group :development, :test do
   gem "rspec-rails"
   gem "capybara"

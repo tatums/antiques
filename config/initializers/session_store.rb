@@ -12,4 +12,4 @@
 # Rails.application.config.session_store :dalli_store, :memcache_server => ['host1', 'host2'], :namespace => 'sessions', :key => '_foundation_session', :expire_after => 30.minutes
 
 require 'action_dispatch/middleware/session/dalli_store'
-Rails.application.config.session_store :dalli_store, :memcache_server => ['localhost'], :namespace => 'sessions', :key => '_foundation_session', :expire_after => 30.minutes
+Rails.application.config.session_store :dalli_store, :memcache_server => ['127.0.0.1:11211'], :namespace => 'sessions', :key => '_foundation_session', :expire_after => 30.minutes

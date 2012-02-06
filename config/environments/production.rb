@@ -27,7 +27,9 @@ PhoebeboothanitquesCom2::Application.configure do
 
 
   #CACHE added on 2/4/2012
-  config.cache_store = :dalli_store
+  config.cache_store = :dalli_store, "127.0.0.1:11211"
+
+  MAIL = YAML.load_file("#{Rails.root}/config/mail.yml")
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
