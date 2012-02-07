@@ -25,7 +25,7 @@ class InvoicesController < ApplicationController
   end
 
   def new
-    @invoice = Invoice.new
+    @invoice = Invoice.new(:inv_date => Time.now.to_date.strftime("%m/%d/%Y"))
     if params[:product_id]
       @product = Product.find(params[:product_id])
       @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,

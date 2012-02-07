@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120128150314) do
+ActiveRecord::Schema.define(:version => 20120207023943) do
 
   create_table "categories", :force => true do |t|
     t.boolean  "active",      :default => false
@@ -55,6 +55,9 @@ ActiveRecord::Schema.define(:version => 20120128150314) do
     t.integer  "subscriber_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "invoice_number"
+    t.text     "notes"
+    t.date     "inv_date"
   end
 
   create_table "keywords", :force => true do |t|

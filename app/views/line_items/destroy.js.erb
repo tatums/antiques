@@ -2,6 +2,6 @@ $('#line_item_<%= @line_item.id %>').fadeOut();
 
 $('.totals').effect("highlight", {color: "#D3D3D3"}, 3000);
 
-$(".tax").html(" <%= number_to_currency(@line_item.invoice.calc_total_tax) %>");
+$(".tax").html(" <%= number_to_currency(@line_item.invoice.calc_tax_total) %>");
 $(".sub_total").html(" <%= number_to_currency(@line_item.invoice.calc_sub_total) %>");
 $(".grand_total").html(" <%= number_to_currency(@line_item.invoice.calc_grand_total) %>");

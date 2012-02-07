@@ -11,15 +11,18 @@
 </div>
 
 <p>
-  <b>Invoice Title: </b><%= @invoice.title %>
+  <b>Invoice Title: </b><%= @invoice.title %><br />
+  <b>Invoice Number: </b><%= @invoice.id %><br />
+  <b>Date: </b><%= @invoice.inv_date %>
 </p>
 
 
 
 <ul>
   <li><%= link_to "View as PDF", invoice_path(@invoice, :format => 'pdf'),:class => "nice small white radius button no-print"%></li>
-  <% unless @invoice.subscriber.email.nil? %>
-    <li><%= button_to 'Email Invoice', email_invoice_path(@invoice), :class => "nice small white radius button no-print" %></li>
+  <% unless @subscriber.email.nil? %>
+    <li><%= button_to 'Email Invoice', email_invoice_path(@invoice), confirm: "Email to #{@subscriber.email}. Are you sure?", :class => "nice small white radius button no-print" %></li>
+
 <% end %>
 </ul>
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> |
@@ -77,7 +80,7 @@
     <td>Subtotal</td><td class="sub_total currency"><%= number_to_currency(@invoice.calc_sub_total) %></td>
   </tr>
   <tr>
-    <td>Tax</td><td class="tax currency"><%= number_to_currency(@invoice.calc_total_tax) %></td>
+    <td>Tax</td><td class="tax currency"><%= number_to_currency(@invoice.calc_tax_total) %></td>
   </tr>
   <tr>
     <td>Grand Total</td><td class="grand_total currency"><%= number_to_currency(@invoice.calc_grand_total) %></td>

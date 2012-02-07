@@ -1,13 +1,14 @@
-/* Add the new keyword to the bottom of the keyword list */
+/* Add the new line_item row to the bottom of the table */
 $(".line_items").append("<%= escape_javascript(render(@line_item)) %>");
 
-/* Highlight the new comment */
+/* Highlight the new line item */
 $('#line_item_<%= @line_item.id %>').effect("highlight", {color: "#D3D3D3"}, 3000);
 
 
-$(".tax").html(" <%= number_to_currency(@line_item.invoice.calc_total_tax) %>");
+$(".tax").html(" <%= number_to_currency(@line_item.invoice.calc_tax_total) %>");
 $(".sub_total").html(" <%= number_to_currency(@line_item.invoice.calc_sub_total) %>");
 $(".grand_total").html(" <%= number_to_currency(@line_item.invoice.calc_grand_total) %>");
+
 
 $('.totals').effect("highlight", {color: "#D3D3D3"}, 3000);
 

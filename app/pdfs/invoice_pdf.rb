@@ -101,7 +101,7 @@ class InvoicePdf < Prawn::Document
 
   def totals_data
     [['Subtotal:', price(@invoice.calc_sub_total)],
-      ['Tax:', price(@invoice.calc_total_tax)],
+      ['Tax:', price(@invoice.calc_tax_total)],
       ['Shipping:', price(@invoice.calc_shipping_total)],
       ['Grand Total:', price(@invoice.calc_grand_total)] ]
   end
