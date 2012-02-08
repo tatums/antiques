@@ -1,10 +1,10 @@
 <h1>Listing invoices</h1>
 
-<table class="invoice table-bordered ">
+<table class="invoice table-bordered sortable">
   <thead>
   <tr>
-    <th>Number</th>
-    <th>Title</th>
+    <th><%= sortable 'id', "Number" %></th>
+    <th><%= sortable "title", "Title" %> </th>
     <th>Subtotal</th>
     <th>Grand total</th>
     <th>Tax</th>
@@ -13,20 +13,14 @@
     <th></th>
   </tr>
 </thead>
-<% @invoices.each do |invoice| %>
-  <tr>
-    <td><%= link_to invoice.id, invoice %></td>
-    <td><%= link_to invoice.title, invoice %></td>
-    <td class="currency"><%= link_to number_to_currency(invoice.calc_sub_total), invoice %></td>
-    <td class="currency"><%= link_to number_to_currency(invoice.calc_grand_total), invoice %></td>
-    <td class="currency"><%= link_to number_to_currency(invoice.calc_tax_total), invoice %></td>
-    <td><%= link_to invoice.subscriber.full_name, invoice.subscriber %></td>
-    <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-    <td><%= link_to 'Destroy', invoice, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<tbody id="invoices">
+  <%= render @invoices %>
+</tbody>
 </table>
 
+<div id="paginator">
+  <%= paginate @invoices, :remote => true %>
+</div>
 <br />
 
 <%= link_to 'New Invoice', new_invoice_path %>

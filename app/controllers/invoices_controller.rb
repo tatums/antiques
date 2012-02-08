@@ -1,11 +1,13 @@
 class InvoicesController < ApplicationController
   before_filter :require_user
 
-  def index
-    @invoices = Invoice.all
+  helper_method :sort_column, :sort_direction
 
+  def index
+    @invoices = Invoice.order(sort_column + ' ' + sort_direction).page(params[:page])
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
+      format.js
     end
   end
 
@@ -13,8 +15,7 @@ class InvoicesController < ApplicationController
     @invoice = Invoice.find(params[:id])
     @subscriber = @invoice.subscriber
     respond_to do |format|
-      format.html # show.html.erb
-      #format.pdf { render :layout => false }
+      format.html
       format.pdf do
           pdf = InvoicePdf.new(@invoice, view_context)
           send_data pdf.render, filename: "order_#{@invoice.id}",
@@ -32,13 +33,14 @@ class InvoicesController < ApplicationController
       :price => @product.price, :quantity => 1, :dimensions => @product.dimensions )
     end
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
     end
   end
 
 
   def edit
     @invoice = Invoice.find(params[:id])
+    @invoice.inv_date = @invoice.inv_date.strftime("%m/%d/%Y")
   end
 
 
@@ -84,6 +86,15 @@ class InvoicesController < ApplicationController
     @pdf = InvoicePdf.new(@invoice, view_context)
     InvoiceMailer.send_invoice(@invoice, @pdf).deliver
     redirect_to @invoice, notice: 'Invoice was sent.'
+  end
+
+private
+  def sort_column
+    Invoice.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
 end
