@@ -4,7 +4,8 @@ class InvoicesController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @invoices = Invoice.order(sort_column + ' ' + sort_direction).page(params[:page])
+    @invoices = Invoice.all
+    #@invoices = Invoice.page(params[:page])
     respond_to do |format|
       format.html
       format.js
@@ -88,13 +89,5 @@ class InvoicesController < ApplicationController
     redirect_to @invoice, notice: 'Invoice was sent.'
   end
 
-private
-  def sort_column
-    Invoice.column_names.include?(params[:sort]) ? params[:sort] : "id"
-  end
-
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
 
 end

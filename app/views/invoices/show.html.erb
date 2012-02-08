@@ -13,7 +13,7 @@
 <p>
   <b>Invoice Title: </b><%= @invoice.title %><br />
   <b>Invoice Number: </b><%= @invoice.id %><br />
-  <b>Date: </b><%= @invoice.inv_date %>
+  <b>Date: </b><%= @invoice.inv_date.strftime('%m/%d/%Y') %>
 </p>
 
 

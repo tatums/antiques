@@ -1,34 +1,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Phoebe Booth Antiques LLC</title>
-	<%= javascript_include_tag "application" %>
-	<%= stylesheet_link_tag "application" %>
-	<%= stylesheet_link_tag "print", :media => "print" %>
-	<%= csrf_meta_tags %>
-	<meta name="description" content="" />
-	<meta name="keywords" content="antique, mahogany, walnut, burl, cherry, oak, fruitwood, credenza, commode, chest, console, breakfront, sideboard, highboy, high chest, lowboy, low chest, etagere, cabinet, bookcase, chiffonier, desk, bureau, coffee table, low table, painting, sculpture, ceramic, andirons, fire tools, fire bucket, candlesticks, lamps, chandelier, pricket sticks, candelabra, sconce, girandoles, mirror, overmantle, looking glass, hanging shelf, bracket, armchair, hall chair, chairvdining chair, bergere, barrel back, klismos, side chair, bench, william mary, queen anne, georgian, regency, victorian, edwardian, arts and crafts, hepplewhite, chippendalevsheraton, gothic, rococo, louis, directoire, dining table, writing table, card table, torcheres, occasional table, tray table, tilt top table, drum table, wine table, pembroke table, tripod table, dressing table, lady's work table, dining table, tea table, vase, tea caddy" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <title>Phoebe Booth Antiques LLC</title>
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "print", :media => "print" %>
+  <%= csrf_meta_tags %>
+  <meta name="description" content="" />
+  <meta name="keywords" content="antique, mahogany, walnut, burl, cherry, oak, fruitwood, credenza, commode, chest, console, breakfront, sideboard, highboy, high chest, lowboy, low chest, etagere, cabinet, bookcase, chiffonier, desk, bureau, coffee table, low table, painting, sculpture, ceramic, andirons, fire tools, fire bucket, candlesticks, lamps, chandelier, pricket sticks, candelabra, sconce, girandoles, mirror, overmantle, looking glass, hanging shelf, bracket, armchair, hall chair, chairvdining chair, bergere, barrel back, klismos, side chair, bench, william mary, queen anne, georgian, regency, victorian, edwardian, arts and crafts, hepplewhite, chippendalevsheraton, gothic, rococo, louis, directoire, dining table, writing table, card table, torcheres, occasional table, tray table, tilt top table, drum table, wine table, pembroke table, tripod table, dressing table, lady's work table, dining table, tea table, vase, tea caddy" />
 <%= render 'layouts/analytics' %>
 </head>
 <body>
-<% if current_user %>
-  <script language="javascript">
-  	$(document).ready(function(){
-  		$('#categories').sortable({
-  			update: function(event, ui) {
-  				var CategoriesOrder = $(this).sortable('toArray');
-  				$.post( "<%= escape_javascript(sort_categories_path) %>", {CategoriesOrder:CategoriesOrder});
-  			}
-  		});
-  	});
-  </script>
-<% end %>
+
 
 <%= render 'layouts/admin_nav' %>
 <%= render 'layouts/notifications' %>
-<a class="close" data-dismiss="alert" href="#">&times;</a>
 <div id="wrapper">
       <% unless current_user %>
 
