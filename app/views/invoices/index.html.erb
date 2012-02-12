@@ -1,11 +1,8 @@
 <script>
 $(document).ready(function(){
-       // $("#invoice-table").tablesorter();
-
-        $("#invoice-table")
-            .tablesorter({widthFixed: true, widgets: ['zebra']})
-            .tablesorterPager({container: $("#pager")});
-
+    $("#invoice-table")
+        .tablesorter({widthFixed: true, widgets: ['zebra']})
+        .tablesorterPager({container: $("#pager")});
 });
 
 </script>
@@ -53,4 +50,4 @@ $(document).ready(function(){
 </div> -->
 <br />
 
-<%= link_to 'New Invoice', new_invoice_path %>
+<%= link_to 'New Invoice', new_invoice_path, :class => 'nice small radius button' %>

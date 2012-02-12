@@ -28,8 +28,9 @@ protected
     invoice.line_items.each_with_index do |item, index|
       item.update_attributes(:position => index+1)
       #LineItem.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
-      puts "Hello*********"
-      puts "ID: #{id}, INDEX: #{index}"
+
+      #puts "Hello*********"
+      #puts "ID: #{id}, INDEX: #{index}"
     end
     # invoice.line_items do |item|
     #   item.position = i

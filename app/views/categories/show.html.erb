@@ -30,9 +30,11 @@
             <%= formatted_dimensions(tag.product.dimensions) %>
             <%= formatted_price(tag.product.price) %>
             <li class="small-thumbs">
+
               <% tag.product.images.each do |image| %>
-                <%= image_tag(image.image_url(:thumb_50) )%>
+                <%= link_to image_tag(image.image_url(:thumb_50) ),image.image_url(:large), :class => 'single_image' %>
               <% end %>
+
               <%= link_to("Print a Tear Sheet", print_path(tag.product), :class => 'print_link no-print')%>
             </li>
           </ul>
@@ -45,8 +47,8 @@
 	</ul>
 
   <% else %>
-  		<p>We are working on the site.  Please check back soon.</p>
-  		<p>If you would like to be emailed once we have content available. Click <%= link_to 'here', subscribe_path %></p>
+    <p>We are working on the site.  Please check back soon.</p>
+    <p>If you would like to be emailed once we have content available. Click <%= link_to 'here', subscribe_path %></p>
   <% end %>
 
 <p class="paginate"><%= paginate @tags %></p>

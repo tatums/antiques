@@ -75,14 +75,14 @@ module ProductsHelper
 
   def edit_button_if_logged_in(product)
     if current_user
-		  link_to 'Edit', edit_product_path(product), :class => "products-edit-button nice small white radius button no-print"
-		end
+      link_to 'Edit', edit_product_path(product), :class => "products-edit-button nice small white radius button no-print"
+    end
   end
 
   def upload_images_button_if_logged_in(product)
     if current_user
       link_to 'Upload Images', product, :class => "products-upload-button nice small white radius button no-print"
-		end
+    end
   end
 
   def invoice_button_if_logged_in(product)

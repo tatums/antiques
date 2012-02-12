@@ -82,6 +82,12 @@ class InvoicesController < ApplicationController
     end
   end
 
+  def add_product_to_invoice(product)
+    @product = Product.find(product.id)
+
+  end
+
+
   def email_invoice
     @invoice = Invoice.find(params[:invoice_id])
     @pdf = InvoicePdf.new(@invoice, view_context)
