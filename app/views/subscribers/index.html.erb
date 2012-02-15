@@ -1,4 +1,13 @@
-<table class="invoice table-bordered ">
+<script>
+$(document).ready(function(){
+    $("#subscribers")
+        .tablesorter({widthFixed: true, widgets: ['zebra']})
+        .tablesorterPager({container: $("#pager")});
+});
+
+</script>
+
+<table id="subscribers" class="table-bordered ">
   <thead>
     <tr>
       <th>Name</th>
@@ -23,3 +32,20 @@
 <% end %>
 </tbody>
 </table>
+
+
+<div id="pager">
+  <form>
+    <!-- <span class="first">‹ First</span> -->
+    <span class="prev">‹ Prev</span>
+    <input type="text" class="pagedisplay">
+    <span class="next">Next ›</span>
+    <!-- <img src="../addons/pager/icons/last.png" class="last"> -->
+    <select class="pagesize">
+      <option selected="selected" value="10">10</option>
+      <option value="20">20</option>
+      <option value="30">30</option>
+      <option value="40">40</option>
+    </select>
+  </form>
+</div>

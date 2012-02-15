@@ -33,11 +33,11 @@
 
   <div id="wrapper">
       <% unless current_user %>
-
-      <div id="header">
-        <h1><%=link_to image_tag("phoebe_booth.gif"), root_url %></h1>
-      </div>
+        <div id="header">
+          <h1><%=link_to image_tag("phoebe_booth.gif"), root_url %></h1>
+        </div>
       <% end %>
+
       <div id="navigation">
         <%= render 'layouts/navigation' %>
       </div>
