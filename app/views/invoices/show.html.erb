@@ -1,26 +1,48 @@
-  <div class="customer">
-    <p>
-      <%= @subscriber.full_name %><br />
-      <%= @subscriber.address %><br />
-      <%= @subscriber.city_state_zip %><br />
-      <%= @subscriber.email %>
-    </p>
+  <div class="row">
+    <div class="span4">
+        <p>
+          <%= @subscriber.full_name %><br />
+          <%= @subscriber.address %><br />
+          <%= @subscriber.city_state_zip %><br />
+          <%= @subscriber.email %>
+        </p>
+    </div>
+
+    <div class="span4">
+      <p>
+        <b>Invoice Title: </b><%= @invoice.title %><br />
+        <b>Invoice Number: </b><%= @invoice.id %><br />
+        <b>Date: </b><%= @invoice.inv_date.strftime('%m/%d/%Y') %>
+      </p>
+    </div>
+    <div class="span4">
+      <p>
+        <b>Invoice Title: </b><%= @invoice.title %><br />
+        <b>Invoice Number: </b><%= @invoice.id %><br />
+        <b>Date: </b><%= @invoice.inv_date.strftime('%m/%d/%Y') %>
+      </p>
+    </div>
+
+    <!-- <div class="span4">
+          <p>
+            <%= link_to 'Edit', edit_invoice_path(@invoice), :class => "nice small white radius button no-print" %>
+          </p>
+          <p>
+            <%= link_to "View as PDF", invoice_path(@invoice, :format => 'pdf'),
+                :class => "nice small white radius button no-print"%>
+          </p>
+          <% unless @subscriber.email.nil? %>
+            <p><%= button_to 'Email Invoice', email_invoice_path(@invoice),
+                  confirm: "Email to #{@subscriber.email}. Are you sure?",
+                  :class => "nice small white radius button no-print" %>
+            </p>
+        <% end %>
+    </div> -->
+
   </div>
 
-<p>
-  <b>Invoice Title: </b><%= @invoice.title %><br />
-  <b>Invoice Number: </b><%= @invoice.id %><br />
-  <b>Date: </b><%= @invoice.inv_date.strftime('%m/%d/%Y') %>
-</p>
 
-<ul>
-    <li><%= link_to "View as PDF", invoice_path(@invoice, :format => 'pdf'),:class => "nice small white radius button no-print"%></li>
-  <% unless @subscriber.email.nil? %>
-    <li><%= button_to 'Email Invoice', email_invoice_path(@invoice), confirm: "Email to #{@subscriber.email}. Are you sure?", :class => "nice small white radius button no-print" %></li>
-<% end %>
-    <li><%= link_to 'Edit', edit_invoice_path(@invoice), :class => "nice small white radius button no-print" %></li>
 
-</ul>
 
   <table class="invoice table-bordered ">
     <thead>

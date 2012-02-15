@@ -7,7 +7,7 @@ gem 'sqlite3', '1.3.4'
 gem "mini_magick"
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'rack' , '1.3.3'
-
+gem 'capistrano'
 
 
 group :assets do

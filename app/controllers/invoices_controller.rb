@@ -1,7 +1,6 @@
 class InvoicesController < ApplicationController
   before_filter :require_user
 
-  helper_method :sort_column, :sort_direction
 
   def index
     @invoices = Invoice.all
@@ -47,6 +46,7 @@ class InvoicesController < ApplicationController
 
   def create
     @invoice = Invoice.new(params[:invoice])
+    @invoice.inv_date = Date.strptime(params[:invoice]["inv_date"], "%m/%d/%Y")
     if params[:product_id]
       @product = Product.find(params[:product_id])
       @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,
@@ -82,10 +82,10 @@ class InvoicesController < ApplicationController
     end
   end
 
-  def add_product_to_invoice(product)
-    @product = Product.find(product.id)
-
-  end
+  # def add_product_to_invoice(product)
+  #   @product = Product.find(product.id)
+  #
+  # end
 
 
   def email_invoice

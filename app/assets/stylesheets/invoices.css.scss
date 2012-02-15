@@ -51,6 +51,14 @@ div.new-item{overflow:auto;}
 
 .delete a{color:red;}
 
+@media (min-width: 768px) {
+  .container{margin-top:60px;}
+}
+
+
+@media (min-width: 1200px) {
+
+}
 
 // DatePicker
 

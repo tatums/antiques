@@ -17,22 +17,17 @@
 
 <%= render 'layouts/admin_nav' %>
 <%= render 'layouts/notifications' %>
-<div id="wrapper">
-      <% unless current_user %>
+<div class="container">
 
+    <% unless current_user %>
       <div id="header">
           <h1><%=link_to image_tag("phoebe_booth.gif"), root_url %></h1>
       </div>
-        <% end %>
-      <div id="navigation">
-        <%= render 'layouts/navigation' %>
-      </div>
+    <% end %>
 
-        <%= yield %>
 
-    <div id="footer" class="footer_style">
-      <%= render 'layouts/footer' %>
-    </div>
+    <%= yield %>
+
 
     <div id="spinner" style="display:none">
       <span>Loading...</span>

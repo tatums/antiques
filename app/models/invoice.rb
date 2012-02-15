@@ -3,6 +3,8 @@ class Invoice < ActiveRecord::Base
   has_many :line_items
   # before_create :set_invoice_number
 
+  validate :inv_date, :presence => true
+
 
   paginates_per 10
   def calc_sub_total
