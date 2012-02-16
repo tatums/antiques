@@ -8,22 +8,20 @@
 	<%= stylesheet_link_tag "application" %>
 	<%= stylesheet_link_tag "print", :media => "print" %>
 	<%= csrf_meta_tags %>
-  <%= render 'layouts/analytics' %>	
+  <%= render 'layouts/analytics' %>
 </head>
 <body>
 
 	<div id="wrapper">
-    <div class="header">  
+    <div class="header">
       <%=link_to image_tag("phoebe_booth.gif"), root_url %>
     </div>
     <div class="head-line"></div>
-					
-		<%= yield %>			
-	
+      <%= yield %>
     <div class="print-footer">
       <p class="center">Phoebe Booth Antiques LLC All Rights Reserved. | phoebe@phoebeboothantiques.com | 917-597-4368</p>
     </div>
-	
+
   </div>
 
 </body>
