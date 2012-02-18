@@ -1,0 +1,24 @@
+common: &default_settings
+  send_to: 'tatum@ashlandstudios.com'
+  send_as: 'do_not_reply@phoebeboothantiques.com'
+  domain: 'phoebeboothantiques.com'
+  user_name: 'admin@phoebeboothantiques.com'
+  password: 'pa88word'
+
+
+development:
+  <<: *default_settings
+test:
+  <<: *default_settings
+
+production:
+  send_to: 'phoebe@phoebeboothantiques.com'
+  send_as: 'do_no_reply@phoebeboothantiques.com'
+  domain: 'phoebeboothantiques.com'
+  user_name: 'admin@phoebeboothantiques.com'
+  password: 'pa88word'
+
+
+#subscriber_list is the list that each user will be subscribed to.
+#MAIL_CHIMP[Rails.env]["api_key"]
+#MAIL_CHIMP[Rails.env]["subscriber_list"]
