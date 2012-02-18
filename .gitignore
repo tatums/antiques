@@ -11,3 +11,4 @@ public/uploads/
 .DS_Store
 .lck
 solr/data/
+./config/*.yml
