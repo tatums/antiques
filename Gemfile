@@ -30,8 +30,8 @@ gem 'prawn'
 gem 'dalli'
 
 #gem 'memcached'
-#gem 'sqlite3', '1.3.4'
+gem 'sqlite3', '1.3.4'
 
 
 # heroku
-gem 'pg'
+#gem 'pg'
