@@ -28,6 +28,7 @@ gem 'sunspot_rails'
 gem "zurb-foundation"
 gem 'prawn'
 gem 'dalli'
+
 #gem 'memcached'
 #gem 'sqlite3', '1.3.4'
 
