@@ -8,7 +8,7 @@ gem "mini_magick"
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'rack' , '1.3.3'
 gem 'capistrano'
-
+gem 'heroku'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
@@ -22,7 +22,8 @@ gem 'sunspot_rails'
 gem "zurb-foundation"
 gem 'prawn'
 gem 'dalli'
-gem 'memcached'
+#gem 'memcached'
+
 group :development, :test do
   gem "rspec-rails"
   gem "capybara"
