@@ -1,0 +1,10 @@
+<%= form_for([@invoice, LineItem.new], :remote => true, :html => {:class=> "nice"}) do |f| %>
+<ul>
+    <li><%= f.text_field :item_number, :class => "ex-small input-text", :placeholder => "item" %></li>
+    <li><%= f.text_field :description, :class => "input-text", :placeholder => "description" %></li>
+    <li><%= f.text_field :dimensions, :class => "small input-text", :placeholder => "dimensions" %></li>
+    <li><%= f.text_field :quantity, :class => "ex-small input-text", :placeholder => "qty" %></li>
+    <li><%= f.text_field :price, :class => "ex-small input-text", :placeholder => "price" %></li>
+    <li><%= f.submit 'Add Line', :class => "nice small radius button" %></li>
+</ul>
+<% end %>

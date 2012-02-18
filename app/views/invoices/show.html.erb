@@ -6,6 +6,13 @@
           <%= @subscriber.city_state_zip %><br />
           <%= @subscriber.email %>
         </p>
+        <p>
+          <%= link_to 'Edit', edit_invoice_path(@invoice), :class => "nice small white radius button no-print" %>
+        </p>
+    </div>
+
+    <div class="span4">
+      <p></p>
     </div>
 
     <div class="span4">
@@ -15,112 +22,87 @@
         <b>Date: </b><%= @invoice.inv_date.strftime('%m/%d/%Y') %>
       </p>
     </div>
-    <div class="span4">
-      <p>
-        <b>Invoice Title: </b><%= @invoice.title %><br />
-        <b>Invoice Number: </b><%= @invoice.id %><br />
-        <b>Date: </b><%= @invoice.inv_date.strftime('%m/%d/%Y') %>
-      </p>
-    </div>
-
-    <!-- <div class="span4">
-          <p>
-            <%= link_to 'Edit', edit_invoice_path(@invoice), :class => "nice small white radius button no-print" %>
-          </p>
-          <p>
-            <%= link_to "View as PDF", invoice_path(@invoice, :format => 'pdf'),
-                :class => "nice small white radius button no-print"%>
-          </p>
-          <% unless @subscriber.email.nil? %>
-            <p><%= button_to 'Email Invoice', email_invoice_path(@invoice),
-                  confirm: "Email to #{@subscriber.email}. Are you sure?",
-                  :class => "nice small white radius button no-print" %>
-            </p>
-        <% end %>
-    </div> -->
-
   </div>
 
-
-
-
-  <table class="invoice table-bordered ">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Item</th>
-        <th>Description</th>
-        <th>Dimensions</th>
-        <th>Qty</th>
-        <th>Price</th>
-        <th>Tax</th>
-        <th>Total</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody class="line_items">
-      <%= render @invoice.line_items %>
-    </tbody>
-  </table>
-
-  <div class="new-item">
-      <%= form_for([@invoice, LineItem.new], :remote => true, :html => {:class=> "nice"}) do |f| %>
-      <ul>
-          <li><%= f.text_field :item_number, :class => "ex-small input-text", :placeholder => "item" %></li>
-          <li><%= f.text_field :description, :class => "input-text", :placeholder => "description" %></li>
-          <li><%= f.text_field :dimensions, :class => "small input-text", :placeholder => "dimensions" %></li>
-          <li><%= f.text_field :quantity, :class => "ex-small input-text", :placeholder => "qty" %></li>
-          <li><%= f.text_field :price, :class => "ex-small input-text", :placeholder => "price" %></li>
-          <li><%= f.text_field :tax, :class => "ex-small input-text", :placeholder => "tax" %></li>
-          <li><%= f.submit 'Add Line', :class => "nice small radius button" %></li>
-      </ul>
-      <% end %>
-  </div>
-  <table class="totals table-bordered">
-    <tr>
-      <td>Subtotal</td><td class="sub_total currency"><%= number_to_currency(@invoice.calc_sub_total) %></td>
-    </tr>
-    <tr>
-      <td>Tax</td><td class="tax currency"><%= number_to_currency(@invoice.calc_tax_total) %></td>
-    </tr>
-    <tr>
-      <td>Grand Total</td><td class="grand_total currency"><%= number_to_currency(@invoice.calc_grand_total) %></td>
-    </tr>
-  </table>
-
-
-<script>
-$(document).ready(function(){
-  $('#add').click(function() {
-
-    if ($("#add-product").is(":hidden")) {
-    $("#add-product").slideDown("slow");
-    $("#add").text('Hide');
-    } else {
-    $("#add-product").slideUp('slow');
-    $("#add").text('Add')
-
-    }
-    return false;
-  });
-});
-</script>
-
-<style>
-  #add-product{
-    display:none;
-  }
-</style>
-
-<div>
-  <%= link_to "add", "#", :id => 'add', :class => "nice small white radius button no-print" %>
+<div class="row">
+  <span class="span12">
+      <table class="invoice table-bordered ">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Dimensions</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="line_items">
+          <%= render @invoice.line_items %>
+        </tbody>
+      </table>
+    </span>
 </div>
 
-<div id="add-product">
-  <ul>
-  <% Product.all.each do |product| %>
-    <li><%= button_to "Add #{product.title}", add_product_to_invoice_path(@invoice, :product_id => product.id), :remote => true %></li>
-  <% end %>
-  </ul>
+
+<div id="add-new-line-item" class="row new-item">
+  <span class="span12">
+    <%= render 'new_line_item' %>
+  </span>
+</div>
+
+<div class="row">
+  <span class="span8">
+    <p>
+    <%= link_to "Add New Line Item", "#", :id => 'add-new-line-btn', :class => "nice small white radius button no-print" %>
+    <%= link_to "Add Product from Inventory", "#", :id => 'add-inventory-btn', :class => "nice small white radius button no-print" %>
+    <%= link_to "View as PDF", invoice_path(@invoice, :format => 'pdf'), :class => "nice small white radius button no-print"%>
+    <% unless @subscriber.email.nil? %>
+      <%= button_to 'Email Invoice', email_invoice_path(@invoice),
+              confirm: "Email to #{@subscriber.email}. Are you sure?",
+              :class => "nice small white radius button no-print" %>
+    <% end %>
+  </p>
+  </span>
+
+  <span class="span4">
+    <table class="totals table-bordered">
+      <tr>
+        <td>Subtotal</td>
+        <td class="sub_total currency"><%= number_to_currency(@invoice.calc_sub_total) %></td>
+      </tr>
+      <tr>
+        <td>Tax</td>
+        <td class="tax currency"><%= number_to_currency(@invoice.calc_tax_total) %></td>
+      </tr>
+      <tr>
+        <td>Grand Total</td>
+        <td class="grand_total currency"><%= number_to_currency(@invoice.calc_grand_total) %></td>
+      </tr>
+    </table>
+  </span>
+</div>
+
+
+<div id="add-inventory-modal" class="reveal-modal">
+     <h2>Add Product from Inventory.</h2>
+       <% Product.all.each do |product| %>
+          <div class="row">
+           <div class="span1">
+             <p>
+               <%= image_tag(product.image_url(:thumb_50) )  %>
+             </p>
+           </div>
+           <div class="span3">
+             <p>
+               <%= button_to "Add #{product.title}", add_product_to_invoice_path(@invoice, :product_id => product.id), :remote => true, :class => 'add-inv-product' %>
+
+             </p>
+           </div>
+          </div>
+       <% end %>
+     <a class="close-reveal-modal">&#215;</a>
 </div>
 
