@@ -5,7 +5,6 @@
   <td class="center"><%= line_item.dimensions %></td>
   <td class="center"><%= line_item.quantity %></td>
   <td class="currency"><%= number_to_currency(line_item.price) %></td>
-  <td class="currency"><%= number_to_currency(line_item.tax) %></td>
   <td class="currency"><%= number_to_currency(line_item.total) %></td>
   <td class="delete center"><%= link_to 'X', line_item, confirm: 'Are you sure?', method: :delete, :remote => true %></td>
 <% end %>

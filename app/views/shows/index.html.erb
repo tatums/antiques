@@ -2,8 +2,8 @@
   <script language="javascript">
       $(document).ready(function() {
            $('#buttonForModal').click(function(evt) {
-      	        $('#myModal').reveal();
-      	         evt.preventDefault();        		         			      			
+                $('#myModal').reveal();
+                evt.preventDefault();
            });
 
            $('#shows').sortable({
@@ -12,7 +12,7 @@
            		$.post("<%= escape_javascript(sort_shows_path) %>", {ShowsOrder:ShowsOrder});
            	}
            });
-     
+
       });
   </script>
 <% end %>
@@ -21,7 +21,7 @@
 <div id="contact-page">
   <p>Email: <a href="mailto:phoebe@phoebeboothantiques.com">phoebe@phoebeboothantiques.com</a><br />
     Phone: 917-597-4368
-  </p>  
+  </p>
 
 
 <% unless @shows.empty? %>
@@ -36,7 +36,7 @@
 <% if current_user %>
   <a href="#" class="nice small radius button" id="buttonForModal">NEW</a>
   <div id="myModal" class="reveal-modal">
-       <h2>New Show.</h2> 			
+       <h2>New Show.</h2>
         <%= render 'form' %>
        <a class="close-reveal-modal">&#215;</a>
   </div>

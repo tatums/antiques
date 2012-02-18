@@ -51,14 +51,11 @@ div.new-item{overflow:auto;}
 
 .delete a{color:red;}
 
-@media (min-width: 768px) {
-  .container{margin-top:60px;}
+
+#add-new-line-item{
+  display:none;
 }
 
-
-@media (min-width: 1200px) {
-
-}
 
 // DatePicker
 
@@ -67,6 +64,17 @@ div.new-item{overflow:auto;}
 .ui-datepicker-next{float:right;}
 .ui-datepicker-title{text-align:center;}
 .show-invoice{overflow:auto;}
-#add-product{overflow:auto;}
-#add-product ul{display:inline;}
-#add-product ul li{display:inline; float:left; margin:0 5px;}
+#add-inventory-product{overflow:auto;}
+#add-inventory-product ul{display:inline;}
+#add-inventory-product ul li{display:inline; float:left; margin:0 5px;}
+
+
+//RESPONSIVE
+@media (min-width: 768px) {
+  .container{margin-top:60px;}
+}
+
+
+@media (min-width: 1200px) {
+
+}
