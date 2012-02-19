@@ -2,6 +2,10 @@ PhoebeboothanitquesCom2::Application.routes.draw do
 
   resources :invoices do
     resources :line_items, :only => [:create, :destroy], :shallow => true
+    #resources :subscribers
+    member do
+      match 'subscribers/:subscriber_id' => "invoices#update", :as => 'update_subscriber'
+    end
   end
   post 'invoice/:invoice_id/line_items/:product_id' => 'line_items#create', :as => 'add_product_to_invoice'
   get 'invoice/new/:product_id' => "invoices#new", :as => 'setup_new_invoice'
@@ -10,7 +14,8 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   post 'email_invoice/:invoice_id' => "invoices#email_invoice", :as => 'email_invoice'
 
 
-  resources :subscribers, :tasks
+  resources :subscribers
+
   resources :shows, :only =>  [:index, :create, :destroy] do
     collection do
       post 'sort'
@@ -35,6 +40,16 @@ PhoebeboothanitquesCom2::Application.routes.draw do
     end
   end
 
+
+  resources :products do
+    resources :images, :shallow  => true, :only =>[:create, :destroy]
+    resources :keywords, :shallow => true, :only =>[:create, :destroy]
+    collection do
+      post 'sort'
+    end
+  end
+  get "home/index"
+
   resources :users, only: [:edit, :update]
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -48,24 +63,15 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   get 'print/:id' => "prints#show", :as => 'print'
 
   #Navigation Links
-  match 'about' => 'home#about', :as => :about
-  match 'search' => 'home#search', :as => :search
-  match 'new_acquisitions' => 'home#new_acquisitions', :as => :new_acquisitions
-  match 'phoebes_finds' => 'home#phoebes_finds', :as => :phoebes_finds
-  match 'subscribe' => 'subscribers#new', :as => :subscribe
-  match 'thank_you' => 'home#thank_you', :as => :thank_you
-  match 'contact' => 'shows#index', :as => :contact
+  get 'about' => 'home#about', :as => :about
+  get 'search' => 'home#search', :as => :search
+  get 'new_acquisitions' => 'home#new_acquisitions', :as => :new_acquisitions
+  get 'phoebes_finds' => 'home#phoebes_finds', :as => :phoebes_finds
+  get 'subscribe' => 'subscribers#new', :as => :subscribe
+  get 'thank_you' => 'home#thank_you', :as => :thank_you
+  get 'contact' => 'shows#index', :as => :contact
 
-  resources :products do
-    resources :images, :shallow  => true, :only =>[:create, :destroy]
-    resources :keywords, :shallow => true, :only =>[:create, :destroy]
-    collection do
-      post 'sort'
-    end
-  end
-  get "home/index"
-
+  resources :tasks
   root :to => 'home#index'
-
 
 end

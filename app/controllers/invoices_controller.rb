@@ -14,6 +14,7 @@ class InvoicesController < ApplicationController
   def show
     @invoice = Invoice.find(params[:id])
     @subscriber = @invoice.subscriber
+    #pry
     respond_to do |format|
       format.html
       format.pdf do
@@ -26,7 +27,7 @@ class InvoicesController < ApplicationController
   end
 
   def new
-    @invoice = Invoice.new(:inv_date => Time.now.to_date.strftime("%m/%d/%Y"))
+    @invoice = Invoice.new
     if params[:product_id]
       @product = Product.find(params[:product_id])
       @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,
@@ -40,7 +41,6 @@ class InvoicesController < ApplicationController
 
   def create
     @invoice = Invoice.new(params[:invoice])
-    @invoice.inv_date = Date.strptime(params[:invoice]["inv_date"], "%m/%d/%Y")
     if params[:product_id]
       @product = Product.find(params[:product_id])
       @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,
@@ -57,15 +57,15 @@ class InvoicesController < ApplicationController
 
   def edit
     @invoice = Invoice.find(params[:id])
-    @invoice.inv_date = @invoice.inv_date.strftime("%m/%d/%Y")
   end
 
   def update
     @invoice = Invoice.find(params[:id])
-    params[:invoice]["inv_date"] = Date.strptime(params[:invoice]["inv_date"], "%m/%d/%Y")
+    setup_for_params
     respond_to do |format|
       if @invoice.update_attributes(params[:invoice])
         format.html { redirect_to @invoice, notice: 'Invoice was successfully updated.' }
+        format.js
       else
         format.html { render action: "edit" }
       end
@@ -89,4 +89,11 @@ class InvoicesController < ApplicationController
     redirect_to @invoice, notice: 'Invoice was sent.'
   end
 
+  private
+
+  def  setup_for_params
+    if params[:subscriber] #post comming in from invoice form
+      @invoice.subscriber_id = params[:subscriber][:id]
+    end
+  end
 end

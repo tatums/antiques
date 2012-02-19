@@ -26,4 +26,8 @@ $(document).ready(function(){
     });
 
 
+  // Datepicker for new invoices
+  $( ".datepicker" ).datepicker( {dateFormat: "yy-mm-dd"});
+
+
 });
