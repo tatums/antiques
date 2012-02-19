@@ -18,7 +18,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'rack' , '1.3.3'
-gem 'capistrano'
+#gem 'capistrano'
 gem 'heroku'
 
 

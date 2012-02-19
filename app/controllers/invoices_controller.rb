@@ -38,12 +38,6 @@ class InvoicesController < ApplicationController
   end
 
 
-  def edit
-    @invoice = Invoice.find(params[:id])
-    @invoice.inv_date = @invoice.inv_date.strftime("%m/%d/%Y")
-  end
-
-
   def create
     @invoice = Invoice.new(params[:invoice])
     @invoice.inv_date = Date.strptime(params[:invoice]["inv_date"], "%m/%d/%Y")
@@ -61,9 +55,14 @@ class InvoicesController < ApplicationController
     end
   end
 
+  def edit
+    @invoice = Invoice.find(params[:id])
+    @invoice.inv_date = @invoice.inv_date.strftime("%m/%d/%Y")
+  end
 
   def update
     @invoice = Invoice.find(params[:id])
+    params[:invoice]["inv_date"] = Date.strptime(params[:invoice]["inv_date"], "%m/%d/%Y")
     respond_to do |format|
       if @invoice.update_attributes(params[:invoice])
         format.html { redirect_to @invoice, notice: 'Invoice was successfully updated.' }
@@ -82,11 +81,6 @@ class InvoicesController < ApplicationController
     end
   end
 
-  # def add_product_to_invoice(product)
-  #   @product = Product.find(product.id)
-  #
-  # end
-
 
   def email_invoice
     @invoice = Invoice.find(params[:invoice_id])
@@ -94,6 +88,5 @@ class InvoicesController < ApplicationController
     InvoiceMailer.send_invoice(@invoice, @pdf).deliver
     redirect_to @invoice, notice: 'Invoice was sent.'
   end
-
 
 end
