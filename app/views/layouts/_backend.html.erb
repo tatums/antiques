@@ -18,13 +18,9 @@
 
 <%= render 'layouts/admin_nav' %>
 <%= render 'layouts/notifications' %>
-<div class="container">
 
-    <% unless current_user %>
-      <div id="header">
-          <h1><%=link_to image_tag("phoebe_booth.gif"), root_url %></h1>
-      </div>
-    <% end %>
+<div class="container-fluid content">
+
 
 
     <%= yield %>

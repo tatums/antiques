@@ -68,10 +68,10 @@ div.new-item{overflow:auto;}
 #add-inventory-product ul{display:inline;}
 #add-inventory-product ul li{display:inline; float:left; margin:0 5px;}
 
-
+.info {min-height:135px;}
 //RESPONSIVE
 @media (min-width: 768px) {
-  .container{margin-top:60px;}
+  .content{margin-top:60px;}
 }
 
 

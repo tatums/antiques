@@ -1,49 +1,40 @@
-
-  <div class="row">
+  <div class="row-fluid">
     <div class="span4">
-        <p>
-          <%= form_for([@invoice, @subscriber], :html =>{:class => 'nice customer'}, :url => @invoice, :remote => true) do |f| %>
-            <div class="field">
-              <%= f.label :id, "Customer" %><br />
-              <%= f.select("id", Subscriber.all.collect {|s| [ s.full_name, s.id ] }, :class=> "large input-text")%>
-            </div>
-            <!-- <div class="actions">
-              <%= f.submit "Save", :class => "nice small radius button" %>
-            </div> -->
-          <% end %>
-        </p>
-          <%= link_to 'Edit', edit_invoice_path(@invoice), :class => "nice small white radius button no-print" %>
-        </p>
+        <div class="subscriber info well">
+          <h3><span id="name"><%= @subscriber.full_name %></span></h3>
+          <span id="address"><%= @subscriber.address %></span><br />
+          <span id="city_state"><%= @subscriber.city_state_zip %></span><br />
+          <span id="email"><%= @subscriber.email %></span>
+        </div>
     </div>
 
     <div class="span4">
-      <p id="subscriber-info">
-        <span id="name"><%= @subscriber.full_name %></span><br />
-        <span id="address"><%= @subscriber.address %></span><br />
-        <span id="city_state"><%= @subscriber.city_state_zip %></span><br />
-        <span id="email"><%= @subscriber.email %>
-      <p>
+        <div class="invoice info well">
+          <h3><span id="inv-number">Inv #<%= @invoice.id %></span></h3>
+          <span id="inv-title"><%= @invoice.title %></span><br />
+          <span id="inv-date"><%= @invoice.inv_date %></span>
+        </div>
     </div>
 
     <div class="span4">
-      <p>
-        <%= form_for(@invoice, :html =>{:class => 'nice inv_date'}, :remote => true) do |f| %>
-          <div class="field">
-            <%= f.text_field :inv_date, :class=> "input-text datepicker", :id => 'inv_date', :placeholder => "Date MM/DD/YYYY" %>
-          </div>
-          <div class="actions">
-              <%# f.submit "Save", :class => "nice small radius button" %>
-          </div>
-        <% end %>
-
-        <b>Invoice Title: </b><%= @invoice.title %><br />
-        <b>Invoice Number: </b><%= @invoice.id %><br />
-        <b>Date: </b><%= @invoice.inv_date.strftime('%m/%d/%Y') %>
-      </p>
+      <div class="form info well">
+      <%= form_for(@invoice, :html =>{:class => 'nice customer'}, :url => @invoice, :remote => true) do |f| %>
+        <div class="field">
+          <%= f.select("subscriber_id", Subscriber.all.collect {|s| [ s.full_name, s.id ] }, :class=> "large input-text")%>
+        </div>
+        <div class="field">
+          <%= f.text_field :title, :class=> "input-text", :id => 'title', :placeholder => "Title" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :inv_date, :class=> "input-text datepicker", :id => 'inv_date', :placeholder => "Date MM/DD/YYYY" %>
+        </div>
+      <% end %>
+      </div>
     </div>
+
   </div>
 
-<div class="row">
+<div class="row-fluid">
   <span class="span12">
       <table class="invoice table-bordered ">
         <thead>
@@ -72,7 +63,7 @@
   </span>
 </div>
 
-<div class="row">
+<div class="row-fluid">
   <span class="span8">
     <p>
     <%= link_to "Add New Line Item", "#", :id => 'add-new-line-btn', :class => "nice small white radius button no-print" %>
@@ -126,14 +117,21 @@
 </div>
 
 <script>
-  $('#subscriber_id').change(function()
+  //monitors the Customer select and submits the form
+  $('#invoice_subscriber_id').change(function()
     {
       $('.customer').submit();
       });
 
+  //monitors the Inv-Date field and submits the form
   $('#inv_date').change(function()
     {
-      $('.inv_date').submit();
+      $('.customer').submit();
+    });
+
+  $('#title').blur(function()
+    {
+      $('.customer').submit();
     });
 
 </script>

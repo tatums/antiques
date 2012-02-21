@@ -3,9 +3,9 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   resources :invoices do
     resources :line_items, :only => [:create, :destroy], :shallow => true
     #resources :subscribers
-    member do
-      match 'subscribers/:subscriber_id' => "invoices#update", :as => 'update_subscriber'
-    end
+    # member do
+    #   match 'subscribers/:subscriber_id' => "invoices#update", :as => 'update_subscriber'
+    # end
   end
   post 'invoice/:invoice_id/line_items/:product_id' => 'line_items#create', :as => 'add_product_to_invoice'
   get 'invoice/new/:product_id' => "invoices#new", :as => 'setup_new_invoice'
