@@ -1,10 +1,14 @@
 <tr>
-  <td><%= link_to invoice.id, invoice %></td>
-  <td><%= link_to invoice.inv_date.strftime('%m/%d/%Y'), invoice %></td>
+  <td><%= link_to invoice.inv_number, invoice %></td>
+  <td><%= link_to invoice.inv_date, invoice %></td>
   <td><%= link_to invoice.title, invoice %></td>
   <td class="currency"><%= link_to number_to_currency(invoice.calc_sub_total), invoice %></td>
   <td class="currency"><%= link_to number_to_currency(invoice.calc_grand_total), invoice %></td>
-  <td><%= link_to invoice.subscriber.full_name, invoice.subscriber %></td>
+  <td>
+    <% if invoice.subscriber %>
+      <%= link_to invoice.subscriber.full_name, invoice.subscriber %>
+    <% end %>
+  </td>
   <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
   <td><%= link_to 'Destroy', invoice, confirm: 'Are you sure?', method: :delete %></td>
 </tr>

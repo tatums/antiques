@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120207023943) do
+ActiveRecord::Schema.define(:version => 20120222033906) do
 
   create_table "categories", :force => true do |t|
     t.boolean  "active",      :default => false
@@ -21,6 +21,26 @@ ActiveRecord::Schema.define(:version => 20120207023943) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+  end
+
+  create_table "contacts", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "email"
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "emails", :force => true do |t|
+    t.string   "first"
+    t.string   "last"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "images", :force => true do |t|
@@ -35,7 +55,7 @@ ActiveRecord::Schema.define(:version => 20120207023943) do
     t.integer  "subscriber_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "invoice_number"
+    t.string   "inv_number"
     t.text     "notes"
     t.date     "inv_date"
   end
@@ -63,19 +83,19 @@ ActiveRecord::Schema.define(:version => 20120207023943) do
   end
 
   create_table "products", :force => true do |t|
-    t.boolean  "active",                                        :default => true
+    t.boolean  "active",          :default => true
     t.string   "title"
     t.text     "body"
     t.string   "image"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "phoebe_find",                                   :default => false
-    t.boolean  "new_acquisition",                               :default => false
+    t.boolean  "phoebe_find",     :default => false
+    t.boolean  "new_acquisition", :default => false
     t.string   "country"
     t.string   "period"
     t.integer  "item_number"
-    t.decimal  "price",           :precision => 8, :scale => 2
+    t.decimal  "price"
     t.string   "dimensions"
   end
 
@@ -126,12 +146,14 @@ ActiveRecord::Schema.define(:version => 20120207023943) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "encrypted_password"
-    t.integer  "sign_in_count"
+    t.string   "email",                             :default => "", :null => false
+    t.string   "encrypted_password", :limit => 128, :default => "", :null => false
+    t.integer  "sign_in_count",                     :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_salt"
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

@@ -25,9 +25,12 @@ $(document).ready(function(){
         $('.close-reveal-modal').trigger('click');
     });
 
-
   // Datepicker for new invoices
   $( ".datepicker" ).datepicker( {dateFormat: "yy-mm-dd"});
 
+  // index table sorter and paginate
+  $("#invoice-table")
+      .tablesorter({widthFixed: true, widgets: ['zebra']})
+      .tablesorterPager({container: $("#pager")});
 
 });

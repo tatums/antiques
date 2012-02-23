@@ -43,7 +43,7 @@ class InvoicePdf < Prawn::Document
   end
 
   def invoice_number
-     text "Invoice #\ #{@invoice.id}", size: 12, style: :italic
+     text "Invoice #\ #{@invoice.inv_number}", size: 12, style: :italic
   end
 
   def date_left

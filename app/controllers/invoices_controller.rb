@@ -1,7 +1,6 @@
 class InvoicesController < ApplicationController
   before_filter :require_user
 
-
   def index
     @invoices = Invoice.all
     #@invoices = Invoice.page(params[:page])
@@ -89,11 +88,12 @@ class InvoicesController < ApplicationController
     redirect_to @invoice, notice: 'Invoice was sent.'
   end
 
-  private
+private
 
   def  setup_for_params
     if params[:subscriber] #post comming in from invoice form
       @invoice.subscriber_id = params[:subscriber][:id]
     end
   end
+
 end

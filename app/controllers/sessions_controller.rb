@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.authenticate(params[:email], params[:password])
+    user = User.authenticate(params[:email].downcase.strip, params[:password])
       if user
         session[:user_id] = user.id
         redirect_back_or_default(root_url, "Logged in!")
@@ -17,5 +17,5 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_url, :notice => "Logged out!"
   end
-    
+
 end

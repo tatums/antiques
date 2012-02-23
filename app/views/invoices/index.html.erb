@@ -1,12 +1,3 @@
-<script>
-$(document).ready(function(){
-    $("#invoice-table")
-        .tablesorter({widthFixed: true, widgets: ['zebra']})
-        .tablesorterPager({container: $("#pager")});
-});
-
-</script>
-
 <h1>Listing invoices</h1>
 
 <table id="invoice-table" class="invoice table-bordered tablesorter">
@@ -29,11 +20,9 @@ $(document).ready(function(){
 
   <div id="pager">
     <form>
-      <!-- <span class="first">‹ First</span> -->
       <span class="prev">‹ Prev</span>
       <input type="text" class="pagedisplay">
       <span class="next">Next ›</span>
-      <!-- <img src="../addons/pager/icons/last.png" class="last"> -->
       <select class="pagesize">
         <option selected="selected" value="10">10</option>
         <option value="20">20</option>
@@ -43,9 +32,6 @@ $(document).ready(function(){
     </form>
   </div>
 
-<!-- <div id="paginator">
-  <%# paginate @invoices, :remote => true %>
-</div> -->
 <br />
 
 <%= link_to 'New Invoice', new_invoice_path, :class => 'nice small radius button' %>

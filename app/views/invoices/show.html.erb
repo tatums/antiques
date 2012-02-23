@@ -1,16 +1,22 @@
   <div class="row-fluid">
     <div class="span4">
         <div class="subscriber info well">
-          <h3><span id="name"><%= @subscriber.full_name %></span></h3>
-          <span id="address"><%= @subscriber.address %></span><br />
-          <span id="city_state"><%= @subscriber.city_state_zip %></span><br />
-          <span id="email"><%= @subscriber.email %></span>
+          <h3><span id="name"><%= @subscriber.full_name if @subscriber %></span></h3>
+          <span id="address"><%= @subscriber.address if @subscriber %></span><br />
+          <span id="city_state"><%= @subscriber.city_state_zip if @subscriber %></span><br />
+          <span id="email"><%= @subscriber.email if @subscriber %></span>
+          <% if @subscriber and @subscriber.email %>
+            <%= button_to 'Email Invoice', email_invoice_path(@invoice),
+                    confirm: "Email to #{@subscriber.email}. Are you sure?",
+                    :class => "nice small white radius button no-print" %>
+          <% end %>
+
         </div>
     </div>
 
     <div class="span4">
         <div class="invoice info well">
-          <h3><span id="inv-number">Inv #<%= @invoice.id %></span></h3>
+          <h3><span id="inv-number">Inv #<%= @invoice.inv_number %></span></h3>
           <span id="inv-title"><%= @invoice.title %></span><br />
           <span id="inv-date"><%= @invoice.inv_date %></span>
         </div>
@@ -69,11 +75,6 @@
     <%= link_to "Add New Line Item", "#", :id => 'add-new-line-btn', :class => "nice small white radius button no-print" %>
     <%= link_to "Add Product from Inventory", "#", :id => 'add-inventory-btn', :class => "nice small white radius button no-print" %>
     <%= link_to "View as PDF", invoice_path(@invoice, :format => 'pdf'), :class => "nice small white radius button no-print"%>
-    <% unless @subscriber.email.nil? %>
-      <%= button_to 'Email Invoice', email_invoice_path(@invoice),
-              confirm: "Email to #{@subscriber.email}. Are you sure?",
-              :class => "nice small white radius button no-print" %>
-    <% end %>
   </p>
   </span>
 

@@ -1,7 +1,8 @@
 class Invoice < ActiveRecord::Base
   belongs_to :subscriber
   has_many :line_items
-  # before_create :set_invoice_number
+  before_create :set_inv_date
+  after_create :set_inv_number
 
   validate :inv_date, :presence => true
 
@@ -23,13 +24,14 @@ class Invoice < ActiveRecord::Base
       0   #||= 0
   end
 
-# protected
-#   def set_invoice_number
-#     Invoice.last ? number = Invoice.last.invoice_number : number = 1000
-#     number += 1
-#     self.invoice_number = number
-#   end
+protected
+  def set_inv_number
+    number = Time.now.to_date.strftime('%m%d%y') + self.id.to_s
+    self.update_attributes(:inv_number => number)
+  end
 
-
+  def set_inv_date
+    self.inv_date = Time.now.to_date if self.inv_date.nil?
+  end
 
 end
