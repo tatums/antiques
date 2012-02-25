@@ -1,8 +1,3 @@
-// $('#subscriber-info').effect("highlight", {color: "#D3D3D3"}, 3000);
-
-$("#name").html(" <%= @invoice.subscriber.full_name %>");
-$("#address").html(" <%= @invoice.subscriber.address %>");
-$("#city_state").html(" <%= @invoice.subscriber.city_state_zip %>");
-$("#email").html(" <%= @invoice.subscriber.email %>");
+$(".subscriber").html("<%= escape_javascript(render(:partial => "subscriber", :object => @invoice.subscriber))%>");
 $("#inv-title").html(" <%= @invoice.title %>");
 $("#inv-date").html(" <%= @invoice.inv_date %>");

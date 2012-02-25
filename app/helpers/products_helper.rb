@@ -87,7 +87,7 @@ module ProductsHelper
 
   def invoice_button_if_logged_in(product)
     if current_user
-      link_to 'Invoice', setup_new_invoice_path(product), :class => "products-upload-button nice small white radius button no-print"
+      link_to 'Invoice', invoice_product_setup_path(Invoice, product), :class => "products-upload-button nice small white radius button no-print"
     end
   end
 

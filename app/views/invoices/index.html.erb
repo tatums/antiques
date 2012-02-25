@@ -10,7 +10,6 @@
     <th>Grand total</th>
     <th>Subscriber</th>
     <th></th>
-    <th></th>
   </tr>
 </thead>
 <tbody id="invoices">
@@ -34,4 +33,4 @@
 
 <br />
 
-<%= link_to 'New Invoice', new_invoice_path, :class => 'nice small radius button' %>
+<%= link_to 'New Invoice', Invoice.new, :method => 'post', :class => 'nice small radius button' %>

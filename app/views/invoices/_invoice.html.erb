@@ -9,6 +9,5 @@
       <%= link_to invoice.subscriber.full_name, invoice.subscriber %>
     <% end %>
   </td>
-  <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
   <td><%= link_to 'Destroy', invoice, confirm: 'Are you sure?', method: :delete %></td>
 </tr>

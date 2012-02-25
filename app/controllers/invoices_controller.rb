@@ -3,7 +3,6 @@ class InvoicesController < ApplicationController
 
   def index
     @invoices = Invoice.all
-    #@invoices = Invoice.page(params[:page])
     respond_to do |format|
       format.html
       format.js
@@ -12,8 +11,6 @@ class InvoicesController < ApplicationController
 
   def show
     @invoice = Invoice.find(params[:id])
-    @subscriber = @invoice.subscriber
-    #pry
     respond_to do |format|
       format.html
       format.pdf do
@@ -25,26 +22,9 @@ class InvoicesController < ApplicationController
     end
   end
 
-  def new
-    @invoice = Invoice.new
-    if params[:product_id]
-      @product = Product.find(params[:product_id])
-      @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,
-      :price => @product.price, :quantity => 1, :dimensions => @product.dimensions )
-    end
-    respond_to do |format|
-      format.html
-    end
-  end
-
-
   def create
     @invoice = Invoice.new(params[:invoice])
-    if params[:product_id]
-      @product = Product.find(params[:product_id])
-      @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,
-      :price => @product.price, :quantity => 1, :dimensions => @product.dimensions )
-    end
+    setup_for_params
     respond_to do |format|
       if @invoice.save
         format.html { redirect_to @invoice, notice: 'Invoice was successfully created.' }
@@ -80,7 +60,7 @@ class InvoicesController < ApplicationController
     end
   end
 
-
+  ##TODO Consider moving this into its own controller
   def email_invoice
     @invoice = Invoice.find(params[:invoice_id])
     @pdf = InvoicePdf.new(@invoice, view_context)
@@ -91,9 +71,18 @@ class InvoicesController < ApplicationController
 private
 
   def  setup_for_params
+    if params[:subscriber_id] #post comming in from subscriber
+      @invoice.subscriber_id = params[:subscriber_id]
+    end
     if params[:subscriber] #post comming in from invoice form
       @invoice.subscriber_id = params[:subscriber][:id]
     end
+    if params[:product_id]
+      @product = Product.find(params[:product_id])
+      @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,
+      :price => @product.price, :quantity => 1, :dimensions => @product.dimensions )
+    end
+
   end
 
 end

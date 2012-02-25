@@ -5,9 +5,9 @@ $(".line_items").append("<%= escape_javascript(render(@line_item)) %>");
 $('#line_item_<%= @line_item.id %>').effect("highlight", {color: "#D3D3D3"}, 3000);
 
 
-$(".tax").html(" <%= number_to_currency(@line_item.invoice.calc_tax_total) %>");
-$(".sub_total").html(" <%= number_to_currency(@line_item.invoice.calc_sub_total) %>");
-$(".grand_total").html(" <%= number_to_currency(@line_item.invoice.calc_grand_total) %>");
+$(".tax").html(" <%= number_to_currency(@invoice.calc_tax_total) %>");
+$(".sub_total").html(" <%= number_to_currency(@invoice.calc_sub_total) %>");
+$(".grand_total").html(" <%= number_to_currency(@invoice.calc_grand_total) %>");
 
 
 $('.totals').effect("highlight", {color: "#D3D3D3"}, 3000);
@@ -18,3 +18,4 @@ $('#line_item_dimensions').val('')
 $('#line_item_quantity').val('')
 $('#line_item_price').val('')
 $('#line_item_tax').val('')
+

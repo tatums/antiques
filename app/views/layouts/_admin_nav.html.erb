@@ -43,7 +43,7 @@
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Invoices <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to 'List Invoices', invoices_path %></li>
-                  <li><%= link_to 'New Invoice', new_invoice_path %></li>
+                  <li><%= link_to 'New Invoice', Invoice.new, :method => 'post' %></li>
                 </ul>
               </li>
 

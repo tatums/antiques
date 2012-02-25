@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <%= @subscriber.full_name %><br />
   <%= @subscriber.address %><br />
@@ -26,7 +24,7 @@
   <% end %>
 </table>
 
-<%= link_to 'New Invoice', new_invoice_path %> |
+<%= link_to 'New Invoice', invoice_subscriber_setup_path(Invoice, @subscriber), :method => 'post' %> |
 <%= link_to 'Edit', edit_subscriber_path(@subscriber) %> |
 <%= link_to 'Destroy', @subscriber, confirm: 'Are you sure?', method: :delete %>
 

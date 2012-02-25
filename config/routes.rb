@@ -1,11 +1,11 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
 
-  resources :invoices do
+  resources :invoices, :except => [:new, :edit] do
     resources :line_items, :only => [:create, :destroy], :shallow => true
+    get '/:product_id' => "invoices#create", :as => 'product_setup'
+    post '/:subscriber_id' => "invoices#create", :as => 'subscriber_setup'
+    post '/line_items/:product_id' => 'line_items#create', :as => 'add_product'
   end
-  post 'invoice/:invoice_id/line_items/:product_id' => 'line_items#create', :as => 'add_product_to_invoice'
-  get 'invoice/new/:product_id' => "invoices#new", :as => 'setup_new_invoice'
-  post 'invoice/:product_id' => "invoices#create", :as => 'setup_invoice'
 
   post 'email_invoice/:invoice_id' => "invoices#email_invoice", :as => 'email_invoice'
 

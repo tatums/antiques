@@ -9,7 +9,6 @@ class LineItemsController < ApplicationController
     end
     respond_to do |format|
       if @line_item.save
-        #format.html
         format.js
       else
         format.js {redirect_to @line_item.invoice, notice: 'Line Item was NOT successfully created.'}
@@ -26,7 +25,7 @@ class LineItemsController < ApplicationController
     end
   end
 
-protected
+private
   def find_product_and_set_params
     @product = Product.find(params[:product_id])
     @line_item = @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,
