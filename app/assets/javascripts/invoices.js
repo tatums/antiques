@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 
-
+  // Hide or show the add line item.
   $('#add-new-line-btn').click(function() {
 
     if ($("#add-new-line-item").is(":hidden"))
@@ -10,6 +10,7 @@ $(document).ready(function(){
     else
       { $("#add-new-line-item").slideUp('slow');
         $("#add-new-line-btn").text('Add New Line Item');    }
+
     return false;
   });
 
