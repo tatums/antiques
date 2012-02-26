@@ -1120,8 +1120,7 @@ table .span12 {
   height: 14px;
   vertical-align: text-top;
 
-  background-image: image-url('glyphicons-halflings.png');
-/*  background-image: url(../img/glyphicons-halflings.png);*/
+  background-image: image-url('bootstrap/glyphicons-halflings.png');
   background-position: 14px 14px;
   background-repeat: no-repeat;
   *margin-right: .3em;
@@ -1130,8 +1129,7 @@ table .span12 {
   *margin-left: 0;
 }
 .icon-white {
-  background-image: image-url('glyphicons-halflings-white.png');
-  /*background-image: url(../img/glyphicons-halflings-white.png);*/
+  background-image: image-url('bootstrap/glyphicons-halflings-white.png');
 }
 .icon-glass {
   background-position: 0      0;

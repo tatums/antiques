@@ -2,6 +2,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
 
   resources :invoices, :except => [:new, :edit] do
     resources :line_items, :only => [:create, :destroy], :shallow => true
+    #post '/:product_id' => "invoices#create", :as => 'product_setup'
     get '/:product_id' => "invoices#create", :as => 'product_setup'
     post '/:subscriber_id' => "invoices#create", :as => 'subscriber_setup'
     post '/line_items/:product_id' => 'line_items#create', :as => 'add_product'

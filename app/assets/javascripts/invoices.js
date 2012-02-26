@@ -4,13 +4,12 @@ $(document).ready(function(){
 
   $('#add-new-line-btn').click(function() {
 
-    if ($("#add-new-line-item").is(":hidden")) {
-    $("#add-new-line-item").slideDown("slow");
-    $("#add-new-line-btn").text('Hide Line Item Form');
-      } else {
-    $("#add-new-line-item").slideUp('slow');
-    $("#add-new-line-btn").text('Add New Line Item')
-    }
+    if ($("#add-new-line-item").is(":hidden"))
+      { $("#add-new-line-item").slideDown("slow");
+        $("#add-new-line-btn").text('Hide Line Item Form');  }
+    else
+      { $("#add-new-line-item").slideUp('slow');
+        $("#add-new-line-btn").text('Add New Line Item');    }
     return false;
   });
 

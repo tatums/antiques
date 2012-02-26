@@ -3,20 +3,20 @@ class Product < ActiveRecord::Base
   has_many :images, :dependent => :destroy
   has_many :sliders
   has_many :keywords, :dependent => :destroy
- 
+
   has_many :tags
   has_many :categories, :through => :tags
 
   before_create :set_item_number
 
-  validates_presence_of :title, :body,  :country, :period, :image
- 
+  validates_presence_of :title, :body,  :country, :period#, :image
+
   #attr_accessible :active, :title, :body, :new_acquisition, :phoebe_find, :country, :period, :image, :image_cache, :category_ids
   mount_uploader :image, ImageUploader
 
   def to_param  # overridden
     "#{id}-#{title.gsub(/\W/, '-').downcase}"
-  end  
+  end
 
   scope :active, where(:active => true)
   scope :inactive, where(:active => false)
@@ -31,8 +31,8 @@ class Product < ActiveRecord::Base
   end
 
   def measurements_setup?
-    unless height.nil? && width.nil? && depth.nil? && diameter.nil? 
-       return true 
+    unless height.nil? && width.nil? && depth.nil? && diameter.nil?
+       return true
     end
   end
 

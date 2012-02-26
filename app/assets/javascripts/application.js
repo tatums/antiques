@@ -8,5 +8,4 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require bootstrap
-//= require foundation
 //= require_tree .

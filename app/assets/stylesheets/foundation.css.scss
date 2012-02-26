@@ -1,7 +1,4 @@
 
-
-
-
 /*	--------------------------------------------------
 	:: Tables
 	-------------------------------------------------- */
@@ -49,12 +46,12 @@
 	input[type=submit].button { -webkit-appearance: none; }
 
 	.button.nice {
-		background: #00a6fc url("foundation/misc/button-gloss.png") repeat-x 0 -34px;
+		background: #00a6fc;
 		-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
 		-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
 		text-shadow: 0 -1px 1px rgba(0,0,0,0.28);
-		background: #00a6fc url("foundation/misc/button-gloss.png") repeat-x 0 -34px, -moz-linear-gradient(top, rgba(255,255,255,.4) 0%, transparent 100%);
-		background: #00a6fc url("foundation/misc/button-gloss.png") repeat-x 0 -34px, -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.4)), color-stop(100%,transparent));
+		background: #00a6fc, -moz-linear-gradient(top, rgba(255,255,255,.4) 0%, transparent 100%);
+		background: #00a6fc, -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.4)), color-stop(100%,transparent));
 		border: 1px solid #0593dc;
 		-webkit-transition: background-color .15s ease-in-out;
 		-moz-transition: background-color .15s ease-in-out;
@@ -187,7 +184,8 @@
 	   Nicer Forms
 	----------------------------------------- */
 	form.nice div.form-field input, form.nice input.input-text, form.nice textarea { border: solid 1px #bbb; border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px; }
-	form.nice div.form-field input, form.nice input.input-text, form.nice textarea { font-size: 13px; padding: 6px 3px 4px; outline: none !important; background: url("foundation/misc/input-bg.png") #fff; }
+	form.nice div.form-field input, form.nice input.input-text, form.nice textarea { font-size: 13px; padding: 6px 3px 4px; outline: none !important; background: image-url("foundation/input-bg.png") #fff; }
+//	form.nice div.form-field input, form.nice input.input-text, form.nice textarea { font-size: 13px; padding: 6px 3px 4px; outline: none !important; background: #fff; }
 	form.nice div.form-field input:focus, form.nice input.input-text:focus, form.nice textarea:focus { background-color: #f9f9f9; }
 
 	form.nice fieldset { border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; }
@@ -199,123 +197,6 @@
  	form.nice div.form-field.error .small + small, form.nice .small + small.error { width: 132px; }
 	form.nice div.form-field.error .medium + small, form.nice .medium + small.error { width: 252px; }
 	form.nice div.form-field.error .large + small, form.nice .large + small.error { width: 432px; }
-
-	/* -----------------------------------------
-	   Custom Forms
-	----------------------------------------- */
-
-	form.custom span.custom { display: inline-block; width: 14px; height: 14px; position: relative; top: 2px; border: solid 1px #ccc; background: url("foundation/misc/custom-form-sprites.png") 0 0 no-repeat; }
-	form.custom span.custom.radio { border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; }
-	form.custom span.custom.radio.checked { background-position: 0px -14px; }
-	form.custom span.custom.checkbox.checked { background-position: 0px -28px; }
-
-	form.custom div.custom.dropdown { position: relative; display: inline-block; width: auto; height: 28px; margin-bottom: 9px; }
-	form.custom div.custom.dropdown a.current { display: block; width: auto; line-height: 26px; padding: 0 38px 0 6px; border: solid 1px #ddd; color: #141414; }
-	form.custom div.custom.dropdown a.selector { position: absolute; width: 26px; height: 26px; display: block; background: url("foundation/misc/custom-form-sprites.png") -14px 0 no-repeat; right: 0px; top: 0px; border: solid 1px #ddd; }
-	form.custom div.custom.dropdown:hover a.selector,
-	form.custom div.custom.dropdown.open a.selector { background-position: -14px -26px; }
-
-	form.custom div.custom.dropdown ul { position: absolute; width: auto; display: none; margin: 0; left: 0px; top: 27px; margin: 0; padding: 0; background: rgba(255,255,255,0.9); border: solid 1px #ddd; z-index: 10; }
-	form.custom div.custom.dropdown ul li { cursor: pointer; padding: 3px 38px 3px 6px; margin: 0; }
-	form.custom div.custom.dropdown ul li.selected { background: url("foundation/misc/custom-form-sprites.png") right -52px no-repeat; }
-	form.custom div.custom.dropdown ul li:hover { background-color: #2a85e8; color: #fff; }
-	form.custom div.custom.dropdown ul li.selected:hover { background: url("foundation/misc/custom-form-sprites.png") #2a85e8 right -78px no-repeat; }
-	form.custom div.custom.dropdown ul.show { display: block; }
-
-	form.custom div.custom.dropdown.open ul { display: block; }
-
-
-
-/*	--------------------------------------------------
-	Reveal Modals
-	-------------------------------------------------- */
-
-	.reveal-modal-bg {
-		position: fixed;
-		height: 100%;
-		width: 100%;
-		background: #000;
-		z-index: 2000;
-		display: none;
-		top: 0;
-		left: 0;
-		}
-
-	.reveal-modal {
-		visibility: hidden;
-		top: 100px;
-		left: 50%;
-		margin-left: -300px;
-		width: 520px;
-		background: #eee url("foundation/misc/modal-gloss.png") no-repeat -200px -80px;
-		position: absolute;
-		z-index: 2001;
-		padding: 30px 40px 34px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
-		border-radius: 5px;
-		-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
-		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
-		box-shadow: 0 0 10px rgba(0,0,0,.4);
-		}
-
-	.reveal-modal.small 		{ width: 200px; margin-left: -140px;}
-	.reveal-modal.medium 		{ width: 400px; margin-left: -240px;}
-	.reveal-modal.large 		{ width: 600px; margin-left: -340px;}
-	.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
-
-	.reveal-modal .close-reveal-modal {
-		font-size: 22px;
-		line-height: .5;
-		position: absolute;
-		top: 8px;
-		right: 11px;
-		color: #aaa;
-		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
-		font-weight: bold;
-		cursor: pointer;
-		}
-
-
-	/* Mobile */
-
-		@media handheld, only screen and (device-width: 768px), (device-width: 800px) {
-			.reveal-modal-bg { position: absolute; }
-
-			.reveal-modal,
-			.reveal-modal.small,
-			.reveal-modal.medium,
-			.reveal-modal.large,
-			.reveal-modal.xlarge { width: 60%; top: 30%; left: 15%; margin-left: 0px; padding: 5%; height: auto; }
-		}
-
-		@media handheld, only screen and (max-width: 767px) {
-			.reveal-modal-bg { position: absolute; }
-
-			.reveal-modal,
-			.reveal-modal.small,
-			.reveal-modal.medium,
-			.reveal-modal.large,
-			.reveal-modal.xlarge { width: 80%; top: 15%; left: 5%; margin-left: 0px; padding: 5%; height: auto; }
-		}
-
-
-	/*
-
-	NOTES
-
-	Close button entity is &#215;
-
-	Example markup
-
-	<div id="myModal" class="reveal-modal">
-		<h2>Awesome. I have it.</h2>
-		<p class="lead">Your couch.  I it's mine.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices aliquet placerat. Duis pulvinar orci et nisi euismod vitae tempus lorem consectetur. Duis at magna quis turpis mattis venenatis eget id diam. </p>
-		<a class="close-reveal-modal">&#215;</a>
-	</div>
-
-	*/
 
 
 
@@ -365,4 +246,81 @@
 		dl.nice.contained.tabs.mobile dd a { padding: 18px 20px; }
 	}
 
+
+
+
+
+
+    /*	--------------------------------------------------
+    	Reveal Modals
+    	-------------------------------------------------- */
+
+    	.reveal-modal-bg {
+    		position: fixed;
+    		height: 100%;
+    		width: 100%;
+    		background: #000;
+    		z-index: 2000;
+    		display: none;
+    		top: 0;
+    		left: 0;
+    		}
+
+    	.reveal-modal {
+    		visibility: hidden;
+    		top: 100px;
+    		left: 50%;
+    		margin-left: -300px;
+    		width: 520px;
+        background: #eee image-url("foundation/modal-gloss.png") no-repeat -200px -80px;
+    		position: absolute;
+    		z-index: 2001;
+    		padding: 30px 40px 34px;
+    		-moz-border-radius: 5px;
+    		-webkit-border-radius: 5px;
+    		border-radius: 5px;
+    		-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    		box-shadow: 0 0 10px rgba(0,0,0,.4);
+    		}
+
+    	.reveal-modal.small 		{ width: 200px; margin-left: -140px;}
+    	.reveal-modal.medium 		{ width: 400px; margin-left: -240px;}
+    	.reveal-modal.large 		{ width: 600px; margin-left: -340px;}
+    	.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
+
+    	.reveal-modal .close-reveal-modal {
+    		font-size: 22px;
+    		line-height: .5;
+    		position: absolute;
+    		top: 8px;
+    		right: 11px;
+    		color: #aaa;
+    		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+    		font-weight: bold;
+    		cursor: pointer;
+    		}
+
+
+    	/* Mobile */
+
+    		@media handheld, only screen and (device-width: 768px), (device-width: 800px) {
+    			.reveal-modal-bg { position: absolute; }
+
+    			.reveal-modal,
+    			.reveal-modal.small,
+    			.reveal-modal.medium,
+    			.reveal-modal.large,
+    			.reveal-modal.xlarge { width: 60%; top: 30%; left: 15%; margin-left: 0px; padding: 5%; height: auto; }
+    		}
+
+    		@media handheld, only screen and (max-width: 767px) {
+    			.reveal-modal-bg { position: absolute; }
+
+    			.reveal-modal,
+    			.reveal-modal.small,
+    			.reveal-modal.medium,
+    			.reveal-modal.large,
+    			.reveal-modal.xlarge { width: 80%; top: 15%; left: 5%; margin-left: 0px; padding: 5%; height: auto; }
+    		}
 

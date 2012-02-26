@@ -22,7 +22,7 @@
     <% if current_user %>
       <%= link_to 'Edit', edit_product_path(@product), :class => "nice small white radius button no-print" %>
       <%= link_to 'Upload Images', "#",:class => "nice small white radius button no-print",  :id => "upload" %><br />
-      <%= link_to 'Invoice', invoice_product_setup_path(Invoice.new, @product), :class => "nice small white radius button no-print" %><br />
+      <%= link_to 'Invoice', invoice_product_setup_path(Invoice, @product), :class => "nice small white radius button no-print" %><br />
 
 
       <div id="keywords-widget" class="no-print">
