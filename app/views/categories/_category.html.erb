@@ -1,0 +1,7 @@
+<li>
+  <h3><%= link_to capitalize_title(category), category %> <span><%= category.products.size %></span></h3>
+  <dl>
+    <dd><%= activate_deactivate_category(category) %></dd>
+    <dd><%= link_to 'Edit', edit_category_path(category), :class=> "small white button" %></dd>
+  </dl>
+</li>

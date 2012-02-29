@@ -9,7 +9,10 @@ tmp/pids/
 public/uploads/
 <<<<<<< HEAD
 .DS_Store
+*.DS_Store
 .lck
 solr/data/
 config/mail.yml
 config/database.yml
+
+app/assets/images/*.DS_Store

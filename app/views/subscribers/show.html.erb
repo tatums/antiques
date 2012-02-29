@@ -24,7 +24,7 @@
   <% end %>
 </table>
 
-<%= link_to 'New Invoice', invoice_subscriber_setup_path(Invoice, @subscriber), :method => 'post' %> |
 <%= link_to 'Edit', edit_subscriber_path(@subscriber) %> |
-<%= link_to 'Destroy', @subscriber, confirm: 'Are you sure?', method: :delete %>
+<%= link_to 'Destroy', @subscriber, confirm: 'Are you sure?', method: :delete %><br /><br />
+<%= link_to 'New Invoice', invoice_subscriber_setup_path(Invoice, @subscriber), :method => 'post', :class => "nice small blue radius button  " %>
 

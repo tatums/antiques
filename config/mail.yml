@@ -10,6 +10,8 @@ development:
   <<: *default_settings
 test:
   <<: *default_settings
+staging:
+  <<: *default_settings
 
 production:
   send_to: 'phoebe@phoebeboothantiques.com'

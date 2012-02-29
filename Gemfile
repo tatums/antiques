@@ -6,6 +6,7 @@ group :development, :test do
   gem "factory_girl_rails"
   gem 'pry'
   gem 'sunspot_solr'
+  gem "rails-erd"
 end
 
 group :assets do

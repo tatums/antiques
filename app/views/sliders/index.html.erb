@@ -1,29 +1,28 @@
-<div class="col-container">
-	<div class="left col">
-		<h3>Active</h3>
-		<ul id="active-slider-images">
-		<% @sliders.active.each do |slider| %>
-      <%= render slider, :locals => { :list => true } %>
-		<% end %>
-		</ul>
-	</div>
+<div class="row">
+  <div class="span4 active">
+    <ul class="well">
+      <h2>Active</h2>
+      <% @sliders.active.each do |slider| %>
+        <%= render slider, :locals => { :list => true } %>
+      <% end %>
+    </ul>
+  </div>
 
-  <% unless @sliders.inactive.empty? %>  
-	<div class="right col">
-		<h3>Inactive</h3>
-		<ul id="inactive-slider-images">
-		<% @sliders.inactive.each do |slider| %>
-      <%= render slider, :locals => { :list => true } %>
-		<% end %>
-		</ul>
-	</div>
-	<% end %> 
+  <div class="span4 inactive">
+    <ul class="well">
+      <h2>Inactive</h2>
+      <% @sliders.inactive.each do |slider| %>
+        <%= render slider, :locals => { :list => true } %>
+      <% end %>
+    </ul>
+  </div>
 </div>
-
 <%= link_to 'New Image', new_slider_path, :class=> 'nice small radius button', :id=> 'new_slider' %>
 
+
+
 <div id="myModal" class="reveal-modal">
-     <h2>New Image.</h2> 			
+     <h2>New Image.</h2>
       <%= render 'upload' %>
      <a class="close-reveal-modal">&#215;</a>
 </div>
