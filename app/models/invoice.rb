@@ -13,7 +13,8 @@ class Invoice < ActiveRecord::Base
   end
 
   def calc_tax_total
-    line_items.map(&:tax).sum
+    self.tax ||= 0
+    #line_items.map(&:tax).sum
   end
 
   def calc_grand_total

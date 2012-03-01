@@ -25,7 +25,11 @@
         <div class="field">
           <%= f.text_field :inv_date, :class=> "input-text datepicker", :id => 'inv_date', :placeholder => "Date MM/DD/YYYY" %>
         </div>
-      <% end %>
+        <div class="field">
+          <%= f.text_field :tax, :class=> "input-text", :id => 'tax', :placeholder => "Tax" %>
+        </div>
+
+        <% end %>
       </div>
     </div>
 
@@ -70,7 +74,7 @@
   </span>
 
   <span class="span4">
-    <table class="totals table-bordered">
+    <table id="totals" class="totals table-bordered">
       <tr>
         <td>Subtotal</td>
         <td class="sub_total currency"><%= number_to_currency(@invoice.calc_sub_total) %></td>
@@ -86,6 +90,8 @@
     </table>
   </span>
 </div>
+
+
 
 
 <div id="add-inventory-modal" class="reveal-modal">
@@ -122,6 +128,11 @@
     });
 
   $('#title').blur(function()
+    {
+      $('.customer').submit();
+    });
+
+  $('#tax').blur(function()
     {
       $('.customer').submit();
     });

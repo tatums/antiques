@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120222033906) do
+ActiveRecord::Schema.define(:version => 20120301024945) do
 
   create_table "categories", :force => true do |t|
     t.boolean  "active",      :default => false
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20120222033906) do
     t.string   "inv_number"
     t.text     "notes"
     t.date     "inv_date"
+    t.decimal  "tax"
   end
 
   create_table "keywords", :force => true do |t|

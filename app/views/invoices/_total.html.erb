@@ -1,0 +1,17 @@
+<tr>
+  <td>Subtotal</td>
+  <td class="sub_total currency"><%= number_to_currency(@invoice.calc_sub_total) %></td>
+</tr>
+<tr>
+  <td>Tax</td>
+  <td class="tax currency"><%= number_to_currency(@invoice.calc_tax_total) %>
+    <div class="field">
+      <%= f.text_field :tax, :class=> "input-text", :id => 'tax', :placeholder => "Tax" %>
+    </div>
+
+    </td>
+</tr>
+<tr>
+  <td>Grand Total</td>
+  <td class="grand_total currency"><%= number_to_currency(@invoice.calc_grand_total) %></td>
+</tr>

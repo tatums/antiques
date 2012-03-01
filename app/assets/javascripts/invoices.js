@@ -33,4 +33,10 @@ $(document).ready(function(){
       .tablesorter({widthFixed: true, widgets: ['zebra']})
       .tablesorterPager({container: $("#pager")});
 
+    // hide the new-line-item form
+    $('.submit-line-item').click(function() {
+      $("#add-new-line-item").slideUp('slow');
+      $("#add-new-line-btn").text('Add New Line Item');
+    });
+
 });
