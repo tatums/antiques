@@ -1,10 +1,22 @@
-<p>
-  <%= @subscriber.full_name %><br />
-  <%= @subscriber.address %><br />
-  <%= @subscriber.city_state_zip %><br />
-  <%= @subscriber.email %>
-</p>
+<div class="row">
+  <div class="span4">
+      <div class="well">
+        <p class="subscriber-vitals">
+        <%= @subscriber.full_name %><br />
+        <%= @subscriber.address %><br />
+        <%= @subscriber.city_state_zip %><br />
+        <%= @subscriber.email %><br />
+      </p>
+      <p>
+      <%= link_to 'Edit', edit_subscriber_path(@subscriber), :class => "nice small white radius button" %>
+      <%= link_to 'Destroy', @subscriber, confirm: "Are you sure? \n\n #{@note}", method: :delete, :class => "nice small white radius button" %>
+      </p>
 
+    </div>
+  </div>
+</div>
+
+<h2><%= @subscriber.full_name %> - Invoices</h2>
 <table class="invoice table-bordered ">
   <thead>
   <tr>
@@ -23,8 +35,5 @@
 
   <% end %>
 </table>
-
-<%= link_to 'Edit', edit_subscriber_path(@subscriber) %> |
-<%= link_to 'Destroy', @subscriber, confirm: 'Are you sure?', method: :delete %><br /><br />
-<%= link_to 'New Invoice', invoice_subscriber_setup_path(Invoice, @subscriber), :method => 'post', :class => "nice small blue radius button  " %>
+<%= link_to 'New Invoice', invoice_subscriber_setup_path(Invoice, @subscriber), :method => 'post', :class => "nice small blue radius button" %>
 

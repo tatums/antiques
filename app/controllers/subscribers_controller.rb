@@ -13,6 +13,7 @@ class SubscribersController < ApplicationController
 
   def show
     @subscriber = Subscriber.find(params[:id])
+    @note = "*WARNING* All assoicated Invoices will also be deleted and cannot be undone."
 
     respond_to do |format|
       format.html # show.html.erb

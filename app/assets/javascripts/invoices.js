@@ -20,6 +20,35 @@ $(document).ready(function(){
         evt.preventDefault();
    });
 
+
+   $('.tax-row').click(function(evt) {
+      $('#add-tax-modal').reveal();
+      evt.preventDefault();
+     });
+
+     $('.tax-save-btn').click(function() {
+          $('.close-reveal-modal').trigger('click');
+      });
+
+
+    $('.price').click(function(){
+        if($(".price").text().trim() == "Price" )
+          {
+            $('#invoice_price_header').val('Net Price')
+            $('.price').html("Net Price")
+          }
+        else
+          {
+            $('#invoice_price_header').val('Price')
+            $('.price').html("Price")
+          }
+
+        $('.customer').submit();
+    });
+
+
+
+
    // if a button is clicked close the modal.
    $('.add-inv-product').click(function() {
         $('.close-reveal-modal').trigger('click');

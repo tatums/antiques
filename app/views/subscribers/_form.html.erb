@@ -17,9 +17,11 @@
   <div class="field subscribe">
     <%= f.text_field :first, :class => 'medium input-text', :placeholder => 'First Name'  %>
   </div>
-
   <div class="field subscribe">
     <%= f.text_field :last, :class => 'medium input-text', :placeholder => 'Last Name' %>
+  </div>
+  <div class="field subscribe">
+    <%= f.text_field :phone, :class => ' input-text', :placeholder => 'Phone' %>
   </div>
   <div class="field subscribe">
     <%= f.text_field :address, :class => ' input-text', :placeholder => 'Address' %>
@@ -35,6 +37,9 @@
   </div> -->
   <div class="field subscribe">
     <%= f.text_field :zip, :class => ' input-text', :placeholder => 'Zip' %>
+  </div>
+  <div class="field subscribe">
+    <%= f.text_area :notes, :class => ' input-text', :placeholder => 'Notes' %>
   </div>
   <div class="actions">
     <%= f.submit 'Subscribe', :class => 'small white nice button radius'  %>

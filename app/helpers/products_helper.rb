@@ -69,8 +69,8 @@ module ProductsHelper
     return output.html_safe
   end
 
-  def sold?(active)
-      "<span class='sold'> </span>".html_safe if active == false
+  def sold?(sold)
+      "<span class='sold'>Sold!</span>".html_safe unless sold.nil?
   end
 
   def edit_button_if_logged_in(product)

@@ -16,6 +16,8 @@
       <%= setup_paragraphs(@product).html_safe %>
       <%= formatted_dimensions(@product.dimensions) %>
       <%= formatted_price(@product.price) %>
+      <%= sold?(@product.sold) %>
+
       <li><%= link_to("Print a Tear Sheet", print_path(@product), :class => 'print_link no-print')%></li>
     </ul>
 

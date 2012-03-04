@@ -7,6 +7,7 @@ group :development, :test do
   gem 'pry'
   gem 'sunspot_solr'
   gem "rails-erd"
+  gem 'thin'
 end
 
 group :assets do

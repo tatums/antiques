@@ -26,9 +26,8 @@
           <%= f.text_field :inv_date, :class=> "input-text datepicker", :id => 'inv_date', :placeholder => "Date MM/DD/YYYY" %>
         </div>
         <div class="field">
-          <%= f.text_field :tax, :class=> "input-text", :id => 'tax', :placeholder => "Tax" %>
+          <%= f.hidden_field :price_header, :value => "Price" %>
         </div>
-
         <% end %>
       </div>
     </div>
@@ -45,7 +44,9 @@
             <th>Description</th>
             <th>Dimensions</th>
             <th>Qty</th>
-            <th>Price</th>
+            <th class="price" rel="popover" data-content="to toggle between Price & Net Price." data-original-title="Click">
+              <%=@invoice.price_header %>
+            </th>
             <th>Total</th>
             <th></th>
           </tr>
@@ -79,7 +80,7 @@
         <td>Subtotal</td>
         <td class="sub_total currency"><%= number_to_currency(@invoice.calc_sub_total) %></td>
       </tr>
-      <tr>
+      <tr class="tax-row" rel="popover" data-content="to adjust tax." data-original-title="Click">
         <td>Tax</td>
         <td class="tax currency"><%= number_to_currency(@invoice.calc_tax_total) %></td>
       </tr>
@@ -91,6 +92,19 @@
   </span>
 </div>
 
+
+<div id="add-tax-modal" class="reveal-modal">
+     <h2>Tax.</h2>
+     <%= form_for(@invoice, :html =>{:class => 'nice customer'}, :url => @invoice, :remote => true) do |f| %>
+       <div class="field">
+         <%= f.text_field :tax, :class=> "input-text", :id => 'tax', :placeholder => "Tax" %>
+       </div>
+       <div class="field">
+         <%= f.submit "Save", :class => "tax-save-btn" %>
+       </div>
+      <% end %>
+     <a class="close-reveal-modal">&#215;</a>
+</div>
 
 
 
@@ -136,5 +150,11 @@
     {
       $('.customer').submit();
     });
+
+
+//tooltips
+    $('.tax-row').popover({placement:'left'});
+    $('.price').popover({placement:'top'});
+
 
 </script>

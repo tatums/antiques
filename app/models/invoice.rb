@@ -25,6 +25,11 @@ class Invoice < ActiveRecord::Base
       0   #||= 0
   end
 
+  PRICE_SELECT = [
+    # Displayed,Stored in DB
+    ['Price','Price'] ,
+    ['Net Price','Net Price']
+  ]
 protected
 
   def set_inv_number #set the inv number to the date + inv count for current day
