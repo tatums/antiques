@@ -64,7 +64,8 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   get 'search' => 'home#search', :as => :search
   get 'new_acquisitions' => 'home#new_acquisitions', :as => :new_acquisitions
   get 'phoebes_finds' => 'home#phoebes_finds', :as => :phoebes_finds
-  get 'subscribe' => 'subscribers#new', :as => :subscribe
+  get 'subscribe' => 'home#subscribe', :as => :subscribe
+  post 'subscribe' => 'home#create_subscriber', :as => :create_subscriber
   get 'thank_you' => 'home#thank_you', :as => :thank_you
   get 'contact' => 'shows#index', :as => :contact
 
