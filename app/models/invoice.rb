@@ -25,6 +25,7 @@ class Invoice < ActiveRecord::Base
       0   #||= 0
   end
 
+
 protected
 
   def set_inv_number #set the inv number to the date + inv count for current day

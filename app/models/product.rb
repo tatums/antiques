@@ -36,6 +36,11 @@ class Product < ActiveRecord::Base
     end
   end
 
+  def toggle_sold
+    sold.nil? ? self.update_attributes(:sold => Time.now.to_date) : self.update_attributes(:sold => nil)
+  end
+
+
 protected
   def set_item_number
     Product.last ? number = Product.last.item_number : number = 1000

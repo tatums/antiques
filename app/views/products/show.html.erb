@@ -17,14 +17,15 @@
       <%= formatted_dimensions(@product.dimensions) %>
       <%= formatted_price(@product.price) %>
       <%= sold?(@product.sold) %>
-
       <li><%= link_to("Print a Tear Sheet", print_path(@product), :class => 'print_link no-print')%></li>
     </ul>
 
     <% if current_user %>
+    <p>
       <%= link_to 'Edit', edit_product_path(@product), :class => "nice small white radius button no-print" %>
-      <%= link_to 'Upload Images', "#",:class => "nice small white radius button no-print",  :id => "upload" %><br />
+      <%= link_to 'Upload Images', "#",:class => "nice small white radius button no-print",  :id => "upload" %>
       <%= link_to 'Invoice', invoice_product_setup_path(Invoice, @product), :class => "nice small white radius button no-print" %><br />
+      </p>
 
 
       <div id="keywords-widget" class="no-print">
