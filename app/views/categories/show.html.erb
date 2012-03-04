@@ -11,21 +11,10 @@
   </script>
 <% end %>
 
-<div class="row">
-  <div class="span12">
     <p id="page_headline"><%= upcase_title(@category) %></p>
-  </div>
-</div>
 
-<div class="row">
-  <div class="span4">
 
-    <ul class="well">
-    <%= render 'layouts/sidebar' %>
-    </ul>
 
-  </div>
-  <div class="span8">
 
       <% if @tags.size > 0 %>
       <ul id="products">
@@ -66,5 +55,3 @@
       <% end %>
       <p class="paginate"><%= paginate @tags %></p>
 
-  </div>
-</div>
