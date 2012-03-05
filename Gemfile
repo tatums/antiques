@@ -4,7 +4,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "capybara"
   gem "factory_girl_rails"
-  gem 'pry'
+  gem 'pry-rails'
   gem 'sunspot_solr'
   gem "rails-erd"
   gem 'thin'

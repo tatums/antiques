@@ -42,13 +42,6 @@ PhoebeboothanitquesCom2::Application.configure do
   #CACHE added on 2/4/2012
   config.cache_store = :dalli_store
 
-  silence_warnings do
-    begin
-      require 'pry'
-      IRB = Pry
-    rescue LoadError
-    end
-  end
 
   MAIL = YAML.load_file("#{Rails.root}/config/mail.yml")
 
@@ -61,8 +54,6 @@ PhoebeboothanitquesCom2::Application.configure do
     :password             => MAIL[Rails.env]["password"],
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
-
-    #MAIL_CHIMP[Rails.env]["api_key"]
 
 
   #HACK TO GET PDFKIT RUNNING

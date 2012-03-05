@@ -32,7 +32,7 @@
                 <%= sold?(tag.product.sold) %>
                 <li class="small-thumbs">
                   <% tag.product.images.each do |image| %>
-                    <%= link_to image_tag(image.image_url(:thumb_50) ),image.image_url(:large), :class => 'single_image' %>
+                    <%= link_to image_tag(image.image_url(:thumb_50) ),image.image_url(:large), :class => 'single_image' if image.image?%>
                   <% end %>
                   <%= link_to("Print a Tear Sheet", print_path(tag.product), :class => 'print_link no-print')%>
                 </li>

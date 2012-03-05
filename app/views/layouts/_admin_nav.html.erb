@@ -63,6 +63,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Change Password", change_password_path %></li>
+                  <li><%= link_to "Toggle Toolitps", toggle_tooltip_path(current_user), :method => 'put', :remote => true %></li>
                   <li><%= link_to "logout", logout_path %></li>
                 </ul>
               </li>
