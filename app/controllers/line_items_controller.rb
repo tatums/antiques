@@ -1,4 +1,20 @@
 class LineItemsController < ApplicationController
+  respond_to :html, :js
+
+  def edit
+    @line_item = LineItem.find(params[:id])
+  end
+
+  def update
+    @line_item = LineItem.find(params[:id])
+    respond_to do |format|
+      if @line_item.update_attributes(params[:line_item])
+        format.html { redirect_to @line_item.invoice, notice: 'Line Item was successfully updated.' }
+      else
+        format.html { render action: "edit" }
+      end
+    end
+  end
 
   def create
     @invoice = Invoice.find(params[:invoice_id])

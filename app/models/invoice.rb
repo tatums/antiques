@@ -8,6 +8,7 @@ class Invoice < ActiveRecord::Base
 
 
   paginates_per 10
+
   def calc_sub_total
     line_items.map(&:total).sum
   end

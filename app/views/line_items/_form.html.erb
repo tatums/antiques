@@ -1,0 +1,8 @@
+<%= form_for(@line_item, :html => {:class=> "nice"}) do |f| %>
+  <%= f.text_field :item_number, :class => "ex-small input-text", :placeholder => "item" %>
+  <%= f.text_field :description, :class => "input-text", :placeholder => "description" %>
+  <%= f.text_field :dimensions, :class => "small input-text", :placeholder => "dimensions" %>
+  <%= f.text_field :quantity, :class => "ex-small input-text", :placeholder => "qty" %>
+  <%= f.text_field :price, :class => "ex-small input-text", :placeholder => "price" %>
+  <%= f.submit 'Update', :class => "nice small radius button submit-line-item" %>
+<% end %>
