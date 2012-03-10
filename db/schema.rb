@@ -65,15 +65,15 @@ ActiveRecord::Schema.define(:version => 20120305002810) do
   end
 
   create_table "products", :force => true do |t|
-    t.boolean  "active",                                        :default => true
+    t.boolean  "active",        :default => true
     t.string   "title"
     t.text     "body"
     t.string   "image"
     t.integer  "position"
-    t.datetime "created_at",                                                       :null => false
-    t.datetime "updated_at",                                                       :null => false
-    t.boolean  "phoebe_find",                                   :default => false
-    t.boolean  "new_acquisition",                               :default => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.boolean  "phoebe_find",     :default => false
+    t.boolean  "new_acquisition", :default => false
     t.string   "country"
     t.string   "period"
     t.integer  "item_number"
@@ -95,8 +95,8 @@ ActiveRecord::Schema.define(:version => 20120305002810) do
   create_table "sliders", :force => true do |t|
     t.boolean  "active",     :default => true
     t.string   "image"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "product_id"
     t.integer  "position"
   end

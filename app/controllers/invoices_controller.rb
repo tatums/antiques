@@ -11,6 +11,7 @@ class InvoicesController < ApplicationController
 
   def show
     @invoice = Invoice.find(params[:id])
+    @email = @invoice.subscriber.email if @invoice.subscriber
     respond_to do |format|
       format.html
       format.pdf do
@@ -63,7 +64,8 @@ class InvoicesController < ApplicationController
   def email_invoice
     @invoice = Invoice.find(params[:invoice_id])
     @pdf = InvoicePdf.new(@invoice, view_context)
-    InvoiceMailer.send_invoice(@invoice, @pdf).deliver
+    @email = params[:email]["email"]
+    InvoiceMailer.send_invoice(@invoice, @pdf, @email).deliver if @email
     redirect_to @invoice, notice: 'Invoice was sent.'
   end
 

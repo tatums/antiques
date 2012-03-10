@@ -20,6 +20,14 @@ $(document).ready(function(){
         evt.preventDefault();
    });
 
+  $('#email-invoice-btn').click(function(evt) {
+       $('#email-invoice-modal').reveal();
+       evt.preventDefault();
+  });
+
+
+
+
 
    $('.tax-row').click(function(evt) {
       $('#add-tax-modal').reveal();
@@ -53,6 +61,12 @@ $(document).ready(function(){
    $('.add-inv-product').click(function() {
         $('.close-reveal-modal').trigger('click');
     });
+
+    // if a button is clicked close the modal.
+    $('.email-send-btn').click(function() {
+         $('.close-reveal-modal').trigger('click');
+     });
+
 
   // Datepicker for new invoices
   $( ".datepicker" ).datepicker( {dateFormat: "yy-mm-dd"});
