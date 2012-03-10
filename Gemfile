@@ -17,7 +17,7 @@ group :staging do
 end
 
 group :production do
-  gem 'sqlite3'#, '1.3.4'
+  #gem 'sqlite3'#, '1.3.4'
 end
 
 group :assets do
