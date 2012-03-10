@@ -23,26 +23,6 @@ ActiveRecord::Schema.define(:version => 20120305002810) do
     t.string   "slug"
   end
 
-  create_table "contacts", :force => true do |t|
-    t.string   "name"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
-    t.string   "email"
-    t.text     "comments"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "emails", :force => true do |t|
-    t.string   "first"
-    t.string   "last"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "images", :force => true do |t|
     t.string   "image"
     t.integer  "product_id"
@@ -85,19 +65,19 @@ ActiveRecord::Schema.define(:version => 20120305002810) do
   end
 
   create_table "products", :force => true do |t|
-    t.boolean  "active",          :default => true
+    t.boolean  "active",                                        :default => true
     t.string   "title"
     t.text     "body"
     t.string   "image"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "phoebe_find",     :default => false
-    t.boolean  "new_acquisition", :default => false
+    t.boolean  "phoebe_find",                                   :default => false
+    t.boolean  "new_acquisition",                               :default => false
     t.string   "country"
     t.string   "period"
     t.integer  "item_number"
-    t.decimal  "price"
+    t.decimal  "price",           :precision => 8, :scale => 2
     t.string   "dimensions"
     t.date     "sold"
   end
@@ -151,15 +131,13 @@ ActiveRecord::Schema.define(:version => 20120305002810) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                             :default => "", :null => false
-    t.string   "encrypted_password", :limit => 128, :default => "", :null => false
-    t.integer  "sign_in_count",                     :default => 0
+    t.string   "email"
+    t.string   "encrypted_password"
+    t.integer  "sign_in_count"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_salt"
     t.boolean  "show_tooltips"
   end
-
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

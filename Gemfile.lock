@@ -98,6 +98,7 @@ GEM
     pdf-reader (1.0.0)
       Ascii85 (~> 1.0.0)
       ruby-rc4
+    pg (0.13.2)
     polyglot (0.3.3)
     pr_geohash (1.0.0)
     prawn (0.12.0)
@@ -216,6 +217,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mini_magick
+  pg
   prawn
   pry-rails
   rack

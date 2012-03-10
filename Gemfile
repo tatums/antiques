@@ -8,6 +8,16 @@ group :development, :test do
   gem 'sunspot_solr'
   gem "rails-erd"
   gem 'thin'
+  gem 'pg'
+  #gem 'sqlite3'#, '1.3.4'
+end
+
+group :staging do
+  gem 'pg'
+end
+
+group :production do
+  gem 'sqlite3'#, '1.3.4'
 end
 
 group :assets do
@@ -32,7 +42,6 @@ gem 'prawn'
 gem 'dalli'
 
 #gem 'memcached'
-gem 'sqlite3'#, '1.3.4'
 
 
 # heroku

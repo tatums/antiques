@@ -17,11 +17,12 @@
       <ul id="products">
         <% @tags.each do |tag| %>
           <%= content_tag_for :li, tag do %>
+
+            <%= span_tag_if_sold?(tag.product.sold) %>
             <span class="block photo">
               <%= link_to image_tag(tag.product.image_url(:thumb_200) ), tag.product if tag.product.image? %>
             </span>
             <span class="block meta">
-
               <ul>
                 <li><h3><%= link_to tag.product.title, tag.product %></h3></li>
                 <li><%= country_and_period(tag.product) %> </li>
@@ -29,7 +30,6 @@
                 <%= read_more_setup_as_paragraphs(tag.product).html_safe %>
                 <%= formatted_dimensions(tag.product.dimensions) %>
                 <%= formatted_price(tag.product.price) %>
-                <%= sold?(tag.product.sold) %>
                 <li class="small-thumbs">
                   <% tag.product.images.each do |image| %>
                     <%= link_to image_tag(image.image_url(:thumb_50) ),image.image_url(:large), :class => 'single_image' if image.image?%>

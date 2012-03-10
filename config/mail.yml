@@ -19,8 +19,3 @@ production:
   domain: 'phoebeboothantiques.com'
   user_name: 'admin@phoebeboothantiques.com'
   password: 'pa88word'
-
-
-#subscriber_list is the list that each user will be subscribed to.
-#MAIL_CHIMP[Rails.env]["api_key"]
-#MAIL_CHIMP[Rails.env]["subscriber_list"]
