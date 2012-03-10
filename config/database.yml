@@ -1,7 +1,7 @@
 development:
     adapter: postgresql
     encoding: unicode
-    database: phoebe_booth_antiques_development
+    database: phoebebooth_development
     pool: 5
     timeout: 5000
 

@@ -7,12 +7,9 @@ tmp/cache/sass/
 tmp/pids/
 .sass-cache/
 public/uploads/
-<<<<<<< HEAD
 .DS_Store
 *.DS_Store
 .lck
 solr/data/
 config/mail.yml
 config/database.yml
-
-app/assets/images/*.DS_Store

@@ -49,7 +49,7 @@ class InvoicePdf < Prawn::Document
   def date_left
     table(date_data) do
          row(0).style(:background_color => 'dddddd', align: :center)
-         column(0..1).width = 60
+         column(0..1).width = 90
          self.header = true
      end
 
@@ -95,14 +95,13 @@ class InvoicePdf < Prawn::Document
   end
 
   def date_data
-    [[ "Date", "Tax ID"], ['' , ' ']]
+    [[ "Date", "Tax ID"], [@invoice.inv_date.strftime('%m/%d/%Y') , ' ']]
 
   end
 
   def totals_data
     [['Subtotal:', price(@invoice.calc_sub_total)],
       ['Tax:', price(@invoice.calc_tax_total)],
-      ['Shipping:', price(@invoice.calc_shipping_total)],
       ['Grand Total:', price(@invoice.calc_grand_total)] ]
   end
 
@@ -115,9 +114,9 @@ class InvoicePdf < Prawn::Document
   end
 
   def line_item_rows
-    [[" ", "Product", "Qty", "Price", "Total Price"]] +
+    [[" ", "Product", "Qty", @invoice.price_header, "Total Price"]] +
     @invoice.line_items.map do |item|
-      [item.position, item.description, item.quantity, item.price, price(item.total)]
+      [item.position, item.description, item.quantity, price(item.price), price(item.total)]
     end
   end
 

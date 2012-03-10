@@ -18,23 +18,23 @@ ActiveRecord::Schema.define(:version => 20120305002810) do
     t.string   "title"
     t.text     "description"
     t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "slug"
   end
 
   create_table "images", :force => true do |t|
     t.string   "image"
     t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "invoices", :force => true do |t|
     t.string   "title"
     t.integer  "subscriber_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.string   "inv_number"
     t.text     "notes"
     t.date     "inv_date"
@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(:version => 20120305002810) do
   create_table "keywords", :force => true do |t|
     t.string   "title"
     t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "line_items", :force => true do |t|
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(:version => 20120305002810) do
     t.decimal  "tax"
     t.decimal  "total"
     t.integer  "invoice_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "products", :force => true do |t|
@@ -70,8 +70,8 @@ ActiveRecord::Schema.define(:version => 20120305002810) do
     t.text     "body"
     t.string   "image"
     t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                                       :null => false
+    t.datetime "updated_at",                                                       :null => false
     t.boolean  "phoebe_find",                                   :default => false
     t.boolean  "new_acquisition",                               :default => false
     t.string   "country"
@@ -88,15 +88,15 @@ ActiveRecord::Schema.define(:version => 20120305002810) do
     t.string   "url"
     t.string   "dates"
     t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "sliders", :force => true do |t|
     t.boolean  "active",     :default => true
     t.string   "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.integer  "product_id"
     t.integer  "position"
   end
@@ -109,8 +109,8 @@ ActiveRecord::Schema.define(:version => 20120305002810) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "phone"
     t.text     "notes"
   end
@@ -118,24 +118,24 @@ ActiveRecord::Schema.define(:version => 20120305002810) do
   create_table "tags", :force => true do |t|
     t.integer  "category_id"
     t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "position"
   end
 
   create_table "tasks", :force => true do |t|
     t.boolean  "completed"
     t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "encrypted_password"
     t.integer  "sign_in_count"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "password_salt"
     t.boolean  "show_tooltips"
   end

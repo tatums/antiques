@@ -159,12 +159,8 @@
     $('.tax-row').popover({placement:'left'});
     $('.price').popover({placement:'top'});
 
-
-    function setHover() {
-      $('.tax-row').mouseleave();
-    }
-
-    setInterval(setHover, 10000);
+    $('.tax-row').mouseover();
+    $('.price').mouseover();
 
   </script>
 <% end %>
