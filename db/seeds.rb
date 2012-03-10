@@ -20,10 +20,10 @@ categories = Category.all
 
 categories.each do |c|
   c.update_attributes(:active => 'true')
-  puts "Created Category #{c.title}"  
+  puts "Created Category #{c.title}"
 end
 
-u = User.create!({:email => "tatum@ashlandstudios.com", :roles => ["admin"], :password => "pa88word", :password_confirmation => "pa88word" })
-u = User.create!({:email => "admin@example.com", :roles => ["admin"], :password => "password", :password_confirmation => "password" })
+u = User.create!({:email => "tatum@ashlandstudios.com", :password => "pa88word", :password_confirmation => "pa88word" })
+u = User.create!({:email => "admin@example.com", :password => "password", :password_confirmation => "password" })
 
 puts "Created User #{u.email}"
