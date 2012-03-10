@@ -9,6 +9,7 @@ group :development, :test do
   gem "rails-erd"
   gem 'thin'
   gem 'pg'
+  gem 'taps' #heroku pg transfers
   #gem 'sqlite3'#, '1.3.4'
 end
 
