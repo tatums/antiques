@@ -14,6 +14,8 @@ end
 
 group :staging do
   gem 'pg'
+  gem 'thin'
+
 end
 
 group :production do
