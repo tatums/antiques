@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   before_save :encrypt_password
 
-
   attr_accessor :password
   attr_accessible :email, :show_tooltips, :password, :password_confirmation
   validates_confirmation_of :password
@@ -20,7 +19,6 @@ class User < ActiveRecord::Base
       self.encrypted_password = BCrypt::Engine.hash_secret(password, password_salt)
     end
   end
-
 
   def self.authenticate(email, password)
     user = find_by_email(email)

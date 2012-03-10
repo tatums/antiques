@@ -24,6 +24,6 @@ categories.each do |c|
 end
 
 u = User.create!({:email => "tatum@ashlandstudios.com", :password => "pa88word", :password_confirmation => "pa88word" })
+puts "Created User #{u.email}"
 u = User.create!({:email => "admin@example.com", :password => "password", :password_confirmation => "password" })
-
 puts "Created User #{u.email}"
