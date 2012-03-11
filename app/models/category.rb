@@ -1,12 +1,13 @@
 class Category < ActiveRecord::Base
-  
+
   #has_and_belongs_to_many :products
-  has_many :tags
-  has_many :products, :through => :tags
-  
+  #has_many :tags
+  has_many :category_products
+  has_many :products, :through => :category_products
+
   validates_presence_of :title
   validates_uniqueness_of :title
-  
+
   scope :active, where(:active => true)
   scope :inactive, where(:active => false)
 
@@ -21,14 +22,14 @@ class Category < ActiveRecord::Base
 
   def to_param  # overridden
     slug
-  end  
+  end
 
   def toggle_active
     if active == true
       update_attributes(:active => false)
     else
       update_attributes(:active => true)
-    end  
+    end
   end
 
 
@@ -38,9 +39,9 @@ private
   def set_slug
     self.slug = self.title.gsub(' ', '-').gsub(/[^a-zA-Z0-9\_\-\.]/, '').downcase
   end
-    
+
   def downcase_title
     self.title = self.title.downcase
-  end  
-  
+  end
+
 end

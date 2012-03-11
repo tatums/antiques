@@ -4,8 +4,8 @@ class Product < ActiveRecord::Base
   has_many :sliders
   has_many :keywords, :dependent => :destroy
 
-  has_many :tags
-  has_many :categories, :through => :tags
+  has_many :category_products
+  has_many :categories, :through => :category_products
 
   before_create :set_item_number
 

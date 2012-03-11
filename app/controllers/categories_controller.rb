@@ -13,12 +13,13 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.where(:slug => params[:id]).first
-    @tags = @category.tags.joins(:product).merge(Product.active).order('tags.position').page params[:page]
+    @category_products = @category.category_products.joins(:product).merge(Product.active).order('category_products.position').page params[:page]
+    #@tags = @category.tags.joins(:product).merge(Product.active).order('tags.position').page params[:page]
     respond_to do |format|
      format.html # show.html.erb
      format.json { render json: @category }
     end
-   
+
   end
 
 
@@ -77,23 +78,24 @@ class CategoriesController < ApplicationController
       format.json { head :ok }
     end
   end
-  
-#///////////////////////////////////////////////////////////////////////////  
-    
+
+#///////////////////////////////////////////////////////////////////////////
+
   def sort
     params[:CategoriesOrder].each_with_index do |id, index|
       Category.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
     end
     render :nothing => true
   end
-  
+
   def sort_products
     params[:ProductsOrder].each_with_index do |id, index|
-      Tag.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
+      CategoryProduct.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
     end
     render :nothing => true
   end
-      
+
+
   def toggle
     @category = Category.where(:slug => params[:id]).first
     @category.toggle_active
@@ -102,7 +104,7 @@ class CategoriesController < ApplicationController
       format.html { redirect_to categories_url }
       format.json { head :ok }
     end
-    
+
   end
-  
+
 end
