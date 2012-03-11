@@ -6,11 +6,9 @@ group :development, :test do
   gem "factory_girl_rails"
   gem 'pry-rails'
   gem 'sunspot_solr'
-  gem "rails-erd"
   gem 'thin'
   gem 'pg'
   gem 'taps' #heroku pg transfers
-  #gem 'sqlite3'#, '1.3.4'
 end
 
 group :staging do
@@ -21,7 +19,6 @@ end
 
 group :production do
   gem 'pg'
-  #gem 'sqlite3'#, '1.3.4'
 end
 
 group :assets do
@@ -38,15 +35,10 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'rack'
 gem 'heroku'
 
-
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'sunspot_rails'
 gem 'prawn'
 gem 'dalli'
 
-#gem 'memcached'
 
-
-# heroku
-#gem 'pg'
