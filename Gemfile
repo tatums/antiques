@@ -20,6 +20,7 @@ group :staging do
 end
 
 group :production do
+  gem 'pg'
   #gem 'sqlite3'#, '1.3.4'
 end
 
