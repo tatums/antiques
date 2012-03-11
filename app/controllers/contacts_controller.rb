@@ -33,10 +33,8 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(params[:contact])
-
     respond_to do |format|
       if @contact.save
-        SubscriberMailer.subscribe(@contact).deliver
         format.html { redirect_to thank_you_path, notice: 'Subscriber was successfully saved.' }
       else
         format.html { render action: "new" }

@@ -27,7 +27,7 @@ class HomeController < ApplicationController
     @contact = Contact.new
   end
 
-  def create_subscriber
+  def create_contact
     @contact = Contact.new(params[:contact])
     respond_to do |format|
       if @contact.save
