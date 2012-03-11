@@ -5,11 +5,11 @@ tmp/*
 tmp/cache/assets/
 tmp/cache/sass/
 tmp/pids/
-.sass-cache/
-public/uploads/
-.DS_Store
-*.DS_Store
-.lck
-solr/data/
 config/mail.yml
 config/database.yml
+public/uploads/
+solr/data/
+.sass-cache/
+.DS_Store
+.lck
+
