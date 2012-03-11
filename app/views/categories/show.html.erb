@@ -1,54 +1,14 @@
 <% if current_user %>
   <script language="javascript">
-  $(document).ready(function(){
-  $('#products').sortable({
-    update: function(event, ui) {
-      var ProductsOrder = $(this).sortable('toArray');
-      $.post( 'sort_products', {ProductsOrder:ProductsOrder});
-    }
-  });
-  });
+    $(document).ready(function(){
+      $('#products').sortable({
+        update: function(event, ui) {
+          var ProductsOrder = $(this).sortable('toArray');
+          $.post( 'sort_products', {products_in_order:ProductsOrder, category_id:<%= @category.id %>});
+        }
+      });
+    });
   </script>
 <% end %>
 
-    <p id="page_headline"><%= upcase_title(@category) %></p>
-
-      <% if @category_products.size > 0 %>
-      <ul id="products">
-        <% @category_products.each do |category_product| %>
-          <%= content_tag_for :li, category_product do %>
-
-            <%= span_tag_if_sold?(category_product.product.sold) %>
-            <span class="block photo">
-              <%= link_to image_tag(category_product.product.image_url(:thumb_200) ), category_product.product if category_product.product.image? %>
-            </span>
-            <span class="block meta">
-              <ul>
-                <li><h3><%= link_to category_product.product.title, category_product.product %></h3></li>
-                <li><%= country_and_period(category_product.product) %> </li>
-                <li>Inventory Number: <%= category_product.product.item_number.to_s %></li>
-                <%= read_more_setup_as_paragraphs(category_product.product).html_safe %>
-                <%= formatted_dimensions(category_product.product.dimensions) %>
-                <%= formatted_price(category_product.product.price) %>
-                <li class="small-thumbs">
-                  <% category_product.product.images.each do |image| %>
-                    <%= link_to image_tag(image.image_url(:thumb_50) ),image.image_url(:large), :class => 'single_image' if image.image?%>
-                  <% end %>
-                  <%= link_to("Print a Tear Sheet", print_path(category_product.product), :class => 'print_link no-print')%>
-                </li>
-              </ul>
-
-              <%= edit_button_if_logged_in(category_product.product) %>
-              <%= upload_images_button_if_logged_in(category_product.product) %>
-              <%= invoice_button_if_logged_in(category_product.product) %>
-            </span>
-          <% end %>
-        <% end %>
-      </ul>
-
-      <% else %>
-        <p>We are working on the site.  Please check back soon.</p>
-        <p>If you would like to be emailed once we have content available. Click <%= link_to 'here', subscribe_path %></p>
-      <% end %>
-      <p class="paginate"><%= paginate @category_products %></p>
-
+<%= render 'categories/products' %>
