@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120311011059) do
+ActiveRecord::Schema.define(:version => 20120311033921) do
 
   create_table "categories", :force => true do |t|
     t.boolean  "active",      :default => false
@@ -31,6 +31,26 @@ ActiveRecord::Schema.define(:version => 20120311011059) do
     t.integer  "position"
   end
 
+  create_table "contacts", :force => true do |t|
+    t.string   "first"
+    t.string   "last"
+    t.string   "email"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "phone"
+    t.text     "notes"
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "images", :force => true do |t|
     t.string   "image"
     t.integer  "product_id"
@@ -40,9 +60,9 @@ ActiveRecord::Schema.define(:version => 20120311011059) do
 
   create_table "invoices", :force => true do |t|
     t.string   "title"
-    t.integer  "subscriber_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.integer  "contact_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "inv_number"
     t.text     "notes"
     t.date     "inv_date"
@@ -107,20 +127,6 @@ ActiveRecord::Schema.define(:version => 20120311011059) do
     t.datetime "updated_at",                   :null => false
     t.integer  "product_id"
     t.integer  "position"
-  end
-
-  create_table "subscribers", :force => true do |t|
-    t.string   "first"
-    t.string   "last"
-    t.string   "email"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "phone"
-    t.text     "notes"
   end
 
   create_table "tasks", :force => true do |t|

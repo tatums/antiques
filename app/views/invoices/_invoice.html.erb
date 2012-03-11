@@ -5,8 +5,8 @@
   <td class="currency"><%= link_to number_to_currency(invoice.calc_sub_total), invoice %></td>
   <td class="currency"><%= link_to number_to_currency(invoice.calc_grand_total), invoice %></td>
   <td>
-    <% if invoice.subscriber %>
-      <%= link_to invoice.subscriber.full_name, invoice.subscriber %>
+    <% if invoice.contact %>
+      <%= link_to invoice.contact.full_name, invoice.contact %>
     <% end %>
   </td>
   <td class="delete center">

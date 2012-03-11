@@ -1,0 +1,9 @@
+<h3><span id="name"><%= @invoice.contact.full_name if @invoice.contact %></span></h3>
+<p><span id="address"><%= @invoice.contact.address if @invoice.contact %></span><br />
+<span id="city_state"><%= @invoice.contact.city_state_zip if @invoice.contact %></span><br />
+<span id="email"><%= @invoice.contact.email if @invoice.contact %></span><br />
+</p>
+<% if @invoice.contact %>
+  <p><%= link_to "Edit Subscriber", edit_contact_path(@invoice.contact)%></p>
+<% end %>
+<p><%= button_to "Email Invoice", email_invoice_path(@invoice), :id => 'email-invoice-btn', :class =>"nice small white radius button no-print" %></p>

@@ -1,4 +1,4 @@
-$(".subscriber").html("<%= escape_javascript(render(:partial => 'subscriber', :object => @invoice.subscriber))%>");
+$(".contact").html("<%= escape_javascript(render(:partial => 'contact', :object => @invoice.contact))%>");
 $("#inv-title").html(" <%= @invoice.title %>");
 $("#inv-date").html(" <%= @invoice.inv_date %>");
 $(".tax").html(" <%= escape_javascript number_to_currency(@invoice.tax) %> ")

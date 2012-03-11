@@ -1,13 +1,13 @@
 <script>
 $(document).ready(function(){
-    $("#subscribers")
+    $("#contacts")
         .tablesorter({widthFixed: true, widgets: ['zebra']})
         .tablesorterPager({container: $("#pager")});
 });
 
 </script>
 
-<table id="subscribers" class="table-bordered ">
+<table id="contacts" class="table-bordered ">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,14 +20,14 @@ $(document).ready(function(){
 </thead>
 <tbody>
 
-<% @subscribers.each do |subscriber| %>
+<% @contacts.each do |contact| %>
   <tr>
-    <td><%= link_to subscriber.full_name, subscriber %></td>
-    <td><%= link_to subscriber.email, subscriber %></td>
-    <td><%= subscriber.address %></td>
-    <td><%= subscriber.city %></td>
-    <td><%= subscriber.state %></td>
-    <td><%= subscriber.zip %></td>
+    <td><%= link_to contact.full_name, contact %></td>
+    <td><%= link_to contact.email, contact %></td>
+    <td><%= contact.address %></td>
+    <td><%= contact.city %></td>
+    <td><%= contact.state %></td>
+    <td><%= contact.zip %></td>
   </tr>
 <% end %>
 </tbody>
@@ -49,4 +49,4 @@ $(document).ready(function(){
   </form>
 </div>
 
-<%= link_to "New Subscriber", new_subscriber_path, :class => 'nice small radius button' %>
+<%= link_to "New Subscriber", new_contact_path, :class => 'nice small radius button' %>

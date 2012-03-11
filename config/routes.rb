@@ -1,16 +1,19 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
 
+
   resources :invoices, :except => [:new, :edit] do
     resources :line_items, :only => [:edit, :update, :create, :destroy], :shallow => true
     get '/:product_id' => "invoices#create", :as => 'product_setup'
-    post '/:subscriber_id' => "invoices#create", :as => 'subscriber_setup'
+    post '/:contact_id' => "invoices#create", :as => 'contact_setup'
     post '/line_items/:product_id' => 'line_items#create', :as => 'add_product'
   end
 
   post 'email_invoice/:invoice_id' => "invoices#email_invoice", :as => 'email_invoice'
 
 
-  resources :subscribers
+  resources :contacts, :path => 'subscribers'
+  resources :groups
+
   resources :tooltips, :only => [:update], :as => :toggle_tooltips
   resources :shows, :only =>  [:index, :create, :destroy] do
     collection do
@@ -66,7 +69,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   get 'subscribe' => 'home#subscribe', :as => :subscribe
   post 'subscribe' => 'home#create_subscriber', :as => :create_subscriber
   get 'thank_you' => 'home#thank_you', :as => :thank_you
-  get 'contact' => 'shows#index', :as => :contact
+  get 'contact' => 'shows#index', :as => :contact_us
 
   resources :tasks
   root :to => 'home#index'

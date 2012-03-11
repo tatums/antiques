@@ -24,14 +24,14 @@ class HomeController < ApplicationController
   end
 
   def subscribe
-    @subscriber = Subscriber.new
+    @contact = Contact.new
   end
 
   def create_subscriber
-    @subscriber = Subscriber.new(params[:subscriber])
+    @contact = Contact.new(params[:contact])
     respond_to do |format|
-      if @subscriber.save
-        SubscriberMailer.subscribe(@subscriber).deliver
+      if @contact.save
+        SubscriberMailer.subscribe(@contact).deliver
         format.html { redirect_to thank_you_path, notice: 'Subscriber was successfully saved.' }
       else
         format.html { render action: "subscribe" }

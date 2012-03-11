@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="span4">
+      <div class="well">
+        <p class="contact-vitals">
+        <%= @contact.full_name %><br />
+        <%= @contact.address %><br />
+        <%= @contact.city_state_zip %><br />
+        <%= @contact.email %><br />
+      </p>
+      <p>
+      <%= link_to 'Edit', edit_contact_path(@contact), :class => "nice small white radius button" %>
+      <%= link_to 'Destroy', @contact, confirm: "Are you sure? \n\n #{@note}", method: :delete, :class => "nice small white radius button" %>
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<h2><%= @contact.full_name %> - Invoices</h2>
+<table class="invoice table-bordered ">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Subtotal</th>
+    <th>Grand total</th>
+  </tr>
+  </thead>
+  <% @contact.invoices.each do |invoice| %>
+
+  <tr>
+    <td><%= link_to invoice.title, invoice %></td>
+    <td class="currency"><%= link_to number_to_currency(invoice.calc_sub_total), invoice %></td>
+    <td class="currency"><%= link_to number_to_currency(invoice.calc_grand_total), invoice %></td>
+  </tr>
+
+  <% end %>
+</table>
+<%= link_to 'New Invoice', invoice_contact_setup_path(Invoice, @contact), :method => 'post', :class => "nice small blue radius button" %>
+

@@ -11,7 +11,7 @@ class InvoicesController < ApplicationController
 
   def show
     @invoice = Invoice.find(params[:id])
-    @email = @invoice.subscriber.email if @invoice.subscriber
+    @email = @invoice.contact.email if @invoice.contact
     respond_to do |format|
       format.html
       format.pdf do
@@ -71,12 +71,14 @@ class InvoicesController < ApplicationController
 
 private
 
+
+##TODO  Make sure this works
   def  setup_for_params
-    if params[:subscriber_id] #post comming in from subscriber
-      @invoice.subscriber_id = params[:subscriber_id]
+    if params[:contact_id] #post comming in from subscriber
+      @invoice.contact_id = params[:contact_id]
     end
-    if params[:subscriber] #post comming in from invoice form
-      @invoice.subscriber_id = params[:subscriber][:id]
+    if params[:contact] #post comming in from invoice form
+      @invoice.contact_id = params[:contact][:id]
     end
     if params[:product_id]
       @product = Product.find(params[:product_id])
@@ -84,7 +86,6 @@ private
       @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,
       :price => @product.price, :quantity => 1, :dimensions => @product.dimensions )
     end
-
   end
 
 end

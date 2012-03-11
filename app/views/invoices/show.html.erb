@@ -1,7 +1,8 @@
   <div class="row-fluid">
     <div class="span4">
-        <div class="subscriber info well">
-          <%= render 'subscriber' %>
+        <div class="contact info well">
+          <%= render 'contact' %>
+
         </div>
     </div>
 
@@ -17,7 +18,7 @@
       <div class="form info well">
       <%= form_for(@invoice, :html =>{:class => 'nice customer'}, :url => @invoice, :remote => true) do |f| %>
         <div class="field">
-          <%= f.select("subscriber_id", Subscriber.all.collect {|s| [ s.full_name, s.id ]}, {:include_blank =>"None"}, :class=> "large input-text")%>
+          <%= f.select("contact_id", Contact.all.collect {|c| [ c.full_name, c.id ]}, {:include_blank =>"None"}, :class=> "large input-text")%>
         </div>
         <div class="field">
           <%= f.text_field :title, :class=> "input-text", :id => 'title', :placeholder => "Title" %>
@@ -96,7 +97,7 @@
 
 <div id="add-tax-modal" class="reveal-modal">
      <h2>Tax.</h2>
-     <%= form_for(@invoice, :html =>{:class => 'nice customer'}, :url => @invoice, :remote => true) do |f| %>
+     <%= form_for(@invoice, :html =>{:class => 'nice', :id => 'tax-frm'}, :url => @invoice, :remote => true) do |f| %>
        <div class="field">
          <%= f.text_field :tax, :class=> "input-text", :id => 'tax', :placeholder => "Tax" %>
        </div>
@@ -130,49 +131,38 @@
 </div>
 
 <div id="email-invoice-modal" class="reveal-modal">
-
-        <h3>Send Email to</h3>
-
-        <%= form_for(:email, :html =>{:class => 'nice customer'}, :url => email_invoice_path(@invoice), :remote => true) do |f| %>
-          <div class="field">
-            <% if @email %>
-              <%= f.text_field :email, :class=> "input-text", :id => 'tax', :placeholder => "Email", :value => @email %>
-            <% else %>
-              <%= f.text_field :email, :class=> "input-text", :id => 'tax', :placeholder => "Email"  %>
-            <% end %>
-
-          </div>
-          <div class="field">
-           <%= f.submit "Send", :class => "email-send-btn" %>
-          </div>
-        <% end %>
-
-     <a class="close-reveal-modal">&#215;</a>
+    <h3>Send Email to</h3>
+      <%= form_for(:email, :html =>{:class => 'nice', :id => "email-frm"}, :url => email_invoice_path(@invoice), :remote => true) do |f| %>
+        <div class="field">
+          <% if @email %>
+            <%= f.text_field :email, :class=> "input-text", :id => 'email', :placeholder => "Email", :value => @email %>
+          <% else %>
+            <%= f.text_field :email, :class=> "input-text", :id => 'email', :placeholder => "Email"  %>
+          <% end %>
+        </div>
+        <div class="field">
+         <%= f.submit "Send", :class => "email-send-btn" %>
+        </div>
+      <% end %>
+   <a class="close-reveal-modal">&#215;</a>
 </div>
 
 
 <script>
   //monitors the Customer select and submits the form
-  $('#invoice_subscriber_id').change(function()
+  $('#invoice_contact_id').change(function()
     {
       $('.customer').submit();
     });
-
-  //monitors the Inv-Date field and submits the form
   $('#inv_date').change(function()
     {
       $('.customer').submit();
     });
-
   $('#title').blur(function()
     {
       $('.customer').submit();
     });
 
-  $('#tax').blur(function()
-    {
-      $('.customer').submit();
-    });
 
 </script>
 
@@ -180,12 +170,10 @@
   <script>
     $('.tax-row').popover({placement:'left'});
     $('.price').popover({placement:'top'});
-    //$('.pull-right').popover({placement:'bottom'});
 
 
     $('.tax-row').popover('toggle');
     $('.price').popover('toggle');
-    //$('.pull-right').popover('toggle');
 
 
     $('.popover').delay(1300).fadeOut('slow');

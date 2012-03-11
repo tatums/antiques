@@ -42,7 +42,6 @@ PhoebeboothanitquesCom2::Application.configure do
   #CACHE added on 2/4/2012
   config.cache_store = :dalli_store
 
-
   MAIL = YAML.load_file("#{Rails.root}/config/mail.yml")
 
   config.action_mailer.delivery_method = :smtp
@@ -55,11 +54,11 @@ PhoebeboothanitquesCom2::Application.configure do
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
 
   #HACK TO GET PDFKIT RUNNING
   #config.threadsafe!
 
-
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
 end

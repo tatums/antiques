@@ -1,5 +1,5 @@
 class Invoice < ActiveRecord::Base
-  belongs_to :subscriber
+  belongs_to :contact
   has_many :line_items
   before_create :set_inv_date
   after_create :set_inv_number
@@ -15,7 +15,6 @@ class Invoice < ActiveRecord::Base
 
   def calc_tax_total
     self.tax ||= 0
-    #line_items.map(&:tax).sum
   end
 
   def calc_grand_total

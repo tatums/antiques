@@ -58,9 +58,9 @@ class InvoicePdf < Prawn::Document
 
   def customer_info_right
     bounding_box([440,520], :width => 100) do
-      text @invoice.subscriber.full_name if @invoice.subscriber
-      text @invoice.subscriber.address if @invoice.subscriber
-      text @invoice.subscriber.city_state_zip if @invoice.subscriber
+      text @invoice.contact.full_name if @invoice.contact
+      text @invoice.contact.address if @invoice.contact
+      text @invoice.contact.city_state_zip if @invoice.contact
     end
   end
 
