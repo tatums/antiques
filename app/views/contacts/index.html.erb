@@ -7,46 +7,64 @@ $(document).ready(function(){
 
 </script>
 
-<table id="contacts" class="table-bordered ">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-    </tr>
-</thead>
-<tbody>
+<div class="row">
+  <div class="span2">
+    <div class="well">
+      <h2>Groups</h2>
+      <ul class="nav nav-list">
+        <% Group.all.each do |group|%>
+          <li><%= link_to group.title, group %> <%= link_to 'x', group, confirm: 'Are you sure?', method: :delete  %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 
-<% @contacts.each do |contact| %>
-  <tr>
-    <td><%= link_to contact.full_name, contact %></td>
-    <td><%= link_to contact.email, contact %></td>
-    <td><%= contact.address %></td>
-    <td><%= contact.city %></td>
-    <td><%= contact.state %></td>
-    <td><%= contact.zip %></td>
-  </tr>
-<% end %>
-</tbody>
-</table>
+  <div class="span10">
+    <table id="contacts"><!--class="table-bordered ">-->
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip</th>
+        </tr>
+    </thead>
+    <tbody>
 
-<div id="pager">
-  <form>
-    <!-- <span class="first">‹ First</span> -->
-    <span class="prev">‹ Prev</span>
-    <input type="text" class="pagedisplay">
-    <span class="next">Next ›</span>
-    <!-- <img src="../addons/pager/icons/last.png" class="last"> -->
-    <select class="pagesize">
-      <option selected="selected" value="10">10</option>
-      <option value="20">20</option>
-      <option value="30">30</option>
-      <option value="40">40</option>
-    </select>
-  </form>
+    <% @contacts.each do |contact| %>
+      <tr class="contact <%=contact.id%>">
+        <td><%= link_to contact.full_name, contact %></td>
+        <td><%= link_to contact.email, contact %></td>
+        <td><%= contact.address %></td>
+        <td><%= contact.city %></td>
+        <td><%= contact.state %></td>
+        <td><%= contact.zip %></td>
+      </tr>
+    <% end %>
+    </tbody>
+    </table>
+
+    <div id="pager">
+      <form>
+        <span class="prev">‹ Prev</span>
+        <input type="text" class="pagedisplay">
+        <span class="next">Next ›</span>
+        <select class="pagesize">
+          <option selected="selected" value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="40">40</option>
+        </select>
+      </form>
+    </div>
+    <%= link_to "New Subscriber", new_contact_path, :class => 'nice small radius button' %>
+  </div>
+
 </div>
-
-<%= link_to "New Subscriber", new_contact_path, :class => 'nice small radius button' %>
+<script>
+$(function() {
+  $(".contact").draggable();
+});
+</script>

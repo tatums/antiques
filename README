@@ -1,7 +1,7 @@
 App to manage products.  Allows the user to upload images set a description.  A product can exist in multiple categories. 
+Create Invoices
 
-Rails 3.1
-Mysql DB
+Rails 3.2
+postgres
 rmagick
-devise
-... 
+...... 
