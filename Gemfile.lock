@@ -60,11 +60,14 @@ GEM
     eventmachine (0.12.10)
     execjs (1.3.0)
       multi_json (~> 1.0)
+    fabrication (1.3.2)
     factory_girl (2.6.0)
       activesupport (>= 2.3.9)
     factory_girl_rails (1.7.0)
       factory_girl (~> 2.6.0)
       railties (>= 3.0.0)
+    faker (1.0.1)
+      i18n (~> 0.4)
     ffi (1.0.11)
     heroku (2.20.1)
       launchy (>= 0.3.2)
@@ -218,7 +221,9 @@ DEPENDENCIES
   carrierwave
   coffee-rails
   dalli
+  fabrication
   factory_girl_rails
+  faker
   heroku
   jquery-rails
   kaminari

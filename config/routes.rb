@@ -12,7 +12,9 @@ PhoebeboothanitquesCom2::Application.routes.draw do
 
 
   resources :contacts, :path => 'subscribers'
-  resources :groups
+  resources :groups, :except =>[:index] do
+    resources :contacts, :path => 'subscribers', :only => [:index]
+  end
 
   resources :tooltips, :only => [:update], :as => :toggle_tooltips
   resources :shows, :only =>  [:index, :create, :destroy] do
@@ -20,6 +22,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
       post 'sort'
     end
   end
+
   resources :sliders, :except => [:show] do
     member do
       post 'toggle'
@@ -73,5 +76,8 @@ PhoebeboothanitquesCom2::Application.routes.draw do
 
   resources :tasks
   root :to => 'home#index'
+  #, :constraints => lambda{ |r|
+#    binding.pry
+#  }
 
 end

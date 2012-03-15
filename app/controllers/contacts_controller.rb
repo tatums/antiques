@@ -2,7 +2,12 @@ class ContactsController < ApplicationController
   before_filter :require_user, :except => [:new, :create]
 
   def index
-    @contacts = Contact.all
+    if params[:group_id]
+      @group = Group.find params[:group_id]
+      @contacts = @group.contacts
+    else
+      @contacts = Contact.all
+    end
     respond_to do |format|
       format.html
     end
@@ -45,6 +50,7 @@ class ContactsController < ApplicationController
 
   def update
     @contact = Contact.find(params[:id])
+    add_to_group_if_group_present
     respond_to do |format|
       if @contact.update_attributes(params[:contact])
         format.html { redirect_to @contact, notice: 'Subscriber was successfully updated.' }
@@ -63,4 +69,18 @@ class ContactsController < ApplicationController
       format.html { redirect_to contacts_url }
     end
   end
+
+private
+
+  def add_to_group_if_group_present
+    if params[:group_id]
+      @group = Group.find(params[:group_id])
+      unless @group.contacts.include?(@contact)
+        @group.contacts << @contact
+      end
+    end
+  end
+
+
 end
+

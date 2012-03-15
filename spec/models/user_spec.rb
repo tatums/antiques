@@ -1,16 +1,20 @@
-describe "A User (in general)" do
-  include UserSpecHelper
+require 'spec_helper'
+describe User do
 
-  before(:each) do
-    @user = User.new
+  before do
+    @user = Fabricate :user
   end
 
-  it "should be invalid without a username" do
-    @user.attributes = valid_user_attributes.except(:email)
-    # @user.should_not be_valid
-    # @user.should have(1).error_on(:email)
-    # @user.errors.on(:email).should == "is required"
-    # @user.email = "someusername"
-    @user.should_not be_valid
+  it "can be instantiated" do
+    User.new.should be_an_instance_of(User)
   end
+
+  it "login should work" do
+    User.authenticate(@user.email,@user.password).should == @user
+  end
+
+  it "login should fail" do
+    User.authenticate('test@test_user.com','wrong_password').should be_nil
+  end
+
 end

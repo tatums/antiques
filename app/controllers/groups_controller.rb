@@ -1,11 +1,5 @@
 class GroupsController < ApplicationController
 
-  def index
-    @groups = Group.all
-    respond_to do |format|
-      format.html
-    end
-  end
 
   def show
     @group = Group.find(params[:id])
@@ -33,7 +27,7 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
+        format.html { redirect_to contacts_path, notice: 'Group was successfully created.' }
       else
         format.html { render action: "new" }
       end

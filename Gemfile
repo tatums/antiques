@@ -9,6 +9,8 @@ group :development, :test do
   gem 'thin'
   gem 'pg'
   gem 'taps' #heroku pg transfers
+  gem 'fabrication'
+  gem 'faker'
 end
 
 group :staging do
