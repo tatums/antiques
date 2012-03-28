@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
     else
       @contacts = Contact.all
     end
+    @groups = Group.all
     respond_to do |format|
       format.html
     end

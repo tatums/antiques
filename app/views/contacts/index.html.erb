@@ -1,10 +1,9 @@
 <script>
-$(document).ready(function(){
-    $("#contacts")
-        .tablesorter({widthFixed: true, widgets: ['zebra']})
-        .tablesorterPager({container: $("#pager")});
-});
-
+  $(document).ready(function(){
+      $("#contacts")
+          .tablesorter({widthFixed: true, widgets: ['zebra']})
+          .tablesorterPager({container: $("#pager")});
+  });
 </script>
 
 <div class="row">
@@ -12,17 +11,23 @@ $(document).ready(function(){
     <div class="well">
       <h2>Groups</h2>
       <ul class="nav nav-list">
-      <li><%= link_to 'All Subscribers', contacts_path %><li>
-        <% Group.all.each do |group|%>
-          <li><%= link_to group.title, group_contacts_path(group) %><li>
-        <% end %>
-        <%=link_to 'New Group', new_group_path, :class => 'nice small radius button' %>
+        <li><%= link_to 'All Subscribers', contacts_path %><li>
+        <%= render @groups %>
+        <li><%=link_to 'New Group', new_group_path, :class => 'nice small radius button' %></li>
       </ul>
     </div>
+
+    <% if @group %>
+    <div>
+      <ul class="nav nav-list">
+        <li><%=link_to 'Delete Group', @group, confirm: 'Are you sure?', method: :delete, :class => 'nice small radius button' %></li>
+      </ul>
+    </div>
+    <% end %>
   </div>
 
   <div class="span10">
-    <table id="contacts"><!--class="table-bordered ">-->
+    <table id="contacts" class="table-bordered">
       <thead>
         <tr>
           <th>Name</th>
@@ -34,17 +39,7 @@ $(document).ready(function(){
         </tr>
     </thead>
     <tbody>
-
-    <% @contacts.each do |contact| %>
-      <tr class="contact <%=contact.id%>">
-        <td><%= link_to contact.full_name, contact %></td>
-        <td><%= link_to contact.email, contact %></td>
-        <td><%= contact.address %></td>
-        <td><%= contact.city %></td>
-        <td><%= contact.state %></td>
-        <td><%= contact.zip %></td>
-      </tr>
-    <% end %>
+      <%= render @contacts %>
     </tbody>
     </table>
 
