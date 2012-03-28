@@ -6,6 +6,14 @@
   });
 </script>
 
+<% if @group %>
+  <div class="row">
+    <div class="span12">
+      <h1><%= @group.title %> Group</h1>
+    </div>
+  </div>
+<% end %>
+
 <div class="row">
   <div class="span2">
     <div class="well">
@@ -20,7 +28,7 @@
     <% if @group %>
     <div>
       <ul class="nav nav-list">
-        <li><%=link_to 'Delete Group', @group, confirm: 'Are you sure?', method: :delete, :class => 'nice small radius button' %></li>
+        <li><%=link_to 'Delete Group', @group, confirm: "Are you sure?\n All group members will be lost", method: :delete, :class => 'nice small radius button' %></li>
       </ul>
     </div>
     <% end %>
@@ -56,12 +64,22 @@
         </select>
       </form>
     </div>
+
     <%= link_to "New Subscriber", new_contact_path, :class => 'nice small radius button' %>
+
   </div>
 
+  <% if @group %>
+  <div class="span10">
+    <div class="well">
+    <h2>Assign Members to Group</h2>
+    <ul>
+    <% Contact.all.each do |contact| %>
+        <li><%=link_to contact.full_name, group_path(@group, :contact_id => contact), :method => :put %></li>
+    <% end %>
+    </ul>
+    </div>
+  </div>
+  <% end %>
+
 </div>
-<script>
-$(function() {
-  $(".contact").draggable();
-});
-</script>

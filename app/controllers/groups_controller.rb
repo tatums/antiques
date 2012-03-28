@@ -36,10 +36,10 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-
+    add_to_group_if_contact_present
     respond_to do |format|
       if @group.update_attributes(params[:group])
-        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
+        format.html { redirect_to group_contacts_path(@group), notice: 'Group was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
@@ -54,5 +54,17 @@ class GroupsController < ApplicationController
       format.html { redirect_to contacts_url }
     end
   end
+
+private
+
+def add_to_group_if_contact_present
+  if params[:contact_id]
+    @contact = Contact.find(params[:contact_id])
+    unless @contact.groups.include?(@group)
+      @contact.groups << @group
+    end
+  end
+end
+
 
 end
