@@ -5,6 +5,7 @@ class ContactsController < ApplicationController
     if params[:group_id]
       @group = Group.find params[:group_id]
       @contacts = @group.contacts
+      @non_members = Contact.excluding_ids(@contacts.map(&:id))
     else
       @contacts = Contact.all
     end
@@ -17,6 +18,8 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
+    @groups = @contact.groups
+    @available_groups = Group.find(:all, :conditions => ['id not in (?)', @groups.map(&:id)])
     @note = "*WARNING* All assoicated Invoices will also be deleted and cannot be undone."
     respond_to do |format|
       format.html

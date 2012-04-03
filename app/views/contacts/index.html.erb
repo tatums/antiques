@@ -3,6 +3,12 @@
       $("#contacts")
           .tablesorter({widthFixed: true, widgets: ['zebra']})
           .tablesorterPager({container: $("#pager")});
+
+     $('.assign-group-btn').click(function(evt) {
+          $('#assign-members-modal').reveal();
+          evt.preventDefault();
+     });
+
   });
 </script>
 
@@ -66,20 +72,21 @@
     </div>
 
     <%= link_to "New Subscriber", new_contact_path, :class => 'nice small radius button' %>
-
+    <% if @group %>
+      <%= link_to "Add Group Members", "#", :class => 'nice small radius button assign-group-btn' %>
+    <% end %>
   </div>
 
   <% if @group %>
-  <div class="span10">
-    <div class="well">
-    <h2>Assign Members to Group</h2>
-    <ul>
-    <% Contact.all.each do |contact| %>
-        <li><%=link_to contact.full_name, group_path(@group, :contact_id => contact), :method => :put %></li>
-    <% end %>
-    </ul>
-    </div>
-  </div>
+      <div id="assign-members-modal" class="reveal-modal">
+        <h2>Add Members to Group</h2>
+        <ul>
+        <% @non_members.each do |contact| %>
+            <li><%=link_to contact.full_name, group_path(@group, :contact_id => contact), :method => :put %></li>
+        <% end %>
+        </ul>
+        <a class="close-reveal-modal">&#215;</a>
+      </div>
   <% end %>
 
 </div>

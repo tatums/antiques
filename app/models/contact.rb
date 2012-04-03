@@ -6,6 +6,10 @@ class Contact < ActiveRecord::Base
   has_many :contact_groups
   has_many :groups, :through => :contact_groups
 
+  scope :excluding_ids, lambda { |ids|
+    where(['id NOT IN (?)', ids]) if ids.any?
+  }
+
   def full_name
     first.to_s + " " + last.to_s
   end
