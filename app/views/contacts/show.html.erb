@@ -10,14 +10,10 @@
       <p>
         <%= link_to 'Edit', edit_contact_path(@contact), :class => "nice small white radius button" %>
         <%= link_to 'Destroy', @contact, confirm: "Are you sure? \n\n #{@note}", method: :delete, :class => "nice small white radius button" %>
-        <%= link_to 'Assign Group', '#', :id => 'assign-btn', :class => "nice small white radius button"  %>
+        <%= add_to_group_button_if_available_groups(@available_groups) %>
      </p>
       <br />
-      <ul>
-        <% @contact.groups.each do |group|%>
-          <li><i class="icon-user"></i><%= link_to group.title, group_contacts_path(group) %></li>
-        <% end %>
-      </ul>
+      <%= group_memberships(@contact) %>
     </div>
   </div>
 
@@ -40,15 +36,9 @@
       <% end %>
     </table>
     <%= link_to 'New Invoice', invoice_contact_setup_path(Invoice, @contact), :method => 'post', :class => "nice small blue radius button" %>
+
     </div>
 </div>
-<h2>Assign to Group</h2>
- <ul>
-   <% @available_groups.each do |group|%>
-     <li><%= link_to group.title, contact_path(@contact, :group_id => group), :method => :put  %></li>
-   <% end %>
-</ul>
-
 
 <div id="assign-group-modal" class="reveal-modal">
   <h2>Assign to Group</h2>
@@ -56,12 +46,12 @@
     <% @available_groups.each do |group|%>
       <li><%= link_to group.title, contact_path(@contact, :group_id => group), :method => :put  %></li>
     <% end %>
-    <li><%= link_to 'Assign to a Group', "#", :class => 'assign-grp-btn' %></li>
+    <li>
   </ul>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
 <script>
-
+  $(document).ready(function(){
+  });
 </script>
-
