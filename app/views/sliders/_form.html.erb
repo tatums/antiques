@@ -16,8 +16,9 @@
     <%= f.label :image, 'Image' %><br />
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
-
   </div>
+
+
   <div class="field">
     <%= f.label :product, 'Link this Image to a Product' %><br />
   	<%= f.select :product_id, Product.active.collect {|p|[p.title, p.id]},{:include_blank => 'None'} %>
