@@ -6,4 +6,13 @@
 <% if @invoice.contact %>
   <p><%= link_to "Edit Subscriber", edit_contact_path(@invoice.contact)%></p>
 <% end %>
-<p><%= button_to "Email Invoice", email_invoice_path(@invoice), :id => 'email-invoice-btn', :class =>"nice small white radius button no-print" %></p>
+<p><%= link_to "Email Invoice", '#', :id => 'email-invoice-btn', :class =>"nice small white radius button no-print" %></p>
+
+<script>
+$(document).ready(function(){
+  $('#email-invoice-btn').click(function(evt) {
+    $('#email-invoice-modal').reveal();
+    evt.preventDefault();
+  });
+});
+</script>

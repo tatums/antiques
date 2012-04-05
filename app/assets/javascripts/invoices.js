@@ -23,10 +23,6 @@ $(document).ready(function(){
     $('#add-inventory-modal').reveal();
     evt.preventDefault();
    });
-  $('#email-invoice-btn').click(function(evt) {
-    $('#email-invoice-modal').reveal();
-    evt.preventDefault();
-  });
   $('.tax-row').click(function(evt) {
     $('#add-tax-modal').reveal();
     evt.preventDefault();
