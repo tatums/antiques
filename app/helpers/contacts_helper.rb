@@ -5,7 +5,7 @@ module ContactsHelper
     if contact.groups.any?
       html << "<ul><li><h3>Groups</h3></li>"
         contact.groups.each do |group|
-          html << "<li><i class='icon-user'></i> #{link_to group.title, group}<span>#{link_to 'X', remove_group_from_contact_path(contact, group), confirm: 'Are you sure?', method: :delete}</span></li>"
+          html << "<li class='group'><i class='icon-user'></i> #{link_to group.title, group} #{button_to 'X', remove_group_from_contact_path(contact, group), confirm: 'Are you sure?', method: :delete, class: :delete, :class => 'icon-remove'}</li>"
         end
       html << "</ul>"
     end
