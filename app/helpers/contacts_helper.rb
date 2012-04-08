@@ -5,7 +5,7 @@ module ContactsHelper
     if contact.groups.any?
       html << "<ul><li><h3>Groups</h3></li>"
         contact.groups.each do |group|
-          html << "<li><i class='icon-user'></i> #{link_to group.title, group_contacts_path(group)}</li>"
+          html << "<li><i class='icon-user'></i> #{link_to group.title, group}<span>#{link_to 'X', remove_group_from_contact_path(contact, group), confirm: 'Are you sure?', method: :delete}</span></li>"
         end
       html << "</ul>"
     end
@@ -18,11 +18,5 @@ module ContactsHelper
     end
   end
 
-  def heading_row_if_group_present(group, output = "")
-    if group
-      output = "<div class='row'><div class='span12'><h1>" + group.title + " Group</h1></div></div>"
-    end
-    return output.html_safe
-  end
 
 end

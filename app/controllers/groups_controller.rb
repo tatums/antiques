@@ -1,9 +1,14 @@
 class GroupsController < ApplicationController
 
+  def index
+    @groups = Group.all
+  end
 
   def show
     @group = Group.find(params[:id])
-
+    @contacts = @group.contacts
+    @non_members = Contact.excluding_ids(@contacts.map(&:id))
+    @groups= Group.all
     respond_to do |format|
       format.html
     end
@@ -56,6 +61,12 @@ class GroupsController < ApplicationController
   end
 
 private
+
+def add_contact_when_present
+  binding.pry
+end
+
+
 
 def add_to_group_if_contact_present
   if params[:contact_id]

@@ -2,13 +2,7 @@ class ContactsController < ApplicationController
   before_filter :require_user, :except => [:new, :create]
 
   def index
-    if params[:group_id]
-      @group = Group.find params[:group_id]
-      @contacts = @group.contacts
-      @non_members = Contact.excluding_ids(@contacts.map(&:id))
-    else
-      @contacts = Contact.all
-    end
+    @contacts = Contact.all
     @groups = Group.all
     respond_to do |format|
       format.html
@@ -19,7 +13,7 @@ class ContactsController < ApplicationController
   def show
     @contact = Contact.find(params[:id])
     @groups = @contact.groups
-    @available_groups = Group.find(:all, :conditions => ['id not in (?)', @groups.map(&:id)])
+    @available_groups = Group.excluding_ids(@groups.map(&:id))
     @note = "*WARNING* All assoicated Invoices will also be deleted and cannot be undone."
     respond_to do |format|
       format.html
@@ -42,6 +36,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(params[:contact])
+    add_to_group_if_group_present
     respond_to do |format|
       if @contact.save
         format.html { redirect_to thank_you_path, notice: 'Subscriber was successfully saved.' }
@@ -54,7 +49,7 @@ class ContactsController < ApplicationController
 
   def update
     @contact = Contact.find(params[:id])
-    add_to_group_if_group_present
+    #add_to_group_if_group_present
     respond_to do |format|
       if @contact.update_attributes(params[:contact])
         format.html { redirect_to @contact, notice: 'Subscriber was successfully updated.' }

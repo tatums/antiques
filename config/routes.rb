@@ -10,11 +10,14 @@ PhoebeboothanitquesCom2::Application.routes.draw do
 
   post 'email_invoice/:invoice_id' => "invoices#email_invoice", :as => 'email_invoice'
 
+  post 'groups/:group_id/contacts/:id' => "contact_groups#create", :as => 'apply_contact_to_group'
+  post 'subscribers/:contact_id/groups/:id' => "group_contacts#create", :as => 'apply_group_to_contact'
+  delete 'groups/:group_id/contacts/:id' => "contact_groups#destroy", :as => 'remove_contact_from_group'
+  delete 'subscribers/:contact_id/groups/:id' => "group_contacts#destroy", :as => 'remove_group_from_contact'
 
   resources :contacts, :path => 'subscribers'
-  resources :groups, :except =>[:index] do
-    resources :contacts, :path => 'subscribers', :only => [:index]
-  end
+  resources :groups
+
 
   resources :tooltips, :only => [:update], :as => :toggle_tooltips
   resources :shows, :only =>  [:index, :create, :destroy] do

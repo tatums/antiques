@@ -44,14 +44,9 @@
   <h2>Assign to Group</h2>
    <ul>
     <% @available_groups.each do |group|%>
-      <li><%= link_to group.title, contact_path(@contact, :group_id => group), :method => :put  %></li>
+      <li><%= link_to group.title, apply_group_to_contact_path(@contact, group), :method => :post %></li>
     <% end %>
     <li>
   </ul>
   <a class="close-reveal-modal">&#215;</a>
 </div>
-
-<script>
-  $(document).ready(function(){
-  });
-</script>

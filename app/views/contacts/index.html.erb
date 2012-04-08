@@ -1,5 +1,3 @@
-<%= heading_row_if_group_present(@group)%>
-
 <div class="row">
   <div class="span2">
     <div class="well">
@@ -11,13 +9,6 @@
       </ul>
     </div>
 
-    <% if @group %>
-    <div>
-      <ul class="nav nav-list">
-        <li><%=link_to 'Delete Group', @group, confirm: "Are you sure?\n All group members will be lost", method: :delete, :class => 'nice small radius button' %></li>
-      </ul>
-    </div>
-    <% end %>
   </div>
 
   <div class="span10">
@@ -39,9 +30,9 @@
 
     <div id="pager">
       <form>
-        <span class="prev">‹ Prev</span>
+        <span class="prev"><a href="#">‹ Prev</a></span>
         <input type="text" class="pagedisplay">
-        <span class="next">Next ›</span>
+        <span class="next"><a href="#">Next ›</a></span>
         <select class="pagesize">
           <option selected="selected" value="10">10</option>
           <option value="20">20</option>
@@ -52,9 +43,6 @@
     </div>
 
     <%= link_to "New Subscriber", new_contact_path, :class => 'nice small radius button' %>
-    <% if @group %>
-      <%= link_to "Add Group Members", "#", :class => 'nice small radius button assign-group-btn' %>
-    <% end %>
   </div>
 
   <% if @group %>
