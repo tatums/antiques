@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :show_tooltips?
 
-before_filter :store_click
-
   def sort
     params[:ProductsOrder].each_with_index do |id, index|
       Product.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
@@ -45,10 +43,6 @@ before_filter :store_click
 
   def show_tooltips?
     @current_user.show_tooltips
-  end
-
-  def store_click
-    ClickLog.create(:controller => params[:controller], :action => params[:action], :description => "#{current_user.to_s} -- #{params}")
   end
 
 
