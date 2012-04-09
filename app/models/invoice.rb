@@ -1,6 +1,8 @@
 class Invoice < ActiveRecord::Base
   belongs_to :contact
   has_many :line_items
+
+  before_save :init
   before_create :set_inv_date
   after_create :set_inv_number
 
@@ -9,12 +11,18 @@ class Invoice < ActiveRecord::Base
 
   paginates_per 10
 
+  def init #will set the default value only if it's nil
+    self.tax ||= 0.0
+    self.shipping ||= 0.0
+    self.price_header ||= "Price"
+  end
+
   def calc_sub_total
     line_items.map(&:total).sum
   end
 
   def calc_tax_total
-    self.tax ||= 0
+    self.tax ||= 0.0
   end
 
   def calc_grand_total
@@ -24,6 +32,7 @@ class Invoice < ActiveRecord::Base
   def calc_shipping_total
       0   #||= 0
   end
+
 
 
 protected

@@ -2,4 +2,5 @@ $(".contact").html("<%= escape_javascript(render(:partial => 'contact', :object 
 $("#inv-title").html(" <%= @invoice.title %>");
 $("#inv-date").html(" <%= @invoice.inv_date %>");
 $(".tax").html(" <%= escape_javascript number_to_currency(@invoice.tax) %> ")
+$(".shipping").html(" <%= escape_javascript number_to_currency(@invoice.shipping) %> ")
 $(".grand_total").html(" <%= escape_javascript number_to_currency(@invoice.calc_grand_total) %> ")

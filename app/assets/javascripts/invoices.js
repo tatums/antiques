@@ -23,7 +23,8 @@ $(document).ready(function(){
     $('#add-inventory-modal').reveal();
     evt.preventDefault();
    });
-  $('.tax-row').click(function(evt) {
+
+  $('.tax-row, .shipping-row').click(function(evt) {
     $('#add-tax-modal').reveal();
     evt.preventDefault();
   });

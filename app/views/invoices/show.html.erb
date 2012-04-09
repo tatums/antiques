@@ -86,6 +86,12 @@
         <td>Tax</td>
         <td class="tax currency"><%= number_to_currency(@invoice.calc_tax_total) %></td>
       </tr>
+      <tr class="shipping-row">
+        <td>Shipping</td>
+        <td class="shipping currency">
+          <%= number_to_currency(@invoice.shipping) %>
+        </td>
+      </tr>
       <tr>
         <td>Grand Total</td>
         <td class="grand_total currency"><%= number_to_currency(@invoice.calc_grand_total) %></td>
@@ -96,10 +102,13 @@
 
 
 <div id="add-tax-modal" class="reveal-modal">
-     <h2>Tax.</h2>
+     <h2>Tax & Shipping</h2>
      <%= form_for(@invoice, :html =>{:class => 'nice', :id => 'tax-frm'}, :url => @invoice, :remote => true) do |f| %>
        <div class="field">
          <%= f.text_field :tax, :class=> "input-text", :id => 'tax', :placeholder => "Tax" %>
+       </div>
+       <div class="field">
+         <%= f.text_field :shipping, :class=> "input-text", :id => 'shipping', :placeholder => "Shipping" %>
        </div>
        <div class="field">
          <%= f.submit "Save", :class => "tax-save-btn" %>
@@ -171,13 +180,10 @@
     $('.tax-row').popover({placement:'left'});
     $('.price').popover({placement:'top'});
 
-
     $('.tax-row').popover('toggle');
     $('.price').popover('toggle');
 
-
     $('.popover').delay(1300).fadeOut('slow');
-
 
   </script>
 <% end %>
