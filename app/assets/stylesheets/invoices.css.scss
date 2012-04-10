@@ -56,6 +56,33 @@ div.new-item{overflow:auto;}
   display:none;
 }
 
+.add-item-row td{padding:0;}
+
+table tbody tr.add-item-row{background: none;}
+div#add-new-line-item table{border:none;}
+.cell-1{width:45px;}
+.cell-2{ width:90px;}
+.cell-3{ width:375px;}
+.cell-4{ width:200px;}
+.cell-5{ width:75px;}
+.cell-6{}
+.cell-7{}
+.cell-8{}
+.cell-9{}
+.cell-10{}
+
+.cell-1 input{}
+.cell-2 input{ width:80px;}
+.cell-3 input{ width:365px;}
+.cell-4 input{ width:190px;}
+.cell-5 input{ width:65px;}
+.cell-6 input{ width:120px;}
+.cell-7 input{}
+.cell-8 input{}
+.cell-9 input{}
+.cell-10{}
+
+
 
 // DatePicker
 
