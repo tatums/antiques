@@ -1,5 +1,4 @@
 <div id="show-product">
-  <%= span_tag_if_sold?(@product.sold) %>
   <span class="block photo">
     <ul id="images">
       <li class="featured">
@@ -10,6 +9,7 @@
     </ul>
   </span>
   <span class="block show-meta">
+    <%= span_tag_if_sold?(@product) %>
 
 	  <ul>
     <li><h3><%= @product.title %></h3></li>

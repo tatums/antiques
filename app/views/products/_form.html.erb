@@ -10,15 +10,20 @@
       </ul>
     </div>
   <% end %>
-  
+
   <div id="edit-product-container">
     <div class="edit-product-left">
-    
+
       <div class="inline_checkbox_field edit-product">
         <%= f.check_box :active %>
         <%= f.label :active %>
       </div>
-  
+
+      <div class="inline_checkbox_field edit-product">
+        <%= f.check_box :sold %>
+        <%= f.label :sold %>
+      </div>
+
       <div class="field">
         <%= image_tag(@product.image_url(:thumb_100)) if @product.image? %><br />
         <%= f.label :image, "Featured Image" %><br />
@@ -36,8 +41,8 @@
         </div>
       <% end %>
     </div>
-  
-  
+
+
     <div class="edit-product-right">
       <div class="field">
         <%= f.label :title %><br />
@@ -60,9 +65,9 @@
         <%= f.label :price %><br />
         <%= f.text_field :price, :class=> "small input-text"  %>
       </div>
-  
+
     <div class="field">
-      <%= f.label :body, "Description" %><br />  
+      <%= f.label :body, "Description" %><br />
       <%= f.text_area :body %>
     </div>
   </div>
@@ -71,7 +76,7 @@
       <%= f.submit 'Save', :class => "nice small radius button" %>
     </div>
   </div>
-  
+
 <% end %>
 
 

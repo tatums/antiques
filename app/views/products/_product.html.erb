@@ -1,10 +1,10 @@
 <%= content_tag_for :li, product do %>
-  <%= span_tag_if_sold?(product.sold) %>
   <span class="block photo">
     <%= link_to image_tag(product.image_url(:thumb_200) ), product if product.image? %>
   </span>
   <span class="block meta">
     <ul>
+      <%= span_tag_if_sold?(product) %>
       <li><h3><%= link_to product.title, product %></h3></li>
       <li><%= country_and_period(product) %> </li>
       <li>Inventory Number: <%= product.item_number.to_s %></li>

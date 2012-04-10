@@ -11,7 +11,7 @@ class Product < ActiveRecord::Base
 
   validates_presence_of :title, :body,  :country, :period#, :image
 
-  #attr_accessible :active, :title, :body, :new_acquisition, :phoebe_find, :country, :period, :image, :image_cache, :category_ids
+  #attr_accessible :active, :sold, :title, :body, :new_acquisition, :phoebe_find, :country, :period, :image, :image_cache, :category_ids
   mount_uploader :image, ImageUploader
 
   def to_param  # overridden
@@ -36,9 +36,9 @@ class Product < ActiveRecord::Base
     end
   end
 
-  def toggle_sold
-    sold.nil? ? self.update_attributes(:sold => Time.now.to_date) : self.update_attributes(:sold => nil)
-  end
+  # def toggle_sold
+  #   sold.nil? ? self.update_attributes(:sold => Time.now.to_date) : self.update_attributes(:sold => nil)
+  # end
 
 
 protected

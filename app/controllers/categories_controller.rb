@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.where(:slug => params[:id]).first
-    @products = @category.products.active.order('category_products.position').page params[:page]
+    @products = @category.products.order('category_products.position').page params[:page]
     respond_to do |format|
      format.html
     end

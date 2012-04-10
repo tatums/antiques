@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120409011030) do
+ActiveRecord::Schema.define(:version => 20120410232118) do
 
   create_table "categories", :force => true do |t|
     t.boolean  "active",      :default => false
@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(:version => 20120409011030) do
     t.integer  "item_number"
     t.decimal  "price",           :precision => 8, :scale => 2
     t.string   "dimensions"
-    t.date     "sold"
+    t.boolean  "sold"
   end
 
   create_table "shows", :force => true do |t|

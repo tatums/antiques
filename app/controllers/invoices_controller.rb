@@ -83,7 +83,7 @@ private
     end
     if params[:product_id]
       @product = Product.find(params[:product_id])
-      @product.update_attributes(:sold => Time.now.to_date)
+      @product.update_attributes(:sold => true)
       @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,
       :price => @product.price, :quantity => 1, :dimensions => @product.dimensions )
     end
