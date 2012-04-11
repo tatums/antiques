@@ -23,7 +23,7 @@ class Product < ActiveRecord::Base
   scope :phoebe_finds, where(:phoebe_find => true)
 
   def self.not_sold
-    Product.where(:sold)
+    Product.where(:sold => false)
   end
 
   searchable :auto_index => true, :auto_remove => true do

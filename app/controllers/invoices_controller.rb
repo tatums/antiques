@@ -12,6 +12,8 @@ class InvoicesController < ApplicationController
   def show
     @invoice = Invoice.find(params[:id])
     @email = @invoice.contact.email if @invoice.contact
+    @products = Product.not_sold
+
     respond_to do |format|
       format.html
       format.pdf do

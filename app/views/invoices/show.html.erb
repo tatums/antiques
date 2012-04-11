@@ -122,26 +122,16 @@
 </div>
 
 
-
 <div id="add-inventory-modal" class="reveal-modal large">
      <h2>Add Product from Inventory.</h2>
-       <% Product.not_sold.each do |product| %>
-          <div class="row">
-           <div class="span1">
-             <p>
-               <%= image_tag (product.image_url(:thumb_50) ) if product.image? %>
-             </p>
-           </div>
-           <div class="span3">
-             <p>
-               <%= button_to "Add #{product.title}", invoice_add_product_path(@invoice, :product_id => product.id), :remote => true, :class => 'add-inv-product' %>
 
-             </p>
-           </div>
-          </div>
-       <% end %>
+        <%= render 'product', :collection => @products %>
+
      <a class="close-reveal-modal">&#215;</a>
 </div>
+
+
+
 
 <div id="email-invoice-modal" class="reveal-modal">
     <h3>Send Email to</h3>
