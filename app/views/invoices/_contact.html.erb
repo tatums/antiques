@@ -15,6 +15,11 @@ $(document).ready(function(){
   $('#email-invoice-btn').click(function(evt) {
     $('#email-invoice-modal').reveal();
     evt.preventDefault();
+
+                      // This will set the value of the email for when the butten is clicked..
+    varEmail = $('span#email').html();
+    $('input#email').val(varEmail);
+
   });
 });
 </script>

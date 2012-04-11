@@ -62,11 +62,10 @@ class InvoicesController < ApplicationController
 
   ##TODO Consider moving this into its own controller
   def email_invoice
-    binding.pry
     @invoice = Invoice.find(params[:invoice_id])
     @pdf = InvoicePdf.new(@invoice, view_context)
-    @email = params[:email]["email"]
-    InvoiceMailer.send_invoice(@invoice, @pdf, @email).deliver if @email
+    @email = params[:send_to]["email"]
+    InvoiceMailer.send_invoice(@invoice, @pdf, @email).deliver unless @email.blank?
     redirect_to @invoice, notice: 'Invoice was sent.'
   end
 

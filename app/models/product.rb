@@ -22,6 +22,9 @@ class Product < ActiveRecord::Base
   scope :inactive, where(:active => false)
   scope :phoebe_finds, where(:phoebe_find => true)
 
+  def self.not_sold
+    Product.where(:sold)
+  end
 
   searchable :auto_index => true, :auto_remove => true do
     text :title, :body, :item_number

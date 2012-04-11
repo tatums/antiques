@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(:version => 20120410232118) do
     t.integer  "item_number"
     t.decimal  "price",           :precision => 8, :scale => 2
     t.string   "dimensions"
-    t.boolean  "sold"
+    t.boolean  "sold",                                          :default => false
   end
 
   create_table "shows", :force => true do |t|

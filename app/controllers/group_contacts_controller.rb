@@ -15,7 +15,6 @@ class GroupContactsController < ApplicationController
 
 
   def destroy #called from contact#show
-    binding.pry
     @contact = Contact.find(params[:contact_id])
     @contact_group = ContactGroup.find_by_group_id_and_contact_id(params[:id], params[:contact_id])
     @contact_group.destroy

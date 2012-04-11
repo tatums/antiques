@@ -125,7 +125,7 @@
 
 <div id="add-inventory-modal" class="reveal-modal large">
      <h2>Add Product from Inventory.</h2>
-       <% Product.all.each do |product| %>
+       <% Product.not_sold.each do |product| %>
           <div class="row">
            <div class="span1">
              <p>
@@ -145,16 +145,12 @@
 
 <div id="email-invoice-modal" class="reveal-modal">
     <h3>Send Email to</h3>
-      <%= form_for(:email, :html =>{:class => 'nice', :id => "email-frm"}, :url => email_invoice_path(@invoice), :remote => true) do |f| %>
+      <%= form_for(:send_to, :html =>{:class => 'nice', :id => "email-frm"}, :url => email_invoice_path(@invoice), :remote => true) do |f| %>
         <div class="field">
-          <% if @email %>
-            <%= f.text_field :email, :class=> "input-text", :id => 'email', :placeholder => "Email", :value => @email %>
-          <% else %>
-            <%= f.text_field :email, :class=> "input-text", :id => 'email', :placeholder => "Email"  %>
-          <% end %>
+          <%= f.text_field :email, :class=> "input-text", :id => 'email', :placeholder => "Email"  %>
         </div>
         <div class="field">
-         <%= f.submit "Send", :class => "email-send-btn" %>
+          <%= f.submit "Send", :class => "email-send-btn" %>
         </div>
       <% end %>
    <a class="close-reveal-modal">&#215;</a>

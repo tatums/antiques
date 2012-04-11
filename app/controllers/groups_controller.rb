@@ -62,10 +62,6 @@ class GroupsController < ApplicationController
 
 private
 
-def add_contact_when_present
-  binding.pry
-end
-
 
 
 def add_to_group_if_contact_present
