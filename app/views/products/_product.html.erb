@@ -15,7 +15,7 @@
       <% product.images.each do |image| %>
         <%= link_to image_tag(image.image_url(:thumb_50) ), image.image_url(:large), :class => 'single_image' %>
       <% end %>
-
+      <li><%= link_to "Print a Tear Sheet", product_path(product, :format => 'pdf', :class => 'print_link') %></li>
     </ul>
     <br />
     <%= edit_button_if_logged_in(product) %>

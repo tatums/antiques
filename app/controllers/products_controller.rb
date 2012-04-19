@@ -15,8 +15,14 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @product }
+      format.html
+      format.pdf do
+          pdf = ProductPdf.new(@product)
+          send_data pdf.render, filename: "product_#{@product.id}",
+                                        type: "application/pdf",
+                                        disposition: "inline"
+      end
+
     end
   end
 
@@ -47,7 +53,7 @@ class ProductsController < ApplicationController
         format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }        
+        format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,7 +62,7 @@ class ProductsController < ApplicationController
     params[:product][:category_ids] ||= []
     @product = Product.find(params[:id])
     @product_categories = @product.category_ids
-    
+
     respond_to do |format|
       if @product.update_attributes(params[:product])
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -78,15 +84,15 @@ class ProductsController < ApplicationController
       format.json { head :ok }
     end
   end
-  
-  
+
+
   def sort
     params[:ProductsOrder].each_with_index do |id, index|
       Product.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
     end
     render :nothing => true
   end
-  
-  
-  
+
+
+
 end
