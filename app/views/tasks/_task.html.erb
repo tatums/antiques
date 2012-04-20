@@ -1,7 +1,7 @@
 <%= content_tag_for :tr, task do %>
-    <td><%= task.completed %></td>
-    <td><%= task.title %></td>
-    <td><%= link_to 'Show', task %></td>
+
+    <td><%= show_title(task) %></td>
+
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
     <td><%= link_to 'Destroy', task, confirm: 'Are you sure?', method: :delete %></td>
 <% end %>
