@@ -41,7 +41,7 @@ class Product < ActiveRecord::Base
 
   def set_as_sold_and_move_to_sold_category
     update_attributes(:sold => true)
-    category_products.destroy_all?
+    category_products.destroy_all
     Category.find_or_create_by_title('sold', :active => true).products << self
   end
 
