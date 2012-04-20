@@ -39,9 +39,11 @@ class Product < ActiveRecord::Base
     end
   end
 
-  # def toggle_sold
-  #   sold.nil? ? self.update_attributes(:sold => Time.now.to_date) : self.update_attributes(:sold => nil)
-  # end
+  def set_as_sold_and_move_to_sold_category
+    update_attributes(:sold => true)
+    category_products.destroy_all?
+    Category.find_or_create_by_title('sold', :active => true).products << self
+  end
 
 
 protected

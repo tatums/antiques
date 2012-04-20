@@ -44,7 +44,7 @@ class LineItemsController < ApplicationController
 private
   def find_product_and_set_params
     @product = Product.find(params[:product_id])
-    @product.update_attributes(:sold => true)
+    @product.set_as_sold_and_move_to_sold_category
     @line_item = @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,
     :price => @product.price, :quantity => 1, :dimensions => @product.dimensions )
   end

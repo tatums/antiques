@@ -74,7 +74,6 @@ class InvoicesController < ApplicationController
 private
 
 
-##TODO  Make sure this works
   def  setup_for_params
     if params[:contact_id] #post comming in from subscriber
       @invoice.contact_id = params[:contact_id]
@@ -84,7 +83,7 @@ private
     end
     if params[:product_id]
       @product = Product.find(params[:product_id])
-      @product.update_attributes(:sold => true)
+      @product.set_as_sold_and_move_to_sold_category
       @invoice.line_items.build(:product_id => @product.id, :item_number => @product.item_number, :description => @product.title,
       :price => @product.price, :quantity => 1, :dimensions => @product.dimensions )
     end
