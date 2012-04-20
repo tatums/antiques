@@ -2,31 +2,23 @@ class TasksController < ApplicationController
   before_filter :require_user
 
   def index
-    @tasks = Task.all
-
+    @tasks = Task.order(:position)
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tasks }
+      format.html
     end
   end
-
 
   def show
     @task = Task.find(params[:id])
-
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @task }
+      format.html
     end
   end
 
-
   def new
     @task = Task.new
-
     respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @task }
+      format.html
     end
   end
 
@@ -34,10 +26,8 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
-
   def create
     @task = Task.new(params[:task])
-
     respond_to do |format|
       if @task.save
         format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
@@ -47,29 +37,33 @@ class TasksController < ApplicationController
     end
   end
 
-
   def update
     @task = Task.find(params[:id])
-
     respond_to do |format|
       if @task.update_attributes(params[:task])
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
-        format.json { head :ok }
       else
         format.html { render action: "edit" }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end
   end
 
-
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-
     respond_to do |format|
       format.html { redirect_to tasks_url }
-      format.json { head :ok }
     end
   end
+
+  def sort
+    params[:tasks_in_order].each_with_index do |id, index|
+      Task.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
+    end
+    render :nothing => true
+  end
+
 end
+
+
+

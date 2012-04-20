@@ -1,4 +1,17 @@
+<script language="javascript">
+  $(document).ready(function(){
+    $('#tasks').sortable({
+      update: function(event, ui) {
+        var TasksOrder = $(this).sortable('toArray');
+        $.post( 'tasks/sort', {tasks_in_order:TasksOrder});
+      }
+    });
+  });
+</script>
+
+
 <table>
+<thead>
   <tr>
     <th>Completed</th>
     <th>Title</th>
@@ -6,16 +19,12 @@
     <th></th>
     <th></th>
   </tr>
-
+</thead>
+<tbody id="tasks">
 <% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.completed %></td>
-    <td><%= task.title %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <%= render task %>
 <% end %>
+</tbody>
 </table>
 
 <br />

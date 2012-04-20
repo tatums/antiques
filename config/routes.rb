@@ -77,7 +77,12 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   get 'thank_you' => 'home#thank_you', :as => :thank_you
   get 'contact' => 'shows#index', :as => :contact_us
 
-  resources :tasks
+  resources :tasks do
+    collection do
+      post 'sort'
+    end
+  end
+
   root :to => 'home#index'
   #, :constraints => lambda{ |r|
 #    binding.pry
