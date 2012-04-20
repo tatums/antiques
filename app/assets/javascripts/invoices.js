@@ -13,7 +13,6 @@ $(document).ready(function(){
 
   // hide the line-item after click
   $('.submit-line-item').click(function() {
-    $("#add-new-line-item").slideUp('slow');
     $("#add-new-line-btn").text('Add New Line Item');
   });
 
