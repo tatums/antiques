@@ -53,6 +53,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
       post 'sort'
     end
   end
+
   get "home/index"
 
   resources :users, only: [:edit, :update]
