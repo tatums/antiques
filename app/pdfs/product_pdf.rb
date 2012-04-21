@@ -18,12 +18,12 @@ class ProductPdf < Prawn::Document
   end
 
   def logo_and_title
-    logo = File.open(Rails.root + "app/pdfs/tree-logo.png")
-    bounding_box [240, 720], :width => 500 do
+    logo = File.open(Rails.root + "app/assets/images/phoebe_booth.png")
+    bounding_box [-30, 720], :width => 600 do
       image logo
     end
     move_down 10
-    text "PHOEBE BOOTH ANTIQUES LLC", :size => 16, :align => :center, style: :bold
+    #text "PHOEBE BOOTH ANTIQUES LLC", :size => 16, :align => :center, style: :bold
   end
 
   def inventory_number
