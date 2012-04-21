@@ -5,8 +5,14 @@ class CategoryProduct < ActiveRecord::Base
   after_create :set_init_position
 
   def set_init_position
-    position = category.products.size
-    update_attributes(:position => position)
+    category_products = category.category_products
+    category_product = [] << self
+    update_attributes(:position => 1)
+    category_products -= category_product
+    category_products.to_enum.with_index(2) do |cp, index|
+      cp.update_attributes(:position => index)
+    end
+
   end
 
   scope :active, where('products.active' => true)
