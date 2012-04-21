@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  before_save :strip_whitespace_from_title
+  before_create :set_item_number
 
   has_many :images, :dependent => :destroy
   has_many :sliders
@@ -7,7 +9,6 @@ class Product < ActiveRecord::Base
   has_many :category_products
   has_many :categories, :through => :category_products
 
-  before_create :set_item_number
 
   validates_presence_of :title, :body,  :country, :period#, :image
 
@@ -47,6 +48,10 @@ class Product < ActiveRecord::Base
 
 
 protected
+  def strip_whitespace_from_title
+    title.strip!
+  end
+
   def set_item_number
     Product.last ? number = Product.last.item_number : number = 1000
     number += 1
