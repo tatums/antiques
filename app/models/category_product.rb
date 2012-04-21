@@ -12,7 +12,6 @@ class CategoryProduct < ActiveRecord::Base
     category_products.to_enum.with_index(2) do |cp, index|
       cp.update_attributes(:position => index)
     end
-
   end
 
   scope :active, where('products.active' => true)

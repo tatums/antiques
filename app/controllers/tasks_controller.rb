@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_filter :require_user
 
   def index
-    @tasks = Task.order(:position)
+    @tasks = Task.where(:deployed => false).order(:position)
     respond_to do |format|
       format.html
     end
@@ -41,7 +41,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     respond_to do |format|
       if @task.update_attributes(params[:task])
-        format.html { redirect_to @task, notice: 'Task was successfully updated.' }
+        format.html { redirect_to tasks_path, notice: 'Task was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
