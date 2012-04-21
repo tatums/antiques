@@ -31,9 +31,15 @@ class ProductPdf < Prawn::Document
   end
 
   def product_image
-    product_img = File.open(Rails.root + "public/#{@product.image_url(:thumb_300)}")
+    if @product.image_url
+      product_img = File.open(Rails.root + "public/#{@product.image_url(:thumb_300)}")
+    end
+
     bounding_box [120, 580], :width => 300 do
-     image product_img
+    if product_img
+      image product_img
+    end
+
     end
   end
 
