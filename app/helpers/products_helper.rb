@@ -1,10 +1,10 @@
 module ProductsHelper
 
-
   def country_and_period(product)
-    unless product.country.nil? or product.period.nil?
-       product.country + ", " + product.period
-    end
+    output = []
+    output << product.country unless product.country.blank?
+    output << product.period unless product.period.blank?
+    output.join(', ')
   end
 
 
@@ -68,6 +68,7 @@ module ProductsHelper
     end
     return output.html_safe
   end
+
 
   def span_tag_if_sold?(product)
       "<span class='sold'>SOLD</span>".html_safe if product.sold?
