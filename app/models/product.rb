@@ -9,8 +9,7 @@ class Product < ActiveRecord::Base
 
   before_create :set_item_number
 
-  validates_presence_of :title, :body,  :country, :period#, :image
-
+  validates_presence_of :title#, :body,  :country, :period#, :image
   #attr_accessible :active, :sold, :title, :body, :new_acquisition, :phoebe_find, :country, :period, :image, :image_cache, :category_ids
   mount_uploader :image, ImageUploader
 
