@@ -22,22 +22,26 @@ module ProductsHelper
   end
 
   def read_more_setup_as_paragraphs(product)
-    output = []
-    paragraphs = product.body.split("\r\n")
-    paragraphs.each do |paragraph|
-      unless paragraph.empty?
-        output << "<p>" + paragraph.to_s + "</p>"
+    if product.body.nil?
+      data = ""
+    else
+      output = []
+      paragraphs = product.body.split("\r\n")
+      paragraphs.each do |paragraph|
+        unless paragraph.empty?
+          output << "<p>" + paragraph.to_s + "</p>"
+        end
       end
+      x = output.join
+        preview_words = 35
+        total_words = x.split(" ").length
+        if total_words < preview_words
+          preview = x
+        else
+          preview = x.split[0..preview_words].join(" ")+ "#{link_to " ...more", product, :class=> 'more'}"
+        end
+        data = "<li>"+preview +"</li>"
     end
-    x = output.join
-      preview_words = 35
-      total_words = x.split(" ").length
-      if total_words < preview_words
-        preview = x
-      else
-        preview = x.split[0..preview_words].join(" ")+ "#{link_to " ...more", product, :class=> 'more'}"
-      end
-      data = "<li>"+preview +"</li>"
     return data.html_safe
   end
 

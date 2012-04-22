@@ -30,15 +30,11 @@
       <%= link_to 'Edit', edit_product_path(@product), :class => "nice small white radius button no-print" %>
 
 
-
-
-
-      <input id="fileupload" class="fileupload2" type="file" name="image[image]" multiple class="multi-upload no-print">
-
-      <!-- <%= form_for([@product, Image.new],:remote => true, :html => {:id => 'image-upload',:multipart => true }) do |f| %>
-        <%= f.file_field :image, :class => "fileupload2" %>
-      <% end %> -->
-
+      <%= form_for([@product, Image.new],:remote => true, :html => {:id => 'image-upload',:multipart => true }) do |f| %>
+        <div class="upload-field">
+          <input id="fileupload" type="file" name="image[image]" multiple class="nice small white radius button no-print">
+        </div>
+      <% end %>
 
 
       <%= link_to 'Invoice', invoice_product_setup_path(Invoice, @product), :class => "nice small white radius button no-print" %>
@@ -66,12 +62,6 @@
             </div>
           <% end %>
         </div>
-
-        <ul class="categories">
-          <li><h3>Categories</h3></li>
-          <%= render @product.categories %>
-        </ul>
-
       </div>
       <p class="timestamps no-print">
         Created on <%= @product.created_at.strftime("%m/%d/%Y at %I:%M %p") %><br />
@@ -84,20 +74,14 @@
 
 
 
-<%= javascript_include_tag 'jquery.ui.widget.js' %>
-<%= javascript_include_tag 'jquery.iframe-transport.js' %>
-<%= javascript_include_tag 'jquery.fileupload.js' %>
 
-
-
+<script src="/js/file-upload/jquery.ui.widget.js"></script>
+<script src="/js/file-upload/jquery.iframe-transport.js"></script>
+<script src="/js/file-upload/jquery.fileupload.js"></script>
 
 <script>
-
 $(function () {
-
     $('#fileupload').fileupload({
-
-
         dataType: 'json',
         url: '<%= product_images_path(@product.id) %>',
         done: function (e, data) {
@@ -124,6 +108,7 @@ $(function () {
 
             });
             $('#spinner').hide();
+            //window.location.reload(true);
 
         }
     });
