@@ -12,12 +12,16 @@
       </ul>
   </span>
   <span class="block show-meta">
-    <%= span_tag_if_sold?(@product) %>
+
+
+
+    <%= tag_if_sold(@product) %>
+    <%= tag_if_inactive(@product) %>
 
 	  <ul>
-    <li><h3><%= @product.title %></h3></li>
-    <li><%= country_and_period(@product) %></li>
-    <li>Inventory Number: <%= @product.item_number %></li>
+      <li><h3><%= @product.title %></h3></li>
+      <li><%= country_and_period(@product) %></li>
+      <li>Inventory Number: <%= @product.item_number %></li>
       <%= setup_paragraphs(@product).html_safe %>
       <%= formatted_dimensions(@product.dimensions) %>
       <%= formatted_price(@product.price) %>
