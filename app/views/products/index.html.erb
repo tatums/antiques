@@ -14,12 +14,21 @@
 
 
 
-
-<%= render 'shared/heading', :heading => 'All Products' %>
-
-<div class="top-pagination no-print">
-  <%= paginate @products %>
+<div class="row">
+  <div class="span4">
+      <%= render 'shared/heading', :heading => 'All Products' %>
+  </div>
 </div>
+
+<div class="row">
+  <div class="span4">
+    <div class="top-pagination no-print">
+      <%= paginate @products %>
+    </div>
+  </div>
+</div>
+
+
 <ul id="products">
   <% if @products.count > 0 %>
     <% @products.each do |product| %>

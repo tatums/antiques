@@ -17,6 +17,8 @@ module CategoriesHelper
   end
 
   def read_more(product)
+    preview = ""
+    unless product.body.blank?
       desc = product.body
       preview_words = 60
       total_words = desc.split.length
@@ -25,6 +27,7 @@ module CategoriesHelper
       else
         preview = desc.split[0..preview_words].join(" ")+" ... "
       end
+    end
     return preview
   end
 
