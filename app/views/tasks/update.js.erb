@@ -1,0 +1,5 @@
+<% if params[:deployed] == 'true' %>
+  $('tr#task_<%= @task.id %>').fadeOut();
+<% else %>
+  $('tr#task_<%= @task.id%>').replaceWith("<%= escape_javascript(render(@task)) %>");
+<% end %>

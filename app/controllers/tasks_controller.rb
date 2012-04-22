@@ -51,6 +51,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update_attributes(params[:task])
         format.html { redirect_to tasks_path, notice: 'Task was successfully updated.' }
+        format.js
       else
         format.html { render action: "edit" }
       end

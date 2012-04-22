@@ -9,14 +9,14 @@ module TasksHelper
 
   def finish_button(task)
     unless task.completed?
-      link_to 'Finish', task_path(task, :completed => true),
+      link_to 'Finish', task_path(task, :completed => true), :remote => true,
       confirm: 'Are you sure?', method: :put, :class=> 'btn btn-success'
     end
   end
 
   def deployed_button(task)
     if task.completed?
-      link_to 'Deployed', task_path(task, :deployed => true),
+      link_to 'Deployed', task_path(task, :deployed => true), :remote => true,
       confirm: 'Are you sure?', method: :put, :class=> 'btn btn-warning'
     end
   end
