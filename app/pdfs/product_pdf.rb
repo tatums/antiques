@@ -8,7 +8,7 @@ class ProductPdf < Prawn::Document
     super(top_margin: 70)
     @product = product
     logo_and_title
-  #  move_down 10
+    move_down 10
     inventory_number
     product_image
     move_down 15
@@ -21,8 +21,8 @@ class ProductPdf < Prawn::Document
 
   def logo_and_title
     logo = File.open(Rails.root + "app/assets/images/phoebe_booth_logo.png")
-    bounding_box [25, 730], :width => 600 do
-      image logo
+    bounding_box [125, 730], :width => 300 do
+      image logo, :scale => 0.6, :position => :center, :vposition => :top
     end
     # fill_color "#58A51D"
     # #"#{Prawn::BASEDIR}/data/fonts/DejaVuSans.ttf"
@@ -36,12 +36,12 @@ class ProductPdf < Prawn::Document
 
   def product_image
     if @product.image_url
-      product_img = File.open(Rails.root + "public/#{@product.image_url(:thumb_300)}")
+      product_img = File.open(Rails.root + "public/#{@product.image_url(:medium)}")
     end
 
     bounding_box [120, 590], :width => 300 do
       if product_img
-        image product_img
+        image product_img,:scale => 0.6, :position => :center, :vposition => :top
       end
     end
   end

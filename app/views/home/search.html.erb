@@ -1,23 +1,23 @@
 <div id="search-container">
 
-  <p id="page_headline">SEARCH</p>
+  <%= render 'shared/heading', :heading => 'search' %>
 
   <div id="search-box">
   <%= form_tag search_path, :method => :get, :class => 'nice' do %>
     <div class="field">
       <%= text_field_tag :query, params[:query], :class => 'input-text' %>
     </div>
-    <div class="actions">  
+    <div class="actions">
        <%= submit_tag "Find", :class => 'small white nice button radius' %>
-    </div>   
+    </div>
   <% end %>
   </div>
 
 
-  <div id="search-results">    
+  <div id="search-results">
     <% if @results %>
     <p><em>Your search found <b><%=  @results.count.to_s %></b> results.</em></p>
-    
+
       <ul>
         <% @results.each do |result| %>
           <li>
@@ -29,9 +29,9 @@
               <%= read_more(result) %>
             </span>
           </li>
-        <% end %>  
+        <% end %>
       </ul>
       <%# @results.paginate %>
     <% end %>
-  </div>  
+  </div>
 </div>

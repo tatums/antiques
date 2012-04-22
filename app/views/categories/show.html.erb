@@ -13,4 +13,25 @@
 
 
 
-<%= render 'categories/products' %>
+<%= render 'shared/heading', :heading => @category.title %>
+
+<div class="top-pagination no-print">
+  <%= paginate @products %>
+</div>
+<ul id="products">
+  <% if @products.count > 0 %>
+    <% @products.each do |product| %>
+      <%= render product %>
+      <% end %>
+  <% else %>
+    <li>
+      <h2>Sorry</h2>
+      <p>We are working on the site.  Please check back soon.</p>
+      <p>If you would like to be emailed once we have content available. Click <%= link_to 'here', subscribe_path %></p>
+    </li>
+  <% end %>
+</ul>
+
+<div class="bottom-pagination no-print">
+  <%= paginate @products %>
+</div>
