@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   before_save :strip_whitespace_from_title
   before_create :set_item_number
+  after_create :set_init_position
 
   has_many :images, :dependent => :destroy
   has_many :sliders
@@ -57,6 +58,12 @@ protected
     self.item_number = number
   end
 
+  def set_init_position
+    self.update_attributes(:position => 1)
+    Product.all.each do |product|
+      product.update_attributes(:position => product.position+1)
+    end
+  end
 
 
 end
