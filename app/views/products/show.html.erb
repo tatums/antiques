@@ -36,9 +36,15 @@
       <%= link_to 'Delete', @product, confirm: "Are you sure?", method: :delete, :class => "nice small red radius button" %>
       </p>
 
+      <div class="widget no-print">
+        <h4>Categories</h4>
+        <ul class="categories">
+          <%= render @product.categories %>
+        </ul>
+      </div>
 
-      <div id="keywords-widget" class="no-print">
-        <h4>Keywords</h4>
+      <div class="widget no-print">
+        <h4>Keyword Tags</h4>
         <ul id="keywords">
           <%= render @product.keywords, :locals => { :list => true } %>
         </ul>
@@ -53,13 +59,8 @@
             </div>
           <% end %>
         </div>
-
-        <ul class="categories">
-          <li><h3>Categories</h3></li>
-          <%= render @product.categories %>
-        </ul>
-
       </div>
+
       <p class="timestamps no-print">
         Created on <%= @product.created_at.strftime("%m/%d/%Y at %I:%M %p") %><br />
         Updated on <%= @product.updated_at.strftime("%m/%d/%Y at %I:%M %p") %>

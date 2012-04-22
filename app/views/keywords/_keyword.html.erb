@@ -1,3 +1,5 @@
 <%= content_tag(:li, keyword, :id => "keyword_#{keyword.id}") do %>
-   <%= link_to(keyword.title, keyword_path(keyword), confirm: 'Delete Keyword? Are you sure?', :method => :delete, :class => "white small button", :remote => true) %>
+  <i class='icon-tag'></i>
+  <%= link_to(keyword.title, keyword_path(keyword), confirm: 'Delete Keyword? Are you sure?',
+   :method => :delete, :remote => true) %>
 <% end %>

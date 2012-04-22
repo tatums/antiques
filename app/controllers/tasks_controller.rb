@@ -39,6 +39,15 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
+
+    if params[:completed] == 'true'
+      @task.update_attributes(:completed =>true)
+    end
+
+    if params[:deployed] == 'true'
+      @task.update_attributes(:deployed =>true)
+    end
+
     respond_to do |format|
       if @task.update_attributes(params[:task])
         format.html { redirect_to tasks_path, notice: 'Task was successfully updated.' }

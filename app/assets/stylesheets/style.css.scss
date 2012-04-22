@@ -191,16 +191,6 @@ a:visited { text-decoration: none;}
 
 #keyword-form input{ margin:10px 0;}
 
-//Keywords
-#keywords-widget{ margin:20px 0;}
-#keywords { overflow:auto;}
-#show-product .show-meta ul#keywords li{
-	margin:2px;
-	padding:4px;
-	color:white;
-	float:left;
-	display:inline;
-	}
 
 .photo{
 	text-decoration:none;
@@ -412,11 +402,21 @@ dd.show a.delete{ color:red; display:inline; padding:3px 5px;}
 
 .button{display:inline; }
 
+
+
+div.widget{ margin:20px 0;
+  }
+
+
 // --------------------------------------------------
 //    Pagination      -------------------------------
 // --------------------------------------------------
-div.top-pagination{display:block;	position:absolute; margin-top:-30px; font-size:20px;}
-div.bottom-pagination{display:block;font-size:20px; margin-bottom:20px;}
+//div.top-pagination{display:block; position:absolute; margin-top:-30px; font-size:20px;}
+//div.bottom-pagination{display:block;font-size:20px; margin-bottom:20px;}
+
+div.top-pagination{float:left; margin-top:-39px; font-size:20px;}
+div.bottom-pagination{float:left; font-size:20px;}
+
     .pagination { display: block; height: 24px; margin-left: -5px; }
     .pagination span { float: left; display: block; height: 24px; color: #999; font-size: 15px; margin-left: 5px; }
     .pagination span { display: block; padding: 6px 7px 4px; color: #555; }
