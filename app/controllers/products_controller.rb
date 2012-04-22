@@ -2,7 +2,11 @@ class ProductsController < ApplicationController
   before_filter :require_user, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
-    @products = Product.order(:position).page params[:page]
+    if current_user
+      @products = Product.order(:position).page params[:page]
+    else
+      @products = Product.active.order(:position).page params[:page]
+    end
 
     respond_to do |format|
       format.html # index.html.erb
