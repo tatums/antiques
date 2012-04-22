@@ -26,15 +26,14 @@
     </ul>
 
     <% if current_user %>
+
+    <p>
+      <input id="fileupload" class="fileupload2" type="file" name="image[image]" multiple class="btn no-print">
+    </p>
       <p>
       <%= link_to 'Edit', edit_product_path(@product), :class => "nice small white radius button no-print" %>
-
-      <input id="fileupload" class="fileupload2" type="file" name="image[image]" multiple class="multi-upload no-print">
-
       <%= link_to 'Invoice', invoice_product_setup_path(Invoice, @product), :class => "nice small white radius button no-print" %>
-      </p><br />
-      <p>
-        <%= link_to 'Delete', @product, confirm: "Are you sure?", method: :delete, :class => "nice small red radius button" %>
+      <%= link_to 'Delete', @product, confirm: "Are you sure?", method: :delete, :class => "nice small red radius button" %>
       </p>
 
 
@@ -85,22 +84,14 @@ $(function () {
 
     $('#fileupload').fileupload({
 
-
         dataType: 'json',
         url: '<%= product_images_path(@product.id) %>',
         done: function (e, data) {
             $.each(data.result, function (index, response) {
-
-
-              console.log(response)
-
-
                $('<li><img src="'+response+'"></li>').appendTo('.additonal-images');
-
-
             });
-            $('#spinner').hide();
 
+            //$('#spinner').hide();
         }
     });
 });

@@ -59,10 +59,13 @@ protected
   end
 
   def set_init_position
-    self.update_attributes(:position => 1)
-    Product.all.each do |product|
-      product.update_attributes(:position => product.position+1)
+    update_attributes(:position => 1)
+    other_products = Product.order(:position) - [self]
+    other_products.to_enum.with_index(2) do |product, index|
+      product.update_attributes(:position => index)
     end
+
+
   end
 
 
