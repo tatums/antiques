@@ -3,10 +3,12 @@
     <%= link_to image_tag(product.image_url(:thumb_200) ), product if product.image? %>
   </span>
   <span class="block meta">
+    <h3><%= link_to product.title, product %></h3>
+    <%= tag_if_sold(product) %>
+    <%= tag_if_inactive(product) %>
+
     <ul>
-      <%= tag_if_sold(product) %>
-      <%= tag_if_inactive(product) %>
-      <li><h3><%= link_to product.title, product %></h3></li>
+      </li>
       <li><%= country_and_period(product) %> </li>
       <li>Inventory Number: <%= product.item_number.to_s %></li>
       <%= read_more_setup_as_paragraphs(product).html_safe %>
