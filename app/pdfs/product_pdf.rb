@@ -36,12 +36,12 @@ class ProductPdf < Prawn::Document
 
   def product_image
     if @product.image_url
-      product_img = File.open(Rails.root + "public/#{@product.image_url(:medium)}")
+      product_img = File.open(Rails.root + "public/#{@product.image_url(:large)}")
     end
 
     bounding_box [120, 590], :width => 300 do
       if product_img
-        image product_img,:scale => 0.6, :position => :center, :vposition => :top
+        image product_img,:scale => 0.3, :position => :center, :vposition => :top
       end
     end
   end
