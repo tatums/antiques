@@ -66,4 +66,19 @@ class ProductPdf < Prawn::Document
     text "Images are property of Phoebe Booth Antiques LLC. Any reproductions of the inventory within the image require consent.", size: 9, style: :italic, align: :left
   end
 
+  # font "Times-Roman"
+  # fill_color "#58A51D"
+  # text "PHOEBE BOOTH", :size => 52, :align => :center, style: :bold
+  # fill_color 'gray'
+  # text "ANTIQUES LLC",:align => :center, style: :normal
+  #fill_color "000000"
+
+  #image logo, :scale => 0.6, :position => :center, :vposition => :top
+
+  # fill_color "#58A51D"
+  # #"#{Prawn::BASEDIR}/data/fonts/DejaVuSans.ttf"
+  # font(Rails.root + "times2.ttf")
+  # text "PHOEBE BOOTH ANTIQUES LLC", :size => 32, :align => :center, style: :bold
+
+
 end
