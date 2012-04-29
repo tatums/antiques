@@ -29,9 +29,7 @@
 
 <ul id="products">
   <% if @products.count > 0 %>
-    <% @products.each do |product| %>
-      <%= render product %>
-      <% end %>
+    <%= render @products %>
   <% else %>
     <li>
       <h2>Sorry</h2>
