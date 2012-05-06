@@ -1,0 +1,63 @@
+#show-product
+  %span.block.photo
+    %ul#images
+      %li.featured
+        = link_to image_tag(@product.image_url(:thumb_300) ), @product.image_url(:large), |
+          :class => 'single_image' if @product.image?                                     |
+    %ul.additonal-images
+      = render @product.images
+  %span.block.show-meta
+    = tag_if_sold(@product)
+    = tag_if_inactive(@product)
+    %ul
+      %li
+        %h3= @product.title
+      %li= country_and_period(@product)
+      %li
+        Inventory Number: #{@product.item_number}
+      = setup_paragraphs(@product).html_safe
+      = formatted_dimensions(@product.dimensions)
+      = formatted_price(@product.price)
+      %li= link_to "Print a Tear Sheet", product_path(@product, :format => 'pdf'), :class => 'print_link green'
+    - if current_user
+      %p
+        %input#fileupload.btn.no-print{:multiple => "", :name => "image[image]", :type => "file"}/
+      %p
+        = link_to 'Edit', edit_product_path(@product), :class => "nice small white radius button no-print"
+        = link_to 'Invoice', invoice_product_setup_path(Invoice, @product), :class => "nice small white radius button no-print"
+        = link_to 'Delete', @product, confirm: "Are you sure?", method: :delete, :class => "nice small red radius button"
+      .widget.no-print
+        %h4 Categories
+        %ul.categories
+          = render @product.categories
+      .widget.no-print
+        %h4 Keyword Tags
+        %ul#keywords
+          = render @product.keywords, :locals => { :list => true }
+        #keyword-form
+          = form_for([@product, Keyword.new], :remote => true, :html => {:class=> "nice"}) do |f|
+            .field.edit-product
+              = f.text_field :title, :class => "small input-text", :placeholder => "keyword"
+            .actions
+              = f.submit 'Save Keyword', :id => "keyword-submit", :class => "nice small radius button"
+      %p.timestamps.no-print
+        Created on #{@product.created_at.strftime("%m/%d/%Y at %I:%M %p")}
+        %br/
+        Updated on #{@product.updated_at.strftime("%m/%d/%Y at %I:%M %p")}
+    = javascript_include_tag 'jquery.fileupload.js'
+    :javascript
+      $(function () {
+      
+          $('#fileupload').fileupload({
+      
+              dataType: 'json',
+              url: '#{product_images_path(@product.id)}',
+              done: function (e, data) {
+                  $.each(data.result, function (index, response) {
+                     $('<li><img src="'+response+'"></li>').appendTo('.additonal-images');
+                  });
+      
+                  //$('#spinner').hide();
+              }
+          });
+      });

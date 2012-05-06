@@ -11,6 +11,8 @@ group :development, :test do
   gem 'taps' #heroku pg transfers
   gem 'fabrication'
   gem 'faker'
+  gem 'hpricot'
+  gem 'ruby_parser'
 end
 
 group :staging do

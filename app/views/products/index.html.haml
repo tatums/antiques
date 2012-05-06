@@ -1,0 +1,29 @@
+- if current_user
+  %script{:language => "javascript"}
+    $(document).ready(function(){
+    $('#products').sortable({
+    update: function(event, ui) {
+    var ProductsOrder = $(this).sortable('toArray');
+    $.post( 'products/sort', {ProductsOrder:ProductsOrder});
+    }
+    });
+    });
+.row
+  .span4
+    = render 'shared/heading', :heading => 'All Products'
+.row
+  .span4
+    .top-pagination.no-print
+      = paginate @products
+%ul#products
+  - if @products.count > 0
+    - @products.each do |product|
+      = render product
+  - else
+    %li
+      %h2 Sorry
+      %p We are working on the site.  Please check back soon.
+      %p
+        If you would like to be emailed once we have content available. Click #{link_to 'here', subscribe_path}
+.bottom-pagination.no-print
+  = paginate @products
