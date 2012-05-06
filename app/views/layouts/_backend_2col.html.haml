@@ -1,0 +1,12 @@
+!!! 5
+%html.no-js{:lang => "en"}
+  = render 'layouts/head'
+  %body
+    = render 'layouts/admin_nav'
+    .container.content
+      .row
+        .span4
+          = render 'layouts/sidebar'
+        = yield
+      #spinner{:style => "display:none"}
+        %span Loading...

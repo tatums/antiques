@@ -1,0 +1,11 @@
+<!doctype html>
+%html.no-js{:lang => "en"}
+  = render 'layouts/head'
+  %body
+    #wrapper
+      .header
+        = link_to image_tag("phoebe_booth.gif"), root_url
+      .head-line
+      = yield
+      .print-footer
+        %p.center Phoebe Booth Antiques LLC All Rights Reserved. | phoebe@phoebeboothantiques.com | 917-597-4368

@@ -1,0 +1,42 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
+    %meta{:content => "text/html; charset=ISO-8859-1", "http-equiv" => "Content-Type"}/
+    %title Phoebe Booth Antiques LLC
+    = javascript_include_tag "application"
+    = stylesheet_link_tag "application"
+    = stylesheet_link_tag "print", :media => "print"
+    = csrf_meta_tags
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "antique, mahogany, walnut, burl, cherry, oak, fruitwood, credenza, commode, chest, console,breakfront, sideboard, highboy, high chest, lowboy, low chest, etagere, cabinet, bookcase, chiffonier, desk, bureau, coffee table, low table, painting, sculpture, ceramic, andirons, fire tools, fire bucket, candlesticks, lamps, chandelier, pricket sticks, candelabra, sconce, girandoles, mirror, overmantle, looking glass, hanging shelf, bracket, armchair, hall chair, chairvdining chair, bergere, barrel back, klismos, side chair, bench, william mary, queen anne, georgian, regency, victorian, edwardian, arts and crafts, hepplewhite, chippendalevsheraton, gothic, rococo, louis, directoire, dining table, writing table, card table, torcheres, occasional table, tray table, tilt top table, drum table, wine table, pembroke table, tripod table, dressing table, lady's work table, dining table, tea table, vase, tea caddy", :name => "keywords"}/
+    = render 'layouts/analytics'
+    / <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  %body
+    .container
+      .row
+        .span12
+          = render 'layouts/notifications'
+          %h1= link_to image_tag("phoebe_booth.gif"), root_url
+          = render 'layouts/navigation'
+      .row
+        .span4
+          %ul.categories
+            = render 'layouts/sidebar'
+        .span8
+          = yield
+      .row
+        .span12
+          = render 'layouts/footer'
+      #spinner{:style => "display:none"}
+        %span Loading...
+    - if current_user
+      %script{:language => "javascript"}
+        $(document).ready(function(){
+        $('#categories').sortable({
+        update: function(event, ui) {
+        var CategoriesOrder = $(this).sortable('toArray');
+        $.post( "<haml:loud> escape_javascript(sort_categories_path) </haml:loud>", {CategoriesOrder:CategoriesOrder});
+        }
+        });
+        });

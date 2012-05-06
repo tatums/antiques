@@ -1,0 +1,33 @@
+!!! 5
+%html.no-js{:lang => "en"}
+  = render 'layouts/head'
+  %body
+    - if current_user
+      %script{:language => "javascript"}
+        $(document).ready(function(){
+        $('#categories').sortable({
+        update: function(event, ui) {
+        var CategoriesOrder = $(this).sortable('toArray');
+        $.post( "<haml:loud> escape_javascript(sort_categories_path) </haml:loud>", {CategoriesOrder:CategoriesOrder});
+        }
+        });
+        });
+      :css
+        #wrapper{margin-top:42px}
+      = render 'layouts/admin_nav'
+      #wrapper
+        - unless current_user
+          #header
+            %h1= link_to image_tag("phoebe_booth.gif"), root_url
+        #navigation
+          = render 'layouts/navigation'
+        #leftcolumn
+          #sidebar
+            %ul#categories
+              = render 'layouts/sidebar'
+        #rightcolumn
+          = yield
+        #footer.footer_style
+          = render 'layouts/footer'
+        #spinner{:style => "display:none"}
+          %span Loading...
