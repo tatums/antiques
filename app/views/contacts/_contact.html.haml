@@ -1,0 +1,7 @@
+= content_tag(:tr, contact) do
+  %td= link_to contact.full_name, contact
+  %td= link_to contact.email, contact
+  %td= contact.address
+  %td= contact.city
+  %td= contact.state
+  %td= contact.zip

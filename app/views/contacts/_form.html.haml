@@ -1,0 +1,29 @@
+= form_for(@contact, :html =>{:class=> 'nice'}) do |f|
+  - if @contact.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@contact.errors.count, "error")
+        prohibited this contact from being saved:
+      %ul
+        - @contact.errors.full_messages.each do |msg|
+          %li= msg
+  .field.subscribe
+    = f.text_field :email, :class => ' input-text', :placeholder => 'Email'
+  .field.subscribe
+    = f.text_field :first, :class => 'medium input-text', :placeholder => 'First Name'
+  .field.subscribe
+    = f.text_field :last, :class => 'medium input-text', :placeholder => 'Last Name'
+  .field.subscribe
+    = f.text_field :phone, :class => ' input-text', :placeholder => 'Phone'
+  .field.subscribe
+    = f.text_field :address, :class => ' input-text', :placeholder => 'Address'
+  .field.subscribe
+    = f.text_field :city, :class => ' input-text', :placeholder => 'City'
+  .field.subscribe
+    = f.text_field :state, :class => ' input-text', :placeholder => 'State'
+  .field.subscribe
+    = f.text_field :zip, :class => ' input-text', :placeholder => 'Zip'
+  .field.subscribe
+    = f.text_area :notes, :class => ' input-text', :placeholder => 'Notes'
+  .actions
+    = f.submit 'Subscribe', :class => 'small white nice button radius'

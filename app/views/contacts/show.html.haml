@@ -1,0 +1,40 @@
+.row
+  .span4
+    .well
+      %h2= @contact.full_name
+      %p.contact-vitals
+        = @contact.address
+        %br/
+        = @contact.city_state_zip
+        %br/
+        = @contact.email
+        %br/
+      %p
+        = link_to 'Edit', edit_contact_path(@contact), :class => "nice small white radius button"
+        = link_to 'Destroy', @contact, confirm: "Are you sure? \n\n #{@note}", method: :delete, :class => "nice small white radius button"
+        = add_to_group_button_if_available_groups(@available_groups)
+      %br/
+      = group_memberships(@contact)
+  .span8
+    %h2
+      = @contact.full_name
+      \- Invoices
+    %table.invoice.table-bordered
+      %thead
+        %tr
+          %th Title
+          %th Subtotal
+          %th Grand total
+      - @contact.invoices.each do |invoice|
+        %tr
+          %td= link_to invoice.title, invoice
+          %td.currency= link_to number_to_currency(invoice.calc_sub_total), invoice
+          %td.currency= link_to number_to_currency(invoice.calc_grand_total), invoice
+    = link_to 'New Invoice', invoice_contact_setup_path(Invoice, @contact), :method => 'post', :class => "nice small blue radius button"
+#assign-group-modal.reveal-modal
+  %h2 Assign to Group
+  %ul
+    - @available_groups.each do |group|
+      %li= link_to group.title, apply_group_to_contact_path(@contact, group), :method => :post
+    %li
+  %a.close-reveal-modal ×
