@@ -1,0 +1,30 @@
+- if current_user
+  %script{:language => "javascript"}
+    $(document).ready(function(){
+    $('#products').sortable({
+    update: function(event, ui) {
+    var ProductsOrder = $(this).sortable('toArray');
+    $.post( 'sort_products', {products_in_order:ProductsOrder, category_id:#{@category.id}});
+    }
+    });
+    });
+
+
+.row
+  .span4
+    = render 'shared/heading', :heading => @category.title
+.row
+  .span4
+    .top-pagination.no-print
+      = paginate @products
+%ul{:id => 'products'}
+  - if @products.count > 0
+    = render @products
+  - else
+    %li
+      %h2 Sorry
+      %p We are working on the site.  Please check back soon.
+      %p
+        If you would like to be emailed once we have content available. Click #{link_to 'here', subscribe_path}
+.bottom-pagination.no-print
+  = paginate @products

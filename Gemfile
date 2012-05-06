@@ -16,7 +16,6 @@ end
 group :staging do
   gem 'pg'
   gem 'thin'
-
 end
 
 group :production do
@@ -34,9 +33,9 @@ gem 'rails', '3.2'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'bcrypt-ruby', :require => 'bcrypt'
-#gem 'capistrano'
 gem 'rack'
 gem 'heroku'
+gem "haml-rails"
 
 gem 'jquery-rails'
 gem 'kaminari'
