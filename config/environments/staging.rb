@@ -29,9 +29,9 @@ PhoebeboothanitquesCom2::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => MAIL_DOMAIN,
-    :user_name            => MAIL_USERNAME,
-    :password             => MAIL_PASSWORD,
+    :domain               => ENV['MAIL_DOMAIN'],
+    :user_name            => ENV['MAIL_USERNAME'],
+    :password             => ENV['MAIL_PASSWORD'],
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 
