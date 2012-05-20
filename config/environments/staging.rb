@@ -22,15 +22,16 @@ PhoebeboothanitquesCom2::Application.configure do
   #CACHE added on 2/4/2012
   config.cache_store = :dalli_store
 
-  MAIL = YAML.load_file("#{Rails.root}/config/mail.yml")
-
+  #The Mail.yml file is not in the git repo. --so the username and pass are in the env
+  #heroku config:add MAIL_DOMAIN=phoebeboothantiquest.com
+  #
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => MAIL[Rails.env]["domain"],
-    :user_name            => MAIL[Rails.env]["user_name"],
-    :password             => MAIL[Rails.env]["password"],
+    :domain               => MAIL_DOMAIN,
+    :user_name            => MAIL_USERNAME,
+    :password             => MAIL_PASSWORD,
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 
