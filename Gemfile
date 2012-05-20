@@ -7,7 +7,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'sunspot_solr'
   gem 'thin'
-  gem 'pg'
   gem 'taps' #heroku pg transfers
   gem 'fabrication'
   gem 'faker'
@@ -22,7 +21,6 @@ end
 
 group :production do
   gem 'sunspot_solr'
-  gem 'pg'
 end
 
 group :assets do
@@ -44,5 +42,5 @@ gem 'kaminari'
 gem 'sunspot_rails'
 gem 'prawn'
 gem 'dalli'
-
+gem 'pg'
 
