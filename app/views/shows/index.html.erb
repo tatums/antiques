@@ -17,17 +17,13 @@
   </script>
 <% end %>
 
-<%= render 'shared/heading', :heading => 'contact' %>
+<%= render 'shared/heading', :heading => 'upcoming shows' %>
 
 <div id="contact-page">
-  <p>Email: <a href="mailto:phoebe@phoebeboothantiques.com" class="green">phoebe@phoebeboothantiques.com</a><br />
-    Phone: 917-597-4368
-  </p>
-
+  
 
 <% unless @shows.empty? %>
   <dl id="shows">
-    <dt id="shows-title">Upcoming Shows:</dt>
     <%= render @shows, :locals => { :list => true } %>
   </dl>
 <% end %>

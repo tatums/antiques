@@ -18,8 +18,9 @@
       - unless current_user
         #header
           %h1= link_to image_tag("phoebe_booth.gif"), root_url
-      #navigation
-        = render 'layouts/navigation'
+      #navigation.navigation
+        %ul
+          = render 'layouts/navigation'
       #leftcolumn
         #sidebar
           %ul#categories
