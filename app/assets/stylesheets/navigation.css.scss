@@ -1,9 +1,60 @@
-//NAVIGATION ROLLOVERS//
+.navigation{
+  border-top:1px solid #B7B7B7;
+  border-bottom:1px solid #B7B7B7;
+  width: 922px;
+  margin-bottom:20px;
+  padding:3px 0;
+}
+
+.navigation ul{
+  background-color:#B7B7B7;
+  text-align:center;
+  height:30px;
+}
+
+.navigation ul li{
+  display:inline-block;
+}
+
+.navigation ul li a{
+  display:block;
+  float:left;
+  color:white;
+  font-size:1.1em;
+  margin:0 1.5em;
+  }
+
+.navigation ul li a.norm{
+  //padding-top:8px;
+  top:0;
+}
+
+ .navigation ul li a:hover{
+  color:#58A51D;
+}
+
+.navigation ul li a.finds {
+  color:#58A51D;
+  text-indent: -999em;
+  background: url('navigation/phoebe_finds.png') 0 2px;
+  width:145px;
+  height:25px;
+  }
+
+.navigation ul li a.finds:hover {
+  background-position: 0 28px;
+   }
+
+.navigation ul li.nav-finds a{
+ // margin-top:-8px;
+}
+
+///NAVIGATION ROLLOVERS//
 //#navigation a{ float:left;display: block;height: 35px;text-indent: -99999px; }
 //
 //a.home { margin-left:40px; width: 50px; background: url('navigation/home2.gif') top; }
 //a.home:hover { background-position: 0 35px; }
-//
+
 //a.about { margin-left:70px; width: 59px; background: url('navigation/about2.gif') top; }
 //a.about:hover { background-position: 0 35px; }
 //
@@ -18,55 +69,4 @@
 //
 //a.contact {margin-left:80px; width: 78px; background: url('navigation/contact2.gif') top; }
 //a.contact:hover { background-position: 0 35px; }
-
-.navigation{
-  border-top:1px solid #B7B7B7;
-  border-bottom:1px solid #B7B7B7;
-  
-  text-align:center;
-  width: 922px;
-  margin-bottom:20px;
-  padding:5px 0;
-}
-
-.navigation ul{
-   background-color:#B7B7B7;
-
-     overflow:hidden;
-    }
-
-.navigation ul li{
-  display:inline;
-  float:left;
-  height:25px;
-}
-
-.navigation ul li a{
-  color:white;
-  font-size:1em;
-  margin: 0 2.2em;
- }
-
-.navigation ul li a.norm{
-  display:block;
-  margin-top:5px;
- }
-
- .navigation ul li a:hover{
-  color:#58A51D;
-}
-
-.navigation ul li a.finds {
-  display:block;
-  color:#58A51D;
-  text-indent: -999em;
-  background: url('navigation/phoebe_finds.png') top;
-  width:145px;
-  height:25px;
-  }
-
-.navigation ul li a.finds:hover {
-  background-position: 0 25px;
-   }
-
 
