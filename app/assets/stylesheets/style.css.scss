@@ -1,13 +1,3 @@
-#navigation {
-//  float: left;
-//  text-align:center;
-//  width: 922px;
-//  background: url('navigation/nav_bg3.gif');
-//  margin-bottom:38px;
-//  height: 35px;
-//  border-top:1px solid #B7B7B7;
-//  border-bottom:1px solid #B7B7B7;
-}
 
 #leftcolumn {
   float:left;
@@ -121,26 +111,27 @@ a:visited { text-decoration: none;}
 
 
 //Admin Links
-#rightcolumn a.admin-link{color:red;}
-#admin-links { width: 255px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #959595; }
-#admin-links li a { height: 24px; border-top-width: 1px; border-top-style: solid; border-top-color: #959595; }
-#admin-links li a:link,
-#admin-links li a:visited {
-	display: block;
-	padding-top:8px;
-	padding-left:30px;
-	font-size: 11pt;
-}
-#admin-links li a:hover {
-	color: #CCC;
-	background-position: 0 -32px;
-	font-size: 11pt;
-	padding: 8px, 0, 0, 30px;
-}
-#admin-links li.admin-link a{
-	color:red;
-	font-style:italic;
-}
+//#rightcolumn a.admin-link{color:red;}
+//#admin-links { width: 255px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #959595; }
+//#admin-links li a { height: 24px; border-top-width: 1px; border-top-style: solid; border-top-color: #959595; }
+//#admin-links li a:link,
+//#admin-links li a:visited {
+//  display: block;
+//  padding-top:8px;
+//  padding-left:30px;
+//  font-size: 11pt;
+//}
+//#admin-links li a:hover {
+//  color: #CCC;
+//  background-position: 0 -32px;
+//  font-size: 11pt;
+//  padding: 8px, 0, 0, 30px;
+//}
+//#admin-links li.admin-link a{
+//  color:red;
+//  font-style:italic;
+//}
+
 #page_headline {
     font-family: "Times New Roman", Times, serif;
     font-size: 20pt;
@@ -266,10 +257,6 @@ div#header ul#nav li.active a {
 #admin-console li a{font-size:18px;}
 
 
-//Contact
-
-#contact-page dl dt{font-size:22px; margin-bottom:10px;}
-#contact-page dl dd {margin:10px 0 10px 10px;}
 
 //Search
 #search-box { margin-bottom:50px; width:420px; padding:0px;}
@@ -375,11 +362,10 @@ dd.show a.delete{ color:red; display:inline; padding:3px 5px;}
 
 .button{display:inline; }
 
-
-
 div.widget{ margin:20px 0;
-  }
+}
 
+.content-section{ margin-bottom:30px;}
 
 // --------------------------------------------------
 //    Pagination      -------------------------------
@@ -390,9 +376,9 @@ div.widget{ margin:20px 0;
 div.top-pagination{float:left; font-size:20px;}
 div.bottom-pagination{float:left; font-size:20px;}
 
-    .pagination { display: block; height: 24px; margin-left: -5px; }
-    .pagination span { float: left; display: block; height: 24px; color: #999; font-size: 15px; margin-left: 5px; }
-    .pagination span { display: block; padding: 6px 7px 4px; color: #555; }
-    .pagination span.current, .pagination span:hover, .pagination span:focus { border-bottom: solid 2px #00a6fc; color: #141414; }
-    .pagination span.unavailable { cursor: default; color: #999; }
-    .pagination span.unavailable:hover , .pagination span.unavailable:focus { border-bottom: none; }
+.pagination { display: block; height: 24px; margin-left: -5px; }
+.pagination span { float: left; display: block; height: 24px; color: #999; font-size: 15px; margin-left: 5px; }
+.pagination span { display: block; padding: 6px 7px 4px; color: #555; }
+.pagination span.current, .pagination span:hover, .pagination span:focus { border-bottom: solid 2px #00a6fc; color: #141414; }
+.pagination span.unavailable { cursor: default; color: #999; }
+.pagination span.unavailable:hover , .pagination span.unavailable:focus { border-bottom: none; }

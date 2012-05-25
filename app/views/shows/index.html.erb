@@ -17,26 +17,38 @@
   </script>
 <% end %>
 
-<%= render 'shared/heading', :heading => 'upcoming shows' %>
 
 <div id="contact-page">
-  
 
-<% unless @shows.empty? %>
-  <dl id="shows">
-    <%= render @shows, :locals => { :list => true } %>
-  </dl>
-<% end %>
-
-
-
-<% if current_user %>
-  <a href="#" class="nice small radius button" id="buttonForModal">NEW</a>
-  <div id="myModal" class="reveal-modal">
-       <h2>New Show.</h2>
-        <%= render 'form' %>
-       <a class="close-reveal-modal">&#215;</a>
+  <div class="content-section">
+    <%= render 'shared/heading', :heading => 'upcoming shows' %>
+    <% unless @shows.empty? %>
+      <dl id="shows">
+        <%= render @shows, :locals => { :list => true } %>
+      </dl>
+    <% end %>
   </div>
-<% end %>
+
+  <div class="content-section">
+    <%= render 'shared/heading', :heading => 'press' %>
+    <dl>
+      <dd>July 28, 2010 Phoebe Booth Antiques Featured in the New York Times. Click <a href="http://www.nytimes.com/2010/07/29/garden/29shows.html" class="green">here</a>.</dd>
+      <dd>October 21, 2011 Phoebe Booth Antiques Featured on the WGN Morning Show - Around Town. Click <a href="http://www.wgntv.com/videobeta/1b0bdc0e-c6bc-4b11-9c80-0113502e93ed/Food/Around-Town-Winnetka-Antiques-and-Modernism-Show" class="green">here</a>.</dd>
+      <!--<dd><video width="512" height="288" controls="controls">
+        <source src="wgn.mp4" type="video/mp4" />
+       </video>
+       </dd>-->
+    </dl>
+  </div>
+
+
+  <% if current_user %>
+    <a href="#" class="nice small radius button" id="buttonForModal">New Show</a>
+    <div id="myModal" class="reveal-modal">
+      <h2>New Show.</h2>
+      <%= render 'form' %>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+  <% end %>
 
 </div>

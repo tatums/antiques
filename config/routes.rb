@@ -76,7 +76,7 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   get 'subscribe' => 'home#subscribe', :as => :subscribe
   post 'subscribe' => 'home#create_contact', :as => :create_contact
   get 'thank_you' => 'home#thank_you', :as => :thank_you
-  get 'contact' => 'shows#index', :as => :contact_us
+  get 'shows' => 'shows#index'
 
   resources :tasks do
     collection do
