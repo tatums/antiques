@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+
   before_save :strip_whitespace_from_title
   before_create :set_item_number
   after_create :set_init_position
@@ -27,7 +28,7 @@ class Product < ActiveRecord::Base
     Product.where(:sold => false)
   end
 
-  searchable :auto_index => true, :auto_remove => true do
+  searchable :if => :active, :auto_index => true, :auto_remove => true do
     text :title, :body, :item_number
     text :keywords do
       keywords.map(&:title)
