@@ -3,14 +3,14 @@
   = render 'layouts/head'
   %body
     - if current_user
-      %script{:language => "javascript"}
+      :javascript
         $(document).ready(function(){
-        $('#categories').sortable({
-        update: function(event, ui) {
-        var CategoriesOrder = $(this).sortable('toArray');
-        $.post( "<haml:loud> escape_javascript(sort_categories_path) </haml:loud>", {CategoriesOrder:CategoriesOrder});
-        }
-        });
+          $('#categories').sortable({
+            update: function(event, ui) {
+              var CategoriesOrder = $(this).sortable('toArray');
+              $.post("#{sort_categories_path}", {CategoriesOrder:CategoriesOrder});
+            }
+          });
         });
     = render 'layouts/admin_nav'
     = render 'layouts/notifications'
