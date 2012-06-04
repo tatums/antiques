@@ -93,11 +93,10 @@ class CategoriesController < ApplicationController
 
 
   def toggle
-    @category = Category.where(:slug => params[:id]).first
+    @category = Category.find_by_slug(params[:id])
     @category.toggle_active
     respond_to do |format|
       format.html { redirect_to categories_url }
-      format.json { head :ok }
     end
 
   end
