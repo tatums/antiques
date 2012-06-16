@@ -1,4 +1,5 @@
 = content_tag_for :li, category do
   = link_to upcase_title(category), category
   - if current_user
-    = activate_deactivate_category(category)
+    = button_to "Edit", edit_category_path(category), :class => 'white small button disable', :method => :get
+

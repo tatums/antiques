@@ -23,13 +23,4 @@ module CategoriesHelper
     return preview
   end
 
-  def activate_deactivate_category(category)
-    if category.active
-      button_to "Disable", toggle_category_path(category.slug), :class => 'white small button disable'
-    else
-      button_to "Enable", toggle_category_path(category.slug), :class => 'white small button enable'
-    end
-  end
-
-
 end

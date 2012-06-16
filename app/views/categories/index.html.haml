@@ -1,14 +1,10 @@
 .row
-  .span4.active
-    %ul.well
-      %h2 Active
-      - @categories.active.each do |category|
-        = render category
   .span4.inactive
-    %ul.well
+    .well
       %h2 Inactive
-      - @categories.inactive.each do |category|
-        = render category
+      %ul.inactive
+        = render :partial => 'category', :collection => @inactive_categories
 .row
   .span4
     = link_to 'New Category', new_category_path, :class=>"nice small radius button"
+

@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
 
   def index
-    @categories = Category.order(:position)
+    @inactive_categories = Category.inactive.order(:position)
     respond_to do |format|
       format.html # index.html.erb
     end
@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
 
 
   def show
-    @category = Category.where(:slug => params[:id]).first
+    @category = Category.find_by_slug(params[:id])
     if current_user
       @products = @category.products.order('category_products.position').page params[:page]
     else
@@ -34,9 +34,8 @@ class CategoriesController < ApplicationController
 
 
   def edit
-    @category = Category.where(:slug => params[:id]).first
+    @category = Category.find_by_slug(params[:id])
   end
-
 
 
   def create
@@ -52,9 +51,9 @@ class CategoriesController < ApplicationController
   end
 
 
-
   def update
-    @category = Category.where(:slug => params[:id]).first
+    @category = Category.find_by_slug(params[:id])
+    @category.active = params[:active] if params[:active]
     respond_to do |format|
       if @category.update_attributes(params[:category])
         format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }
@@ -66,12 +65,10 @@ class CategoriesController < ApplicationController
 
 
   def destroy
-    @category = Category.where(:slug => params[:id]).first
+    @category = Category.find_by_slug(params[:id])
     @category.destroy
-
     respond_to do |format|
       format.html { redirect_to categories_url }
-      format.json { head :ok }
     end
   end
 
@@ -92,13 +89,5 @@ class CategoriesController < ApplicationController
   end
 
 
-  def toggle
-    @category = Category.find_by_slug(params[:id])
-    @category.toggle_active
-    respond_to do |format|
-      format.html { redirect_to categories_url }
-    end
-
-  end
 
 end

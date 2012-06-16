@@ -1,6 +1,5 @@
 PhoebeboothanitquesCom2::Application.routes.draw do
-
-
+ 
   resources :invoices, :except => [:new, :edit] do
     resources :line_items, :only => [:edit, :update, :create, :destroy], :shallow => true
     get '/:product_id' => "invoices#create", :as => 'product_setup'
@@ -36,9 +35,6 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   end
 
   resources :categories do
-    member do
-      post 'toggle'
-    end
     collection do
       post 'sort'
       post 'sort_products'

@@ -9,5 +9,8 @@
           %li= msg
   .field
     = f.text_field :title, :class=> "input-text", :placeholder => "Title"
+  .field
+    = f.check_box :active
+    = f.label :active
   .actions
     = f.submit 'Save' ,:class => "nice small radius button"

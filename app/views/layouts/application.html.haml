@@ -3,12 +3,12 @@
   = render 'layouts/head'
   %body
     - if current_user
-      %script{:language => "javascript"}
+      :javascript
         $(document).ready(function(){
         $('#categories').sortable({
         update: function(event, ui) {
         var CategoriesOrder = $(this).sortable('toArray');
-        $.post( "<haml:loud> escape_javascript(sort_categories_path) </haml:loud>", {CategoriesOrder:CategoriesOrder});
+        $.post("#{sort_categories_path}"), {CategoriesOrder:CategoriesOrder});
         }
         });
         });
@@ -25,7 +25,7 @@
       #leftcolumn
         #sidebar
           %ul#categories
-            = render 'layouts/sidebar'
+            = render :partial => 'layouts/category', :collection => Category.active.order(:position)
       #rightcolumn
         = yield
       #footer.footer_style

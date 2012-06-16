@@ -24,7 +24,7 @@
       #leftcolumn
         #sidebar
           %ul#categories
-            = render 'layouts/sidebar'
+            = render :partial => 'layouts/category', :collection => Category.active.order(:position)
       #rightcolumn
         = yield
       #footer.footer_style
