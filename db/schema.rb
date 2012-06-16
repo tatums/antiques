@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120421022714) do
+ActiveRecord::Schema.define(:version => 20120616165257) do
 
   create_table "categories", :force => true do |t|
     t.boolean  "active",      :default => false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20120421022714) do
     t.datetime "updated_at", :null => false
     t.string   "phone"
     t.text     "notes"
+    t.string   "country"
   end
 
   create_table "groups", :force => true do |t|
