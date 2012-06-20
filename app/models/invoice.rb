@@ -8,7 +8,6 @@ class Invoice < ActiveRecord::Base
 
   validate :inv_date, :presence => true
 
-
   paginates_per 10
 
   def init #will set the default value only if it's nil
@@ -32,8 +31,6 @@ class Invoice < ActiveRecord::Base
   def calc_shipping_total
       0   #||= 0
   end
-
-
 
 protected
 

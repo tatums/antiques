@@ -13,9 +13,9 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find_by_slug(params[:id])
     if current_user
-      @products = @category.products.order('category_products.position').page params[:page]
+      @products = @category.products.includes(:images).order('category_products.position').page params[:page]
     else
-      @products = @category.products.active.order('category_products.position').page params[:page]
+      @products = @category.products.includes(:images).active.order('category_products.position').page params[:page]
     end
     respond_to do |format|
      format.html

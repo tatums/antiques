@@ -3,9 +3,9 @@ class ProductsController < ApplicationController
 
   def index
     if current_user
-      @products = Product.order(:position).page params[:page]
+      @products = Product.includes(:images).order(:position).page params[:page]
     else
-      @products = Product.active.order(:position).page params[:page]
+      @products = Product.includes(:images).active.order(:position).page params[:page]
     end
 
     respond_to do |format|

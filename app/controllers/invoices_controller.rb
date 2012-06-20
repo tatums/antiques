@@ -2,7 +2,7 @@ class InvoicesController < ApplicationController
   before_filter :require_user
 
   def index
-    @invoices = Invoice.all
+    @invoices = Invoice.all(:include => [:contact, :line_items])
     respond_to do |format|
       format.html
       format.js
