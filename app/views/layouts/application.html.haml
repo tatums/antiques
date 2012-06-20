@@ -8,7 +8,7 @@
         $('#categories').sortable({
         update: function(event, ui) {
         var CategoriesOrder = $(this).sortable('toArray');
-        $.post("#{sort_categories_path}"), {CategoriesOrder:CategoriesOrder});
+        $.post("#{sort_categories_path}", {CategoriesOrder:CategoriesOrder});
         }
         });
         });

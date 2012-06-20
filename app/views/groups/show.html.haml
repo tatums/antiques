@@ -15,7 +15,7 @@
     - if @group
       %div
         %ul.nav.nav-list
-          %li= link_to 'Delete Group', @group, confirm: "Are you sure?\n All group members will be lost", method: :delete, :class => 'nice small radius button'
+          %li= link_to 'Delete Group', @group, :data => {confirm: "Are you sure?\n All group members will be lost."}, method: :delete, :class => 'nice small radius button'
   .span10
     %table#contacts.table-bordered
       %thead
@@ -32,7 +32,7 @@
     #pager
       %form
         %span.prev ‹ Prev
-        %input.pagedisplay{:type => "text"}/
+        %input.pagedisplay{:type => "text"}
         %span.next Next ›
         %select.pagesize
           %option{:selected => "selected", :value => "10"} 10
@@ -49,5 +49,3 @@
         - @non_members.each do |contact|
           %li= link_to contact.full_name, apply_contact_to_group_path(@group, contact), :method => :post
       %a.close-reveal-modal ×
-:javascript
-  

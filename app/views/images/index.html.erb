@@ -3,7 +3,7 @@
 
 
 
-<ul>    
+<ul>
   <li>
     <%= image_tag @product.image_url(:thumb_200) %>
     <%= link_to 'Edit Product', edit_product_path(@product), :class=>"admin-link" %>
@@ -11,9 +11,8 @@
 <% @images.each do |image| %>
   <li>
     <%= image_tag image.image_url(:thumb_200) %>
-    <%# link_to 'Show', image %>
     <%= link_to 'Edit', edit_image_path(image), :class=>"admin-link"  %>
-  <%= link_to 'Destroy', image, confirm: 'Are you sure?', method: :delete, :class=>"admin-link"  %>
+    <%= link_to 'Destroy', image, :data => {confirm: 'Are you sure?'}, method: :delete, :class=>"admin-link"  %>
   </li>
 <% end %>
 </ul>

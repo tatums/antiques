@@ -10,6 +10,6 @@
     <% end %>
   </td>
   <td class="delete center">
-    <%= link_to 'X', invoice, confirm: 'Are you sure?', method: :delete %>
+    <%= link_to 'X', invoice, :data => {confirm: 'Are you sure?'}, method: :delete %>
   </td>
 </tr>

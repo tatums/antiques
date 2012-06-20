@@ -8,7 +8,7 @@
 <% end %>
 <p><%= link_to "Email Invoice", '#', :id => 'email-invoice-btn', :class =>"nice small white radius button no-print" %></p>
 <br />
-<p><%= link_to 'Delete', @invoice, confirm: 'Are you sure?', method: :delete, :class =>"nice small red radius button no-print"%></p>
+<p><%= link_to 'Delete', @invoice, :data => {confirm: 'Are you sure?'}, method: :delete, :class =>"nice small red radius button no-print"%></p>
 
 <script>
 $(document).ready(function(){

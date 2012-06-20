@@ -6,4 +6,4 @@
   %td= contact.state
   %td= contact.zip
   %td.delete.center
-    = link_to 'X', remove_contact_from_group_path(@group, contact), confirm: 'Are you sure?', method: :delete
+    = link_to 'X', remove_contact_from_group_path(@group, contact), :data => {confirm: 'Are you sure?'}, method: :delete

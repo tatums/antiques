@@ -56,7 +56,6 @@ PhoebeboothanitquesCom2::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-
   #HACK TO GET PDFKIT RUNNING
   #config.threadsafe!
 

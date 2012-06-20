@@ -1,16 +1,10 @@
 class Slider < ActiveRecord::Base
-
+  belongs_to :product
   #attr_accessible :active, :position, :image, :image_cache, :product_id
   mount_uploader :image, ImageUploader
-
   #validates_presence_of :image
-
   scope :active, where(:active => true)
   scope :inactive, where(:active => false)
-
-  belongs_to :product
-
-
 
   def toggle_active
     if active == true

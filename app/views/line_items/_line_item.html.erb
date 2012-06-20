@@ -8,6 +8,6 @@
   <td class="currency"><%= number_to_currency(line_item.total) %></td>
   <td class="center"><%= link_to 'Edit', edit_line_item_path(line_item) %></td>
   <td class="delete center">
-    <%= link_to 'X', line_item, confirm: 'Are you sure?', method: :delete, :remote => true %>
+    <%= link_to 'X', line_item, :data => { :confirm => 'Are you sure?' }, method: :delete, :remote => true %>
   </td>
 <% end %>
