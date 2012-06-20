@@ -21,11 +21,11 @@
       %li= link_to "Print a Tear Sheet", product_path(@product, :format => 'pdf'), :class => 'print_link green'
     - if current_user
       %p
-        %input#fileupload.btn.no-print{:multiple => "", :name => "image[image]", :type => "file"}/
+        %input#fileupload.btn.no-print{:multiple => "", :name => "image[image]", :type => "file"}
       %p
         = link_to 'Edit', edit_product_path(@product), :class => "nice small white radius button no-print"
         = link_to 'Invoice', invoice_product_setup_path(Invoice, @product), :class => "nice small white radius button no-print"
-        = link_to 'Delete', @product, confirm: "Are you sure?", method: :delete, :class => "nice small red radius button"
+        = link_to 'Delete', @product, :data => {confirm: "Are you sure?"}, method: :delete, :class => "nice small red radius button"
       .widget.no-print
         %h4 Categories
         %ul.categories
@@ -42,22 +42,21 @@
               = f.submit 'Save Keyword', :id => "keyword-submit", :class => "nice small radius button"
       %p.timestamps.no-print
         Created on #{@product.created_at.strftime("%m/%d/%Y at %I:%M %p")}
-        %br/
+        %br
         Updated on #{@product.updated_at.strftime("%m/%d/%Y at %I:%M %p")}
     = javascript_include_tag 'jquery.fileupload.js'
     :javascript
       $(function () {
-      
+
           $('#fileupload').fileupload({
-      
+
               dataType: 'json',
               url: '#{product_images_path(@product.id)}',
               done: function (e, data) {
                   $.each(data.result, function (index, response) {
                      $('<li><img src="'+response+'"></li>').appendTo('.additonal-images');
                   });
-      
-                  //$('#spinner').hide();
+
               }
           });
       });
