@@ -48,8 +48,8 @@ class ContactsController < ApplicationController
 
 
   def update
+    params[:contact][:group_ids] ||= []
     @contact = Contact.find(params[:id])
-    #add_to_group_if_group_present
     respond_to do |format|
       if @contact.update_attributes(params[:contact])
         format.html { redirect_to @contact, notice: 'Subscriber was successfully updated.' }

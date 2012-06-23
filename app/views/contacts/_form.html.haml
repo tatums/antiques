@@ -1,31 +1,45 @@
-= form_for(@contact, :html =>{:class=> 'nice'}) do |f|
-  - if @contact.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@contact.errors.count, "error")
-        prohibited this contact from being saved:
-      %ul
-        - @contact.errors.full_messages.each do |msg|
-          %li= msg
-  .field.subscribe
-    = f.text_field :email, :class => ' input-text', :placeholder => 'Email'
-  .field.subscribe
-    = f.text_field :first, :class => 'medium input-text', :placeholder => 'First Name'
-  .field.subscribe
-    = f.text_field :last, :class => 'medium input-text', :placeholder => 'Last Name'
-  .field.subscribe
-    = f.text_field :phone, :class => ' input-text', :placeholder => 'Phone'
-  .field.subscribe
-    = f.text_field :address, :class => ' input-text', :placeholder => 'Address'
-  .field.subscribe
-    = f.text_field :city, :class => ' input-text', :placeholder => 'City'
-  .field.subscribe
-    = f.text_field :state, :class => ' input-text', :placeholder => 'State'
-  .field.subscribe
-    = f.text_field :zip, :class => ' input-text', :placeholder => 'Zip'
-  .field.subscribe
-    = f.text_field :country, :class => ' input-text', :placeholder => 'Country'
-  .field.subscribe
-    = f.text_area :notes, :class => ' input-text', :placeholder => 'Notes'
-  .actions
-    = f.submit 'Subscribe', :class => 'small white nice button radius'
+.row
+  = form_for(@contact, :html =>{:class=> 'nice'}) do |f|
+    .span4
+      - if @contact.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@contact.errors.count, "error")
+            prohibited this contact from being saved:
+          %ul
+            - @contact.errors.full_messages.each do |msg|
+              %li= msg
+      %fieldset
+        %legend Vitals
+        .field.subscribe
+          = f.text_field :email, :class => ' input-text', :placeholder => 'Email'
+        .field.subscribe
+          = f.text_field :first, :class => 'medium input-text', :placeholder => 'First Name'
+        .field.subscribe
+          = f.text_field :last, :class => 'medium input-text', :placeholder => 'Last Name'
+        .field.subscribe
+          = f.text_field :phone, :class => ' input-text', :placeholder => 'Phone'
+    .span4
+      %fieldset
+        %legend Address
+        .field.subscribe
+          = f.text_field :address, :class => ' input-text', :placeholder => 'Address'
+        .field.subscribe
+          = f.text_field :city, :class => ' input-text', :placeholder => 'City'
+        .field.subscribe
+          = f.text_field :state, :class => ' input-text', :placeholder => 'State'
+        .field.subscribe
+          = f.text_field :zip, :class => ' input-text', :placeholder => 'Zip'
+        .field.subscribe
+          = f.text_field :country, :class => ' input-text', :placeholder => 'Country'
+        .field.subscribe
+          = f.text_area :notes, :class => ' input-text', :placeholder => 'Notes', :rows =>'5'
+    .span4
+      %fieldset
+        %legend Groups
+        - Group.all.each do |group|
+          .field
+            = check_box_tag "contact[group_ids][]", group.id, @contact.groups.include?(group)
+            = group.title.capitalize
+      .actions
+        = f.submit 'Save', :class => 'small white nice button radius'
