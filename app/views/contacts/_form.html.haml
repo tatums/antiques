@@ -41,5 +41,8 @@
           .field
             = check_box_tag "contact[group_ids][]", group.id, @contact.groups.include?(group)
             = group.title.capitalize
+        %br
+        %p
+          = link_to "New Group", new_group_path,:class => 'small white nice button radius'
       .actions
-        = f.submit 'Save', :class => 'small white nice button radius'
+        = f.submit 'Save Subscriber', :class => 'small white nice button radius'

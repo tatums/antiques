@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
   helper_method :show_tooltips?
+  helper_method :store_referer
+  helper_method :redirect_back_to
 
   def sort
     params[:ProductsOrder].each_with_index do |id, index|
@@ -35,10 +37,21 @@ class ApplicationController < ActionController::Base
      session[:return_to] = request.url
   end
 
+  def store_referer
+     session[:return_back_to] = request.referer
+  end
+
   def redirect_back_or_default(default, message)
     flash[:notice] = message
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
+  end
+
+  def redirect_back_to(message)
+    flash[:notice] = message
+    redirect_to(session[:return_back_to] || groups_path)
+    session[:return_back_to] = nil
+
   end
 
   def show_tooltips?

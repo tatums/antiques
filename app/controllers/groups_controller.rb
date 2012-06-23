@@ -15,7 +15,9 @@ class GroupsController < ApplicationController
   end
 
   def new
+
     @group = Group.new
+    store_referer
 
     respond_to do |format|
       format.html
@@ -32,7 +34,8 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to contacts_path, notice: 'Group was successfully created.' }
+        format.html { redirect_back_to('Group was successfully created.') }
+         #format.html { redirect_to contacts_path, notice: 'Group was successfully created.' }
       else
         format.html { render action: "new" }
       end
