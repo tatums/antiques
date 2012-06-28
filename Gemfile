@@ -12,6 +12,8 @@ group :development, :test do
   gem 'faker'
   gem 'hpricot'
   gem 'ruby_parser'
+  gem 'awesome_print'
+  gem 'progress_bar'
 end
 
 group :staging do
