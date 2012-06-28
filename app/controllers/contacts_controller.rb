@@ -2,7 +2,14 @@ class ContactsController < ApplicationController
   before_filter :require_user, :except => [:new, :create]
 
   def index
-    @contacts = Contact.all
+    if params[:query]
+      @contacts = Contact.search do
+        keywords params[:query]
+      end.results
+    else
+      @contacts = Contact.all
+    end
+    
     @groups = Group.all
     respond_to do |format|
       format.html

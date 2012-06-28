@@ -1,4 +1,6 @@
 .row
+  .span12
+.row
   .span2
     .well
       %h2 Groups
@@ -8,6 +10,10 @@
           = render @groups
         %li= link_to 'New Group', new_group_path, :class => 'nice small radius button'
   .span10
+    = form_tag contacts_path, :method => :get, :class => 'nice' do
+      .field
+        = text_field_tag :query, params[:query], :class => 'input-text'
+        = submit_tag "Find", :class => 'small white nice button radius'
     %table#contacts.table-bordered
       %thead
         %tr

@@ -21,6 +21,12 @@ class Contact < ActiveRecord::Base
     city.to_s + ", " + state.to_s + " " + zip.to_s
   end
 
+  searchable :auto_index => true, :auto_remove => true do
+    text :first, :last, :email
+  end
+
+
+
   STATE_SELECT = [
     # Displayed,Stored in DB
     ['AL','AL'] ,
