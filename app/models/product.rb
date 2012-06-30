@@ -10,6 +10,7 @@ class Product < ActiveRecord::Base
 
   has_many :category_products
   has_many :categories, :through => :category_products
+  has_many :notes, :as => :notable
 
 
   validates_presence_of :title#, :body,  :country, :period#, :image

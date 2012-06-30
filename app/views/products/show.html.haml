@@ -2,8 +2,11 @@
   %span.block.photo
     %ul#images
       %li.featured
-        = link_to image_tag(@product.image_url(:thumb_300) ), @product.image_url(:large), |
+        - if @product.image?
+          = link_to image_tag(@product.image_url(:thumb_300) ), @product.image_url(:large), |
           :class => 'single_image' if @product.image?                                     |
+        -else
+          = link_to image_tag('no_image.png'), @product, :class => 'thumbnail'
     %ul.additonal-images
       = render @product.images
   %span.block.show-meta
@@ -19,6 +22,7 @@
       = formatted_dimensions(@product.dimensions)
       = formatted_price(@product.price)
       %li= link_to "Print a Tear Sheet", product_path(@product, :format => 'pdf'), :class => 'print_link green'
+
     - if current_user
       %p
         %input#fileupload.btn.no-print{:multiple => "", :name => "image[image]", :type => "file"}
@@ -44,6 +48,9 @@
         Created on #{@product.created_at.strftime("%m/%d/%Y at %I:%M %p")}
         %br
         Updated on #{@product.updated_at.strftime("%m/%d/%Y at %I:%M %p")}
+      %span.label
+        = link_to 'Show Notes', "#", :id=> 'notes_toggle'
+
     = javascript_include_tag 'jquery.fileupload.js'
     :javascript
       $(function () {
@@ -60,3 +67,8 @@
               }
           });
       });
+.row.notes
+  .span6
+    = render @notes
+    = render :partial => 'notes/form',:locals => { :parent => @product }
+

@@ -4,21 +4,23 @@
       %h2= @contact.full_name
       %p.contact-vitals
         = @contact.address
-        %br/
+        %br
         = @contact.city_state_zip
-        %br/
+        %br
         = @contact.email
-        %br/
+        %br
       %p
         = link_to 'Edit', edit_contact_path(@contact), :class => "nice small white radius button"
         = link_to 'Destroy', @contact, confirm: "Are you sure? \n\n #{@note}", method: :delete, :class => "nice small white radius button"
         = add_to_group_button_if_available_groups(@available_groups)
-      %br/
+      %br
       = group_memberships(@contact)
+      %br
+      %span.label
+        = link_to 'Show Notes', "#", :id=> 'notes_toggle'
   .span8
     %h2
-      = @contact.full_name
-      \- Invoices
+      ="#{@contact.full_name} - Invoices"
     %table.invoice.table-bordered
       %thead
         %tr
@@ -31,6 +33,10 @@
           %td.currency= link_to number_to_currency(invoice.calc_sub_total), invoice
           %td.currency= link_to number_to_currency(invoice.calc_grand_total), invoice
     = link_to 'New Invoice', invoice_contact_setup_path(Invoice, @contact), :method => 'post', :class => "nice small blue radius button"
+.row.notes
+  .span12
+    = render @notes
+    = render :partial => 'notes/form',:locals => { :parent => @contact }
 #assign-group-modal.reveal-modal
   %h2 Assign to Group
   %ul

@@ -4,7 +4,8 @@ group :development, :test do
   gem "rspec-rails"
   gem "capybara"
   gem "factory_girl_rails"
-  gem 'pry-rails'
+  gem 'pry'
+  #gem 'pry-rails'
   gem 'sunspot_solr'
   gem 'thin'
   gem 'taps' #heroku pg transfers

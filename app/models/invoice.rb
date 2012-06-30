@@ -1,6 +1,7 @@
 class Invoice < ActiveRecord::Base
   belongs_to :contact
   has_many :line_items
+  has_many :notes, :as => :notable
 
   before_save :init
   before_create :set_inv_date

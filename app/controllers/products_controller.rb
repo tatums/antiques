@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-
+    @notes = @product.notes
     respond_to do |format|
       format.html
       format.pdf do

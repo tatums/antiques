@@ -1,0 +1,4 @@
+= form_for([ parent, Note.new ], remote: true) do |f|
+  = f.text_area :body, :class=>'boxsizingBorder'
+  = f.submit :new
+

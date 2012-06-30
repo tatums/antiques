@@ -1,0 +1,8 @@
+= content_tag :div, note, id: "note_#{note.id}", class: 'well' do
+  %span.label.label-important.delete-note
+    = link_to 'Delete', note, method: 'delete', remote:true
+  %p
+    %i
+      = note.created_at.strftime("%B %d, %Y at %I:%M %P")
+  %p
+    = note.body    

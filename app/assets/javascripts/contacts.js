@@ -14,4 +14,24 @@ $(document).ready(function(){
   });
 
 
+ $('.notes').hide();
+
+ $('#notes_toggle').click(function() {
+    if ($(".notes").is(":hidden")) 
+        {
+          $(".notes").slideDown(); 
+          $("#notes_toggle").text('Hide Notes');
+        }
+    else
+      {
+        $(".notes").slideUp();
+        $("#notes_toggle").text('Show Notes');
+
+      }
+    return false;
+  });
+
+
+
+
 });

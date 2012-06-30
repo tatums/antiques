@@ -14,18 +14,22 @@ PhoebeboothanitquesCom2::Application.routes.draw do
   delete 'groups/:group_id/contacts/:id' => "contact_groups#destroy", :as => 'remove_contact_from_group'
   delete 'subscribers/:contact_id/groups/:id' => "group_contacts#destroy", :as => 'remove_group_from_contact'
 
-  resources :contacts, :path => 'subscribers'
+  resources :contacts, :path => 'subscribers' do
+    resources :notes
+  end
+
+
   resources :groups
 
 
-  resources :tooltips, :only => [:update], :as => :toggle_tooltips
-  resources :shows, :only =>  [:index, :create, :destroy] do
+  resources :tooltips, only: [:update], as: 'toggle_tooltips'
+  resources :shows, only: [:index, :create, :destroy] do
     collection do
       post 'sort'
     end
   end
 
-  resources :sliders, :except => [:show] do
+  resources :sliders, except: [:show] do
     member do
       post 'toggle'
     end
@@ -43,8 +47,9 @@ PhoebeboothanitquesCom2::Application.routes.draw do
 
 
   resources :products do
-    resources :images, :shallow  => true, :only =>[:create, :destroy]
-    resources :keywords, :shallow => true, :only =>[:create, :destroy]
+    resources :images, shallow: true, only: [:create, :destroy]
+    resources :keywords, shallow: true, only: [:create, :destroy]
+    resources :notes, shallow: true, only: [:create, :destroy]
     collection do
       post 'sort'
     end

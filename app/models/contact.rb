@@ -1,10 +1,13 @@
 class Contact < ActiveRecord::Base
+  attr_accessible :first, :last, :email, :address, :city, :state, :zip, :phone, :country, :notes
+
   validates_presence_of :first
   #validates :email, :presence => true, :uniqueness => true, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
 
   has_many :invoices, :dependent => :destroy
   has_many :contact_groups
   has_many :groups, :through => :contact_groups
+  has_many :notes, :as => :notable
 
   scope :excluding_ids, lambda { |ids|
     where(['id NOT IN (?)', ids]) if ids.any?

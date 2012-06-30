@@ -1,0 +1,2 @@
+$("form.new_note").before("<%= escape_javascript(render(:partial => 'note', :object => @note) ) %>");
+$("form.new_note textarea").val('');
