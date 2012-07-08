@@ -66,8 +66,9 @@
               }
           });
       });
-.row.notes
-  .span6
-    = render @notes
-    = render :partial => 'notes/form',:locals => { :parent => @product }
+- if current_user
+  .row.notes
+    .span6
+      = render @notes
+      = render :partial => 'notes/form',:locals => { :parent => @product }
 

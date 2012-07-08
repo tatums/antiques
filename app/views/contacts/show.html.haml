@@ -33,14 +33,16 @@
           %td.currency= link_to number_to_currency(invoice.calc_sub_total), invoice
           %td.currency= link_to number_to_currency(invoice.calc_grand_total), invoice
     = link_to 'New Invoice', invoice_contact_setup_path(Invoice, @contact), :method => 'post', :class => "nice small blue radius button"
-.row.notes
-  .span12
-    = render @notes
-    = render :partial => 'notes/form',:locals => { :parent => @contact }
-#assign-group-modal.reveal-modal
-  %h2 Assign to Group
-  %ul
-    - @available_groups.each do |group|
-      %li= link_to group.title, apply_group_to_contact_path(@contact, group), :method => :post
-    %li
-  %a.close-reveal-modal ×
+
+- if current_user
+  .row.notes
+    .span12
+      = render @notes
+      = render :partial => 'notes/form',:locals => { :parent => @contact }
+  #assign-group-modal.reveal-modal
+    %h2 Assign to Group
+    %ul
+      - @available_groups.each do |group|
+        %li= link_to group.title, apply_group_to_contact_path(@contact, group), :method => :post
+      %li
+    %a.close-reveal-modal ×
