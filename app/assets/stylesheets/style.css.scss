@@ -35,12 +35,18 @@
 
 
 
-
-
 $lime-green: #54B919;
 * { padding: 0; margin: 0; }
-body #wrapper{font-family: "Times New Roman", Times, serif; color:black;}
-body #wrapper p{font-family: "Times New Roman", Times, serif;}
+
+
+body #wrapper{
+  font-family: "Times New Roman", Times, serif;
+  color:black;
+}
+//body #wrapper p{font-family: "Times New Roman", Times, serif;}
+body p{font-family: "Times New Roman", Times, serif;}
+
+
 
 .center{text-align:center;}
 img{border:none;}
@@ -109,28 +115,6 @@ a:visited { text-decoration: none;}
 }
 #sidebar li a:hover { color: #CCC; }
 
-
-//Admin Links
-//#rightcolumn a.admin-link{color:red;}
-//#admin-links { width: 255px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #959595; }
-//#admin-links li a { height: 24px; border-top-width: 1px; border-top-style: solid; border-top-color: #959595; }
-//#admin-links li a:link,
-//#admin-links li a:visited {
-//  display: block;
-//  padding-top:8px;
-//  padding-left:30px;
-//  font-size: 11pt;
-//}
-//#admin-links li a:hover {
-//  color: #CCC;
-//  background-position: 0 -32px;
-//  font-size: 11pt;
-//  padding: 8px, 0, 0, 30px;
-//}
-//#admin-links li.admin-link a{
-//  color:red;
-//  font-style:italic;
-//}
 
 #page_headline {
     font-family: "Times New Roman", Times, serif;

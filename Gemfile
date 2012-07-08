@@ -15,6 +15,7 @@ group :development, :test do
   gem 'ruby_parser'
   gem 'awesome_print'
   gem 'progress_bar'
+  gem 'newrelic_rpm'
 end
 
 group :staging do

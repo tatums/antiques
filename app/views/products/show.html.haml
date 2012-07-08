@@ -3,10 +3,9 @@
     %ul#images
       %li.featured
         - if @product.image?
-          = link_to image_tag(@product.image_url(:thumb_300) ), @product.image_url(:large), |
-          :class => 'single_image' if @product.image?                                     |
+          = link_to image_tag(@product.image_url(:thumb_300) ), @product.image_url(:large), :class => 'single_image'
         -else
-          = link_to image_tag('no_image.png'), @product, :class => 'thumbnail'
+          = link_to image_tag('no_image.png'), @product
     %ul.additonal-images
       = render @product.images
   %span.block.show-meta
