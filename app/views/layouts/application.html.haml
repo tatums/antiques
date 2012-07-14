@@ -2,7 +2,7 @@
 %html.no-js{:lang => "en"}
   = render 'layouts/head'
   %body
-    - if current_user
+    - if current_user and !visitor_view
       :javascript
         $(document).ready(function(){
         $('#categories').sortable({
@@ -16,7 +16,7 @@
         #wrapper{margin-top:42px}
       = render 'layouts/admin_nav'
     #wrapper
-      - unless current_user
+      - unless current_user and !visitor_view
         #header
           %h1= link_to image_tag("phoebe_booth.gif"), root_url
       .navigation

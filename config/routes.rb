@@ -23,6 +23,8 @@ PhoebeboothanitquesCom2::Application.routes.draw do
 
 
   resources :tooltips, only: [:update], as: 'toggle_tooltips'
+  post 'enable_visitor_view' => 'visitor_view#create', :as => :enable_visitor_view
+  post 'disable_visitor_view' => 'visitor_view#destroy', :as => :disable_visitor_view
   resources :shows, only: [:index, :create, :destroy] do
     collection do
       post 'sort'

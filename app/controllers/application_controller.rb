@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :show_tooltips?
   helper_method :store_referer
   helper_method :redirect_back_to
+  helper_method :visitor_view
 
   def sort
     params[:ProductsOrder].each_with_index do |id, index|
@@ -20,9 +21,14 @@ class ApplicationController < ActionController::Base
   end
 
   private
-    def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    end
+  def visitor_view
+    session[:visitor_view]
+  end
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
 
   def require_user
     unless current_user
@@ -51,12 +57,20 @@ class ApplicationController < ActionController::Base
     flash[:notice] = message
     redirect_to(session[:return_back_to] || groups_path)
     session[:return_back_to] = nil
-
   end
 
   def show_tooltips?
     @current_user.show_tooltips
   end
+
+  def enable_visitor_view
+    session[:visitor_view] = true
+  end
+
+  def disable_visitor_view
+    session.delete('visitor_view')
+  end
+
 
 
 end

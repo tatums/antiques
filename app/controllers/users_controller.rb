@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
   end
-  
+
   def edit
     @user = current_user
   end
@@ -19,7 +19,6 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-    
   end
 
 end

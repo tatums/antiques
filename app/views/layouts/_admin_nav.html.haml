@@ -1,4 +1,4 @@
-- if current_user
+- if current_user and !visitor_view
   .navbar.navbar-fixed-top.no-print
     .navbar-inner
       .container-fluid
@@ -52,5 +52,6 @@
               %ul.dropdown-menu
                 %li= link_to "Change Password", change_password_path
                 %li= link_to "Toggle Toolitps", toggle_tooltip_path(current_user), :method => 'put', :remote => true
+                %li= link_to "Enable Visitor View", enable_visitor_view_path, method: 'post'
                 %li= link_to "Tasks", tasks_path
                 %li= link_to "logout", logout_path

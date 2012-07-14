@@ -15,7 +15,7 @@
     = render 'layouts/admin_nav'
     = render 'layouts/notifications'
     #wrapper
-      - unless current_user
+      - unless current_user and !visitor_view
         #header
           %h1= link_to image_tag("phoebe_booth.gif"), root_url
       #navigation.navigation

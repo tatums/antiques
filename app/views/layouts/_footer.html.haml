@@ -3,3 +3,7 @@
     \&copy;#{Time.now.year} Phoebe Booth Antiques LLC All Rights Reserved
 #facebook
   = link_to image_tag("facebook.gif"),"http://www.facebook.com/pages/Phoebe-Booth-Antiques-LLC/153860351334138"
+.widget
+  %h1
+    = link_to "Disable Visitor View", disable_visitor_view_path, method: 'post', class: 'btn btn-small btn-inverse' if current_user and visitor_view
+

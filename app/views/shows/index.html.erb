@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if current_user and !visitor_view %>
   <script language="javascript">
       $(document).ready(function() {
            $('#buttonForModal').click(function(evt) {
@@ -42,7 +42,7 @@
   </div>
 
 
-  <% if current_user %>
+  <% if current_user and !visitor_view %>
     <a href="#" class="nice small radius button" id="buttonForModal">New Show</a>
     <div id="myModal" class="reveal-modal">
       <h2>New Show.</h2>

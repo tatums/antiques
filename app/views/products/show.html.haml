@@ -22,7 +22,7 @@
       = formatted_price(@product.price)
       %li= link_to "Print a Tear Sheet", product_path(@product, :format => 'pdf'), :class => 'print_link green'
 
-    - if current_user
+    - if current_user and !visitor_view
       %p
         %input#fileupload.btn.no-print{:multiple => "", :name => "image[image]", :type => "file"}
       %p
