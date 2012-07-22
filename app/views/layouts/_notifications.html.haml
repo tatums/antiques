@@ -1,12 +1,11 @@
 - if notice.present?
-  = show_notifcations.html_safe
-  = content_tag :script, :type => "text/javascript" do
-    setTimeout(function() {
-    $('#notification').slideUp();
-    }, 3000);
+  #notification.alert-box.success
+    =notice
+    =link_to '&times;'.html_safe, '#', class: 'close'
 - if alert.present?
-  = show_alerts.html_safe
-  = content_tag :script, :type => "text/javascript" do
-    setTimeout(function() {
-    $('#notification').slideUp();
-    }, 3000);
+  #notification.alert-box.warning
+    =alert
+    =link_to '&times;'.html_safe, '#', class: 'close'
+
+/ if alert.present?
+/  = show_alerts.html_safe
