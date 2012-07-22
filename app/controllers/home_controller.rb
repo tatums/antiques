@@ -20,9 +20,6 @@ class HomeController < ApplicationController
     @products = Product.phoebe_finds.active.order(:position).page params[:page]
   end
 
-  def thank_you
-  end
-
   def subscribe
     @contact = Contact.new
   end
@@ -32,7 +29,7 @@ class HomeController < ApplicationController
     respond_to do |format|
       if @contact.save
         SubscriberMailer.subscribe(@contact).deliver
-        format.html { redirect_to thank_you_path, notice: 'Subscriber was successfully saved.' }
+        format.html { redirect_to category_path(Category.active.sample), notice: 'Thank You... You infomation was successfully saved.' }
       else
         format.html { render action: "subscribe" }
       end
