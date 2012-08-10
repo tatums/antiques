@@ -1,0 +1,11 @@
+.row
+  .span12
+    %h1 Mail Test
+    /%p Use this form to ensure that emails are sent.
+    = form_tag send_test_mail_path, :html =>{:class=> 'nice'}
+    .field
+      = text_field_tag :email, '', :class => ' input-text', :placeholder => 'Email'
+    .field
+      = submit_tag 'Send', :class => 'small white nice button radius'
+
+

@@ -4,6 +4,7 @@
   %body
     = render 'layouts/admin_nav'
     .container.content
+      = render 'layouts/notifications'
       = yield
       #spinner{:style => "display:none"}
         %span Loading...

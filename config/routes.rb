@@ -64,6 +64,10 @@ PhoebeBoothAntiquesCom::Application.routes.draw do
 
   get "change_password" => "users#edit", :as => "change_password"
 
+  get "test_mail" => "admin#test_mail", :as => "test_mail"
+  post "send_test_mail" => "admin#send_test_mail", :as => "send_test_mail"
+
+
   get "log_in" => "sessions#new", :as => "login"
   get "login" => "sessions#new", :as => "login"
   get "log_out" => "sessions#destroy", :as => "logout"
