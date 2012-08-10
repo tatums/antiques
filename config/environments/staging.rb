@@ -1,4 +1,4 @@
-PhoebeboothanitquesCom2::Application.configure do
+PhoebeBoothAntiquesCom::Application.configure do
 
   config.cache_classes = true
 

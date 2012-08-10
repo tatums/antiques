@@ -1,5 +1,5 @@
-PhoebeboothanitquesCom2::Application.routes.draw do
- 
+PhoebeBoothAntiquesCom::Application.routes.draw do
+
   resources :invoices, :except => [:new, :edit] do
     resources :line_items, :only => [:edit, :update, :create, :destroy], :shallow => true
     get '/:product_id' => "invoices#create", :as => 'product_setup'

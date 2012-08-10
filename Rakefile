@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-PhoebeboothanitquesCom2::Application.load_tasks
+PhoebeBoothAntiquesCom::Application.load_tasks
