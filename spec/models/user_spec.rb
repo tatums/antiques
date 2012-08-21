@@ -17,4 +17,15 @@ describe User do
     User.authenticate('test@test_user.com','wrong_password').should be_nil
   end
 
+  it "should be invalid without a email" do
+    @user.email = ''
+    @user.should_not be_valid
+    @user.should have(1).error_on(:email)
+  end
+
+  it "should be valid" do
+    #@user.save
+    @user.should be_valid
+  end
+
 end

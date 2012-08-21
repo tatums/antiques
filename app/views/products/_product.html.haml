@@ -1,10 +1,9 @@
 = content_tag_for :li, product do
   %span.block.photo
     -if product.image?
-      = link_to image_tag(product.image_url(:thumb_200) ), product
+      = link_to image_tag(product.image_url(:thumb_200) ), product, :class => 'thumbnail'
     -else
       = link_to 'No Image', product, :class => 'thumbnail'
-      /= link_to image_tag(product.image_url(:thumb_200) ), product if product.image?
   %span.block.meta
     %h3= link_to product.title, product
     = tag_if_sold(product)
@@ -17,8 +16,11 @@
       = read_more_setup_as_paragraphs(product).html_safe
       = formatted_dimensions(product.dimensions)
       = formatted_price(product.price)
-      - product.images.each do |image|
-        = link_to image_tag(image.image_url(:thumb_50) ), image.image_url(:large), :class => 'single_image'
+      %li
+        %ul.thumbnails
+          - product.images.each do |image|
+            %li
+              = link_to image_tag(image.image_url(:thumb_50) ), image.image_url(:large), :class => 'single_image thumbnail'
       %li= link_to "Print a Tear Sheet", product_path(product, :format => 'pdf'), :class => 'print_link green'
     %br/
     = edit_button_if_logged_in(product)

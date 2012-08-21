@@ -1,4 +1,4 @@
 <%= content_tag(:li, image, :id => "image_#{image.id}") do %>
-  <%= link_to image_tag(image.image_url(:thumb_200) ), image.image_url(:large), :class => 'single_image' %>
-  <%= show_delete_if_logged_in(image) %>  
+  <%= link_to image_tag(image.image_url(:thumb_200) ), image.image_url(:large), :class => 'single_image thumbnail' %>
+  <%= show_delete_if_logged_in(image) %>
 <% end %>

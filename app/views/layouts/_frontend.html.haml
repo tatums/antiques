@@ -2,7 +2,7 @@
 %html.no-js{:lang => "en"}
   = render 'layouts/head'
   %body
-    - if current_user
+    - if current_user and !visitor_view
       :javascript
         $(document).ready(function(){
           $('#categories').sortable({

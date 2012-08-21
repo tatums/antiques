@@ -1,12 +1,12 @@
 #show-product
   %span.block.photo
-    %ul#images
+    %ul.thumbnails
       %li.featured
         - if @product.image?
-          = link_to image_tag(@product.image_url(:thumb_300) ), @product.image_url(:large), :class => 'single_image'
+          = link_to image_tag(@product.image_url(:thumb_300) ), @product.image_url(:large), :class => 'single_image thumbnail'
         -else
           = link_to image_tag('no_image.png'), @product
-    %ul.additonal-images
+    %ul.thumbnails
       = render @product.images
   %span.block.show-meta
     = tag_if_sold(@product)
