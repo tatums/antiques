@@ -20,13 +20,11 @@ class CategoriesController < ApplicationController
     respond_to do |format|
      format.html
     end
-
   end
 
 
   def new
     @category = Category.new
-
     respond_to do |format|
       format.html
     end
@@ -40,7 +38,6 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(params[:category])
-
     respond_to do |format|
       if @category.save
         format.html { redirect_to categories_path, notice: 'Category was successfully created.' }

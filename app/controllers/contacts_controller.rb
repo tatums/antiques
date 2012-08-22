@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
     else
       @contacts = Contact.all
     end
-    
+
     @groups = Group.all
     respond_to do |format|
       format.html
@@ -21,7 +21,6 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
     @groups = @contact.groups
     @available_groups = Group.excluding_ids(@groups.map(&:id))
-    #@note = "*WARNING* All assoicated Invoices will also be deleted and cannot be undone."
     @notes = @contact.notes
     respond_to do |format|
       format.html
