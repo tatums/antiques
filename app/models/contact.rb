@@ -13,6 +13,14 @@ class Contact < ActiveRecord::Base
     where(['id NOT IN (?)', ids]) if ids.any?
   }
 
+  def self.find_records(query=nil)
+    if query
+      Contact.search {keywords query}.results
+    else
+      Contact.all
+    end
+  end
+
   def full_name
     first.to_s + " " + last.to_s
   end
@@ -27,6 +35,7 @@ class Contact < ActiveRecord::Base
   searchable :auto_index => true, :auto_remove => true do
     text :first, :last, :email
   end
+
 
 
 
@@ -83,4 +92,6 @@ class Contact < ActiveRecord::Base
     ['WV','WV'] ,
     ['WI','WI'] ,
     ['WY','WY'] ]
+
+
 end
