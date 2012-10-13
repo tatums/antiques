@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
     else
       @contacts = Contact.all
     end
-    
+
     @groups = Group.all
     respond_to do |format|
       format.html
@@ -47,7 +47,7 @@ class ContactsController < ApplicationController
     add_to_group_if_group_present
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to thank_you_path, notice: 'Subscriber was successfully saved.' }
+        format.html { redirect_to @contact, notice: 'Subscriber was successfully saved.' }
       else
         format.html { render action: "new" }
       end

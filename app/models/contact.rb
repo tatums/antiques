@@ -1,5 +1,5 @@
 class Contact < ActiveRecord::Base
-  attr_accessible :first, :last, :email, :address, :city, :state, :zip, :phone, :country, :notes
+  attr_accessible :first, :last, :email, :address, :city, :state, :zip, :phone, :country, :note
 
   validates_presence_of :first
   #validates :email, :presence => true, :uniqueness => true, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
@@ -24,9 +24,9 @@ class Contact < ActiveRecord::Base
     city.to_s + ", " + state.to_s + " " + zip.to_s
   end
 
-  searchable :auto_index => true, :auto_remove => true do
-    text :first, :last, :email
-  end
+  # searchable :auto_index => true, :auto_remove => true do
+  #   text :first, :last, :email
+  # end
 
 
 
