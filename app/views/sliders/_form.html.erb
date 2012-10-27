@@ -1,4 +1,4 @@
-<%= form_for(Slider.new ,:html => {:id => 'image-upload' }) do |f| %>
+<%= form_for(@slider ,:html => {:id => 'image-upload' }) do |f| %>
   <% if @slider.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@slider.errors.count, "error") %> prohibited this slider from being saved:</h2>
@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+
   <div class="field">
     <%= image_tag(@slider.image_url(:thumb_200)) if @slider.image? %><br />
     <%= f.label :image, 'Image' %><br />
@@ -18,11 +19,15 @@
     <%= f.hidden_field :image_cache %>
   </div>
 
-
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
   <div class="field">
     <%= f.label :product, 'Link this Image to a Product' %><br />
   	<%= f.select :product_id, Product.active.collect {|p|[p.title, p.id]},{:include_blank => 'None'} %>
   </div>
+
   <div class="actions">
     <%= f.submit 'Save', :id => 'upload-button'   %>
   </div>
