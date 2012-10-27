@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013104902) do
+ActiveRecord::Schema.define(:version => 20121027174312) do
 
   create_table "categories", :force => true do |t|
     t.boolean  "active",      :default => false
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(:version => 20121013104902) do
     t.datetime "updated_at",                   :null => false
     t.integer  "product_id"
     t.integer  "position"
+    t.string   "title"
   end
 
   create_table "tasks", :force => true do |t|
