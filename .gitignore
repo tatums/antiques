@@ -12,7 +12,11 @@ config/mail.yml
 config/database.yml
 public/uploads/
 solr/data/
+solr/pids/*
 .sass-cache/
 .DS_Store
 .lck
 
+
+# Ignore application configuration
+/config/application.yml

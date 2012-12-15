@@ -48,4 +48,5 @@ gem 'sunspot_rails'
 gem 'prawn'
 gem 'dalli'
 gem 'pg'
+gem 'figaro'
 

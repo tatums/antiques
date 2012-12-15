@@ -72,6 +72,8 @@ GEM
       i18n (~> 0.4)
     fattr (2.2.1)
     ffi (1.0.11)
+    figaro (0.5.0)
+      rails (~> 3.0)
     fog (1.8.0)
       builder
       excon (~> 0.14)
@@ -256,6 +258,7 @@ DEPENDENCIES
   fabrication
   factory_girl_rails
   faker
+  figaro
   fog
   haml-rails
   heroku

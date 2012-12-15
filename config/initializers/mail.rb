@@ -5,5 +5,4 @@ if Rails.env.staging?
                           "domain"=> ENV["MAIL_DOMAIN"] ,
                           "user_name"=>  ENV['MAIL_USERNAME'] ,
                           "password"=> ENV['MAIL_PASSWORD'] }  }
-
 end
