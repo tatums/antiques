@@ -4,6 +4,7 @@ db/*.sqlite3
 *.dump
 log/*.log
 log/*.lck
+log/*
 tmp/*
 tmp/cache/assets/
 tmp/cache/sass/
