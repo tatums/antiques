@@ -1,5 +1,5 @@
 class InvoiceMailer < ActionMailer::Base
-  default from: MAIL[Rails.env]["send_as"]
+  default from: ENV["send_as"]
 
   def send_invoice(invoice, pdf, email_address)
       @invoice = invoice

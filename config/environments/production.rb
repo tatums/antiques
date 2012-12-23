@@ -29,15 +29,13 @@ PhoebeBoothAntiquesCom::Application.configure do
   #CACHE added on 2/4/2012
   config.cache_store = :dalli_store, "127.0.0.1:11211"
 
-  MAIL = YAML.load_file("#{Rails.root}/config/mail.yml")
-
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => MAIL[Rails.env]["domain"],
-    :user_name            => MAIL[Rails.env]["user_name"],
-    :password             => MAIL[Rails.env]["password"],
+    :domain               => ENV["domain"],
+    :user_name            => ENV["user_name"],
+    :password             => ENV["password"],
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 
