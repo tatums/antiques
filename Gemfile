@@ -34,7 +34,8 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'rails'
+gem 'rails', '3.2.11'
+
 gem 'carrierwave'
 gem "mini_magick"
 gem 'bcrypt-ruby', :require => 'bcrypt'
