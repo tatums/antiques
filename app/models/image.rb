@@ -16,15 +16,4 @@ class Image < ActiveRecord::Base
       }
   end
 
-  # def to_jq_upload
-  #     {
-  #       "name" => read_attribute(:image),
-  #       "size" => image.size,
-  #       "url" => image.url,
-  #       "thumbnail_url" => image_url,
-  #       "delete_url" => picture_path(:id => id),
-  #       "delete_type" => "DELETE"
-  #     }
-  # end
-
 end

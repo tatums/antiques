@@ -21,6 +21,7 @@ end
 group :staging do
   gem 'pg'
   gem 'thin'
+  gem 'fog'
 end
 
 group :production do
@@ -33,7 +34,8 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'rails'
+gem 'rails', '3.2.11'
+
 gem 'carrierwave'
 gem "mini_magick"
 gem 'bcrypt-ruby', :require => 'bcrypt'
@@ -47,4 +49,5 @@ gem 'sunspot_rails'
 gem 'prawn'
 gem 'dalli'
 gem 'pg'
+gem 'figaro'
 

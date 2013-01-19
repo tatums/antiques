@@ -4,6 +4,7 @@ db/*.sqlite3
 *.dump
 log/*.log
 log/*.lck
+log/*
 tmp/*
 tmp/cache/assets/
 tmp/cache/sass/
@@ -13,8 +14,11 @@ config/database.yml
 public/uploads/
 public/assets/
 solr/data/
-solr/pids/
+solr/pids/*
 .sass-cache/
 .DS_Store
 .lck
 
+
+# Ignore application configuration
+/config/application.yml
