@@ -50,4 +50,4 @@ gem 'prawn'
 gem 'dalli'
 gem 'pg'
 gem 'figaro'
-
+gem 'textacular', '~> 3.0', require: 'textacular/rails'

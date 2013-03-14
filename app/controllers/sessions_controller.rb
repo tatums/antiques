@@ -3,14 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.authenticate(params[:email].downcase.strip, params[:password])
-      if user
-        session[:user_id] = user.id
-        redirect_back_or_default(root_url, "Logged in!")
-      else
-        flash.now[:alert] = "Invalid email or password"
-        render "new"
-      end
+    if user = User.authenticate(params[:email].downcase.strip, params[:password])
+      session[:user_id] = user.id
+      redirect_back_or_default(root_url, "Logged in!")
+    else
+      flash.now[:alert] = "Invalid email or password"
+      render "new"
+    end
   end
 
   def destroy

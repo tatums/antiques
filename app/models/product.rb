@@ -13,8 +13,7 @@ class Product < ActiveRecord::Base
   has_many :notes, :as => :notable
 
 
-  validates_presence_of :title#, :body,  :country, :period#, :image
-  #attr_accessible :active, :sold, :title, :body, :new_acquisition, :phoebe_find, :country, :period, :image, :image_cache, :category_ids
+  validates_presence_of :title
   mount_uploader :image, ImageUploader
 
   def to_param  # overridden
