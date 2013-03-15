@@ -5,10 +5,8 @@ group :development, :test do
   gem "capybara"
   gem "factory_girl_rails"
   gem 'pry'
-  #gem 'pry-rails'
   gem 'sunspot_solr'
   gem 'thin'
-  gem 'taps' #heroku pg transfers
   gem 'fabrication'
   gem 'faker'
   gem 'hpricot'
@@ -25,7 +23,7 @@ group :staging do
 end
 
 group :production do
-  gem 'sunspot_solr'
+
 end
 
 group :assets do
@@ -34,7 +32,7 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 
 gem 'carrierwave'
 gem "mini_magick"
@@ -45,7 +43,6 @@ gem "haml-rails"
 
 gem 'jquery-rails'
 gem 'kaminari'
-gem 'sunspot_rails'
 gem 'prawn'
 gem 'dalli'
 gem 'pg'

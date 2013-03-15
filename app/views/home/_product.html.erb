@@ -1,0 +1,9 @@
+<%= content_tag :li do %>
+  <span class="block search-photo">
+    <%= link_to image_tag(product.image_url(:thumb_100) ), product if product.image? %>
+  </span>
+  <span class="block search-meta">
+    <h4><%= link_to product.item_number, product %> - <%=link_to product.title, product %></h4>
+    <%= read_more(product) %>
+  </span>
+<% end %>

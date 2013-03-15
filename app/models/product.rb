@@ -28,13 +28,6 @@ class Product < ActiveRecord::Base
     Product.where(:sold => false)
   end
 
-  searchable :if => :active, :auto_index => true, :auto_remove => true do
-    text :title, :body, :item_number
-    text :keywords do
-      keywords.map(&:title)
-    end
-  end
-
   def measurements_setup?
     unless height.nil? && width.nil? && depth.nil? && diameter.nil?
        return true
@@ -46,6 +39,8 @@ class Product < ActiveRecord::Base
     category_products.destroy_all
     Category.find_or_create_by_title('sold', :active => true).products << self
   end
+
+
 
 
 protected

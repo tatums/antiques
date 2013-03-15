@@ -8,12 +8,7 @@ class HomeController < ApplicationController
   end
 
   def search
-    if params[:query]
-      @products = Product.search do
-        keywords params[:query]
-      end
-      @results = @products.results
-    end
+    @products = Product.where(:active => true).fuzzy_search(params[:query]) if params[:query]
   end
 
   def phoebes_finds
