@@ -36,7 +36,13 @@ class ProductPdf < Prawn::Document
 
   def product_image
     if @product.image_url
-      product_img = File.open(Rails.root + "public/#{@product.image_url(:large)}")
+
+      #if Rails.env.staging?
+        product_img = File.open @product.image_url(:large)
+      # else
+      #   product_img = File.open(Rails.root + "public/#{@product.image_url(:large)}")
+      # end
+
     end
 
     bounding_box [120, 590], :width => 300 do

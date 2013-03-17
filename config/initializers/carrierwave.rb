@@ -1,6 +1,10 @@
 CarrierWave.configure do |config|
 
-  #config.grid_fs_access_url = "/stage/images"
+  if %w[development production].include?(Rails.env)
+    config.storage :file
+  else
+    config.storage :fog
+  end
 
   config.fog_credentials = {
    provider: "AWS",

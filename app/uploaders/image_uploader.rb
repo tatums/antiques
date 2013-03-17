@@ -1,16 +1,5 @@
 class ImageUploader < CarrierWave::Uploader::Base
-
-
-   include CarrierWave::MiniMagick
-
-
-  # Choose what kind of storage to use for this uploader:
-  ## 1/19/3013
-  if %w[development production].include?(Rails.env)
-    storage :file
-  else
-    storage :fog
-  end
+  include CarrierWave::MiniMagick
 
 
   # Override the directory where uploaded files will be stored.
