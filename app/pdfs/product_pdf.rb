@@ -24,10 +24,6 @@ class ProductPdf < Prawn::Document
     bounding_box [125, 730], :width => 300 do
       image logo, :scale => 0.6, :position => :center, :vposition => :top
     end
-    # fill_color "#58A51D"
-    # #"#{Prawn::BASEDIR}/data/fonts/DejaVuSans.ttf"
-    # font(Rails.root + "times2.ttf")
-    # text "PHOEBE BOOTH ANTIQUES LLC", :size => 32, :align => :center, style: :bold
   end
 
   def inventory_number
@@ -36,25 +32,23 @@ class ProductPdf < Prawn::Document
 
   def product_image
 
-    if @product.image_url
       bounding_box [120, 590], :width => 300 do
+        puts @product.image_url(:large)
         image open(@product.image_url(:large)),:scale => 0.3, :position => :center, :vposition => :top rescue nil
       end
-    end
   end
 
   def description
-      text "#{@product.title}", size: 16, align: :left
-      move_down 10
-      text "#{@product.body}", size: 12, align: :left
-      move_down 10
-      text "#{country_and_period(@product)}"
-      move_down 5
-      text "#{@product.dimensions}"
-      move_down 5
-      text "#{number_to_currency @product.price}"
-      move_down 5
-
+    text "#{@product.title}", size: 16, align: :left
+    move_down 10
+    text "#{@product.body}", size: 12, align: :left
+    move_down 10
+    text "#{country_and_period(@product)}"
+    move_down 5
+    text "#{@product.dimensions}"
+    move_down 5
+    text "#{number_to_currency @product.price}"
+    move_down 5
   end
 
   def copy

@@ -1,6 +1,8 @@
 class Slider < ActiveRecord::Base
   belongs_to :product
-  #attr_accessible :active, :position, :image, :image_cache, :product_id
+
+  attr_accessible :active, :title, :position, :image, :image_cache, :product_id
+
   mount_uploader :image, ImageUploader
   scope :active, where(:active => true)
   scope :inactive, where(:active => false)
