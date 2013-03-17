@@ -13,11 +13,13 @@ group :development, :test do
   gem 'ruby_parser'
   gem 'awesome_print'
   gem 'progress_bar'
+  gem 'unicorn'
 end
 
 group :staging do
   gem 'pg'
   gem 'thin'
+  gem 'unicorn'
 end
 
 group :production do
@@ -48,3 +50,4 @@ gem 'figaro'
 gem 'pg_search'
 gem 'fog'
 gem 'newrelic_rpm'
+gem 'foreman'
