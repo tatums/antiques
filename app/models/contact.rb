@@ -1,8 +1,21 @@
 class Contact < ActiveRecord::Base
+  include PgSearch
+
   attr_accessible :first, :last, :email, :address, :city, :state, :zip, :phone, :country, :note
 
+  pg_search_scope :search,
+    against: {first:    'A',
+              last:     'A',
+              email:    'B',
+              address:  'B',
+              city:     'B',
+              state:    'B',
+              zip:      'B'},
+    associated_against: { groups: :title },
+    using: { tsearch: { prefix: true} }
+
+
   validates_presence_of :first
-  #validates :email, :presence => true, :uniqueness => true, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
 
   has_many :invoices, :dependent => :destroy
   has_many :contact_groups

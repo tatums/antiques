@@ -11,7 +11,7 @@ class Invoice < ActiveRecord::Base
 
   paginates_per 10
 
-  def init #will set the default value only if it's nil
+  def init
     self.tax ||= 0.0
     self.shipping ||= 0.0
     self.price_header ||= "Price"
@@ -30,7 +30,7 @@ class Invoice < ActiveRecord::Base
   end
 
   def calc_shipping_total
-      0   #||= 0
+      0
   end
 
 protected

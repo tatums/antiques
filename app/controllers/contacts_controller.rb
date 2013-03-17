@@ -3,7 +3,7 @@ class ContactsController < ApplicationController
 
   def index
     if params[:query]
-      @contacts = Contact.fuzzy_search(params[:query])
+      @contacts = Contact.search(params[:query])
     else
       @contacts = Contact.all
     end

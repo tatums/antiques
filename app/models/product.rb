@@ -1,4 +1,12 @@
 class Product < ActiveRecord::Base
+  include PgSearch
+
+  pg_search_scope :search,
+    against: {title: 'A', body: 'B',
+              dimensions: 'C', period: 'D',
+              country: 'D'},
+    associated_against: { keywords: :title},
+    using: { tsearch: { prefix: true} }
 
   before_save :strip_whitespace_from_title
   before_create :set_item_number
