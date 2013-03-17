@@ -1,6 +1,6 @@
 CarrierWave.configure do |config|
 
-  if %w[development production].include?(Rails.env)
+  if %w[production].include?(Rails.env)
     config.storage :file
   else
     config.storage :fog
