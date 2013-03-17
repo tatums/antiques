@@ -1,5 +1,6 @@
 CarrierWave.configure do |config|
-  config.grid_fs_access_url = "/stage/images"
+
+  #config.grid_fs_access_url = "/stage/images"
 
   config.fog_credentials = {
    provider: "AWS",
