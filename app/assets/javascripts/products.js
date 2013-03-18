@@ -10,7 +10,19 @@ $(document).ready(function() {
 
 
 	/* Lightbox - uses default settings */
+
+
+
 	$("a.single_image").fancybox();
+
+
+
+
+
+
+
+
+
 	/* Using custom settings */
 
   //Monitors the Keyword field and enables and disables the button unless filled.

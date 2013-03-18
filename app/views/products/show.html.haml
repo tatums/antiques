@@ -50,22 +50,8 @@
       %span.label
         = link_to 'Show Notes', "#", :id=> 'notes_toggle'
 
-    = javascript_include_tag 'jquery.fileupload.js'
-    :javascript
-      $(function () {
 
-          $('#fileupload').fileupload({
 
-              dataType: 'json',
-              url: '#{product_images_path(@product.id)}',
-              done: function (e, data) {
-                  $.each(data.result, function (index, response) {
-                     $('<li><img src="'+response+'"></li>').appendTo('.additonal-images');
-                  });
-
-              }
-          });
-      });
 - if current_user
   .row.notes
     .span6

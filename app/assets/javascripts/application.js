@@ -4,9 +4,10 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
-//= require jquery_1.7
+//= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-//= require bootstrap
-//= require jquery.fileupload
+//= require fancybox
+//= require twitter/bootstrap
+//= require jquery-fileupload/basic
 //= require_tree .

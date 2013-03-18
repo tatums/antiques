@@ -30,6 +30,9 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
+  gem 'jquery-fileupload-rails'
+  gem 'fancybox2-rails', '~> 0.2.4'
+  gem 'anjlab-bootstrap-rails', '>= 2.3', :require => 'bootstrap-rails'
 end
 
 gem 'rails', '3.2.12'
