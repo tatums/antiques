@@ -4,7 +4,7 @@ jQuery ->
     done: (e, data) ->
       id = data.files[0].name
       console.log(data)
-      $('#'+id).hide()
+      $('.progress:first').fadeOut()
     add: (e, data) ->
       id = data.files[0].name
       data.context = $('<div id="'+id+'" class="progress progress-striped"><div class="bar"></div></div>')
