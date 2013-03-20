@@ -12,7 +12,6 @@ class InvoicePdf < Prawn::Document
     line_items_table
     sales_final
     footer
-    #pdf.font("/myfont.ttf")
 
   end
 
@@ -28,10 +27,9 @@ class InvoicePdf < Prawn::Document
 
   def left_head
     bounding_box([0,570], :width => 200, :height => 50) do
-      #stroke_bounds
-      text "2145 North Dayton Street, CH", :size => 10
-      text "Chicago, IL 60614", :size => 10
-      text "PHONE: 917-597-4368", :size => 10
+      text Configuration.current.line_1, :size => 10
+      text Configuration.current.line_2, :size => 10
+      text "Phone: #{Configuration.current.phone}", :size => 10
     end
   end
 
@@ -50,6 +48,7 @@ class InvoicePdf < Prawn::Document
     table(date_data) do
          row(0).style(:background_color => 'dddddd', align: :center)
          column(0..1).width = 90
+         columns(0..1).style(size:10)
          self.header = true
      end
 
@@ -67,14 +66,17 @@ class InvoicePdf < Prawn::Document
 
   def line_items_table
       bounding_box([0, 430], :width => 550) do
-         table line_item_rows do
-           column(0).style(:width => 20, align: :center)
-           columns(1..4).align = :right
-           row(0).style(:background_color => '666666', :text_color => 'FFFFFF', align: :center)
-           self.row_colors = ["DDDDDD", "FFFFFF"]
-           self.header = true
-           self.width = 540
-         end
+        table line_item_rows do
+          column(0).style(:width => 20, align: :center)
+          columns(1..4).align
+          column(2).style align: :center
+          columns(0..4).style(size:10)
+          columns(3..4).style align: :right
+          row(0).style(:background_color => '666666', :text_color => 'FFFFFF', align: :center)
+          self.row_colors = ["DDDDDD", "FFFFFF"]
+          self.header = true
+          self.width = 540
+        end
        move_down 20
 
         bounding_box([340, 0], :width => 300) do
@@ -82,6 +84,7 @@ class InvoicePdf < Prawn::Document
                column(0).style(:background_color => 'dddddd', align: :center )
                column(1).style( font_style: :bold, align: :right )
                column(0..1).width = 100
+               columns(0..1).style(size:10)
            end
         end
      end
@@ -109,7 +112,8 @@ class InvoicePdf < Prawn::Document
 
   def footer
     bounding_box [0, 10], :width => 500 do
-      text "PHOEBE BOOTH ANTIQUES LLC | 2145 North Dayton Street, CH, Chicago, IL 60614 | PHONE: 917-597-4368", :size => 8, :align => :center
+      text Configuration.current.footer, :size => 8, :align => :center
+      #text "PHOEBE BOOTH ANTIQUES LLC | 2145 North Dayton Street, CH, Chicago, IL 60614 | PHONE: 917-597-4368", :size => 8, :align => :center
     end
   end
 

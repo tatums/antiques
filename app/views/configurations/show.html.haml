@@ -1,0 +1,10 @@
+%h1 Configuration
+
+%p
+  = @configuration.line_1
+  %br= @configuration.line_2
+  %br= @configuration.phone
+  = @configuration.email
+  %br
+  = link_to 'Edit', @configuration
+  = link_to 'Activate', @configuration

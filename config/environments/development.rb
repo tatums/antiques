@@ -1,5 +1,14 @@
 PhoebeBoothAntiquesCom::Application.configure do
 
+
+
+  ### ADDED THIS FOR UNICORN DURING DEVELOPMENT
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger.const_get(
+    ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'DEBUG'
+  )
+
+
   # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict
 

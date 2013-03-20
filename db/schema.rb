@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027174312) do
+ActiveRecord::Schema.define(:version => 20130319223102) do
 
   create_table "categories", :force => true do |t|
     t.boolean  "active",      :default => false
@@ -29,6 +29,19 @@ ActiveRecord::Schema.define(:version => 20121027174312) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "position"
+  end
+
+  create_table "configurations", :force => true do |t|
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "phone"
+    t.string   "email"
+    t.boolean  "current"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "contact_groups", :force => true do |t|

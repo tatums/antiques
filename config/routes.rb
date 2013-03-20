@@ -47,6 +47,7 @@ PhoebeBoothAntiquesCom::Application.routes.draw do
     end
   end
 
+  resources :configurations
 
   resources :products do
     resources :images, shallow: true, only: [:create, :destroy]

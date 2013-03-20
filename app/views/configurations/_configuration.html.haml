@@ -1,0 +1,4 @@
+= content_tag :li, class: class_name_for(configuration) do
+  = content_tag(:i, nil, class: 'icon-plus') if configuration.current?
+  = link_to "#{configuration.line_1} #{configuration.line_2}", configuration
+
