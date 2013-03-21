@@ -1,0 +1,29 @@
+.row
+  = form_for(@configuration, :html =>{:class=> 'nice'}) do |f|
+    .span4
+      - if @configuration.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@configuration.errors.count, "error")
+            prohibited this configuration from being saved:
+          %ul
+            - @configuration.errors.full_messages.each do |msg|
+              %li= msg
+      %fieldset
+        .field
+          = f.text_field :address1, :class => 'medium input-text', :placeholder => 'Address Line 1'
+        .field
+          = f.text_field :address2, :class => 'medium input-text', :placeholder => 'Address Line 2'
+        .field
+          = f.text_field :city, :class => ' input-text', :placeholder => 'City'
+        .field
+          = f.text_field :state, :class => ' input-text', :placeholder => 'State'
+        .field
+          = f.text_field :zip, :class => ' input-text', :placeholder => 'Zip'
+      %fieldset
+        .field
+          = f.text_field :email, :class => ' input-text', :placeholder => 'Email'
+        .field
+          = f.text_field :phone, :class => ' input-text', :placeholder => 'Phone'
+      .actions
+        = f.submit 'Save Subscriber', :class => 'small white nice button radius'

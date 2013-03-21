@@ -1,17 +1,17 @@
 class Configuration < ActiveRecord::Base
   attr_accessible :address1, :address2, :city, :phone, :state, :zip, :email, :current
   validates :address1, :city, :phone, :state, :zip, :email, :presence => true
-  validate :only_one_current
+  #validate :only_one_current
   before_destroy :protect_current
 
   def self.current
     find_by_current(true)
   end
 
-  def activate
-    Configuration.current.update_attributes(current:false)
-    update_attributes(current:true)
-  end
+  # def activate
+  #   Configuration.current.update_attributes(current:false)
+  #   update_attributes(current:true)
+  # end
 
   def line_1
     [address1, address2].compact.join(', ')
