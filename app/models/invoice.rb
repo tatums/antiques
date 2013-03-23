@@ -33,6 +33,15 @@ class Invoice < ActiveRecord::Base
       0
   end
 
+  def setup_line_item_from(product)
+    line_items.build( product_id: product.id,
+                      item_number: product.item_number,
+                      description: product.title,
+                      price: product.price,
+                      quantity: 1,
+                      dimensions: product.dimensions)
+  end
+
 protected
 
   def set_inv_number #set the inv number to the date + inv count for current day

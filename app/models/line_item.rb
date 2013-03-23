@@ -29,11 +29,9 @@ protected
     end
   end
 
-
   def sort
     generic_sort(params[:ProductsOrder], 'Product')
     render :nothing => true
   end
-
 
 end
