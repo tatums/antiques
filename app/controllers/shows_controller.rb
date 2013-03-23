@@ -1,6 +1,8 @@
 class ShowsController < ApplicationController
   before_filter :require_user, :except => [:index]
 
+  include Sort
+
   def index
     @shows = Show.order(:position)
     @show= Show.new
@@ -36,11 +38,6 @@ class ShowsController < ApplicationController
       format.html { redirect_to shows_url }
       format.json { head :ok }
     end
-  end
-
-  def sort
-    generic_sort(params[:ShowsOrder], 'Show')
-    render :nothing => true
   end
 
 

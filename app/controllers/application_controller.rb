@@ -8,16 +8,6 @@ class ApplicationController < ActionController::Base
 
 private
 
-  def generic_sort(items, klass, category_id=nil)
-    items.each_with_index do |id, index|
-      if category_id
-        klass.constantize.where(:product_id => id.scan(/\d+/), :category_id => category_id).update_all(:position => index+1)
-      else
-        klass.constantize.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
-      end
-    end
-  end
-
   def visitor_view
     session[:visitor_view]
   end

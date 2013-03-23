@@ -5,12 +5,12 @@
     - if current_user and !visitor_view
       :javascript
         $(document).ready(function(){
-        $('#categories').sortable({
-        update: function(event, ui) {
-        var CategoriesOrder = $(this).sortable('toArray');
-        $.post("#{sort_categories_path}", {CategoriesOrder:CategoriesOrder});
-        }
-        });
+          $('#categories').sortable({
+              update: function(event, ui) {
+              var categoriesOrder = $(this).sortable('toArray');
+              $.post("#{sort_categories_path}", {ItemsOrder:categoriesOrder});
+            }
+          });
         });
       :css
         #wrapper{margin-top:42px}

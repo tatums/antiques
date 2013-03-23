@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  include Sort
   before_filter :require_user
 
   def index
@@ -39,14 +40,8 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-
-    if params[:completed] == 'true'
-      @task.update_attributes(:completed =>true)
-    end
-
-    if params[:deployed] == 'true'
-      @task.update_attributes(:deployed =>true)
-    end
+    @task.update_attributes(:completed =>true) if params[:completed] == 'true'
+    @task.update_attributes(:deployed =>true) if params[:deployed] == 'true'
 
     respond_to do |format|
       if @task.update_attributes(params[:task])
@@ -66,10 +61,6 @@ class TasksController < ApplicationController
     end
   end
 
-  def sort
-    generic_sort(params[:tasks_in_order], 'Task')
-    render :nothing => true
-  end
 
 end
 

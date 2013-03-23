@@ -8,8 +8,8 @@
 
            $('#shows').sortable({
            	update: function(event, ui) {
-           		var ShowsOrder = $(this).sortable('toArray');
-           		$.post("<%= escape_javascript(sort_shows_path) %>", {ShowsOrder:ShowsOrder});
+           		var showsOrder = $(this).sortable('toArray');
+           		$.post("<%= escape_javascript(sort_shows_path) %>", {ItemsOrder:showsOrder});
            	}
            });
 

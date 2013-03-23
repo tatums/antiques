@@ -7,23 +7,6 @@ module ProductsHelper
     output.join(', ')
   end
 
-
-  def read_more(product)
-      preview = ""
-      unless product.body.blank?
-        desc = product.body
-        preview_words = 35
-        total_words = desc.split.length
-        if total_words < preview_words
-          preview = desc
-        else
-          preview = desc.split[0..preview_words].join(" ")+" ..."
-        end
-      end
-      data = "<p id='product-desc'>"+preview +"</p>"
-    return data.html_safe
-  end
-
   def read_more_setup_as_paragraphs(product)
     if product.body.nil?
       data = ""
@@ -103,4 +86,11 @@ module ProductsHelper
     end
   end
 
+  def zero_products_blurb
+    "There aren't any products in this category yet.  Please check back soon."
+  end
+
+  def subscribe_blurb
+    "If you would like to be emailed once we have content available. Click #{link_to 'here', subscribe_path}".html_safe
+  end
 end

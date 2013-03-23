@@ -2,8 +2,8 @@
   $(document).ready(function(){
     $('#tasks').sortable({
       update: function(event, ui) {
-        var TasksOrder = $(this).sortable('toArray');
-        $.post( 'tasks/sort', {tasks_in_order:TasksOrder});
+        var tasksOrder = $(this).sortable('toArray');
+        $.post( 'tasks/sort', {ItemsOrder:tasksOrder});
       }
     });
   });
@@ -19,9 +19,7 @@
   </tr>
 </thead>
 <tbody id="tasks">
-<% @tasks.each do |task| %>
-  <%= render task %>
-<% end %>
+  <%= render @tasks %>
 </tbody>
 </table>
 

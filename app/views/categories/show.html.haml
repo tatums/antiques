@@ -21,9 +21,8 @@
     = render @products
   - else
     %li
-      %h2 Sorry
-      %p We are working on the site.  Please check back soon.
-      %p
-        If you would like to be emailed once we have content available. Click #{link_to 'here', subscribe_path}
+      %p=zero_products_blurb
+      %p=subscribe_blurb
+
 .bottom-pagination.no-print
   = paginate @products

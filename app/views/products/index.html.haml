@@ -1,12 +1,12 @@
 - if current_user
   :javascript
     $(document).ready(function(){
-    $('#products').sortable({
-    update: function(event, ui) {
-    var ProductsOrder = $(this).sortable('toArray');
-    $.post( 'products/sort', {ProductsOrder:ProductsOrder});
-    }
-    });
+      $('#products').sortable({
+        update: function(event, ui) {
+          var productsOrder = $(this).sortable('toArray');
+          $.post( 'products/sort', {ItemsOrder:productsOrder});
+        }
+      });
     });
 .row
   .span4
@@ -21,8 +21,8 @@
       = render product
   - else
     %li
-      %h2 Sorry
-      %p We are working on the site.  Please check back soon.
+      %p=zero_products_blurb
+
       %p
         If you would like to be emailed once we have content available. Click #{link_to 'here', subscribe_path}
 .bottom-pagination.no-print

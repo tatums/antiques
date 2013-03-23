@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  include Sort
   respond_to :html, :js
   before_filter :require_user, :except => [:show]
 
@@ -55,10 +56,6 @@ class CategoriesController < ApplicationController
 
 #///////////////////////////////////////////////////////////////////////////
 
-  def sort
-    generic_sort(params[:CategoriesOrder], 'Category')
-    render :nothing => true
-  end
 
   def sort_products
     generic_sort(params[:products_in_order], 'CategoryProduct', params[:category_id].to_i)
@@ -71,12 +68,5 @@ private
     Category.find_by_slug(params[:id])
   end
 
-  def find_products_for_category(category)
-    if current_user and !visitor_view
-      category.products.includes(:images)
-    else
-      category.products.includes(:images).active
-    end
-  end
 
 end

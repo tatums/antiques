@@ -1,5 +1,7 @@
 PhoebeBoothAntiquesCom::Application.routes.draw do
 
+  root :to => 'home#index'
+
   resources :invoices, :except => [:new, :edit] do
     resources :line_items, :only => [:edit, :update, :create, :destroy], :shallow => true
     get '/:product_id' => "invoices#create", :as => 'product_setup'
@@ -20,7 +22,6 @@ PhoebeBoothAntiquesCom::Application.routes.draw do
 
 
   resources :groups
-
 
   resources :tooltips, only: [:update], as: 'toggle_tooltips'
   post 'enable_visitor_view' => 'visitor_view#create', :as => :enable_visitor_view
@@ -84,9 +85,7 @@ PhoebeBoothAntiquesCom::Application.routes.draw do
     end
   end
 
-  root :to => 'home#index'
-  #, :constraints => lambda{ |r|
-#    binding.pry
-#  }
+
+
 
 end

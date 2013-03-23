@@ -1,50 +1,34 @@
 class ProductsController < ApplicationController
+  respond_to :html, :js
   before_filter :require_user, :only => [:new, :create, :edit, :update, :destroy]
 
+  include Sort
+
   def index
-    if current_user and !visitor_view
-      @products = Product.includes(:images).order(:position).page params[:page]
-    else
-      @products = Product.includes(:images).active.order(:position).page params[:page]
-    end
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @products }
-    end
+    @products = find_products
+    respond_with(@products)
   end
-
 
   def show
     @product = Product.find(params[:id])
     @notes = @product.notes
     respond_to do |format|
       format.html
-      format.pdf do
-          pdf = ProductPdf.new(@product)
-          send_data pdf.render, filename: "product_#{@product.id}",
-                                        type: "application/pdf",
-                                        disposition: "inline"
-      end
-
+      format.pdf { send_data ProductPdf.new(@product).render,
+                  filename: "product_#{@product.id}", type: "application/pdf", disposition: "inline" }
     end
   end
-
 
   def new
     @product = Product.new
     @product_categories = @product.category_ids
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @product }
-    end
+    respond_with(@product)
   end
 
   def edit
     @product = Product.find(params[:id])
     @product_categories = @product.category_ids
-
+    respond_with(@product)
   end
 
   def create
@@ -54,10 +38,8 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -70,14 +52,11 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.update_attributes(params[:product])
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { head :ok }
       else
         format.html { render action: "edit" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
-
 
   def destroy
     @product = Product.find(params[:id])
@@ -85,14 +64,18 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to products_url }
-      format.json { head :ok }
     end
   end
 
 
-  def sort
-    generic_sort(params[:ProductsOrder], 'Product')
-    render :nothing => true
+private
+
+  def find_products
+   if current_user and !visitor_view
+      Product.includes(:images).order(:position).page params[:page]
+    else
+      Product.includes(:images).active.order(:position).page params[:page]
+    end
   end
 
 end
