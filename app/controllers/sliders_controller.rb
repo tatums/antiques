@@ -1,25 +1,20 @@
 class SlidersController < ApplicationController
+  respond_to :html, :js
   before_filter :require_user
 
   def index
     @sliders = Slider.order(:position)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @sliders }
-    end
+    respond_with(@sliders)
   end
 
   def new
     @slider = Slider.new
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @slider }
-    end
+    respond_with(@slider)
   end
 
 
   def edit
-    @slider = Slider.find(params[:id])
+    @slider = find_slider
   end
 
   def create
@@ -27,35 +22,30 @@ class SlidersController < ApplicationController
     respond_to do |format|
       if @slider.save
         format.html { redirect_to sliders_url, notice: 'Slider was successfully created.' }
-        format.json { render json: @slider, status: :created, location: @slider }
       else
         format.html { render action: "new" }
-        format.json { render json: @slider.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
-    @slider = Slider.find(params[:id])
+    @slider = find_slider
     respond_to do |format|
       if @slider.update_attributes(params[:slider])
         format.html { redirect_to sliders_url, notice: 'Slider was successfully updated.' }
-        format.json { head :ok }
       else
         format.html { render action: "edit" }
-        format.json { render json: @slider.errors, status: :unprocessable_entity }
       end
     end
   end
 
 
   def destroy
-    @slider = Slider.find(params[:id])
+    @slider = find_slider
     @slider.destroy
     respond_to do |format|
       format.js
       format.html { redirect_to sliders_url }
-      format.json { head :ok }
     end
   end
 
@@ -67,14 +57,17 @@ class SlidersController < ApplicationController
   end
 
   def toggle
-    @slider = Slider.find(params[:id])
+    @slider = find_slider
     @slider.toggle_active
-
     respond_to do |format|
       format.html { redirect_to sliders_url }
-      format.json { head :ok }
     end
+  end
 
+  private
+
+  def find_slider
+    Slider.find(params[:id])
   end
 
 end
