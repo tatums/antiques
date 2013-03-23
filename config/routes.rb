@@ -31,14 +31,7 @@ PhoebeBoothAntiquesCom::Application.routes.draw do
     end
   end
 
-  resources :sliders, except: [:show] do
-    member do
-      post 'toggle'
-    end
-    collection do
-      post 'sort'
-    end
-  end
+  resources :sliders, except: [:show]
 
   resources :categories do
     collection do

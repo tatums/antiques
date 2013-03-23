@@ -1,9 +1,15 @@
 <%= content_tag_for :li, slider do %>
   <div class="slider-image">
-    <%= link_to(image_tag(slider.image_url(:thumb_200)), slider.image_url(:large), :class => 'single_image') %>
+    <%= link_to( image_tag( slider.image_url(:thumb_200) ), slider.image_url(:large), :class => 'single_image') %>
   </div>
+
   <div class="slider-meta">
-    <%= activate_deactivate_button(slider) %>
+
+    <%= form_for slider do |form| %>
+      <%= hidden_field_hlpr(slider, form) %>
+      <%= form.submit button_text_hlpr(slider) %>
+    <% end %>
+
     <%= link_to 'Edit', edit_slider_path(slider), :class=> 'nice small radius white button' %>
     <%= link_to 'Destroy', slider, :class=> 'nice small radius button white' , :data => {confirm: 'Are you sure?'}, method: :delete, :remote => true%>
   </div>

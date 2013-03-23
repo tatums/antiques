@@ -6,19 +6,19 @@ class ApplicationController < ActionController::Base
   helper_method :redirect_back_to
   helper_method :visitor_view
 
-  def sort
-    params[:ProductsOrder].each_with_index do |id, index|
-      Product.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
-    end
-    render :nothing => true
-  end
+  # def sort
+  #   params[:ProductsOrder].each_with_index do |id, index|
+  #     Product.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
+  #   end
+  #   render :nothing => true
+  # end
 
-  def sort_measurements
-    params[:MeasurementsOrder].each_with_index do |id, index|
-      Measurement.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
-    end
-    render :nothing => true
-  end
+  # def sort_measurements
+  #   params[:MeasurementsOrder].each_with_index do |id, index|
+  #     Measurement.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
+  #   end
+  #   render :nothing => true
+  # end
 
   private
   def visitor_view
@@ -70,7 +70,5 @@ class ApplicationController < ActionController::Base
   def disable_visitor_view
     session.delete('visitor_view')
   end
-
-
 
 end

@@ -5,15 +5,22 @@ module SlidersHelper
       return "Active"
     else
       return "Inactive"
-    end    
+    end
   end
 
-
-  def activate_deactivate_button(slider)
-    if slider.active
-      button_to "Disable", toggle_slider_path(slider), :class=>'small red nice button radius'
+  def hidden_field_hlpr(slider,form)
+    if slider.active?
+      form.hidden_field :active, :value => false
     else
-      button_to "Enable", toggle_slider_path(slider), :class=>'small white nice button radius'
+      form.hidden_field :active, :value => true
+    end
+  end
+
+  def button_text_hlpr(slider)
+    if slider.active?
+      "Deactivate"
+    else
+      "Activate"
     end
   end
 

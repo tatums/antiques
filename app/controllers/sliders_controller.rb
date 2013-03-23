@@ -12,7 +12,6 @@ class SlidersController < ApplicationController
     respond_with(@slider)
   end
 
-
   def edit
     @slider = find_slider
   end
@@ -30,6 +29,7 @@ class SlidersController < ApplicationController
 
   def update
     @slider = find_slider
+
     respond_to do |format|
       if @slider.update_attributes(params[:slider])
         format.html { redirect_to sliders_url, notice: 'Slider was successfully updated.' }
@@ -38,7 +38,6 @@ class SlidersController < ApplicationController
       end
     end
   end
-
 
   def destroy
     @slider = find_slider
@@ -49,22 +48,7 @@ class SlidersController < ApplicationController
     end
   end
 
-  def sort
-    params[:SlidersOrder].each_with_index do |id, index|
-      Slider.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
-    end
-    render :nothing => true
-  end
-
-  def toggle
-    @slider = find_slider
-    @slider.toggle_active
-    respond_to do |format|
-      format.html { redirect_to sliders_url }
-    end
-  end
-
-  private
+private
 
   def find_slider
     Slider.find(params[:id])
