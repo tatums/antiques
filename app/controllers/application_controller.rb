@@ -6,21 +6,18 @@ class ApplicationController < ActionController::Base
   helper_method :redirect_back_to
   helper_method :visitor_view
 
-  # def sort
-  #   params[:ProductsOrder].each_with_index do |id, index|
-  #     Product.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
-  #   end
-  #   render :nothing => true
-  # end
+private
 
-  # def sort_measurements
-  #   params[:MeasurementsOrder].each_with_index do |id, index|
-  #     Measurement.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
-  #   end
-  #   render :nothing => true
-  # end
+  def generic_sort(items, klass, category_id=nil)
+    items.each_with_index do |id, index|
+      if category_id
+        klass.constantize.where(:product_id => id.scan(/\d+/), :category_id => category_id).update_all(:position => index+1)
+      else
+        klass.constantize.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
+      end
+    end
+  end
 
-  private
   def visitor_view
     session[:visitor_view]
   end

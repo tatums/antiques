@@ -37,13 +37,11 @@ class ShowsController < ApplicationController
       format.json { head :ok }
     end
   end
-  
+
   def sort
-    params[:ShowsOrder].each_with_index do |id, index|
-      Show.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
-    end
+    generic_sort(params[:ShowsOrder], 'Show')
     render :nothing => true
   end
-  
-  
+
+
 end

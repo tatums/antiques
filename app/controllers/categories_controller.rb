@@ -1,34 +1,26 @@
 class CategoriesController < ApplicationController
+  respond_to :html, :js
   before_filter :require_user, :except => [:show]
 
   def index
     @inactive_categories = Category.inactive.order(:position)
-    respond_to do |format|
-      format.html # index.html.erb
-    end
+    respond_with(@inactive_categories)
   end
 
   def show
     @category = find_by_slug
     @products = find_products_for_category(@category).order('category_products.position').page params[:page]
-    respond_to do |format|
-     format.html
-    end
+    respond_with(@category)
   end
-
 
   def new
     @category = Category.new
-    respond_to do |format|
-      format.html
-    end
+    respond_with(@category)
   end
-
 
   def edit
     @category = find_by_slug
   end
-
 
   def create
     @category = Category.new(params[:category])
@@ -41,10 +33,8 @@ class CategoriesController < ApplicationController
     end
   end
 
-
   def update
     @category = find_by_slug
-    @category.active = params[:active] if params[:active]
     respond_to do |format|
       if @category.update_attributes(params[:category])
         format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }
@@ -66,16 +56,12 @@ class CategoriesController < ApplicationController
 #///////////////////////////////////////////////////////////////////////////
 
   def sort
-    params[:CategoriesOrder].each_with_index do |id, index|
-      Category.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
-    end
+    generic_sort(params[:CategoriesOrder], 'Category')
     render :nothing => true
   end
 
   def sort_products
-    params[:products_in_order].each_with_index do |id, index|
-      CategoryProduct.where(:product_id => id.scan(/\d+/), :category_id => params[:category_id].to_i).update_all(:position => index+1)
-    end
+    generic_sort(params[:products_in_order], 'CategoryProduct', params[:category_id].to_i)
     render :nothing => true
   end
 

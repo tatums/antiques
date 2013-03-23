@@ -67,9 +67,7 @@ class TasksController < ApplicationController
   end
 
   def sort
-    params[:tasks_in_order].each_with_index do |id, index|
-      Task.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
-    end
+    generic_sort(params[:tasks_in_order], 'Task')
     render :nothing => true
   end
 

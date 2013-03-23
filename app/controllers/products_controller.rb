@@ -91,12 +91,8 @@ class ProductsController < ApplicationController
 
 
   def sort
-    params[:ProductsOrder].each_with_index do |id, index|
-      Product.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
-    end
+    generic_sort(params[:ProductsOrder], 'Product')
     render :nothing => true
   end
-
-
 
 end
