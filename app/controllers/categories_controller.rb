@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
   before_filter :require_user, :except => [:show]
 
-
   def index
     @inactive_categories = Category.inactive.order(:position)
     respond_to do |format|
@@ -9,14 +8,9 @@ class CategoriesController < ApplicationController
     end
   end
 
-
   def show
-    @category = Category.find_by_slug(params[:id])
-    if current_user and !visitor_view
-      @products = @category.products.includes(:images).order('category_products.position').page params[:page]
-    else
-      @products = @category.products.includes(:images).active.order('category_products.position').page params[:page]
-    end
+    @category = find_by_slug
+    @products = find_products_for_category(@category).order('category_products.position').page params[:page]
     respond_to do |format|
      format.html
     end
@@ -32,7 +26,7 @@ class CategoriesController < ApplicationController
 
 
   def edit
-    @category = Category.find_by_slug(params[:id])
+    @category = find_by_slug
   end
 
 
@@ -49,7 +43,7 @@ class CategoriesController < ApplicationController
 
 
   def update
-    @category = Category.find_by_slug(params[:id])
+    @category = find_by_slug
     @category.active = params[:active] if params[:active]
     respond_to do |format|
       if @category.update_attributes(params[:category])
@@ -62,7 +56,7 @@ class CategoriesController < ApplicationController
 
 
   def destroy
-    @category = Category.find_by_slug(params[:id])
+    @category = find_by_slug
     @category.destroy
     respond_to do |format|
       format.html { redirect_to categories_url }
@@ -85,6 +79,18 @@ class CategoriesController < ApplicationController
     render :nothing => true
   end
 
+private
 
+  def find_by_slug
+    Category.find_by_slug(params[:id])
+  end
+
+  def find_products_for_category(category)
+    if current_user and !visitor_view
+      category.products.includes(:images)
+    else
+      category.products.includes(:images).active
+    end
+  end
 
 end

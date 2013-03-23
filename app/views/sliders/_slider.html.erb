@@ -7,7 +7,7 @@
 
     <%= form_for slider do |form| %>
       <%= hidden_field_hlpr(slider, form) %>
-      <%= form.submit button_text_hlpr(slider) %>
+      <%= form.submit button_text_hlpr(slider), :class=>'small red nice button radius' %>
     <% end %>
 
     <%= link_to 'Edit', edit_slider_path(slider), :class=> 'nice small radius white button' %>
