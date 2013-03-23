@@ -65,30 +65,33 @@ class InvoicePdf < Prawn::Document
 
 
   def line_items_table
-      bounding_box([0, 430], :width => 550) do
-        table line_item_rows do
-          column(0).style(:width => 20, align: :center)
-          columns(1..4).align
-          column(2).style align: :center
-          columns(0..4).style(size:10)
-          columns(3..4).style align: :right
-          row(0).style(:background_color => '666666', :text_color => 'FFFFFF', align: :center)
-          self.row_colors = ["DDDDDD", "FFFFFF"]
-          self.header = true
-          self.width = 540
-        end
-       move_down 20
+    bounding_box([0, 430], :width => 550) do
+      table line_item_rows do
+        column(0).style(:width => 20, align: :center)
+        columns(1..4).align
+        column(2).style align: :center
+        columns(0..4).style(size:10)
+        columns(3..4).style align: :right
+        row(0).style(:background_color => '666666', :text_color => 'FFFFFF', align: :center)
+        self.row_colors = ["DDDDDD", "FFFFFF"]
+        self.header = true
+        self.width = 540
+      end
+      move_down 20
+      sub_total_box
+    end
 
-        bounding_box([340, 0], :width => 300) do
-           table(totals_data) do
-               column(0).style(:background_color => 'dddddd', align: :center )
-               column(1).style( font_style: :bold, align: :right )
-               column(0..1).width = 100
-               columns(0..1).style(size:10)
-           end
-        end
-     end
+  end
 
+  def sub_total_box
+    bounding_box([340, 0], :width => 300) do
+      table(totals_data) do
+        column(0).style(:background_color => 'dddddd', align: :center )
+        column(1).style( font_style: :bold, align: :right )
+        column(0..1).width = 100
+        columns(0..1).style(size:10)
+      end
+    end
   end
 
   def sales_final
