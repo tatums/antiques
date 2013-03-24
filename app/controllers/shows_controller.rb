@@ -14,7 +14,7 @@ class ShowsController < ApplicationController
   def create
     @show = Show.new(params[:show])
     @show.save
-    respond_with(@shows, location: shows_path)
+    respond_with(@show)
   end
 
 

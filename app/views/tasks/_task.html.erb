@@ -1,5 +1,11 @@
 <%= content_tag_for :tr, task do %>
     <td><%= show_title(task) %></td>
-    <td><%= finish_button(task) %></td>
-    <td><%= deployed_button(task) %></td>
+
+    <td>
+      <%= finish_button(task) %>
+    </td>
+    <td>
+      <%= deployed_button(task) %>
+    </td>
+
 <% end %>

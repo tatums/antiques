@@ -1,6 +1,6 @@
 class Task < ActiveRecord::Base
   after_create :set_init_position
-
+  validates :title, presence: true
 
 private
 
@@ -13,7 +13,5 @@ private
       task.update_attributes(:position => index)
     end
   end
-
-
 
 end
