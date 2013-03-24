@@ -1,16 +1,16 @@
 class ContactGroupsController < ApplicationController
+  respond_to :html
+  before_filter :require_user
 
   def create
     @group = Group.find(params[:group_id])
     @contact = Contact.find(params[:id])
-    respond_to do |format|
-      if @group.contacts.include?(@contact)
-        format.html { redirect_to @group, notice: 'Subscriber already a member.' }
-      else
-        @group.contacts << @contact
-        format.html { redirect_to @group, notice: 'Subscriber added to Group.' }
-      end
+    @group.contact_groups.build(contact: @contact)
+
+    if @group.save
+      flash[:notice] = 'Subscriber added to Group.'
     end
+    respond_with(@group)
   end
 
 
@@ -19,8 +19,6 @@ class ContactGroupsController < ApplicationController
     @group = Group.find(params[:group_id])
     @contact_group = ContactGroup.find_by_contact_id_and_group_id(params[:id], params[:group_id])
     @contact_group.destroy
-    respond_to do |format|
-      format.html { redirect_to @group }
-    end
+    respond_with(@group)
   end
 end

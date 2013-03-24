@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_filter :require_user
   include Sort
 
   respond_to :html, :js

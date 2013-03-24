@@ -1,4 +1,5 @@
 class VisitorViewController < ApplicationController
+  before_filter :require_user
   def create
     store_referer
     enable_visitor_view

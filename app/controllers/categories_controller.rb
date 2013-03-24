@@ -25,32 +25,25 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(params[:category])
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to categories_path, notice: 'Category was successfully created.' }
-      else
-        format.html { render action: "new" }
-      end
+    if @category.save
+        flash[:notice] = 'Category was successfully created.'
     end
+    respond_with(@category)
   end
 
   def update
     @category = find_by_slug
-    respond_to do |format|
-      if @category.update_attributes(params[:category])
-        format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }
-      else
-        format.html { render action: "edit" }
-      end
+    @category = Category.new(params[:category])
+    if @category.update_attributes(params[:category])
+        flash[:notice] = 'Category was successfully updated.'
     end
+    respond_with(@category)
   end
 
   def destroy
     @category = find_by_slug
     @category.destroy
-    respond_to do |format|
-      format.html { redirect_to categories_url }
-    end
+    respond_with(@category)
   end
 
   def sort_products
@@ -63,6 +56,5 @@ private
   def find_by_slug
     Category.find_by_slug(params[:id])
   end
-
 
 end

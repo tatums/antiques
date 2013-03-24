@@ -16,6 +16,9 @@ class Contact < ActiveRecord::Base
 
 
   validates_presence_of :first
+  validates_associated :contact_groups
+
+
 
   has_many :invoices, :dependent => :destroy
   has_many :contact_groups

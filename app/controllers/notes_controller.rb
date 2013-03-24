@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+  before_filter :require_user
   def create
     @notable = find_notable
     @note = @notable.notes.build(params[:note])
