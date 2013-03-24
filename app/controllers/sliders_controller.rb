@@ -18,25 +18,14 @@ class SlidersController < ApplicationController
 
   def create
     @slider = Slider.new(params[:slider])
-    respond_to do |format|
-      if @slider.save
-        format.html { redirect_to sliders_url, notice: 'Slider was successfully created.' }
-      else
-        format.html { render action: "new" }
-      end
-    end
+    flash[:notice] = 'Image was successfully created.' if @slider.save
+    respond_with(@slider, location: sliders_path)
   end
 
   def update
     @slider = find_slider
-
-    respond_to do |format|
-      if @slider.update_attributes(params[:slider])
-        format.html { redirect_to sliders_url, notice: 'Slider was successfully updated.' }
-      else
-        format.html { render action: "edit" }
-      end
-    end
+    flash[:notice] = 'Image was successfully updated.' if @slider.update_attributes(params[:slider])
+    respond_with(@slider, location: sliders_path)
   end
 
   def destroy
