@@ -1,7 +1,7 @@
 class Contact < ActiveRecord::Base
   include PgSearch
 
-  attr_accessible :first, :last, :email, :address, :city, :state, :zip, :phone, :country, :note
+  attr_accessible :first, :last, :email, :address, :city, :state, :zip, :phone, :country, :note, :group_ids
 
   pg_search_scope :search,
     against: {first:    'A',
