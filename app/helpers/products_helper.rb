@@ -43,20 +43,12 @@ module ProductsHelper
     return "<li>" + output.join + "</li>"
   end
 
-  def formatted_price(price)
-    output = ""
-    unless price.blank?
-      output = "<li>" + number_to_currency(price, :precision => 0) + "</li>"
-    end
-    return output.html_safe
+  def formatted_price(product)
+    content_tag :li, number_to_currency(product.price, :precision => 0) unless product.price.blank?
   end
 
-  def formatted_dimensions(dimensions)
-    output = ""
-    unless dimensions.blank?
-      output = "<li>" + dimensions + "</li>"
-    end
-    return output.html_safe
+  def formatted_dimensions(product)
+    content_tag :li, product.dimensions unless product.dimensions.empty?
   end
 
 

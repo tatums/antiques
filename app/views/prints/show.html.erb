@@ -2,13 +2,15 @@
     <h1>Inventory #<%= @product.item_number %></h1>
     <%= image_tag(@product.image_url(:medium))%>
     <ul>
-      <li><h3><%= @product.title %></h3></li>
+      <li>
+        <h3><%= @product.title %></h3>
+      </li>
       <li><%= country_and_period(@product) %></li>
-      <%# setup_paragraphs(@product).html_safe %>     
-      <%= formatted_dimensions(@product.dimensions) %>
-      <%= formatted_price(@product.price) %>      
+      <%# setup_paragraphs(@product).html_safe %>
+      <%= formatted_dimensions(@product) %>
+      <%= formatted_price(@product) %>
     </ul>
     <p class="disclaimer">
       Images are property of Phoebe Booth Antiques LLC. Any reproductions of the inventory within the image require consent.
-    </p> 
+    </p>
 </div>

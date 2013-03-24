@@ -16,9 +16,14 @@
         %h3= @product.title
       %li= country_and_period(@product)
       %li= "Inventory Number: #{@product.item_number}"
+
+
+
       = setup_paragraphs(@product).html_safe
-      = formatted_dimensions(@product.dimensions)
-      = formatted_price(@product.price)
+
+
+      = formatted_dimensions(@product)
+      = formatted_price(@product)
       %li= link_to "Print a Tear Sheet", product_path(@product, :format => 'pdf'), :class => 'print_link green'
 
     - if current_user and !visitor_view

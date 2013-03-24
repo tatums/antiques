@@ -45,7 +45,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-
   def destroy
     @category = find_by_slug
     @category.destroy
@@ -53,9 +52,6 @@ class CategoriesController < ApplicationController
       format.html { redirect_to categories_url }
     end
   end
-
-#///////////////////////////////////////////////////////////////////////////
-
 
   def sort_products
     generic_sort(params[:products_in_order], 'CategoryProduct', params[:category_id].to_i)
