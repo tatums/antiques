@@ -14,9 +14,6 @@
       %li
         Inventory Number: #{product.item_number.to_s}
       = read_more_setup_as_paragraphs(product).html_safe
-
-
-
       = formatted_dimensions(product)
       = formatted_price(product)
       %li

@@ -1,7 +1,7 @@
-/* Add the new keyword to the bottom of the keyword list */
-$("#shows").append("<%= escape_javascript(render(@show)) %>");
 
-/* Highlight the new comment */
-$('#show_<%= @show.id %>').effect("highlight", {}, 3000);
-
-$('#myModal .close-reveal-modal').trigger('click.modalEvent');
+<% if @show.valid? %>
+  $("#shows").append("<%= escape_javascript(render(@show)) %>");
+  $('#show_<%= @show.id %>').effect("highlight", {}, 3000);
+  $('#myModal .close-reveal-modal').trigger('click.modalEvent');
+  $('.field input').val('');
+<% end %>

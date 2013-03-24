@@ -1,4 +1,5 @@
 class ShowsController < ApplicationController
+  respond_to :html, :js
   before_filter :require_user, :except => [:index]
 
   include Sort
@@ -6,26 +7,14 @@ class ShowsController < ApplicationController
   def index
     @shows = Show.order(:position)
     @show= Show.new
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @shows }
-    end
+    respond_with(@shows)
   end
 
 
   def create
     @show = Show.new(params[:show])
-
-    respond_to do |format|
-      if @show.save
-        format.html { redirect_to shows_path, notice: 'Show was successfully created.' }
-        format.js
-        format.json { render json: @show, status: :created, location: @show }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @show.errors, status: :unprocessable_entity }
-      end
-    end
+    @show.save
+    respond_with(@shows, location: shows_path)
   end
 
 

@@ -32,12 +32,20 @@
   <div class="content-section">
     <%= render 'shared/heading', :heading => 'press' %>
     <dl>
-      <dd>July 28, 2010 Phoebe Booth Antiques Featured in the New York Times. Click <a href="http://www.nytimes.com/2010/07/29/garden/29shows.html" class="green">here</a>.</dd>
-      <dd>October 21, 2011 Phoebe Booth Antiques Featured on the WGN Morning Show - Around Town. Click <a href="http://www.wgntv.com/videobeta/1b0bdc0e-c6bc-4b11-9c80-0113502e93ed/Food/Around-Town-Winnetka-Antiques-and-Modernism-Show" class="green">here</a>.</dd>
-      <!--<dd><video width="512" height="288" controls="controls">
-        <source src="wgn.mp4" type="video/mp4" />
-       </video>
-       </dd>-->
+      <dd>
+        <a href="http://www.nytimes.com/2010/07/29/garden/29shows.html" class="green">
+          July 28, 2010 Phoebe Booth Antiques Featured in the New York Times.</a>
+      </dd>
+      <dd>
+        <a href="#" class="green" id='wgn-video-cntrl'>
+          October 21, 2011 Phoebe Booth Antiques Featured on the WGN Morning Show - Around Town.</a>
+      </dd>
+
+      <dd style='display:none;' id='wgn-video'>
+        <video width="512" height="288" controls="controls">
+          <source src="wgn.mp4" type="video/mp4" />
+        </video>
+       </dd>
     </dl>
   </div>
 

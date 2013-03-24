@@ -15,7 +15,7 @@ class Show < ActiveRecord::Base
 private
 
   def set_init_position
-    self.position = Show.active.size
+    self.position = Show.all.size
   end
 
 end
