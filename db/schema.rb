@@ -180,6 +180,4 @@ ActiveRecord::Schema.define(:version => 20130319223102) do
     t.boolean  "show_tooltips"
   end
 
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-
 end

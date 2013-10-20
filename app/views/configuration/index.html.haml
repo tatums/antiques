@@ -5,4 +5,5 @@
   %br= @configuration.phone
   = @configuration.email
   %br
-  = link_to 'Edit', edit_configuration_path(@configuration)
+  = link_to 'Edit',
+    edit_configuration_path(@configuration), class: 'small red button'

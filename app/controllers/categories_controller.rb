@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
 
   def update
     @category = find_by_slug
-    @category = Category.new(params[:category])
+    #@category = Category.new(params[:category])
     if @category.update_attributes(params[:category])
         flash[:notice] = 'Category was successfully updated.'
     end
