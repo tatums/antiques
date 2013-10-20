@@ -12,7 +12,6 @@ tmp/pids/
 config/mail.yml
 config/database.yml
 public/uploads/
-public/assets/
 solr/data/
 solr/pids/*
 .sass-cache/
