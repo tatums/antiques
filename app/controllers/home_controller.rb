@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   respond_to :html
-  before_filter :require_user
+  #before_filter :require_user
 
   def index
     @sliders = Slider.active.order(:position)
@@ -27,7 +27,6 @@ class HomeController < ApplicationController
 
   def create_contact
     @contact = Contact.new(params[:contact])
-
     respond_to do |format|
       if @contact.save
         SubscriberMailer.subscribe(@contact).deliver

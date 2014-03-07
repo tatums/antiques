@@ -19,9 +19,6 @@ PhoebeBoothAntiquesCom::Application.configure do
   config.assets.digest = true
 
 
-  #CACHE added on 2/4/2012
-  config.cache_store = :dalli_store
-
   #The Mail.yml file is not in the git repo. --so the username and pass are in the env
   #heroku config:add MAIL_DOMAIN=phoebeboothantiquest.com
   #
@@ -43,4 +40,17 @@ PhoebeBoothAntiquesCom::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.after_initialize do
+    CarrierWave.configure do |config|
+      config.storage :fog
+      config.fog_credentials = {
+       provider: "AWS",
+       aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+       aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+      }
+      config.fog_directory = ENV['S3_BUCKET_NAME']
+    end
+  end
+
 end

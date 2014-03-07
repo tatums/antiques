@@ -5,34 +5,27 @@ group :development, :test do
   gem "capybara"
   gem "factory_girl_rails"
   gem 'pry'
-  gem 'thin'
   gem 'fabrication'
   gem 'faker'
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'awesome_print'
   gem 'progress_bar'
-  gem 'unicorn'
 end
 
 group :staging do
-  gem 'pg'
   gem 'thin'
   gem 'unicorn'
 end
-
-group :production do
-
-end
+gem 'quiet_assets', :group => :development
 
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'jquery-fileupload-rails'
-  gem 'fancybox2-rails', '~> 0.2.4'
-  gem 'anjlab-bootstrap-rails', '>= 2.3', :require => 'bootstrap-rails'
   gem "jquery-ui-rails"
+  gem 'fancybox2-rails', '~> 0.2.4'
 end
 
 gem 'rails', '3.2.12'
@@ -44,10 +37,9 @@ gem 'rack'
 gem 'heroku'
 gem "haml-rails"
 
-gem 'jquery-rails'
+gem 'jquery-rails', "~> 2.1.4"
 gem 'kaminari'
 gem 'prawn'
-gem 'dalli'
 gem 'pg'
 gem 'figaro'
 gem 'pg_search'

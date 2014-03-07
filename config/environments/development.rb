@@ -46,9 +46,6 @@ PhoebeBoothAntiquesCom::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  #CACHE added on 2/4/2012
-  config.cache_store = :dalli_store
-
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
@@ -60,5 +57,6 @@ PhoebeBoothAntiquesCom::Application.configure do
     :enable_starttls_auto => true  }
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
 
 end
