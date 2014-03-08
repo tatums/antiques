@@ -3,7 +3,7 @@
     $('#tasks').sortable({
       update: function(event, ui) {
         var tasksOrder = $(this).sortable('toArray');
-        $.post( 'tasks/sort', {ItemsOrder:tasksOrder});
+        $.post( 'tasks/sort', {TasksOrder:tasksOrder});
       }
     });
   });

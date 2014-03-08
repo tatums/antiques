@@ -7,10 +7,10 @@
            });
 
            $('#shows').sortable({
-           	update: function(event, ui) {
-           		var showsOrder = $(this).sortable('toArray');
-           		$.post("<%= escape_javascript(sort_shows_path) %>", {ItemsOrder:showsOrder});
-           	}
+            update: function(event, ui) {
+            var showsOrder = $(this).sortable('toArray');
+              $.post("<%= escape_javascript(sort_shows_path) %>", {ShowsOrder:showsOrder});
+            }
            });
 
       });

@@ -2,7 +2,8 @@ module Sort
 
   def sort
     class_name = params[:controller].capitalize.singularize
-    generic_sort(params[:ItemsOrder], class_name)
+    item_name = class_name.pluralize + "Order"
+    generic_sort(params[item_name.to_sym], class_name)
     render :nothing => true
   end
 

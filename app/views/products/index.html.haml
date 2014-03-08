@@ -4,7 +4,7 @@
       $('#products').sortable({
         update: function(event, ui) {
           var productsOrder = $(this).sortable('toArray');
-          $.post( 'products/sort', {ItemsOrder:productsOrder});
+          $.post( 'products/sort', {ProductsOrder:productsOrder});
         }
       });
     });
