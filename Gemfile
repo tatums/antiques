@@ -30,7 +30,7 @@ group :assets do
   gem 'fancybox2-rails', '~> 0.2.4'
 end
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.17'
 
 gem 'carrierwave'
 gem "mini_magick"
