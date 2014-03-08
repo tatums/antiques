@@ -17,7 +17,7 @@ class ConfigurationController < ApplicationController
     if @configuration.update_attributes(params[:configuration])
       flash[:notice] = 'Configuration was successfully updated.'
     end
-    respond_with(@configuration)
+    respond_with(@configuration, location: root_path)
   end
 
 end
