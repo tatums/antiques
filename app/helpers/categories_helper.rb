@@ -11,8 +11,9 @@ module CategoriesHelper
   end
 
   def read_more(product, preview = "")
-    return if product.body.blank?
-    truncate product.body, PREVIEW_WORDS
+    if product.body
+      product.body.truncate(PREVIEW_WORDS)
+    end
   end
 
 end
