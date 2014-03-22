@@ -28,7 +28,7 @@ class HomeController < ApplicationController
   def create_contact
 
     @contact = Contact.new(params[:contact])
-    SubscriberMailer.subscribe(@contact).deliver if params[:first_name].present?
+    SubscriberMailer.spam(@contact).deliver if params[:first_name].present?
     respond_to do |format|
       ## [:first_name] is for spam bots - its a hidden field
       ## if a bot fills this out.. not valid and re-render the page.
