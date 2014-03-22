@@ -47,3 +47,5 @@ gem 'pg_search'
 gem 'fog'
 gem 'newrelic_rpm'
 gem 'foreman'
+gem 'rails_12factor'
+
