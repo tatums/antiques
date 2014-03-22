@@ -6,4 +6,10 @@ class SubscriberMailer < ActionMailer::Base
       @url  = "http://phoebeboothantiques.com"
       mail(:to => ENV["send_to"], :subject => "Subscriber")
   end
+
+  def spam(contact)
+    @contact = contact
+    @url  = "http://phoebeboothantiques.com"
+    mail(:to => ENV["send_to"], :subject => "SPAM")
+  end
 end

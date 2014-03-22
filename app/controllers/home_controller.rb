@@ -26,9 +26,17 @@ class HomeController < ApplicationController
   end
 
   def create_contact
+
+    SubscriberMailer.subscribe(@contact).deliver if params[:first_name].present?
+
     @contact = Contact.new(params[:contact])
     respond_to do |format|
-      if @contact.save
+      ## [:first_name] is for spam bots - its a hidden field
+      ## if a bot fills this out.. not valid and re-render the page.
+
+      binding.pry
+
+      if params[:first_name].empty? && @contact.save
         SubscriberMailer.subscribe(@contact).deliver
         format.html { redirect_to category_path(Category.active.sample), notice: 'Thank You... You infomation was successfully saved.' }
       else
